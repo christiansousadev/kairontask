@@ -1,0 +1,9 @@
+<svg viewBox="0 0 64 64"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <path d="M 12,8 H 52 L 36,28 L 52,56 H 12 L 28,28 Z"
+        id="kaironLogoWhite"
+        style="fill-opacity:1;fill-rule:evenodd;stroke:none;
+        fill: #fff;
+        stroke-linecap:round;stroke-linejoin:round;" />
+</svg>
