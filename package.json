@@ -146,7 +146,7 @@
   },
   "dependencies": {
     "@capacitor/browser": "^7.0.4",
-    "@capacitor/ios": "^7.4.4",
+    "@capacitor/ios": "^8.5.3",
     "@capacitor/keyboard": "^7.0.4",
     "@capacitor/status-bar": "^7.0.4",
     "@material-symbols/font-400": "^0.40.2",
