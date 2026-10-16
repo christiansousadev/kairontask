@@ -8,9 +8,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/christiansousadev/kairontask/releases"><img src="https://img.shields.io/badge/Versão-18.1.3-6366f1.svg?style=flat-square" alt="Versão 18.1.3"/></a>
+  <img src="https://img.shields.io/badge/Versão-18.1.3-6366f1.svg?style=flat-square" alt="Versão 18.1.3"/>
   &nbsp;
-  <a href="LICENSE"><img src="https://img.shields.io/badge/Licença-MIT-indigo.svg?style=flat-square" alt="MIT License"/></a>
+  <img src="https://img.shields.io/badge/Licença-MIT-indigo.svg?style=flat-square" alt="MIT License"/>
   &nbsp;
   <img src="https://img.shields.io/badge/Arquitetura-Local--First-06b6d4.svg?style=flat-square" alt="Local First"/>
   &nbsp;
@@ -262,12 +262,7 @@ Para aprofundar-se na engenharia, padrões de projeto e governança do código, 
 ---
 
 ## 📄 Licença e Autoria
-
-- **Autor e Mantenedor**: [Christian Sousa](https://github.com/christiansousadev)
-- **Repositório Oficial**: [github.com/christiansousadev/kairontask](https://github.com/christiansousadev/kairontask)
-- **Website / Web App**: [kairontask.app](https://kairontask.app)
-- **Serviço de Sincronização**: [sync.kairontask.app](https://sync.kairontask.app)
-- **Contato & Suporte**: [support@kairontask.app](mailto:support@kairontask.app)
-
-Distribuído sob os termos da licença [MIT](LICENSE).  
-Copyright (c) 2026 Christian Sousa.
+ 
+- **Autor e Desenvolvedor**: Christian Sousa
+- **Licença**: Distribuído sob os termos da licença [MIT](LICENSE).  
+Copyright (c) 2026 Christian Sousa. Todos os direitos reservados.

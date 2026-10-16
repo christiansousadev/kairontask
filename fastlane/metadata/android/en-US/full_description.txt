@@ -14,4 +14,3 @@ Pomodoro and focus modes help you eliminate distractions and stay in deep work.
 
 KaironTask <b>does NOT collect personal data</b>. There are no tracking scripts and no mandatory accounts. Your data is 100% yours and stays on your device unless you choose to sync.
 
-<a href="https://kairontask.app/privacy">Privacy Policy</a>

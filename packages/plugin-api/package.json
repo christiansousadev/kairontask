@@ -20,17 +20,13 @@
     "productivity",
     "task-management"
   ],
-  "author": "Christian Sousa <support@kairontask.app>",
+  "author": "Christian Sousa",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/christiansousadev/kairontask.git",
     "directory": "packages/plugin-api"
   },
-  "bugs": {
-    "url": "https://github.com/christiansousadev/kairontask/issues"
-  },
-  "homepage": "https://kairontask.app",
   "files": [
     "dist/**/*.js",
     "dist/**/*.d.ts",

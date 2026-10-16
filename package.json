@@ -11,13 +11,12 @@
     "Pomodoro",
     "Productivity"
   ],
-  "homepage": "https://kairontask.app",
   "repository": {
     "type": "git",
-    "url": "git://github.com/kairontask/kairontask.git"
+    "url": "https://github.com/christiansousadev/kairontask.git"
   },
   "license": "MIT",
-  "author": "KaironTask Team <support@kairontask.app>",
+  "author": "Christian Sousa",
   "main": "./electron/main.js",
   "scripts": {
     "env": "node ./tools/load-env.js",
