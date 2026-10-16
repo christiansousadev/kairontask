@@ -1,0 +1,160 @@
+import { BrowserContext, test as base } from '@playwright/test';
+import { WorkViewPage } from '../pages/work-view.page';
+import { ProjectPage } from '../pages/project.page';
+import { TaskPage } from '../pages/task.page';
+import { SettingsPage } from '../pages/settings.page';
+import { DialogPage } from '../pages/dialog.page';
+import { PlannerPage } from '../pages/planner.page';
+import { SyncPage } from '../pages/sync.page';
+import { TagPage } from '../pages/tag.page';
+import { NotePage } from '../pages/note.page';
+import { SideNavPage } from '../pages/side-nav.page';
+import { waitForAppReady } from '../utils/waits';
+
+type TestFixtures = {
+  workViewPage: WorkViewPage;
+  projectPage: ProjectPage;
+  taskPage: TaskPage;
+  settingsPage: SettingsPage;
+  dialogPage: DialogPage;
+  plannerPage: PlannerPage;
+  syncPage: SyncPage;
+  tagPage: TagPage;
+  notePage: NotePage;
+  sideNavPage: SideNavPage;
+  isolatedContext: BrowserContext;
+  waitForNav: (selector?: string) => Promise<void>;
+  testPrefix: string;
+};
+
+export const test = base.extend<TestFixtures>({
+  // Create isolated context for each test
+  isolatedContext: async ({ browser, baseURL }, use, testInfo) => {
+    const url = baseURL || testInfo.project.use.baseURL || 'http://localhost:4242';
+    // Create a new context with isolated storage
+    const context = await browser.newContext({
+      // Each test gets its own storage state
+      storageState: undefined,
+      // Preserve the base userAgent and add worker index for debugging
+      userAgent: `PLAYWRIGHT PLAYWRIGHT-WORKER-${testInfo.workerIndex}`,
+      baseURL: url,
+    });
+
+    await use(context);
+
+    // Cleanup
+    await context.close();
+  },
+
+  // Override page to use isolated context
+  page: async ({ isolatedContext }, use) => {
+    const page = await isolatedContext.newPage();
+
+    // Skip onboarding, hints, and example tasks before the app boots.
+    // This runs before any page JavaScript, so Angular sees the flags immediately.
+    await page.addInitScript(() => {
+      localStorage.setItem('SUP_ONBOARDING_PRESET_DONE', 'true');
+      localStorage.setItem('SUP_ONBOARDING_HINTS_DONE', 'true');
+      localStorage.setItem('SUP_IS_SHOW_TOUR', 'true');
+      localStorage.setItem('SUP_EXAMPLE_TASKS_CREATED', 'true');
+    });
+
+    try {
+      // Always log uncaught page errors — they are almost always test-relevant
+      page.on('pageerror', (error) => {
+        console.error('Page error:', error.message);
+      });
+
+      // Only log verbose console messages when E2E_VERBOSE is set
+      if (process.env.E2E_VERBOSE) {
+        page.on('console', (msg) => {
+          console.log(`Console ${msg.type()}:`, msg.text());
+        });
+      }
+
+      // Navigate to the app with retry logic
+      let navigationSuccess = false;
+      for (let attempt = 0; attempt < 3 && !navigationSuccess; attempt++) {
+        try {
+          await page.goto('/', {
+            waitUntil: 'domcontentloaded',
+            timeout: 30000,
+          });
+          navigationSuccess = true;
+        } catch (error) {
+          if (attempt === 2) throw error;
+          console.log(`Navigation attempt ${attempt + 1} failed, retrying...`);
+          await page.waitForTimeout(1000);
+        }
+      }
+
+      await waitForAppReady(page);
+
+      await use(page);
+    } finally {
+      // Cleanup - make sure context is still available
+      if (!page.isClosed()) {
+        await page.close();
+      }
+    }
+  },
+
+  // Provide test prefix for data namespacing
+  testPrefix: async ({}, use, testInfo) => {
+    // Use worker index and parallel index for unique prefixes
+    const prefix = `W${testInfo.workerIndex}-P${testInfo.parallelIndex}`;
+    await use(prefix);
+  },
+
+  workViewPage: async ({ page, testPrefix }, use) => {
+    await use(new WorkViewPage(page, testPrefix));
+  },
+
+  projectPage: async ({ page, testPrefix }, use) => {
+    await use(new ProjectPage(page, testPrefix));
+  },
+
+  taskPage: async ({ page, testPrefix }, use) => {
+    await use(new TaskPage(page, testPrefix));
+  },
+
+  settingsPage: async ({ page, testPrefix }, use) => {
+    await use(new SettingsPage(page, testPrefix));
+  },
+
+  dialogPage: async ({ page, testPrefix }, use) => {
+    await use(new DialogPage(page, testPrefix));
+  },
+
+  plannerPage: async ({ page }, use) => {
+    await use(new PlannerPage(page));
+  },
+
+  syncPage: async ({ page }, use) => {
+    await use(new SyncPage(page));
+  },
+
+  tagPage: async ({ page, testPrefix }, use) => {
+    await use(new TagPage(page, testPrefix));
+  },
+
+  notePage: async ({ page, testPrefix }, use) => {
+    await use(new NotePage(page, testPrefix));
+  },
+
+  sideNavPage: async ({ page, testPrefix }, use) => {
+    await use(new SideNavPage(page, testPrefix));
+  },
+
+  waitForNav: async ({ page }, use) => {
+    const waitForNav = async (selector?: string): Promise<void> => {
+      await waitForAppReady(page, {
+        ensureRoute: false,
+        selector,
+      });
+    };
+    await use(waitForNav);
+  },
+});
+
+export { expect } from '@playwright/test';

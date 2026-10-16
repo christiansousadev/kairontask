@@ -1,0 +1,163 @@
+@use '../../../../styles/_globals.scss' as *;
+@use '../schedule-constants.scss' as *;
+
+:host {
+  --nr-of-days: 5;
+  --nr-of-weeks: 6;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+// we need this to prevent problems with route ani and scroll behavior
+.scroll-wrapper {
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  box-sizing: border-box;
+
+  // Enable horizontal scroll when viewport is too small for 7 days
+  &[data-horizontal-scroll] {
+    overflow-x: scroll; // Show horizontal scrollbar when needed
+
+    // Match app's standard scrollbar styling
+    scrollbar-width: $schedule-scrollbar-width;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+
+    &::-webkit-scrollbar {
+      width: $schedule-scrollbar-width;
+      height: $schedule-scrollbar-height; // Slightly taller for horizontal visibility
+    }
+
+    &::-webkit-scrollbar-track {
+      background: var(--scrollbar-track);
+      border-radius: $schedule-scrollbar-width;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--scrollbar-thumb);
+      border-radius: 16px;
+
+      &:hover {
+        background: var(--scrollbar-thumb-hover);
+      }
+    }
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  @include extraBorder('-top');
+  @include extraBorder('-bottom');
+  box-shadow: var(--whiteframe-shadow-1dp);
+  z-index: 10;
+  color: var(--text-color);
+  background: var(--bg-lighter);
+  // to account for scrollbar
+  padding-right: $schedule-header-scrollbar-padding;
+}
+
+.schedule-nav-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s);
+  @include extraBorder('-bottom');
+  background: var(--bg-lighter);
+  flex-wrap: nowrap;
+  //min-height: 48px;
+
+  button {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  button[mat-button] {
+    min-width: fit-content;
+    padding: 0 12px;
+  }
+
+  button[mat-icon-button] {
+    flex-shrink: 0;
+  }
+
+  mat-icon {
+    flex-shrink: 0;
+  }
+}
+
+.main-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include extraBorder('-bottom');
+}
+
+.days {
+  display: grid;
+  place-content: center;
+  text-align: center;
+  grid-auto-columns: 1fr;
+  grid-template-columns: var(--schedule-time-width) repeat(var(--nr-of-days), 1fr);
+
+  --schedule-time-width: #{$schedule-time-column-width};
+}
+
+.day {
+  line-height: 32px;
+  font-size: 18px;
+  @include extraBorder('-left');
+
+  @include mq(xs, max) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.day-num {
+  font-weight: 600;
+  display: inline;
+  padding-right: 6px;
+}
+
+.day-day {
+  display: inline;
+  font-weight: 100;
+}
+
+.days.month-view {
+  display: block;
+  grid-template-columns: none;
+
+  .month-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px var(--s2);
+
+    .month-title {
+      font-size: 20px;
+      font-weight: 600;
+
+      @include mq(xs, max) {
+        font-size: 16px;
+        margin-bottom: 3px;
+      }
+    }
+  }
+
+  @include mq(xs, max) {
+    padding-bottom: 3px;
+
+    .month-header {
+      padding: 6px 12px;
+    }
+  }
+}

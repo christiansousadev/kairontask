@@ -1,0 +1,16 @@
+Organize your daily tasks in one place while making time tracking effortless. KaironTask is a Local-First ToDo List / Time Tracker / Personal Task Manager for multiple platforms.
+
+<h3>Features</h3>
+
+<b>Plan, track & summarize</b>. Create time sheets and work summaries in a breeze to easily export them to your company's time tracking system.
+
+Integrate with <b>Jira</b>, <b>GitHub</b>, <b>GitLab</b>, <b>Linear</b>, and <b>Azure DevOps</b>. Auto import tasks assigned to you, plan details locally, automatically create worklogs, and stay up to date.
+
+Organize your project's data. Create <b>notes</b>, attach <b>files</b>, or create <b>bookmarks</b> for links, files, and commands.
+
+Helps you to <b>establish healthy habits</b>. A break timer reminds you when it's time to step away. Collect personal metrics to analyze your work routines.
+
+Pomodoro and focus modes help you eliminate distractions and stay in deep work.
+
+KaironTask <b>does NOT collect personal data</b>. There are no tracking scripts and no mandatory accounts. Your data is 100% yours and stays on your device unless you choose to sync.
+

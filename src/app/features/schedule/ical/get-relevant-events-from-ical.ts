@@ -1,0 +1,569 @@
+import { CalendarIntegrationEvent } from '../../calendar-integration/calendar-integration.model';
+import { Log } from '../../../core/log';
+import { loadIcalModule } from './ical-lazy-loader';
+
+type ICalModule = any;
+
+interface ICalVEvent {
+  getFirstPropertyValue(name: string): unknown;
+  getAllProperties(name: string): ICalProperty[];
+  getFirstSubcomponent(name: string): ICalVEvent | null;
+  getAllSubcomponents(name: string): ICalVEvent[];
+}
+
+interface ICalProperty {
+  getValues(): unknown[];
+}
+
+// NOTE: this sucks and is slow, but writing a new ical parser would be very hard... :(
+
+/**
+ * Sanitizes iCal data to fix common formatting errors before parsing.
+ * Specifically handles "orphan" lines (like address continuations) that are missing
+ * the required whitespace indentation, which causes ical.js to crash.
+ */
+const sanitizeIcalData = (icalData: string): string => {
+  return icalData
+    .split(/\r?\n/)
+    .map((line) => {
+      // If line is content (not empty) but has no delimiter and no indentation
+      // it is likely a broken continuation line.
+      if (
+        line.trim().length > 0 &&
+        !line.includes(':') &&
+        !line.includes(';') &&
+        !/^\s/.test(line)
+      ) {
+        return ' ' + line; // Fold it into previous line by prepending space
+      }
+      return line;
+    })
+    .join('\r\n');
+};
+
+/**
+ * Safely extracts a date value from an iCal property and converts it to timestamp.
+ * Returns null if the property is missing or invalid.
+ */
+const safeGetDateTimestamp = (
+  vevent: ICalVEvent,
+  propertyName: string,
+): number | null => {
+  try {
+    const prop = vevent.getFirstPropertyValue(propertyName);
+    if (!prop) {
+      return null;
+    }
+    if (typeof (prop as { toJSDate?: () => Date }).toJSDate !== 'function') {
+      return null;
+    }
+    return (prop as { toJSDate: () => Date }).toJSDate().getTime();
+  } catch (error) {
+    return null;
+  }
+};
+
+/**
+ * Checks if the event's DTSTART is a DATE value (all-day event) vs DATE-TIME.
+ * In ical.js, ICAL.Time has an `isDate` property that is true for VALUE=DATE.
+ */
+const isAllDayEvent = (vevent: ICalVEvent): boolean => {
+  try {
+    const dtstart = vevent.getFirstPropertyValue('dtstart');
+    return (dtstart as { isDate?: boolean })?.isDate === true;
+  } catch {
+    return false;
+  }
+};
+
+/**
+ * Exception event data for RECURRENCE-ID handling
+ */
+interface ExceptionEvent {
+  vevent: ICalVEvent;
+  recurrenceId: number;
+  isCancelled: boolean;
+}
+
+/**
+ * Map of UID to exception events for that recurring series
+ */
+type ExceptionMap = Map<string, ExceptionEvent[]>;
+
+/**
+ * Builds a map of exception events (modified/cancelled instances) grouped by UID.
+ * Exception events are identified by having a RECURRENCE-ID property.
+ */
+const buildExceptionMap = (vevents: ICalVEvent[]): ExceptionMap => {
+  const exceptionMap: ExceptionMap = new Map();
+
+  for (const ve of vevents) {
+    try {
+      const recurrenceId = safeGetDateTimestamp(ve, 'recurrence-id');
+      if (recurrenceId !== null) {
+        const uid = ve.getFirstPropertyValue('uid');
+        if (!uid) continue;
+
+        const status = ve.getFirstPropertyValue('status');
+        const isCancelled =
+          (status as { toUpperCase?: () => string })?.toUpperCase?.() === 'CANCELLED' ||
+          (typeof status === 'string' && status.toUpperCase() === 'CANCELLED');
+
+        const uidStr = String(uid);
+        if (!exceptionMap.has(uidStr)) {
+          exceptionMap.set(uidStr, []);
+        }
+
+        exceptionMap.get(uidStr)!.push({
+          vevent: ve,
+          recurrenceId,
+          isCancelled,
+        });
+      }
+    } catch (error) {
+      // Skip malformed exception events
+      Log.warn('Failed to process exception event:', error);
+    }
+  }
+
+  return exceptionMap;
+};
+
+/**
+ * Extracts the calendar email from a Google Calendar iCal URL.
+ * Google iCal URLs follow: https://calendar.google.com/calendar/ical/<email>/basic.ics
+ */
+const getGoogleCalendarEmail = (icalUrl: string): string | undefined => {
+  const match = icalUrl.match(/calendar\.google\.com\/calendar\/ical\/([^/]+)\//i);
+  if (!match) {
+    return undefined;
+  }
+  try {
+    return decodeURIComponent(match[1]);
+  } catch {
+    return undefined;
+  }
+};
+
+/**
+ * Checks whether an iCal UID looks like a Google-native event ID.
+ * Google-native UIDs end with @google.com or @group.calendar.google.com.
+ * Imported/subscribed events in Google feeds have foreign UIDs and won't
+ * produce valid Google Calendar links.
+ */
+const isGoogleNativeUid = (uid: string): boolean =>
+  /(@google\.com|@group\.calendar\.google\.com)(_|$)/.test(uid);
+
+/**
+ * Generates a Google Calendar event URL from an event ID and calendar email.
+ * Strips the @google.com / @group.calendar.google.com domain and any
+ * recurring-instance suffix we appended (e.g. "_20240115T100000Z").
+ */
+const generateGoogleCalendarEventUrl = (
+  eventId: string,
+  calendarEmail: string,
+): string | undefined => {
+  try {
+    const cleanId = eventId.replace(/@(group\.calendar\.)?google\.com.*$/, '');
+    const raw = `${cleanId} ${calendarEmail}`;
+    const bytes = new TextEncoder().encode(raw);
+    let binary = '';
+    for (let i = 0; i < bytes.length; i++) {
+      binary += String.fromCharCode(bytes[i]);
+    }
+    const eid = btoa(binary);
+    return `https://calendar.google.com/calendar/event?eid=${eid}`;
+  } catch {
+    return undefined;
+  }
+};
+
+export const getRelevantEventsForCalendarIntegrationFromIcal = async (
+  icalData: string,
+  calProviderId: string,
+  startTimestamp: number,
+  endTimestamp: number,
+  icalUrl?: string,
+): Promise<CalendarIntegrationEvent[]> => {
+  const ICAL = await loadIcalModule();
+  let calendarIntegrationEvents: CalendarIntegrationEvent[] = [];
+
+  // Sanitize input data to prevent parser crashes on malformed lines
+  const cleanIcalData = sanitizeIcalData(icalData);
+
+  const allPossibleFutureEvents = getAllPossibleEventsAfterStartFromIcal(
+    ICAL,
+    cleanIcalData,
+    new Date(startTimestamp),
+  );
+
+  // Build exception map from all events
+  const exceptionMap = buildExceptionMap(allPossibleFutureEvents);
+  // Track which recurring series we already processed via their master event
+  const processedRecurringUids = new Set<string>();
+
+  allPossibleFutureEvents.forEach((ve) => {
+    try {
+      const recurrenceId = safeGetDateTimestamp(ve, 'recurrence-id');
+
+      // Skip exception events here - they'll be processed separately
+      if (recurrenceId !== null) {
+        return;
+      }
+
+      if (ve.getFirstPropertyValue('rrule')) {
+        const uid = ve.getFirstPropertyValue('uid');
+        const uidStr = uid ? String(uid) : '';
+        const exceptions = exceptionMap.get(uidStr) || [];
+        if (uid) {
+          processedRecurringUids.add(uidStr);
+        }
+
+        calendarIntegrationEvents = calendarIntegrationEvents.concat(
+          getForRecurring(ve, calProviderId, startTimestamp, endTimestamp, exceptions),
+        );
+      } else {
+        const dtstart = safeGetDateTimestamp(ve, 'dtstart');
+        if (dtstart !== null && dtstart < endTimestamp) {
+          calendarIntegrationEvents.push(
+            convertVEventToCalendarIntegrationEvent(ve, calProviderId),
+          );
+        }
+      }
+    } catch (error) {
+      Log.warn(
+        'Failed to process event:',
+        ve.getFirstPropertyValue('uid'),
+        ve.getFirstPropertyValue('summary'),
+        error,
+      );
+    }
+  });
+
+  // Handle orphan exception events where the master recurring event is outside the time range.
+  // This happens when a recurring series has ended or hasn't started yet, but one or more
+  // modified instances (RECURRENCE-ID) have been moved into our query window.
+  // Example: A daily meeting series ended on Jan 1, but the Jan 2 instance was rescheduled to Jan 20.
+  exceptionMap.forEach((exceptions, uid) => {
+    if (processedRecurringUids.has(uid)) {
+      return;
+    }
+    exceptions.forEach((exception) => {
+      if (exception.isCancelled) {
+        return;
+      }
+      const exceptionStart = safeGetDateTimestamp(exception.vevent, 'dtstart');
+      if (
+        exceptionStart !== null &&
+        exceptionStart >= startTimestamp &&
+        exceptionStart < endTimestamp
+      ) {
+        const baseId = uid || String(exception.vevent.getFirstPropertyValue('uid') || '');
+        const legacyIds = baseId ? [baseId] : undefined;
+        calendarIntegrationEvents.push(
+          convertVEventToCalendarIntegrationEvent(exception.vevent, calProviderId, {
+            overrideId: baseId
+              ? `${baseId}_${exception.recurrenceId}`
+              : `${exception.recurrenceId}`,
+            legacyIds,
+          }),
+        );
+      }
+    });
+  });
+  // Log.timeEnd('TEST');
+
+  // Generate URLs for Google Calendar events that don't already have one
+  if (icalUrl) {
+    const googleEmail = getGoogleCalendarEmail(icalUrl);
+    if (googleEmail) {
+      for (const ev of calendarIntegrationEvents) {
+        if (!ev.url && isGoogleNativeUid(ev.id)) {
+          ev.url = generateGoogleCalendarEventUrl(ev.id, googleEmail);
+        }
+      }
+    }
+  }
+
+  return calendarIntegrationEvents;
+};
+
+const calculateEventDuration = (vevent: ICalVEvent, startTimeStamp: number): number => {
+  // NOTE: Per RFC 2445, events can have either DTEND or DURATION, but not both
+  // If neither is present, the event ends at DTSTART (zero duration)
+  const dtend = vevent.getFirstPropertyValue('dtend');
+  if (dtend) {
+    return (dtend as { toJSDate: () => Date }).toJSDate().getTime() - startTimeStamp;
+  }
+
+  const durationProp = vevent.getFirstPropertyValue('duration');
+  if (durationProp) {
+    // ICAL.Duration provides toSeconds() method
+    return (durationProp as { toSeconds: () => number }).toSeconds() * 1000;
+  }
+
+  // Default to zero duration if neither DTEND nor DURATION is present
+  return 0;
+};
+
+const getExDateTimestamps = (vevent: ICalVEvent): number[] => {
+  const exDates: number[] = [];
+  const exDateProps = vevent.getAllProperties('exdate');
+
+  for (const prop of exDateProps) {
+    // getValues() returns an array of ICAL.Time objects for multi-value properties (comma-separated)
+    // or an array with a single ICAL.Time for single-value properties
+    const values = prop.getValues();
+    for (const val of values) {
+      if (val && typeof (val as { toJSDate?: () => Date }).toJSDate === 'function') {
+        exDates.push((val as { toJSDate: () => Date }).toJSDate().getTime());
+      }
+    }
+  }
+  return exDates;
+};
+
+const getForRecurring = (
+  vevent: ICalVEvent,
+  calProviderId: string,
+  startTimestamp: number,
+  endTimeStamp: number,
+  exceptions: ExceptionEvent[] = [],
+): CalendarIntegrationEvent[] => {
+  try {
+    const title: string = vevent.getFirstPropertyValue('summary') as string;
+    const description = vevent.getFirstPropertyValue('description');
+    const url = getSafeVEventUrl(vevent);
+    const start = vevent.getFirstPropertyValue('dtstart');
+
+    // Handle missing or invalid dtstart for recurring events
+    if (!start || typeof (start as { toJSDate?: () => Date }).toJSDate !== 'function') {
+      Log.warn(
+        'Recurring event missing valid dtstart:',
+        vevent.getFirstPropertyValue('uid'),
+        title,
+      );
+      return [];
+    }
+
+    const startDate = (start as { toJSDate: () => Date }).toJSDate();
+    const startTimeStamp = startDate.getTime();
+    const baseId = vevent.getFirstPropertyValue('uid');
+
+    // Calculate duration from either dtend, DURATION property, or default to 0
+    // This follows RFC 2445 which allows either DTEND or DURATION (but not both)
+    const duration = calculateEventDuration(vevent, startTimeStamp);
+
+    const recur = vevent.getFirstPropertyValue('rrule');
+
+    const iter = (
+      recur as { iterator: (s: unknown) => { next: () => unknown } }
+    ).iterator(start);
+    const isAllDay = isAllDayEvent(vevent);
+
+    // Build set of exception timestamps for fast lookup
+    const exceptionTimestamps = new Set(exceptions.map((ex) => ex.recurrenceId));
+
+    // Add EXDATEs to exception timestamps
+    const exDateTimestamps = getExDateTimestamps(vevent);
+    exDateTimestamps.forEach((ts) => exceptionTimestamps.add(ts));
+
+    const evs: CalendarIntegrationEvent[] = [];
+    for (
+      let next = iter.next() as { toJSDate: () => Date } | null;
+      next;
+      next = iter.next() as { toJSDate: () => Date } | null
+    ) {
+      const nextTimestamp = next.toJSDate().getTime();
+
+      // Skip this occurrence if there's an exception for it
+      if (exceptionTimestamps.has(nextTimestamp)) {
+        continue;
+      }
+
+      if (nextTimestamp <= endTimeStamp && nextTimestamp >= startTimestamp) {
+        evs.push({
+          title,
+          start: nextTimestamp,
+          duration,
+          id: baseId + '_' + next,
+          calProviderId,
+          issueProviderKey: 'ICAL',
+          description: (description as string) || undefined,
+          ...(isAllDay && { isAllDay }),
+          ...(url && { url }),
+        });
+      } else if (nextTimestamp > endTimeStamp) {
+        break;
+      }
+    }
+
+    // Add non-cancelled exception events
+    for (const exception of exceptions) {
+      if (exception.isCancelled) {
+        continue;
+      }
+
+      const exceptionStart = safeGetDateTimestamp(exception.vevent, 'dtstart');
+      // Only include exceptions within the time range
+      if (
+        exceptionStart !== null &&
+        exceptionStart >= startTimestamp &&
+        exceptionStart < endTimeStamp
+      ) {
+        const legacyIds = baseId ? [String(baseId)] : undefined;
+        const overrideId =
+          baseId !== undefined
+            ? `${baseId}_${exception.recurrenceId}`
+            : `${exception.recurrenceId}`;
+        evs.push(
+          convertVEventToCalendarIntegrationEvent(exception.vevent, calProviderId, {
+            overrideId,
+            legacyIds,
+          }),
+        );
+      }
+    }
+
+    return evs;
+  } catch (error) {
+    Log.warn(
+      'Failed to process recurring event:',
+      vevent.getFirstPropertyValue('uid'),
+      vevent.getFirstPropertyValue('summary'),
+      error,
+    );
+    return [];
+  }
+};
+
+const getSafeVEventUrl = (vevent: ICalVEvent): string | undefined => {
+  const raw = vevent.getFirstPropertyValue('url');
+  if (typeof raw !== 'string') {
+    return undefined;
+  }
+  const trimmed = raw.trim();
+  if (/^https?:\/\//i.test(trimmed)) {
+    return trimmed;
+  }
+  return undefined;
+};
+
+interface ConvertOptions {
+  overrideId?: string;
+  legacyIds?: string[];
+}
+
+const convertVEventToCalendarIntegrationEvent = (
+  vevent: ICalVEvent,
+  calProviderId: string,
+  options?: ConvertOptions,
+): CalendarIntegrationEvent => {
+  // options.overrideId allows detached instances to re-use conversion while staying unique per occurrence
+  // options.legacyIds preserves backward compatibility with previous ID schemes
+  const start = (vevent.getFirstPropertyValue('dtstart') as { toJSDate: () => Date })
+    .toJSDate()
+    .getTime();
+  // NOTE: if dtend is missing, it defaults to dtstart; @see #1814 and RFC 2455
+  // detailed comment in #1814:
+  // https://github.com/super-productivity/super-productivity/issues/1814#issuecomment-1008132824
+  const duration = calculateEventDuration(vevent, start);
+  const isAllDay = isAllDayEvent(vevent);
+
+  const url = getSafeVEventUrl(vevent);
+
+  return {
+    id: options?.overrideId || String(vevent.getFirstPropertyValue('uid')),
+    title: (vevent.getFirstPropertyValue('summary') as string) || '',
+    description: (vevent.getFirstPropertyValue('description') as string) || undefined,
+    start,
+    duration,
+    calProviderId,
+    issueProviderKey: 'ICAL',
+    legacyIds: options?.legacyIds,
+    ...(isAllDay && { isAllDay }),
+    ...(url && { url }),
+  };
+};
+
+const getAllPossibleEventsAfterStartFromIcal = (
+  ICAL: ICalModule,
+  icalData: string,
+  start: Date,
+): ICalVEvent[] => {
+  const c = ICAL.parse(icalData);
+  const comp = new ICAL.Component(c);
+  const tzAdded: string[] = [];
+  if (comp.getFirstSubcomponent('vtimezone')) {
+    for (const vtz of comp.getAllSubcomponents('vtimezone')) {
+      const tz = new ICAL.Timezone({
+        tzid: vtz.getFirstPropertyValue('tzid'),
+        component: vtz,
+      });
+
+      if (!ICAL.TimezoneService.has(tz.tzid)) {
+        ICAL.TimezoneService.register(tz);
+        tzAdded.push(tz.tzid);
+      }
+    }
+  }
+  // Wrap updateTimezones in try-catch to handle edge cases in some Office 365 calendars
+  // that can cause "Cannot read properties of null (reading 'parent')" errors.
+  // See: https://github.com/super-productivity/super-productivity/issues/5722
+  let vevents: ICalVEvent[];
+  try {
+    vevents = ICAL.helpers
+      .updateTimezones(comp)
+      .getAllSubcomponents('vevent') as unknown as ICalVEvent[];
+  } catch (error) {
+    Log.warn(
+      'Failed to update timezones for calendar, falling back to raw component:',
+      error,
+    );
+    vevents = comp.getAllSubcomponents('vevent') as unknown as ICalVEvent[];
+  }
+
+  const allPossibleFutureEvents = vevents.filter((ve: ICalVEvent) => {
+    try {
+      const dtstart = ve.getFirstPropertyValue('dtstart');
+      // Skip events without valid dtstart
+      if (
+        !dtstart ||
+        typeof (dtstart as { toJSDate?: () => Date }).toJSDate !== 'function'
+      ) {
+        return false;
+      }
+
+      const dtstartDate = (dtstart as { toJSDate: () => Date }).toJSDate();
+      if (dtstartDate >= start) {
+        return true;
+      }
+
+      // Check if it's a recurring event that might have future occurrences
+      const rrule = ve.getFirstPropertyValue('rrule');
+      if (rrule) {
+        const until = (rrule as { until?: unknown }).until;
+        if (!until) {
+          // No end date means infinite recurrence
+          return true;
+        }
+        if (typeof (until as { toJSDate?: () => Date }).toJSDate === 'function') {
+          return (until as { toJSDate: () => Date }).toJSDate() > start;
+        }
+        // If until exists but doesn't have toJSDate, include it to be safe
+        return true;
+      }
+
+      return false;
+    } catch (error) {
+      // Skip events that cause errors during filtering
+      return false;
+    }
+  });
+
+  for (const tzid of tzAdded) {
+    ICAL.TimezoneService.remove(tzid);
+  }
+
+  return allPossibleFutureEvents;
+};

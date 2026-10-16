@@ -1,0 +1,12 @@
+apiVersion: v2
+name: kaironsync
+description: Helm chart for KaironSync - KaironTask sync server
+type: application
+version: 0.1.0
+appVersion: '1.0.0'
+home: https://kairontask.app
+sources:
+  - https://github.com/christiansousadev/kairontask
+maintainers:
+  - name: christiansousadev
+    url: https://github.com/christiansousadev

@@ -1,0 +1,235 @@
+import { inject, Injectable } from '@angular/core';
+import { createEffect } from '@ngrx/effects';
+import {
+  concatMap,
+  debounceTime,
+  distinctUntilChanged,
+  filter,
+  first,
+  map,
+  switchMap,
+  withLatestFrom,
+} from 'rxjs/operators';
+import { combineLatest, EMPTY, of } from 'rxjs';
+import { GlobalTrackingIntervalService } from '../../../core/global-tracking-interval/global-tracking-interval.service';
+import { TaskSharedActions } from '../../../root-store/meta/task-shared.actions';
+import { Store } from '@ngrx/store';
+import {
+  selectOverdueTasksOnToday,
+  selectTasksDueForDay,
+  selectTasksWithDueTimeForRange,
+} from './task.selectors';
+import { SyncWrapperService } from '../../../imex/sync/sync-wrapper.service';
+import { selectTodayTaskIds } from '../../work-context/store/work-context.selectors';
+import { AddTasksForTomorrowService } from '../../add-tasks-for-tomorrow/add-tasks-for-tomorrow.service';
+import { getDateRangeForDay } from '../../../util/get-date-range-for-day';
+import {
+  selectStartOfNextDayDiffMs,
+  selectTodayStr,
+} from '../../../root-store/app-state/app-state.selectors';
+import { TaskLog } from '../../../core/log';
+import { SyncTriggerService } from '../../../imex/sync/sync-trigger.service';
+import { environment } from '../../../../environments/environment';
+import { HydrationStateService } from '../../../op-log/apply/hydration-state.service';
+import { waitForSyncWindow } from '../../../util/wait-for-sync-window.operator';
+
+@Injectable()
+export class TaskDueEffects {
+  private _store$ = inject(Store);
+  private _globalTrackingIntervalService = inject(GlobalTrackingIntervalService);
+  private _syncWrapperService = inject(SyncWrapperService);
+  private _addTasksForTomorrowService = inject(AddTasksForTomorrowService);
+  private _syncTriggerService = inject(SyncTriggerService);
+  private _hydrationState = inject(HydrationStateService);
+
+  // NOTE: this gets a lot of interference from tagEffect.preventParentAndSubTaskInTodayList$:
+  // Uses afterInitialSyncDoneStrict$ to ensure sync has completed before creating repeat tasks,
+  // preventing duplicate repeat task instances across clients (fixes repeat task duplication bug).
+  //
+  // KNOWN GAP (#6230): This effect only fires on todayDateStr$ date changes (distinctUntilChanged).
+  // Once it fires for today, there is no intra-day re-check. If addAllDueToday() misses a config
+  // (e.g., due to browser timer throttling around midnight, or system sleep/resume edge cases),
+  // repeat tasks won't appear until the next date change or app restart.
+  // Investigation (2026-03): day-change trigger, sync buffering, and data loading guards all
+  // verified correct in isolation via e2e tests (see git history for Tests A and B).
+  // The exact real-world trigger remains unidentified.
+  // See: e2e/tests/recurring/repeat-task-day-change-bug-6230.spec.ts
+  createRepeatableTasksAndAddDueToday$ = createEffect(
+    () => {
+      return this._syncTriggerService.afterInitialSyncDoneStrict$.pipe(
+        first(),
+        switchMap(() =>
+          // Keep listening for date changes throughout the app lifecycle
+          this._globalTrackingIntervalService.todayDateStr$.pipe(
+            distinctUntilChanged(),
+            // Wait for sync window to end instead of dropping the emission (#6192)
+            waitForSyncWindow(
+              this._hydrationState,
+              'TaskDueEffects:createRepeatableTasksAndAddDueToday$',
+            ),
+            switchMap((dateStr) => {
+              TaskLog.log(
+                '[TaskDueEffects] Date changed, processing tasks for:',
+                dateStr,
+              );
+              return this._syncWrapperService.afterCurrentSyncDoneOrSyncDisabled$;
+            }),
+            // Add debounce to ensure sync has fully completed and status is updated
+            debounceTime(1000),
+            // Ensure we're not in the middle of another sync
+            switchMap(() => this._syncWrapperService.afterCurrentSyncDoneOrSyncDisabled$),
+            // NOTE we use concatMap since tap errors only show in console, but are not handled by global handler
+            concatMap(() => {
+              TaskLog.log('[TaskDueEffects] Triggering addAllDueToday after sync', {
+                isInSyncWindow: this._hydrationState.isInSyncWindow(),
+              });
+              return this._addTasksForTomorrowService.addAllDueToday();
+            }),
+          ),
+        ),
+      );
+    },
+    {
+      dispatch: false,
+    },
+  );
+
+  // NOTE: this gets a lot of interference from tagEffect.preventParentAndSubTaskInTodayList$:
+  removeOverdueFormToday$ = createEffect(() => {
+    return this._syncTriggerService.afterInitialSyncDoneAndDataLoadedInitially$.pipe(
+      first(),
+      switchMap(() =>
+        // Keep listening for date changes throughout the app lifecycle
+        this._globalTrackingIntervalService.todayDateStr$.pipe(
+          distinctUntilChanged(),
+          // Wait for sync window to end instead of dropping the emission (#6192)
+          waitForSyncWindow(
+            this._hydrationState,
+            'TaskDueEffects:removeOverdueFormToday$',
+          ),
+          switchMap((dateStr) => {
+            TaskLog.log('[TaskDueEffects] Date changed, removing overdue for:', dateStr);
+            return this._syncWrapperService.afterCurrentSyncDoneOrSyncDisabled$;
+          }),
+          // Add debounce to ensure sync has fully completed and status is updated
+          debounceTime(1000),
+          // Ensure we're not in the middle of another sync
+          switchMap(() => this._syncWrapperService.afterCurrentSyncDoneOrSyncDisabled$),
+          switchMap(() => this._store$.select(selectOverdueTasksOnToday).pipe(first())),
+          filter((overdue) => !!overdue.length),
+          withLatestFrom(this._store$.select(selectTodayTaskIds)),
+          // we do this to maintain the order of tasks
+          switchMap(([overdue, todayTaskIds]) => {
+            const overdueIds = todayTaskIds.filter(
+              (id) => !!overdue.find((oT) => oT.id === id),
+            );
+            if (overdueIds.length === 0) {
+              return EMPTY;
+            }
+            TaskLog.log('[TaskDueEffects] Removing overdue tasks from today', {
+              overdueCount: overdueIds.length,
+            });
+            // Use non-persistent action to avoid LWW conflicts with user
+            // actions on other devices (#6992). Every device runs this effect
+            // independently, so syncing the removal is redundant.
+            return of(
+              TaskSharedActions.localRemoveOverdueFromToday({
+                taskIds: overdueIds,
+              }),
+            );
+          }),
+        ),
+      ),
+    );
+  });
+
+  // Defensive effect to ensure tasks due today are in TODAY tag
+  ensureTasksDueTodayInTodayTag$ = createEffect(() => {
+    return this._syncTriggerService.afterInitialSyncDoneAndDataLoadedInitially$.pipe(
+      first(),
+      switchMap(() =>
+        // Keep listening for date changes throughout the app lifecycle
+        this._globalTrackingIntervalService.todayDateStr$.pipe(
+          distinctUntilChanged(),
+          // Wait for sync window to end instead of dropping the emission (#6192)
+          waitForSyncWindow(
+            this._hydrationState,
+            'TaskDueEffects:ensureTasksDueTodayInTodayTag$',
+          ),
+          switchMap((dateStr) => {
+            TaskLog.log('[TaskDueEffects] Ensuring tasks for:', dateStr);
+            return this._syncWrapperService.afterCurrentSyncDoneOrSyncDisabled$;
+          }),
+          debounceTime(2000), // Wait a bit longer to ensure all other effects have run
+          switchMap(() => this._syncWrapperService.afterCurrentSyncDoneOrSyncDisabled$),
+          withLatestFrom(
+            this._store$.select(selectTodayStr),
+            this._store$.select(selectStartOfNextDayDiffMs),
+          ),
+          switchMap(([, todayStr, startOfNextDayDiffMs]) => {
+            const todayRange = getDateRangeForDay(Date.now() - startOfNextDayDiffMs);
+            return combineLatest([
+              this._store$.select(selectTasksDueForDay, { day: todayStr }),
+              this._store$.select(selectTasksWithDueTimeForRange, todayRange),
+            ]).pipe(
+              first(),
+              withLatestFrom(this._store$.select(selectTodayTaskIds)),
+              map(([[tasksDueByDay, tasksDueByTime], todayTaskIds]) => {
+                // Merge both lists, deduplicating by ID.
+                // Tasks with dueWithTime set have dueDay cleared (mutual exclusivity),
+                // so we must check both selectors to catch all tasks due today.
+                const seenIds = new Set<string>();
+                const allTasksDueToday = [...tasksDueByDay, ...tasksDueByTime].filter(
+                  (task) => {
+                    if (seenIds.has(task.id)) return false;
+                    seenIds.add(task.id);
+                    return true;
+                  },
+                );
+
+                const missingTaskIds = allTasksDueToday
+                  .filter((task) => !todayTaskIds.includes(task.id))
+                  // Exclude subtasks whose parent is already in TODAY
+                  // (preventParentAndSubTaskInTodayList$ will remove them anyway,
+                  // causing an infinite add/remove loop and phantom sync changes)
+                  .filter(
+                    (task) => !task.parentId || !todayTaskIds.includes(task.parentId),
+                  )
+                  .map((task) => task.id);
+
+                // Debug log to investigate repeated operations
+                TaskLog.log('[TaskDueEffects] ensureTasksDueTodayInTodayTag check:', {
+                  tasksDueByDayCount: tasksDueByDay.length,
+                  tasksDueByTimeCount: tasksDueByTime.length,
+                  tasksDueTodayIds: allTasksDueToday.map((t) => t.id),
+                  todayTaskIdsCount: todayTaskIds.length,
+                  missingTaskIds,
+                  willDispatch: missingTaskIds.length > 0,
+                });
+
+                if (!environment.production && missingTaskIds.length > 0) {
+                  TaskLog.err(
+                    '[TaskDueEffects] Found tasks due today missing from TODAY tag:',
+                    {
+                      tasksDueToday: allTasksDueToday.length,
+                      todayTaskIds: todayTaskIds.length,
+                      missingTaskIds,
+                    },
+                  );
+                }
+
+                return missingTaskIds.length > 0
+                  ? TaskSharedActions.planTasksForToday({
+                      taskIds: missingTaskIds,
+                      isSkipRemoveReminder: true,
+                    })
+                  : null;
+              }),
+              filter((action) => !!action),
+            );
+          }),
+        ),
+      ),
+    );
+  });
+}
