@@ -44,30 +44,18 @@ describe('mapArchiveToWorklogWeeks timezone test', () => {
       // The task should be placed on the local date when it was created
       // In LA (UTC-8): 2025-01-16 at 10 PM local -> worklog for Jan 16
       // In Berlin (UTC+1): 2025-01-17 at 7 AM local -> worklog for Jan 17
-      const tzOffset = new Date().getTimezoneOffset();
-      const year2025 = result['2025'];
+      const localDate = new Date(taskCreatedTime);
+      const expectedDateStr = `${localDate.getFullYear()}-${String(localDate.getMonth() + 1).padStart(2, '0')}-${String(localDate.getDate()).padStart(2, '0')}`;
+      const year = localDate.getFullYear().toString();
+      const yearArr = result[year];
 
-      if (tzOffset > 0) {
-        // LA
-        // Should have entry for Jan 16
-        const foundEntry = year2025?.some(
-          (week) =>
-            week &&
-            week.ent &&
-            Object.values(week.ent).some((day) => day.dateStr === '2025-01-16'),
-        );
-        expect(foundEntry).toBe(true);
-      } else {
-        // Berlin
-        // Should have entry for Jan 17
-        const foundEntry = year2025?.some(
-          (week) =>
-            week &&
-            week.ent &&
-            Object.values(week.ent).some((day) => day.dateStr === '2025-01-17'),
-        );
-        expect(foundEntry).toBe(true);
-      }
+      const foundEntry = yearArr?.some(
+        (week) =>
+          week &&
+          week.ent &&
+          Object.values(week.ent).some((day: any) => day.dateStr === expectedDateStr),
+      );
+      expect(foundEntry).toBe(true);
     });
 
     it('should handle parent task creation date for subtasks', () => {

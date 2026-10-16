@@ -47,14 +47,9 @@ describe('DialogEditTaskRepeatCfgComponent timezone test', () => {
       // This creates a repeat config based on local interpretation of the timestamp
       // In LA: starts on 2025-01-16
       // In Berlin: starts on 2025-01-17
-      const tzOffset = new Date().getTimezoneOffset();
-      if (tzOffset > 0) {
-        // LA
-        expect(startDate).toBe('2025-01-16');
-      } else {
-        // Berlin
-        expect(startDate).toBe('2025-01-17');
-      }
+      const expectedLocal = new Date(taskDueWithTime);
+      const expected = `${expectedLocal.getFullYear()}-${String(expectedLocal.getMonth() + 1).padStart(2, '0')}-${String(expectedLocal.getDate()).padStart(2, '0')}`;
+      expect(startDate).toBe(expected);
     });
   });
 });

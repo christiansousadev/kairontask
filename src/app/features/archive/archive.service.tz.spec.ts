@@ -41,14 +41,9 @@ describe('ArchiveService timezone test', () => {
 
       // In LA (UTC-8): 2025-01-16 at 11 PM -> '2025-01-16'
       // In Berlin (UTC+1): 2025-01-17 at 8 AM -> '2025-01-17'
-      const tzOffset = new Date().getTimezoneOffset();
-      if (tzOffset > 0) {
-        // LA
-        expect(todayStr).toBe('2025-01-16');
-      } else {
-        // Berlin
-        expect(todayStr).toBe('2025-01-17');
-      }
+      const expectedLocal = new Date(testTime);
+      const expected = `${expectedLocal.getFullYear()}-${String(expectedLocal.getMonth() + 1).padStart(2, '0')}-${String(expectedLocal.getDate()).padStart(2, '0')}`;
+      expect(todayStr).toBe(expected);
     });
 
     it('should be used for sorting time tracking data', () => {

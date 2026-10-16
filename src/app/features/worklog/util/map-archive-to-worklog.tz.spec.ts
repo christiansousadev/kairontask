@@ -43,25 +43,16 @@ describe('mapArchiveToWorklog timezone test', () => {
         offset: new Date().getTimezoneOffset(),
       });
 
-      // The task should be placed on the local date when it was done
-      // In LA (UTC-8): 2025-01-16 at 10 PM local -> worklog for Jan 16
-      // In Berlin (UTC+1): 2025-01-17 at 7 AM local -> worklog for Jan 17
-      const tzOffset = new Date().getTimezoneOffset();
-      const year2025 = result.worklog['2025'];
+      const doneDate = new Date(taskDoneTime);
+      const year = doneDate.getFullYear().toString();
+      const month = doneDate.getMonth() + 1;
+      const day = doneDate.getDate();
+      const expectedDateStr = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
 
-      if (tzOffset > 0) {
-        // LA
-        // Should have entry for Jan 16
-        const foundEntry = year2025?.ent[1]?.ent[16];
-        expect(foundEntry).toBeDefined();
-        expect(foundEntry?.dateStr).toBe('2025-01-16');
-      } else {
-        // Berlin
-        // Should have entry for Jan 17
-        const foundEntry = year2025?.ent[1]?.ent[17];
-        expect(foundEntry).toBeDefined();
-        expect(foundEntry?.dateStr).toBe('2025-01-17');
-      }
+      const yearObj = result.worklog[year];
+      const foundEntry = yearObj?.ent[month]?.ent[day];
+      expect(foundEntry).toBeDefined();
+      expect(foundEntry?.dateStr).toBe(expectedDateStr);
     });
 
     it('should fall back to created date when doneOn is not set', () => {

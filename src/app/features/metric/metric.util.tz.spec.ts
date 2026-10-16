@@ -48,14 +48,9 @@ describe('metric.util timezone test', () => {
       // The start should be the local date when the task was created
       // In LA (UTC-8): 2025-01-16 at 10 PM local -> '2025-01-16'
       // In Berlin (UTC+1): 2025-01-17 at 7 AM local -> '2025-01-17'
-      const tzOffset = new Date().getTimezoneOffset();
-      if (tzOffset > 0) {
-        // LA
-        expect(result.start).toBe('2025-01-16');
-      } else {
-        // Berlin
-        expect(result.start).toBe('2025-01-17');
-      }
+      const expectedLocal = new Date(taskCreatedTime);
+      const expected = `${expectedLocal.getFullYear()}-${String(expectedLocal.getMonth() + 1).padStart(2, '0')}-${String(expectedLocal.getDate()).padStart(2, '0')}`;
+      expect(result.start).toBe(expected);
     });
 
     it('should find earliest task creation time', () => {

@@ -11,6 +11,7 @@ import {
 } from './planner-calendar-gesture-handler';
 import { parseDbDateStr } from '../../../util/parse-db-date-str';
 import { getWeekRange } from '../../../util/get-week-range';
+import { getWeekdaysMin } from '../../../util/get-weekdays-min';
 
 describe('PlannerCalendarNavComponent', () => {
   let fixture: ComponentFixture<PlannerCalendarNavComponent>;
@@ -264,13 +265,16 @@ describe('PlannerCalendarNavComponent', () => {
       fixture.detectChanges();
 
       const labels = component.dayLabels();
-      // Monday labels depend on locale, but we can verify rotation:
-      // getWeekdaysMin() returns [Sun, Mon, Tue, ...] indexes 0-6
-      // with firstDayOfWeek=1 (Monday), labels should start at index 1
       expect(labels.length).toBe(7);
-      // Verify it is a rotation of all unique days
-      const unique = new Set(labels);
-      expect(unique.size).toBe(7);
+      expect(labels).toEqual([
+        getWeekdaysMin()[1],
+        getWeekdaysMin()[2],
+        getWeekdaysMin()[3],
+        getWeekdaysMin()[4],
+        getWeekdaysMin()[5],
+        getWeekdaysMin()[6],
+        getWeekdaysMin()[0],
+      ]);
     });
 
     it('should start from Sunday when firstDayOfWeek is 0', () => {
@@ -279,8 +283,7 @@ describe('PlannerCalendarNavComponent', () => {
 
       const labels = component.dayLabels();
       expect(labels.length).toBe(7);
-      const unique = new Set(labels);
-      expect(unique.size).toBe(7);
+      expect(labels).toEqual(getWeekdaysMin());
     });
 
     it('should use default first day of week when localization config is undefined', () => {
