@@ -184,7 +184,7 @@
     "@angular/router": "^21.2.5",
     "@angular/service-worker": "^21.2.5",
     "@capacitor/android": "^7.4.4",
-    "@capacitor/app": "^7.1.0",
+    "@capacitor/app": "^8.1.2",
     "@capacitor/cli": "^7.5.0",
     "@capacitor/core": "^7.4.3",
     "@capacitor/filesystem": "^7.1.1",
