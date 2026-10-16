@@ -177,7 +177,7 @@
     "@angular/core": "^21.2.5",
     "@angular/forms": "^21.2.5",
     "@angular/language-service": "^21.2.5",
-    "@angular/material": "^21.2.3",
+    "@angular/material": "^22.2.2",
     "@angular/platform-browser": "^21.2.5",
     "@angular/platform-browser-dynamic": "^21.2.5",
     "@angular/platform-server": "^21.2.5",
