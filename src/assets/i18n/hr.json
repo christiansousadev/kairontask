@@ -3,7 +3,7 @@
     "B_INSTALL": {
       "IGNORE": "Zanemari",
       "INSTALL": "Instaliraj",
-      "MSG": "Želiš li instalirati Super Productivity kao PWA (progresivni web-program)?"
+      "MSG": "Želiš li instalirati KaironTask kao PWA (progresivni web-program)?"
     },
     "B_OFFLINE": "Ne postoji veza s internetom. Sinkronizacija i traženje podataka pružatelja usluge za praćenje problema neće funkcionirati.",
     "UPDATE_WEB_APP": "Postoji nova verzija. Želiš li učitati novu veziju?",
@@ -28,7 +28,7 @@
   "EXAMPLE_TASKS": {
     "LEARN_KEYBOARD_SHORTCUTS": {
       "TITLE": "Naučite tipkovničke prečace",
-      "NOTES": "Super Productivity je dizajniran za korištenje s tipkovnicom. Naučite prečace kako biste radili brže.\n\n**Kako početi:**\n1. Otvorite **bočni izbornik**\n2. Idite na **Pomoć**\n3. Kliknite na **Obilazak tipkovničke navigacije**"
+      "NOTES": "KaironTask je dizajniran za korištenje s tipkovnicom. Naučite prečace kako biste radili brže.\n\n**Kako početi:**\n1. Otvorite **bočni izbornik**\n2. Idite na **Pomoć**\n3. Kliknite na **Obilazak tipkovničke navigacije**"
     },
     "CREATE_PROJECT": {
       "TITLE": "Stvorite svoj prvi projekt",
@@ -116,7 +116,7 @@
         "TWO_WAY_SYNC_TITLE": "Smjer sinkronizacije naslova"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Ovdje možeš konfigurirati Super Productivity za prikaz popisa nezavršenih CalDav zadataka za određeni projekt na ploči za stvaranje zadataka u prikazu dnevnog planiranja. U popisu će se ti zadaci navesti kao prijedlozi s poveznicom na zadatak te s daljnjim informacija o zadatku.</p> <p>Osim toga, sve nezavršene zadatke možeš automatski dodati u odlagalište zadataka i sinkronizirati ih.</p><p>Da bi to za nextcloud radilo na mobilnom uređaju i webu, možda ćeš morati staviti „https://app.super-productivity.com” na popis dopuštenih putem nextcloud programa <a href='https://apps.nextcloud. com/apps/webapppassword'>webapppassword<a>.</p>"
+        "HELP": "<p>Ovdje možeš konfigurirati KaironTask za prikaz popisa nezavršenih CalDav zadataka za određeni projekt na ploči za stvaranje zadataka u prikazu dnevnog planiranja. U popisu će se ti zadaci navesti kao prijedlozi s poveznicom na zadatak te s daljnjim informacija o zadatku.</p> <p>Osim toga, sve nezavršene zadatke možeš automatski dodati u odlagalište zadataka i sinkronizirati ih.</p><p>Da bi to za nextcloud radilo na mobilnom uređaju i webu, možda ćeš morati staviti „https://app.kairontask.app” na popis dopuštenih putem nextcloud programa <a href='https://apps.nextcloud. com/apps/webapppassword'>webapppassword<a>.</p>"
       },
       "S": {
         "CALENDAR_NOT_FOUND": "CalDav: Kalendar „{{calendarName}}” nije pronađen",
@@ -251,7 +251,7 @@
         "TOKEN": "Token za pristup"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Ovdje možeš konfigurirati Super Productivity za prikaz popisa nezavršenih Gitea problema za određeni repozitorij na ploči za stvaranje zadataka u prikazu dnevnog planiranja. U popisu će se ti problemi navesti kao prijedlozi s poveznicom na problem te s daljnjim informacija o problemu.</p> <p>Osim toga, sve neriješene probleme možeš automatski u odlagalište zadataka i sinkronizirati ih.</p><p>Za dobivanje ograničenja korištenja i za pristupanje možeš navesti token za pristup."
+        "HELP": "<p>Ovdje možeš konfigurirati KaironTask za prikaz popisa nezavršenih Gitea problema za određeni repozitorij na ploči za stvaranje zadataka u prikazu dnevnog planiranja. U popisu će se ti problemi navesti kao prijedlozi s poveznicom na problem te s daljnjim informacija o problemu.</p> <p>Osim toga, sve neriješene probleme možeš automatski u odlagalište zadataka i sinkronizirati ih.</p><p>Za dobivanje ograničenja korištenja i za pristupanje možeš navesti token za pristup."
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "Odgovorna osoba",
@@ -293,7 +293,7 @@
         "TOKEN": "Token za pristup"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Ovdje možeš konfigurirati Super Productivity za prikaz popisa nezavršenih GitLab problema (online verzija ili instanca vlastitog histinga) za određeni projekt na ploči za stvaranje zadataka u prikazu dnevnog planiranja. U popisu će se ti problemi navesti kao prijedlozi s poveznicom na problem te s daljnjim informacija o problemu.</p> <p>Osim toga, sve neriješene probleme možeš automatski dodati u odlagalište zadataka i sinkronizirati ih.</p>"
+        "HELP": "<p>Ovdje možeš konfigurirati KaironTask za prikaz popisa nezavršenih GitLab problema (online verzija ili instanca vlastitog histinga) za određeni projekt na ploči za stvaranje zadataka u prikazu dnevnog planiranja. U popisu će se ti problemi navesti kao prijedlozi s poveznicom na problem te s daljnjim informacija o problemu.</p> <p>Osim toga, sve neriješene probleme možeš automatski dodati u odlagalište zadataka i sinkronizirati ih.</p>"
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "Odgovorna osoba",
@@ -381,7 +381,7 @@
     },
     "JIRA": {
       "BANNER": {
-        "BLOCK_ACCESS_MSG": "Jira: Za izbjegavanje prekidanja API-a Super Productivity je blokirao pristup. Vjerojatno moraš provjeriti tvoje Jira postavke!",
+        "BLOCK_ACCESS_MSG": "Jira: Za izbjegavanje prekidanja API-a KaironTask je blokirao pristup. Vjerojatno moraš provjeriti tvoje Jira postavke!",
         "BLOCK_ACCESS_UNBLOCK": "Deblokiraj"
       },
       "CFG_CMP": {
@@ -486,7 +486,7 @@
       },
       "S": {
         "ADDED_WORKLOG_FOR": "Jira: Dodan je dnevnik rada za {{issueKey}}",
-        "EXTENSION_NOT_LOADED": "Proširenje za Super Productivity nije učitano. Ponovno učitavanje stranice može pomoći",
+        "EXTENSION_NOT_LOADED": "Proširenje za KaironTask nije učitano. Ponovno učitavanje stranice može pomoći",
         "INSUFFICIENT_SETTINGS": "Nedovoljne postavke dostavljene za Jira",
         "INVALID_RESPONSE": "Jira: Odgovor je sadržao neispravne podatke",
         "NO_AUTO_IMPORT_JQL": "Jira: Upit za pretragu nije definiran za automatski uvoz",
@@ -677,7 +677,7 @@
         "TOKEN": "Token za pristup"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Ovdje možeš konfigurirati Super Productivity za prikaz popisa otvorenih radnih OpenProject paketa. Da bi ovo funkcioniralo u pregledniku, vjerojatno ćeš morati konfigurirati CORS za tvoj OpenProject poslužitelj da bi se dozvolio pristup s app.super-productivity.com</p>"
+        "HELP": "<p>Ovdje možeš konfigurirati KaironTask za prikaz popisa otvorenih radnih OpenProject paketa. Da bi ovo funkcioniralo u pregledniku, vjerojatno ćeš morati konfigurirati CORS za tvoj OpenProject poslužitelj da bi se dozvolio pristup s app.kairontask.app</p>"
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "Odgovorna osoba",
@@ -788,7 +788,7 @@
         "IS_SHOW_TIME_TRACKING_DIALOG_FOR_EACH_SUB_TASK": "Prikaži dijalog za praćenje vremena kada se podzadaci dovrše"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Ovdje možeš konfigurirati Super Productivity za prikaz popisa nezavršenih Redmine problema (online verzija ili instanca vlastitog hostinga) za određeni projekt na ploči za stvaranje zadataka u prikazu dnevnog planiranja. U popisu će se ti problemi navesti kao prijedlozi s poveznicom na problem te s daljnjim informacija o problemu.</p><p>Osim toga, sve neriješene probleme možeš automatski dodati u odlagalište zadataka i sinkronizirati ih.</p>",
+        "HELP": "<p>Ovdje možeš konfigurirati KaironTask za prikaz popisa nezavršenih Redmine problema (online verzija ili instanca vlastitog hostinga) za određeni projekt na ploči za stvaranje zadataka u prikazu dnevnog planiranja. U popisu će se ti problemi navesti kao prijedlozi s poveznicom na problem te s daljnjim informacija o problemu.</p><p>Osim toga, sve neriješene probleme možeš automatski dodati u odlagalište zadataka i sinkronizirati ih.</p>",
         "TITLE": "Redmine"
       },
       "ISSUE_CONTENT": {
@@ -974,15 +974,15 @@
         },
         "TITLE": "Sinkronizacija",
         "WEB_DAV": {
-          "CORS_INFO": "<strong>Omogućavanje rada na mobilnom uređaju i u pregledniku:</strong> da bi ovo radilo na mobilnom uređaju ili pregledniku, Super Productivity moraš staviti na popis dopuštenih za CORS zahtjeve za tvoju Nextcloud instancu. To može negativno utjecati na sigurnost! <a href='https://github.com/nextcloud/server/issues/3131'>Pogledaj ovu razgovor za daljnje informacija</a>. Jedan od pristupa da bi ovo radilo na mobilnom uređaju je stavljanje adrese „https://app.super-productivity.com” na popis dopuštenih putem Nextcloud programa <a href='https://apps.nextcloud.com/apps/webapppassword'>webapppassword <a>. Koristi na vlastitu odgovornost!</p>",
+          "CORS_INFO": "<strong>Omogućavanje rada na mobilnom uređaju i u pregledniku:</strong> da bi ovo radilo na mobilnom uređaju ili pregledniku, KaironTask moraš staviti na popis dopuštenih za CORS zahtjeve za tvoju Nextcloud instancu. To može negativno utjecati na sigurnost! <a href='https://github.com/nextcloud/server/issues/3131'>Pogledaj ovu razgovor za daljnje informacija</a>. Jedan od pristupa da bi ovo radilo na mobilnom uređaju je stavljanje adrese „https://app.kairontask.app” na popis dopuštenih putem Nextcloud programa <a href='https://apps.nextcloud.com/apps/webapppassword'>webapppassword <a>. Koristi na vlastitu odgovornost!</p>",
           "L_BASE_URL": "Osnovni URL",
           "L_PASSWORD": "Lozinka",
           "L_SYNC_FOLDER_PATH": "Sync folder chemen",
           "L_USER_NAME": "Korisničko ime",
-          "CONDITIONAL_HEADER_WARNING_MSG": "Vaš WebDAV poslužitelj ne podržava uvjetna zaglavlja (If-Unmodified-Since). To znači da Super Productivity ne može otkriti istovremene promjene s drugih uređaja tijekom prijenosa.<br><br>Sinkronizacija će i dalje raditi, ali postoji mali rizik od sukoba podataka ako istovremeno mijenjate podatke na više uređaja.",
+          "CONDITIONAL_HEADER_WARNING_MSG": "Vaš WebDAV poslužitelj ne podržava uvjetna zaglavlja (If-Unmodified-Since). To znači da KaironTask ne može otkriti istovremene promjene s drugih uređaja tijekom prijenosa.<br><br>Sinkronizacija će i dalje raditi, ali postoji mali rizik od sukoba podataka ako istovremeno mijenjate podatke na više uređaja.",
           "CONDITIONAL_HEADER_WARNING_TITLE": "Smanjena sigurnost sinkronizacije",
           "D_SYNC_FOLDER_PATH": "Putanja relativna prema korijenu WebDAV poslužitelja gdje će se pohranjivati datoteke za sinkronizaciju (npr. '/super-productivity' ili '/'). Ovo NIJE interna putanja direktorija vašeg poslužitelja.",
-          "INFO": "<strong>Upozorenje:</strong> WebDAV implementacije se uvelike razlikuju. Super Productivity poznato dobro radi s Nextcloud, <strong>ali možda neće raditi s vašim pružateljem</strong>. Temeljito testirajte prije oslanjanja na njega.",
+          "INFO": "<strong>Upozorenje:</strong> WebDAV implementacije se uvelike razlikuju. KaironTask poznato dobro radi s Nextcloud, <strong>ali možda neće raditi s vašim pružateljem</strong>. Temeljito testirajte prije oslanjanja na njega.",
           "L_TEST_CONNECTION": "Testiraj vezu",
           "S_FILL_ALL_FIELDS": "Najprije ispunite sva WebDAV polja",
           "S_TEST_FAIL": "Test veze neuspješan: {{error}} - Ciljni URL: {{url}}",
@@ -1859,10 +1859,10 @@
     "EXPORT_DATA": "Izvezi podatke",
     "IMPORT_FROM_FILE": "Uvezi iz datoteke",
     "IMPORT_FROM_URL": "Uvezi s URL-a",
-    "IMPORT_FROM_URL_DIALOG_DESCRIPTION": "Molimo unesite puni URL JSON datoteke sigurnosne kopije Super Productivity koju želite uvesti.",
+    "IMPORT_FROM_URL_DIALOG_DESCRIPTION": "Molimo unesite puni URL JSON datoteke sigurnosne kopije KaironTask koju želite uvesti.",
     "IMPORT_FROM_URL_DIALOG_TITLE": "Uvezi s URL-a",
     "OPEN_IMPORT_FROM_URL_DIALOG": "Uvezi s URL-a",
-    "PRIVACY_EXPORT": "Izvezi anonimizirane podatke (za sljanje na adresu contact@super-productivity.com za ispravljanje grešaka)",
+    "PRIVACY_EXPORT": "Izvezi anonimizirane podatke (za sljanje na adresu support@kairontask.app za ispravljanje grešaka)",
     "S_BACKUP_DOWNLOADED": "Backup telechaje nan android dokiman katab",
     "S_ERR_IMPORT_FAILED": "Enpòte done echwe",
     "S_ERR_INVALID_DATA": "Neuspio uvoz: Neispravan JSON",
@@ -1925,10 +1925,10 @@
       "TITLE": "Automatske sigurnosne kopije"
     },
     "CALENDARS": {
-      "BROWSER_WARNING": "<b>Ovo vjerojatno NEĆE funkcionirati s verzijom preglednika Super Productivity.<br/> Za korištenje ove funkcije <a href=\"https://super-productivity.com/download/\">preuzmi desktop verziju</a>!</b>",
+      "BROWSER_WARNING": "<b>Ovo vjerojatno NEĆE funkcionirati s verzijom preglednika KaironTask.<br/> Za korištenje ove funkcije <a href=\"https://kairontask.app/download/\">preuzmi desktop verziju</a>!</b>",
       "CAL_PATH": "URL iCal izvora",
       "CHECK_UPDATES": "Traži eksterna aktualiziranja svakih X",
-      "HELP": "Kalendare za podsjetnik možeš integrirati i dodati ih kao zadatke unutar Super Productivity. Integracija radi pomoću iCal formata. Da bi ovo funkcioniralo, tvoji kalendari moraju biti dostupni putem interneta ili putem sustava datoteka.",
+      "HELP": "Kalendare za podsjetnik možeš integrirati i dodati ih kao zadatke unutar KaironTask. Integracija radi pomoću iCal formata. Da bi ovo funkcioniralo, tvoji kalendari moraju biti dostupni putem interneta ili putem sustava datoteka.",
       "SHOW_BANNER_THRESHOLD": "Prikaži obavijest X prije događaja (prazno za deaktivirano)"
     },
     "EVALUATION": {
@@ -1964,7 +1964,7 @@
       "EXPAND_SUB_TASKS": "Rasklopi podzadatke",
       "GLOBAL_ADD_NOTE": "Dodaj novu bilješku",
       "GLOBAL_ADD_TASK": "Dodaj novi zadatak",
-      "GLOBAL_SHOW_HIDE": "Prikaži/Sakrij Super Productivity",
+      "GLOBAL_SHOW_HIDE": "Prikaži/Sakrij KaironTask",
       "GLOBAL_TOGGLE_TASK_START": "Uključi/Isključi praćenje vremena za zadnji aktivni zadatak",
       "GO_TO_DAILY_AGENDA": "Idi na agendu",
       "GO_TO_FOCUS_MODE": "Idi na modus fokusa",
@@ -2103,7 +2103,7 @@
       "DEFAULT_TASK_REMIND_OPTION": "Zadana opcija podsjetnika pri stvaranju zadataka",
       "DISABLE_REMINDERS": "Onemogući sve podsjetnike",
       "DUE_DATE_NOTIFICATION_HOUR": "Sat prikaza obavijesti za datume dospijeća (0-23)",
-      "HELP": "<p><strong>Važno:</strong> Podsjetnici koriste <strong>lokalne obavijesti</strong>, ne push obavijesti. To znači da aplikacija mora biti otvorena barem jednom na vašem uređaju da bi podsjetnici bili zakazani. Podsjetnici postavljeni na drugom uređaju pojavit će se tek nakon sinkronizacije aplikacije na ciljnom uređaju.</p><p>Na <strong>iOS-u</strong> provjerite jesu li obavijesti omogućene za Super Productivity u postavkama uređaja pod 'Postavke' > 'Obavijesti'.</p>",
+      "HELP": "<p><strong>Važno:</strong> Podsjetnici koriste <strong>lokalne obavijesti</strong>, ne push obavijesti. To znači da aplikacija mora biti otvorena barem jednom na vašem uređaju da bi podsjetnici bili zakazani. Podsjetnici postavljeni na drugom uređaju pojavit će se tek nakon sinkronizacije aplikacije na ciljnom uređaju.</p><p>Na <strong>iOS-u</strong> provjerite jesu li obavijesti omogućene za KaironTask u postavkama uređaja pod 'Postavke' > 'Obavijesti'.</p>",
       "IS_FOCUS_WINDOW": "Fokusiraj prozor aplikacije kad se podsjetnik aktivira",
       "NOTIFY_ON_DUE_DATE": "Prikaži obavijesti za zadatke koji dospijevaju danas",
       "USE_ALARM_STYLE_REMINDERS": "Koristi podsjetnike u stilu alarma (samo Android)",
@@ -2346,7 +2346,7 @@
     "UNPLAN_ALL_TASKS": "Ukloni plan za sve zadatke"
   },
   "MIGRATE": {
-    "C_DOWNLOAD_BACKUP": "Èske ou vle telechaje yon backup nan done eritaj ou (yo ka itilize ak vèsyon ki pi gran nan Super Productivity)?",
+    "C_DOWNLOAD_BACKUP": "Èske ou vle telechaje yon backup nan done eritaj ou (yo ka itilize ak vèsyon ki pi gran nan KaironTask)?",
     "DETECTED_LEGACY": "Done eritaj detekte. Nou pral egrate li pou ou!",
     "E_MIGRATION_FAILED": "Migrasyon echwe! avèk erè:",
     "E_RESTART_FAILED": "Rekòmanse otomatik echwe. Tanpri rekòmanse app a manyèlman!",
@@ -2359,7 +2359,7 @@
     "STATUS_PREPARING": "Priprema migracije..."
   },
   "ONBOARDING": {
-    "TITLE": "Kako želite koristiti Super Productivity?",
+    "TITLE": "Kako želite koristiti KaironTask?",
     "SUBTITLE": "Odaberite postavke koje odgovaraju vašem načinu rada. Uvijek to možete promijeniti kasnije u Postavkama.",
     "PRIVACY_HINT": "Vaši podaci ostaju sigurni na vašem uređaju. Ništa se ne šalje na poslužitelj.",
     "PRESETS": {
@@ -2530,7 +2530,7 @@
   },
   "DONATE_PAGE": {
     "BUTTON_TEXT": "Donirajte putem GitHub Sponsors",
-    "INTRO_1": "Super Productivity u potpunosti financira zajednica. Nema praćenja, nema oglasa i nema prikupljanja podataka — vaši zadaci ostaju na vašem uređaju.",
+    "INTRO_1": "KaironTask u potpunosti financira zajednica. Nema praćenja, nema oglasa i nema prikupljanja podataka — vaši zadaci ostaju na vašem uređaju.",
     "INTRO_2": "Ako cijenite ovaj pristup i želite da projekt ostane zdrav i da se razvija, dobrovoljne donacije su vrlo cijenjene."
   },
   "GLOBAL": {

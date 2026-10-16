@@ -7,7 +7,7 @@
 
 ## 1. Visão Geral da Pasta `packages/`
 
-O Super Productivity estrutura suas bibliotecas reutilizáveis e microsserviços na pasta [`packages/`](file:///c:/Projects/super-productivity/packages). Todos os sub-pacotes são gerenciados via npm workspaces e orquestrados pelo script de compilação [`packages/build-packages.js`](file:///c:/Projects/super-productivity/packages/build-packages.js).
+O KaironTask estrutura suas bibliotecas reutilizáveis e microsserviços na pasta [`packages/`](file:///c:/Projects/kairontask/packages). Todos os sub-pacotes são gerenciados via npm workspaces e orquestrados pelo script de compilação [`packages/build-packages.js`](file:///c:/Projects/kairontask/packages/build-packages.js).
 
 ```
                             packages/
@@ -28,7 +28,7 @@ Frontend & Electron     Frontend & Servidor       para Self-Hosting
 
 ### 2.1. `packages/plugin-api` (SDK Oficial de Plugins)
 
-- **Propósito**: Conjunto de interfaces TypeScript e classes utilitárias que os desenvolvedores utilizam para criar extensões para o Super Productivity.
+- **Propósito**: Conjunto de interfaces TypeScript e classes utilitárias que os desenvolvedores utilizam para criar extensões para o KaironTask.
 - **Capacidades Expostas pela API**:
   - `tasks`: Criar, listar, atualizar e concluir tarefas programaticamente.
   - `ui`: Adicionar botões no cabeçalho (_Header Buttons_), itens na barra lateral e renderizar componentes customizados.
@@ -55,7 +55,7 @@ Frontend & Electron     Frontend & Servidor       para Self-Hosting
   - `POST /api/sync/operations`: Recebimento de lotes de operações do `op-log` com validação de relógio vetorial.
   - `GET /api/sync/operations`: Consulta de deltas com base na última versão do cliente.
   - `WebSocket /api/sync/ws`: Notificações push em tempo real para sincronização instantânea entre múltiplos computadores e celulares conectados.
-- **Implantação**: Pode ser iniciado com um comando via [`docker-compose.supersync.yaml`](file:///c:/Projects/super-productivity/docker-compose.supersync.yaml).
+- **Implantação**: Pode ser iniciado com um comando via [`docker-compose.supersync.yaml`](file:///c:/Projects/kairontask/docker-compose.supersync.yaml).
 
 ---
 
@@ -63,7 +63,7 @@ Frontend & Electron     Frontend & Servidor       para Self-Hosting
 
 - **Propósito**: Ferramentas de compilação baseadas em Vite para desenvolvedores de plugins.
 - **Destaques**:
-  - Fornece Hot Module Reloading (HMR) para desenvolvedores testarem alterações em seus plugins instantaneamente dentro do Super Productivity em execução local.
+  - Fornece Hot Module Reloading (HMR) para desenvolvedores testarem alterações em seus plugins instantaneamente dentro do KaironTask em execução local.
 
 ---
 
@@ -74,7 +74,7 @@ Frontend & Electron     Frontend & Servidor       para Self-Hosting
   - Arquivo JSON versionado no repositório que lista plugins validados pela comunidade (ex: integrações com Toggl, Obsidian, Habitica).
 - **Modelo de Execução e Segurança**:
   - Na versão Web: Plugins rodam dentro de um Web Worker / Sandbox JS com permissões limitadas.
-  - Na versão Desktop (Electron): Chamadas que exigem acesso ao sistema de arquivos ou rede local são delegadas para o executor Node seguro [`electron/plugin-node-executor.ts`](file:///c:/Projects/super-productivity/electron/plugin-node-executor.ts).
+  - Na versão Desktop (Electron): Chamadas que exigem acesso ao sistema de arquivos ou rede local são delegadas para o executor Node seguro [`electron/plugin-node-executor.ts`](file:///c:/Projects/kairontask/electron/plugin-node-executor.ts).
 
 ---
 

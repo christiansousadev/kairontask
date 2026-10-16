@@ -3,7 +3,7 @@
     "B_INSTALL": {
       "IGNORE": "Ignorieren",
       "INSTALL": "Installieren",
-      "MSG": "Möchten Sie Super Productivity als PWA installieren?"
+      "MSG": "Möchten Sie KaironTask als PWA installieren?"
     },
     "B_OFFLINE": "Sie sind vom Internet getrennt. Das Synchronisieren und Anfordern von Daten des Issue-Providers funktioniert nicht.",
     "CONTEXT_MENU": {
@@ -38,13 +38,13 @@
   },
   "DONATE_PAGE": {
     "BUTTON_TEXT": "Über GitHub Sponsors spenden",
-    "INTRO_1": "Super Productivity wird vollständig von der Community finanziert. Es gibt kein Tracking, keine Werbung und keine Datenerfassung – deine Aufgaben bleiben auf deinem Gerät.",
+    "INTRO_1": "KaironTask wird vollständig von der Community finanziert. Es gibt kein Tracking, keine Werbung und keine Datenerfassung – deine Aufgaben bleiben auf deinem Gerät.",
     "INTRO_2": "Wenn du diesen Ansatz schätzt und das Projekt gesund und weiterentwickelt halten möchtest, wird eine freiwillige Spende sehr geschätzt."
   },
   "EXAMPLE_TASKS": {
     "LEARN_KEYBOARD_SHORTCUTS": {
       "TITLE": "Tastenkürzel lernen",
-      "NOTES": "Super Productivity ist für die Bedienung mit der Tastatur konzipiert. Lerne die Tastenkürzel, um schneller zu arbeiten.\n\n**So fängst du an:**\n1. Öffne das **Seitenleistenmenü**\n2. Gehe zu **Hilfe**\n3. Klicke auf **Tastaturnavigations-Tour**"
+      "NOTES": "KaironTask ist für die Bedienung mit der Tastatur konzipiert. Lerne die Tastenkürzel, um schneller zu arbeiten.\n\n**So fängst du an:**\n1. Öffne das **Seitenleistenmenü**\n2. Gehe zu **Hilfe**\n3. Klicke auf **Tastaturnavigations-Tour**"
     },
     "CREATE_PROJECT": {
       "TITLE": "Erstelle dein erstes Projekt",
@@ -132,7 +132,7 @@
         "TWO_WAY_SYNC_TITLE": "Titel-Synchronisationsrichtung"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Hier können Sie SuperProductivity so konfigurieren, dass unvollständige CalDav-Aufgaben für ein bestimmtes Projekt im Aufgabenerstellungsfenster in der täglichen Planungsansicht aufgelistet werden. Sie werden als Vorschläge aufgeführt und enthalten einen Link zur Aufgabe sowie weitere Informationen dazu.</p> <p>Außerdem können Sie automatisch alle nicht abgeschlossenen Aufgaben zu Ihrem Aufgaben-Backlog hinzufügen und synchronisieren.</p>"
+        "HELP": "<p>Hier können Sie KaironTask so konfigurieren, dass unvollständige CalDav-Aufgaben für ein bestimmtes Projekt im Aufgabenerstellungsfenster in der täglichen Planungsansicht aufgelistet werden. Sie werden als Vorschläge aufgeführt und enthalten einen Link zur Aufgabe sowie weitere Informationen dazu.</p> <p>Außerdem können Sie automatisch alle nicht abgeschlossenen Aufgaben zu Ihrem Aufgaben-Backlog hinzufügen und synchronisieren.</p>"
       },
       "ISSUE_CONTENT": {
         "DESCRIPTION": "Beschreibung",
@@ -272,7 +272,7 @@
         "TOKEN": "Zugangstoken"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Hier können Sie SuperProductivity so konfigurieren, dass offene Gitea-Issues für ein bestimmtes Repository im Aufgabenerstellungsfenster in der Tagesplanungsansicht aufgelistet werden. Sie werden als Vorschläge aufgeführt und enthalten einen Link zum Issue sowie weitere Informationen dazu.</p><p> Darüber hinaus können Sie alle offenen Issues automatisch hinzufügen und importieren.</p><p> Um Nutzungsbeschränkungen zu umgehen und Zugriff zu erhalten, können Sie ein Zugriffstoken bereitstellen."
+        "HELP": "<p>Hier können Sie KaironTask so konfigurieren, dass offene Gitea-Issues für ein bestimmtes Repository im Aufgabenerstellungsfenster in der Tagesplanungsansicht aufgelistet werden. Sie werden als Vorschläge aufgeführt und enthalten einen Link zum Issue sowie weitere Informationen dazu.</p><p> Darüber hinaus können Sie alle offenen Issues automatisch hinzufügen und importieren.</p><p> Um Nutzungsbeschränkungen zu umgehen und Zugriff zu erhalten, können Sie ein Zugriffstoken bereitstellen."
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "Bearbeiter",
@@ -314,7 +314,7 @@
         "TOKEN": "Zugangstoken"
       },
       "FORM_SECTION": {
-        "HELP": "<p> Hier können Sie SuperProductivity so konfigurieren, dass offene GitLab-Probleme (entweder die Online-Version oder eine selbst gehostete Instanz) für ein bestimmtes Projekt im Bereich zur Aufgabenerstellung in der täglichen Planungsansicht aufgelistet werden. Sie werden als Vorschläge aufgeführt und enthalten einen Link zum Problem sowie weitere Informationen dazu. </p> <p> Außerdem können Sie alle offenen Probleme automatisch zu Ihrem Aufgaben-Backlog hinzufügen und synchronisieren. </p>"
+        "HELP": "<p> Hier können Sie KaironTask so konfigurieren, dass offene GitLab-Probleme (entweder die Online-Version oder eine selbst gehostete Instanz) für ein bestimmtes Projekt im Bereich zur Aufgabenerstellung in der täglichen Planungsansicht aufgelistet werden. Sie werden als Vorschläge aufgeführt und enthalten einen Link zum Problem sowie weitere Informationen dazu. </p> <p> Außerdem können Sie alle offenen Probleme automatisch zu Ihrem Aufgaben-Backlog hinzufügen und synchronisieren. </p>"
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "Bearbeiter",
@@ -332,7 +332,7 @@
       }
     },
     "ISSUE": {
-      "CROSS_ORIGIN_BROWSER_WARNING": "Diese Integration wird in Ihrem Browser wahrscheinlich nicht funktionieren. Bitte laden Sie die Desktop- oder Android-Version von Super Productivity herunter!",
+      "CROSS_ORIGIN_BROWSER_WARNING": "Diese Integration wird in Ihrem Browser wahrscheinlich nicht funktionieren. Bitte laden Sie die Desktop- oder Android-Version von KaironTask herunter!",
       "DEFAULT": {
         "ISSUE_STR": "Problem",
         "ISSUES_STR": "Probleme"
@@ -407,7 +407,7 @@
     },
     "JIRA": {
       "BANNER": {
-        "BLOCK_ACCESS_MSG": "Jira: Um zu verhindern, dass das API geschlossen wird, wurde der Zugriff von Super Productivity blockiert. Sie sollten wahrscheinlich Ihre Jira-Einstellungen überprüfen!",
+        "BLOCK_ACCESS_MSG": "Jira: Um zu verhindern, dass das API geschlossen wird, wurde der Zugriff von KaironTask blockiert. Sie sollten wahrscheinlich Ihre Jira-Einstellungen überprüfen!",
         "BLOCK_ACCESS_UNBLOCK": "Entsperren"
       },
       "CFG_CMP": {
@@ -488,7 +488,7 @@
           "P2_1": "Es gibt verschiedene Möglichkeiten, um festzulegen, wann und wie Sie ein Worklog senden möchten. Durch Aktivieren von <em>'Dialogfeld \"Worklog öffnen\" zum Hinzufügen eines Worklogs zu Jira nach Abschluss der Aufgabe'</em> wird ein Dialogfeld zum Hinzufügen eines Worklogs jedes Mal geöffnet, wenn Sie eine Jira-Aufgabe als erledigt markieren. Denken Sie also daran, dass Worklogs zu allen bisher erfassten Daten hinzugefügt werden. Wenn Sie also eine Aufgabe zum zweiten Mal als erledigt markieren, möchten Sie möglicherweise nicht die gesamte Arbeitszeit für die Aufgabe erneut senden.",
           "P2_2": "<em>'Worklogdialog öffnen, wenn eine Unteraufgabe erledigt ist und nicht für Aufgaben mit Unteraufgaben selbst'</em> öffnet jedes Mal ein Worklogdialogfeld, wenn Sie eine Unteraufgabe eines Jira-Issues als erledigt markieren. Da Sie Ihre Zeit bereits über die Unteraufgaben nachverfolgen, wird kein Dialogfeld geöffnet, sobald Sie die Jira-Aufgabe selbst als erledigt markieren.",
           "P2_3": "<em>'Aktualisierungen automatisch ohne Dialog an das Worklog senden'</em> macht, was es sagt. Da das mehrmalige Markieren einer Aufgabe dazu führt, dass die gesamte Arbeitszeit zweimal erfasst wird, wird dies nicht empfohlen.",
-          "P3_1": "Hier können Sie Ihre Standardübergänge neu konfigurieren. Jira ermöglicht eine umfassende Konfiguration von Übergängen, die normalerweise als unterschiedliche Spalten auf Ihrem Jira Agile Board wirksam werden. Super Productivity kann hierzu keine Annahme treffen. Daher müssen Sie die Übergänge manuell einstellen."
+          "P3_1": "Hier können Sie Ihre Standardübergänge neu konfigurieren. Jira ermöglicht eine umfassende Konfiguration von Übergängen, die normalerweise als unterschiedliche Spalten auf Ihrem Jira Agile Board wirksam werden. KaironTask kann hierzu keine Annahme treffen. Daher müssen Sie die Übergänge manuell einstellen."
         }
       },
       "ISSUE_CONTENT": {
@@ -512,7 +512,7 @@
       },
       "S": {
         "ADDED_WORKLOG_FOR": "Jira: Worklog für {{issueKey}} hinzugefügt",
-        "EXTENSION_NOT_LOADED": "Super Productivity Extension nicht geladen. Das Neuladen der Seite könnte helfen",
+        "EXTENSION_NOT_LOADED": "KaironTask Extension nicht geladen. Das Neuladen der Seite könnte helfen",
         "INSUFFICIENT_SETTINGS": "Unzureichende Einstellungen für Jira",
         "INVALID_RESPONSE": "Jira: Antwort enthielt ungültige Daten",
         "NO_AUTO_IMPORT_JQL": "Jira: Keine Suchabfrage für den automatischen Import definiert",
@@ -730,7 +730,7 @@
         "TOKEN": "Zugangstoken"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Hier können Sie SuperProductivity konfigurieren, um offene OpenProject-Arbeitspakete aufzulisten. Bitte beachten Sie, dass Sie, damit dies im Browser funktioniert, wahrscheinlich CORS für Ihren OpenProject-Server konfigurieren müssen, um den Zugriff von app.super-productivity.com zu ermöglichen</p>"
+        "HELP": "<p>Hier können Sie KaironTask konfigurieren, um offene OpenProject-Arbeitspakete aufzulisten. Bitte beachten Sie, dass Sie, damit dies im Browser funktioniert, wahrscheinlich CORS für Ihren OpenProject-Server konfigurieren müssen, um den Zugriff von app.kairontask.app zu ermöglichen</p>"
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "Bearbeiter",
@@ -869,7 +869,7 @@
         "SCOPE_CREATED": "Von mir erstellt"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Hier können Sie SuperProductivity so konfigurieren, dass offene Redmine-Issus (entweder die Online-Version oder eine selbst gehostete Instanz) für ein bestimmtes Projekt im Aufgabenerstellungsfenster in der Tagesplanungsansicht aufgelistet werden. Sie werden als Vorschläge aufgeführt und enthalten einen Link zum Issue sowie weitere Informationen dazu.</p><p> Darüber hinaus können Sie alle offenen Issues automatisch importieren.</p>",
+        "HELP": "<p>Hier können Sie KaironTask so konfigurieren, dass offene Redmine-Issus (entweder die Online-Version oder eine selbst gehostete Instanz) für ein bestimmtes Projekt im Aufgabenerstellungsfenster in der Tagesplanungsansicht aufgelistet werden. Sie werden als Vorschläge aufgeführt und enthalten einen Link zum Issue sowie weitere Informationen dazu.</p><p> Darüber hinaus können Sie alle offenen Issues automatisch importieren.</p>",
         "TITLE": "Redmine"
       },
       "ISSUE_CONTENT": {
@@ -1246,9 +1246,9 @@
         },
         "TITLE": "Sync",
         "WEB_DAV": {
-          "CORS_INFO": "<p><strong>Experimental!!</strong> <strong>Damit dies für Mobil oder den Browser funktioniert, müssen Sie Super Productivity für CORS-Anfragen bei Ihrer Nextcloud-Instanz auf die Whitelist setzen</strong>, dies kann negative Auswirkungen auf die Sicherheit haben! Bitte beziehen Sie sich <a href='https://github.com/nextcloud/server/issues/3131'>auf diesen Thread</a> für weitere Informationen. Ein Ansatz, um dies auch mobil zu ermöglichen, ist das Whitelisting \"https://app.super-productivity.com\" über die Nextcloud-App <a href='https://apps.nextcloud.com/apps/webapppassword'>webapppassword<a>. Benutzung auf eigene Gefahr!",
+          "CORS_INFO": "<p><strong>Experimental!!</strong> <strong>Damit dies für Mobil oder den Browser funktioniert, müssen Sie KaironTask für CORS-Anfragen bei Ihrer Nextcloud-Instanz auf die Whitelist setzen</strong>, dies kann negative Auswirkungen auf die Sicherheit haben! Bitte beziehen Sie sich <a href='https://github.com/nextcloud/server/issues/3131'>auf diesen Thread</a> für weitere Informationen. Ein Ansatz, um dies auch mobil zu ermöglichen, ist das Whitelisting \"https://app.kairontask.app\" über die Nextcloud-App <a href='https://apps.nextcloud.com/apps/webapppassword'>webapppassword<a>. Benutzung auf eigene Gefahr!",
           "D_SYNC_FOLDER_PATH": "Pfad relativ zum WebDAV-Server-Stamm, in dem die Synchronisationsdateien gespeichert werden (z.B. '\\/super-productivity' oder '\\/'). Dies ist NICHT der interne Verzeichnispfad Ihres Servers.",
-          "INFO": "Leider unterscheiden sich WebDAV-Implementierungen stark voneinander. Super Productivity funktioniert bekanntermaßen gut mit Nextcloud, <strong>aber möglicherweise nicht mit Ihrem Anbieter</strong>.",
+          "INFO": "Leider unterscheiden sich WebDAV-Implementierungen stark voneinander. KaironTask funktioniert bekanntermaßen gut mit Nextcloud, <strong>aber möglicherweise nicht mit Ihrem Anbieter</strong>.",
           "L_BASE_URL": "Basis-URL",
           "L_PASSWORD": "Passwort",
           "L_SYNC_FOLDER_PATH": "Sync-Ordnerpfad",
@@ -1257,7 +1257,7 @@
           "S_FILL_ALL_FIELDS": "Bitte füllen Sie zuerst alle WebDAV-Felder aus",
           "S_TEST_FAIL": "Verbindungstest fehlgeschlagen: {{error}} - Ziel-URL: {{url}}",
           "S_TEST_SUCCESS": "Verbindungstest erfolgreich! Ziel-URL: {{url}}",
-          "CONDITIONAL_HEADER_WARNING_MSG": "Ihr WebDAV-Server unterstützt keine bedingten Header (If-Unmodified-Since). Das bedeutet, dass Super Productivity gleichzeitige Änderungen von anderen Geräten beim Hochladen nicht erkennen kann.<br><br>Die Synchronisierung funktioniert weiterhin, aber es besteht ein geringes Risiko von Datenkonflikten, wenn Sie auf mehreren Geräten gleichzeitig Änderungen vornehmen.",
+          "CONDITIONAL_HEADER_WARNING_MSG": "Ihr WebDAV-Server unterstützt keine bedingten Header (If-Unmodified-Since). Das bedeutet, dass KaironTask gleichzeitige Änderungen von anderen Geräten beim Hochladen nicht erkennen kann.<br><br>Die Synchronisierung funktioniert weiterhin, aber es besteht ein geringes Risiko von Datenkonflikten, wenn Sie auf mehreren Geräten gleichzeitig Änderungen vornehmen.",
           "CONDITIONAL_HEADER_WARNING_TITLE": "Eingeschränkte Synchronisierungssicherheit"
         },
         "L_MANUAL_SYNC_ONLY": "Nur manuell synchronisieren (automatische Synchronisierung deaktivieren)",
@@ -1875,10 +1875,10 @@
     "EXPORT_DATA": "Daten exportieren",
     "IMPORT_FROM_FILE": "Aus Datei importieren",
     "IMPORT_FROM_URL": "Aus URL importieren",
-    "IMPORT_FROM_URL_DIALOG_DESCRIPTION": "Bitte geben Sie die vollständige URL der Super Productivity-Backup-JSON-Datei ein, die Sie importieren möchten.",
+    "IMPORT_FROM_URL_DIALOG_DESCRIPTION": "Bitte geben Sie die vollständige URL der KaironTask-Backup-JSON-Datei ein, die Sie importieren möchten.",
     "IMPORT_FROM_URL_DIALOG_TITLE": "Aus URL importieren",
     "OPEN_IMPORT_FROM_URL_DIALOG": "Aus URL importieren",
-    "PRIVACY_EXPORT": "Exportiere anonymisierte Daten (zum Senden an contact@super-productivity.com zur Fehlersuche)",
+    "PRIVACY_EXPORT": "Exportiere anonymisierte Daten (zum Senden an support@kairontask.app zur Fehlersuche)",
     "S_BACKUP_DOWNLOADED": "Backup in den Android-Dokumentenordner heruntergeladen",
     "S_ERR_IMPORT_FAILED": "Datenimport fehlgeschlagen",
     "S_ERR_INVALID_DATA": "Import fehlgeschlagen: Ungültiger JSON",
@@ -1960,10 +1960,10 @@
       "TITLE": "Automatische Backups"
     },
     "CALENDARS": {
-      "BROWSER_WARNING": "<b>Dies funktioniert wahrscheinlich NICHT mit der Browserversion von Super Productivity.<br /> Bitte <a href=\"https://super-productivity.com/download/\">laden Sie die Desktop-Version herunter</a> , um diese Funktion zu nutzen!</b>",
+      "BROWSER_WARNING": "<b>Dies funktioniert wahrscheinlich NICHT mit der Browserversion von KaironTask.<br /> Bitte <a href=\"https://kairontask.app/download/\">laden Sie die Desktop-Version herunter</a> , um diese Funktion zu nutzen!</b>",
       "CAL_PATH": "URL der iCal-Quelle",
       "CHECK_UPDATES": "Alle X mal nach Remote-Updates suchen",
-      "HELP": "Sie können Kalender zur Erinnerung integrieren und diese als Aufgaben in Super Productivity hinzufügen. Die Integration funktioniert über das iCal-Format. Damit dies funktioniert, müssen Ihre Kalender entweder über das Internet oder über ein Dateisystem zugänglich sein.",
+      "HELP": "Sie können Kalender zur Erinnerung integrieren und diese als Aufgaben in KaironTask hinzufügen. Die Integration funktioniert über das iCal-Format. Damit dies funktioniert, müssen Ihre Kalender entweder über das Internet oder über ein Dateisystem zugänglich sein.",
       "SHOW_BANNER_THRESHOLD": "Vor dem Ereignis eine Benachrichtigung anzeigen (leer für deaktiviert)"
     },
     "CLIPBOARD_IMAGES": {
@@ -2030,7 +2030,7 @@
       "EXPAND_SUB_TASKS": "Erweitern der Unteraufgaben",
       "GLOBAL_ADD_NOTE": "Neue Notiz hinzufügen",
       "GLOBAL_ADD_TASK": "Neue Aufgabe hinzufügen",
-      "GLOBAL_SHOW_HIDE": "Super Productivity ein- oder ausblenden",
+      "GLOBAL_SHOW_HIDE": "KaironTask ein- oder ausblenden",
       "GLOBAL_TOGGLE_TASK_START": "Schaltet die Zeiterfassung für die zuletzt aktive Aufgabe um",
       "GO_TO_DAILY_AGENDA": "Gehe zur Agenda",
       "GO_TO_FOCUS_MODE": "Wechseln Sie in den Fokusmodus",
@@ -2168,7 +2168,7 @@
       "IS_COUNTDOWN_BANNER_ENABLED": "Countdown-Banner anzeigen, bevor Erinnerungen fällig werden",
       "TITLE": "Erinnerungen",
       "DUE_DATE_NOTIFICATION_HOUR": "Uhrzeit für Fälligkeitsbenachrichtigungen (0–23)",
-      "HELP": "<p><strong>Wichtig:</strong> Erinnerungen verwenden <strong>lokale Benachrichtigungen</strong>, keine Push-Benachrichtigungen. Das bedeutet, dass die App mindestens einmal auf Ihrem Gerät geöffnet worden sein muss, damit Erinnerungen geplant werden können. Erinnerungen, die auf einem anderen Gerät gesetzt werden, erscheinen erst nach der Synchronisierung der App auf dem Zielgerät.</p><p>Auf <strong>iOS</strong> stellen Sie sicher, dass Benachrichtigungen für Super Productivity in Ihren Geräteeinstellungen unter 'Einstellungen' > 'Mitteilungen' aktiviert sind.</p>",
+      "HELP": "<p><strong>Wichtig:</strong> Erinnerungen verwenden <strong>lokale Benachrichtigungen</strong>, keine Push-Benachrichtigungen. Das bedeutet, dass die App mindestens einmal auf Ihrem Gerät geöffnet worden sein muss, damit Erinnerungen geplant werden können. Erinnerungen, die auf einem anderen Gerät gesetzt werden, erscheinen erst nach der Synchronisierung der App auf dem Zielgerät.</p><p>Auf <strong>iOS</strong> stellen Sie sicher, dass Benachrichtigungen für KaironTask in Ihren Geräteeinstellungen unter 'Einstellungen' > 'Mitteilungen' aktiviert sind.</p>",
       "IS_FOCUS_WINDOW": "Anwendungsfenster fokussieren, wenn eine Erinnerung ausgelöst wird",
       "NOTIFY_ON_DUE_DATE": "Benachrichtigungen für heute fällige Aufgaben anzeigen",
       "USE_ALARM_STYLE_REMINDERS": "Alarmstil-Benachrichtigungen verwenden (nur Android)",
@@ -2365,7 +2365,7 @@
     "TOGGLE_SHOW_BOOKMARKS": "Lesezeichen ein-/ausblenden"
   },
   "MIGRATE": {
-    "C_DOWNLOAD_BACKUP": "Möchten Sie ein Backup Ihrer alten Daten herunterladen (kann mit älteren Versionen von Super Productivity verwendet werden)?",
+    "C_DOWNLOAD_BACKUP": "Möchten Sie ein Backup Ihrer alten Daten herunterladen (kann mit älteren Versionen von KaironTask verwendet werden)?",
     "DETECTED_LEGACY": "Alte Daten erkannt. Wir werden sie für Sie migrieren!",
     "E_MIGRATION_FAILED": "Migration fehlgeschlagen! mit Fehler:",
     "E_RESTART_FAILED": "Automatischer Neustart fehlgeschlagen. Bitte starten Sie die App manuell neu!",
@@ -2378,7 +2378,7 @@
     "STATUS_MIGRATING": "Daten werden migriert..."
   },
   "ONBOARDING": {
-    "TITLE": "Wie möchtest du Super Productivity nutzen?",
+    "TITLE": "Wie möchtest du KaironTask nutzen?",
     "SUBTITLE": "Wähle ein Setup, das zu deinem Workflow passt. Du kannst das später jederzeit in den Einstellungen ändern.",
     "PRIVACY_HINT": "Deine Daten bleiben sicher auf deinem Gerät. Es wird nichts an einen Server gesendet.",
     "PRESETS": {

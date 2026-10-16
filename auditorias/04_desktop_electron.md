@@ -7,7 +7,7 @@
 
 ## 1. Visão Geral da Arquitetura Desktop
 
-O Super Productivity utiliza o **Electron 37+** para empacotar a aplicação web em uma aplicação desktop nativa para Windows, macOS e Linux. A arquitetura segue rigorosamente as recomendações de segurança do Electron, mantendo o processo Node.js completamente isolado do Renderer via `Context Isolation` e `Preload Bridge`.
+O KaironTask utiliza o **Electron 37+** para empacotar a aplicação web em uma aplicação desktop nativa para Windows, macOS e Linux. A arquitetura segue rigorosamente as recomendações de segurança do Electron, mantendo o processo Node.js completamente isolado do Renderer via `Context Isolation` e `Preload Bridge`.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -42,7 +42,7 @@ O Super Productivity utiliza o **Electron 37+** para empacotar a aplicação web
 
 ## 2. Processo Principal e Inicialização (`electron/`)
 
-- **Ponto de Entrada**: [`electron/main.ts`](file:///c:/Projects/super-productivity/electron/main.ts) inicia o ciclo e delega a orquestração para [`electron/start-app.ts`](file:///c:/Projects/super-productivity/electron/start-app.ts).
+- **Ponto de Entrada**: [`electron/main.ts`](file:///c:/Projects/kairontask/electron/main.ts) inicia o ciclo e delega a orquestração para [`electron/start-app.ts`](file:///c:/Projects/kairontask/electron/start-app.ts).
 - **Instância Única (`Single Instance Lock`)**: Utiliza `app.requestSingleInstanceLock()` para garantir que apenas um processo do aplicativo execute simultaneamente; abrir uma nova instância foca a janela existente.
 - **Gerenciamento de Janela (`electron/main-window.ts`)**:
   - Salva e restaura coordenadas, largura e altura da janela via `electron-window-state`.
@@ -84,14 +84,14 @@ A comunicação entre o Angular e o Electron é isolada através de handlers tip
 
 ### 4.1. Contrato Tipado no Preload
 
-- **Arquivo de Tipos**: [`electron/electronAPI.d.ts`](file:///c:/Projects/super-productivity/electron/electronAPI.d.ts)
-- **Implementação do Bridge**: [`electron/preload.ts`](file:///c:/Projects/super-productivity/electron/preload.ts) expõe o namespace seguro `window.ea`.
+- **Arquivo de Tipos**: [`electron/electronAPI.d.ts`](file:///c:/Projects/kairontask/electron/electronAPI.d.ts)
+- **Implementação do Bridge**: [`electron/preload.ts`](file:///c:/Projects/kairontask/electron/preload.ts) expõe o namespace seguro `window.ea`.
 
 ---
 
 ## 5. Empacotamento Desktop (`electron-builder.yaml`)
 
-O arquivo [`electron-builder.yaml`](file:///c:/Projects/super-productivity/electron-builder.yaml) controla a geração de binários:
+O arquivo [`electron-builder.yaml`](file:///c:/Projects/kairontask/electron-builder.yaml) controla a geração de binários:
 
 - **Windows**:
   - `NSIS`: Instalador `.exe` de 64 bits com assistente completo.

@@ -1,6 +1,6 @@
 import { SyncProviderPrivateCfgBase } from '../../core/types/sync.types';
 
-export const SUPER_SYNC_DEFAULT_BASE_URL = 'https://sync.super-productivity.com';
+export const SUPER_SYNC_DEFAULT_BASE_URL = 'https://sync.kairontask.app';
 
 export interface SuperSyncPrivateCfg extends SyncProviderPrivateCfgBase {
   /** Base URL of the SuperSync server. Defaults to SUPER_SYNC_DEFAULT_BASE_URL if not set. */

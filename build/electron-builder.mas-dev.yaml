@@ -1,5 +1,5 @@
-appId: com.super-productivity.app
-productName: Super Productivity
+appId: com.kairontask.app
+productName: KaironTask
 artifactName: ${name}-${arch}.${ext}
 files:
   - electron/**/*
@@ -15,7 +15,7 @@ directories:
   output: './.tmp/app-builds'
 
 mac:
-  appId: com.super-productivity.app
+  appId: com.kairontask.app
   type: development
   category: public.app-category.productivity
   #  entitlements: build/entitlements.mac.plist

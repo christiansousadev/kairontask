@@ -7,7 +7,7 @@
 
 ## 1. Visão Geral dos Módulos Funcionais
 
-O diretório [`src/app/features/`](file:///c:/Projects/super-productivity/src/app/features) contém todos os módulos funcionais da aplicação. Cada funcionalidade é autocontida com modelos tipados, serviços de fachada (_Facade Services_), componentes visuais e slices no NgRx Store.
+O diretório [`src/app/features/`](file:///c:/Projects/kairontask/src/app/features) contém todos os módulos funcionais da aplicação. Cada funcionalidade é autocontida com modelos tipados, serviços de fachada (_Facade Services_), componentes visuais e slices no NgRx Store.
 
 ```
                             src/app/features/
@@ -52,7 +52,7 @@ O diretório [`src/app/features/`](file:///c:/Projects/super-productivity/src/ap
 
 ### 2.2. Integrações de Issue Trackers (`src/app/features/issue/`)
 
-O Super Productivity possui uma arquitetura extensível para conectar com 11 plataformas externas:
+O KaironTask possui uma arquitetura extensível para conectar com 11 plataformas externas:
 
 | Provedor           | Diretório                         | Funcionalidades Específicas                                                                                                               |
 | :----------------- | :-------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------- |
@@ -112,4 +112,4 @@ O Super Productivity possui uma arquitetura extensível para conectar com 11 pla
 
 1. **Uso Exclusivo de Standalone Components**: Qualquer novo componente de feature deve ser declarado como `standalone: true`.
 2. **Fachadas Reativas (Facade Pattern)**: Componentes não devem acessar diretamente o NgRx Store; sempre utilize o serviço de fachada correspondente (ex: `TaskService`, `ProjectService`, `WorkContextService`).
-3. **Internacionalização Obrigatória**: Todo texto visível na interface deve utilizar a chave de tradução tipada `T.*` importada de [`src/app/t.const.ts`](file:///c:/Projects/super-productivity/src/app/t.const.ts).
+3. **Internacionalização Obrigatória**: Todo texto visível na interface deve utilizar a chave de tradução tipada `T.*` importada de [`src/app/t.const.ts`](file:///c:/Projects/kairontask/src/app/t.const.ts).

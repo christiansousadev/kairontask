@@ -1,7 +1,7 @@
 # CODEOWNERS - Define code ownership for security-critical files
 # https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
 #
-# Changes to files listed below require approval from @johannesjo
+# Changes to files listed below require approval from @christiansousadev
 # This protects against unauthorized workflow modifications and supply chain attacks
 
 # ==========================================
@@ -11,68 +11,68 @@
 # - Secret exfiltration via workflow modification
 # - Malicious deployment to production
 # - Supply chain attacks on users
-/.github/workflows/*.yml @johannesjo
-/.github/workflows/*.yaml @johannesjo
+/.github/workflows/*.yml @christiansousadev
+/.github/workflows/*.yaml @christiansousadev
 
 # CODEOWNERS file itself (prevent removal of protections)
-/.github/CODEOWNERS @johannesjo
+/.github/CODEOWNERS @christiansousadev
 
 # ==========================================
 # Build & Deployment Configuration (HIGH)
 # ==========================================
 # Electron application entry point and build config
-/electron/ @johannesjo
+/electron/ @christiansousadev
 
 # Docker deployment configuration
-/Dockerfile @johannesjo
-/docker-entrypoint.sh @johannesjo
-/docker-compose*.yml @johannesjo
-/docker-compose*.yaml @johannesjo
+/Dockerfile @christiansousadev
+/docker-entrypoint.sh @christiansousadev
+/docker-compose*.yml @christiansousadev
+/docker-compose*.yaml @christiansousadev
 
 # Mobile app build configuration
-/android/ @johannesjo
-/ios/ @johannesjo
-/capacitor.config.ts @johannesjo
+/android/ @christiansousadev
+/ios/ @christiansousadev
+/capacitor.config.ts @christiansousadev
 
 # Electron Builder configuration (code signing, auto-update)
-/build/ @johannesjo
-/electron-builder*.yml @johannesjo
-/electron-builder*.yaml @johannesjo
+/build/ @christiansousadev
+/electron-builder*.yml @christiansousadev
+/electron-builder*.yaml @christiansousadev
 
 # ==========================================
 # Package Management (HIGH)
 # ==========================================
 # Dependencies and lock files (supply chain risk)
-/package.json @johannesjo
-/package-lock.json @johannesjo
+/package.json @christiansousadev
+/package-lock.json @christiansousadev
 
 # ==========================================
 # Security & Environment (HIGH)
 # ==========================================
 # Security documentation
-/SECURITY.md @johannesjo
+/SECURITY.md @christiansousadev
 
 # Environment configuration
-/.env.example @johannesjo
-/tools/load-env.js @johannesjo
+/.env.example @christiansousadev
+/tools/load-env.js @christiansousadev
 
 # ==========================================
 # Web Server Configuration (MEDIUM)
 # ==========================================
 # Nginx reverse proxy and web server config
-/nginx/ @johannesjo
+/nginx/ @christiansousadev
 
 # ==========================================
 # Git Configuration (MEDIUM)
 # ==========================================
 # Git hooks and configuration
-/.husky/ @johannesjo
-/.gitignore @johannesjo
+/.husky/ @christiansousadev
+/.gitignore @christiansousadev
 
 # ==========================================
 # Documentation Changes (LOW - Optional)
 # ==========================================
 # Uncomment if you want to review all README changes
-# /README.md @johannesjo
-# /CLAUDE.md @johannesjo
-# /docs/ @johannesjo
+# /README.md @christiansousadev
+# /CLAUDE.md @christiansousadev
+# /docs/ @christiansousadev

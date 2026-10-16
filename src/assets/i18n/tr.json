@@ -38,13 +38,13 @@
   },
   "DONATE_PAGE": {
     "BUTTON_TEXT": "Github Sponsorları ile Bağış Yapın",
-    "INTRO_1": "Super Productivity tamamen topluluk tarafından finanse edilmektedir. Takip, reklam veya veri toplama yoktur — görevleriniz cihazınızda kalır.",
+    "INTRO_1": "KaironTask tamamen topluluk tarafından finanse edilmektedir. Takip, reklam veya veri toplama yoktur — görevleriniz cihazınızda kalır.",
     "INTRO_2": "Bu yaklaşımı değerli buluyorsanız ve projenin sağlıklı ve gelişen kalmasını istiyorsanız, gönüllü bir bağış büyük takdirle karşılanır."
   },
   "EXAMPLE_TASKS": {
     "LEARN_KEYBOARD_SHORTCUTS": {
       "TITLE": "Klavye kısayollarını öğrenin",
-      "NOTES": "Super Productivity klavye ile kullanılmak üzere tasarlanmıştır. Daha hızlı çalışmak için kısayolları öğrenin.\n\n**Nasıl başlanır:**\n1. **Kenar çubuğu menüsünü** açın\n2. **Yardım** bölümüne gidin\n3. **Klavye Gezinti Turu**'na tıklayın"
+      "NOTES": "KaironTask klavye ile kullanılmak üzere tasarlanmıştır. Daha hızlı çalışmak için kısayolları öğrenin.\n\n**Nasıl başlanır:**\n1. **Kenar çubuğu menüsünü** açın\n2. **Yardım** bölümüne gidin\n3. **Klavye Gezinti Turu**'na tıklayın"
     },
     "CREATE_PROJECT": {
       "TITLE": "İlk projenizi oluşturun",
@@ -132,7 +132,7 @@
         "TWO_WAY_SYNC_TITLE": "Başlık senkronizasyon yönü"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Burada, SuperProductivity'yi günlük planlama görünümündeki görev oluşturma panelinde belirli bir proje için tamamlanmamış CalDav yapılacak işleri listeleyecek şekilde yapılandırabilirsiniz. Öneriler olarak listelenecekler ve yapılacaklar için bir bağlantı ve bununla ilgili daha fazla bilgi sağlayacaklar.</p> <p>Ek olarak, tamamlanmamış tüm görevleri görev biriktirme listesine otomatik olarak ekleyebilir ve senkronize edebilirsiniz.</p>"
+        "HELP": "<p>Burada, KaironTask'yi günlük planlama görünümündeki görev oluşturma panelinde belirli bir proje için tamamlanmamış CalDav yapılacak işleri listeleyecek şekilde yapılandırabilirsiniz. Öneriler olarak listelenecekler ve yapılacaklar için bir bağlantı ve bununla ilgili daha fazla bilgi sağlayacaklar.</p> <p>Ek olarak, tamamlanmamış tüm görevleri görev biriktirme listesine otomatik olarak ekleyebilir ve senkronize edebilirsiniz.</p>"
       },
       "ISSUE_CONTENT": {
         "DESCRIPTION": "Açıklama",
@@ -278,7 +278,7 @@
         "TOKEN": "Erişim Jetonu"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Burada SuperProductivity'yi, günlük planlama görünümündeki görev oluşturma panelinde belirli bir depo için açık Gitea sorunlarını listeleyecek şekilde yapılandırabilirsiniz. Öneriler olarak listelenecekler ve konuyla ilgili bir bağlantının yanı sıra konuyla ilgili daha fazla bilgi sağlayacaklar.</p> <p>Ek olarak, tüm açık sorunları otomatik olarak görev biriktirme listenize ekleyebilir ve senkronize edebilirsiniz.</p><p>Kullanım sınırlarını aşmak ve erişim sağlamak için bir erişim jetonu sağlayabilirsiniz."
+        "HELP": "<p>Burada KaironTask'yi, günlük planlama görünümündeki görev oluşturma panelinde belirli bir depo için açık Gitea sorunlarını listeleyecek şekilde yapılandırabilirsiniz. Öneriler olarak listelenecekler ve konuyla ilgili bir bağlantının yanı sıra konuyla ilgili daha fazla bilgi sağlayacaklar.</p> <p>Ek olarak, tüm açık sorunları otomatik olarak görev biriktirme listenize ekleyebilir ve senkronize edebilirsiniz.</p><p>Kullanım sınırlarını aşmak ve erişim sağlamak için bir erişim jetonu sağlayabilirsiniz."
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "Atanan",
@@ -320,7 +320,7 @@
         "TOKEN": "Erişim Jetonu"
       },
       "FORM_SECTION": {
-        "HELP": "<p> Burada SuperProductivity'yi günlük planlama görünümünde görev oluşturma panelinde belirli bir proje için açık GitLab (çevrimiçi sürümü veya kendi kendine barındırılan bir örnek) sorunlarını listeleyecek şekilde yapılandırabilirsiniz. Bunlar öneri olarak listelenecek ve sorunla ilgili bir bağlantı ve bununla ilgili daha fazla bilgi sağlayacaktır. </p> <p> Buna ek olarak, tüm açık sorunları otomatik olarak görev biriktirme listesine ekleyebilir ve senkronize edebilirsiniz. </p>"
+        "HELP": "<p> Burada KaironTask'yi günlük planlama görünümünde görev oluşturma panelinde belirli bir proje için açık GitLab (çevrimiçi sürümü veya kendi kendine barındırılan bir örnek) sorunlarını listeleyecek şekilde yapılandırabilirsiniz. Bunlar öneri olarak listelenecek ve sorunla ilgili bir bağlantı ve bununla ilgili daha fazla bilgi sağlayacaktır. </p> <p> Buna ek olarak, tüm açık sorunları otomatik olarak görev biriktirme listesine ekleyebilir ve senkronize edebilirsiniz. </p>"
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "Atanan",
@@ -338,13 +338,13 @@
       }
     },
     "ISSUE": {
-      "CROSS_ORIGIN_BROWSER_WARNING": "Bu entegrasyon muhtemelen tarayıcınızda çalışmayacaktır. Lütfen Super Productivity'nin Masaüstü veya Android sürümünü indirin!",
+      "CROSS_ORIGIN_BROWSER_WARNING": "Bu entegrasyon muhtemelen tarayıcınızda çalışmayacaktır. Lütfen KaironTask'nin Masaüstü veya Android sürümünü indirin!",
       "DEFAULT": {
         "ISSUES_STR": "Sorunlar",
         "ISSUE_STR": "Sorun"
       },
       "DEFAULT_PROJECT_DESCRIPTION": "Sorunlardan oluşturulan görevlere atanan proje.",
-      "DEFAULT_PROJECT_LABEL": "Varsayılan Super Productivity Projesi",
+      "DEFAULT_PROJECT_LABEL": "Varsayılan KaironTask Projesi",
       "HOW_TO_GET_A_TOKEN": "Bir token nasıl alınır?",
       "ISSUE_CONTENT": {
         "ASSIGNEE": "Atanan",
@@ -413,7 +413,7 @@
     },
     "JIRA": {
       "BANNER": {
-        "BLOCK_ACCESS_MSG": "Jira: Api'nin kapatılmasını önlemek için erişim Super Productivity tarafından engellendi. Muhtemelen jira ayarlarınızı kontrol etmelisiniz!",
+        "BLOCK_ACCESS_MSG": "Jira: Api'nin kapatılmasını önlemek için erişim KaironTask tarafından engellendi. Muhtemelen jira ayarlarınızı kontrol etmelisiniz!",
         "BLOCK_ACCESS_UNBLOCK": "Engeli kaldır"
       },
       "CFG_CMP": {
@@ -709,7 +709,7 @@
         "TOKEN": "Erişim Jetonu"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Burada SuperProductivity'yi açık OpenProject iş paketlerini listeleyecek şekilde yapılandırabilirsiniz. Lütfen bunun tarayıcıda çalışması için, app.super-productivity.com adresinden erişime izin vermek üzere OpenProject sunucunuz için CORS'u yapılandırmanız gerektiğini unutmayın</p>"
+        "HELP": "<p>Burada KaironTask'yi açık OpenProject iş paketlerini listeleyecek şekilde yapılandırabilirsiniz. Lütfen bunun tarayıcıda çalışması için, app.kairontask.app adresinden erişime izin vermek üzere OpenProject sunucunuz için CORS'u yapılandırmanız gerektiğini unutmayın</p>"
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "Atanan",
@@ -839,7 +839,7 @@
         "IS_SHOW_TIME_TRACKING_DIALOG_FOR_EACH_SUB_TASK": "Alt görevler tamamlandığında süre takibi diyaloğunu göster"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Burada, günlük planlama görünümündeki görev oluşturma panelinde belirli bir proje için açık Redmine (çevrimiçi sürümü veya şirket içinde barındırılan bir örnek) sorunlarını listelemek için SuperProductivity'yi yapılandırabilirsiniz. Öneriler olarak listelenecekler ve konuyla ilgili bir bağlantının yanı sıra konuyla ilgili daha fazla bilgi sağlayacaklar.</p><p>Ek olarak, tüm açık sorunları otomatik olarak görev biriktirme listenize ekleyebilir ve senkronize edebilirsiniz.</p>",
+        "HELP": "<p>Burada, günlük planlama görünümündeki görev oluşturma panelinde belirli bir proje için açık Redmine (çevrimiçi sürümü veya şirket içinde barındırılan bir örnek) sorunlarını listelemek için KaironTask'yi yapılandırabilirsiniz. Öneriler olarak listelenecekler ve konuyla ilgili bir bağlantının yanı sıra konuyla ilgili daha fazla bilgi sağlayacaklar.</p><p>Ek olarak, tüm açık sorunları otomatik olarak görev biriktirme listenize ekleyebilir ve senkronize edebilirsiniz.</p>",
         "TITLE": "Redmine"
       },
       "ISSUE_CONTENT": {
@@ -1175,7 +1175,7 @@
         "L_SYNC_PROVIDER": "Senkronizasyon Sağlayıcı",
         "TITLE": "Senkronize et",
         "WEB_DAV": {
-          "CORS_INFO": "<strong>Tarayıcıda çalışmasını sağlamak:</strong> Bunun tarayıcıda çalışmasını sağlamak için Nextcloud örneğiniz için CORS isteklerine yönelik Süper Üretkenliği beyaz listeye almanız gerekir. Bunun olumsuz güvenlik etkileri olabilir! Lütfen <a href='https://github.com/nextcloud/server/issues/3131'>daha fazla bilgi için bu konuya bakın</a>. Bunun mobil cihazlarda çalışmasını sağlamanın bir yolu, nextcloud uygulaması <a href='https://apps.nextcloud.com/apps/webapppassword'>webapppassword aracılığıyla \"https://app.super-productivity.com\" adresini beyaz listeye eklemektir. <a>. Kullanım riski size aittir!</p>",
+          "CORS_INFO": "<strong>Tarayıcıda çalışmasını sağlamak:</strong> Bunun tarayıcıda çalışmasını sağlamak için Nextcloud örneğiniz için CORS isteklerine yönelik Süper Üretkenliği beyaz listeye almanız gerekir. Bunun olumsuz güvenlik etkileri olabilir! Lütfen <a href='https://github.com/nextcloud/server/issues/3131'>daha fazla bilgi için bu konuya bakın</a>. Bunun mobil cihazlarda çalışmasını sağlamanın bir yolu, nextcloud uygulaması <a href='https://apps.nextcloud.com/apps/webapppassword'>webapppassword aracılığıyla \"https://app.kairontask.app\" adresini beyaz listeye eklemektir. <a>. Kullanım riski size aittir!</p>",
           "D_SYNC_FOLDER_PATH": "Senkronizasyon dosyalarının depolanacağı WebDAV sunucu köküne göreli yol (örneğin '/super-productivity' veya '/'). Bu, sunucunuzun dahili dizin yolu DEĞİLDİR.",
           "INFO": "WebDAV uygulamaları ne yazık ki çılgınca farklılık gösteriyor. Süper Verimliliğin Nextcloud ile iyi çalıştığı biliniyor, <strong> ancak sağlayıcınızla çalışmayabilir</strong>.",
           "L_BASE_URL": "Temel URL",
@@ -1187,7 +1187,7 @@
           "S_TEST_FAIL": "Bağlantı testi başarısız: {{error}} - Hedef URL: {{url}}",
           "S_TEST_SUCCESS": "Bağlantı testi başarılı! Hedef URL: {{url}}",
           "CONDITIONAL_HEADER_WARNING_TITLE": "Azaltılmış Senkronizasyon Güvenliği",
-          "CONDITIONAL_HEADER_WARNING_MSG": "WebDAV sunucunuz koşullu başlıkları desteklemiyor (If-Unmodified-Since). Bu, Super Productivity'nin yükleme sırasında diğer cihazlardan eşzamanlı değişiklikleri algılayamayacağı anlamına gelir.<br><br>Senkronizasyon yine de çalışacak, ancak birden fazla cihazda aynı anda değişiklik yaparsanız küçük bir veri çakışma riski vardır."
+          "CONDITIONAL_HEADER_WARNING_MSG": "WebDAV sunucunuz koşullu başlıkları desteklemiyor (If-Unmodified-Since). Bu, KaironTask'nin yükleme sırasında diğer cihazlardan eşzamanlı değişiklikleri algılayamayacağı anlamına gelir.<br><br>Senkronizasyon yine de çalışacak, ancak birden fazla cihazda aynı anda değişiklik yaparsanız küçük bir veri çakışma riski vardır."
         },
         "BTN_CHANGE_PASSWORD": "Şifreyi Değiştir",
         "BTN_DISABLE_ENCRYPTION": "Şifrelemeyi Devre Dışı Bırak",
@@ -1875,10 +1875,10 @@
     "EXPORT_DATA": "Verileri Dışa Aktar",
     "IMPORT_FROM_FILE": "Dosyadan içe aktar",
     "IMPORT_FROM_URL": "URL'den İçe Aktar",
-    "IMPORT_FROM_URL_DIALOG_DESCRIPTION": "Lütfen içe aktarmak istediğiniz Super Productivity yedek JSON dosyasının tam URL'sini girin.",
+    "IMPORT_FROM_URL_DIALOG_DESCRIPTION": "Lütfen içe aktarmak istediğiniz KaironTask yedek JSON dosyasının tam URL'sini girin.",
     "IMPORT_FROM_URL_DIALOG_TITLE": "URL'den İçe Aktar",
     "OPEN_IMPORT_FROM_URL_DIALOG": "URL'den İçe Aktar",
-    "PRIVACY_EXPORT": "Anonimleştirilmiş verileri dışa aktarın (hata ayıklama için contact@super-productivity.com adresine göndermek üzere)",
+    "PRIVACY_EXPORT": "Anonimleştirilmiş verileri dışa aktarın (hata ayıklama için support@kairontask.app adresine göndermek üzere)",
     "S_BACKUP_DOWNLOADED": "Android belgeler klasörüne indirilen yedekleme",
     "S_ERR_IMPORT_FAILED": "Verileri içeri aktarma başarısız oldu",
     "S_ERR_INVALID_DATA": "İçe aktarma başarısız oldu: Geçersiz JSON",
@@ -1973,10 +1973,10 @@
       "TITLE": "Otomatik Yedeklemeler"
     },
     "CALENDARS": {
-      "BROWSER_WARNING": "Çapraz kaynak kısıtlamaları nedeniyle <b>bu muhtemelen Super Productivity'nin Tarayıcı sürümüyle ÇALIŞMAYACAKTIR.<br /> Bu özelliği kullanmak için lütfen <a href=\"https://super-productivity.com/download/\">masaüstü sürümünü indirin</a>!</b>",
+      "BROWSER_WARNING": "Çapraz kaynak kısıtlamaları nedeniyle <b>bu muhtemelen KaironTask'nin Tarayıcı sürümüyle ÇALIŞMAYACAKTIR.<br /> Bu özelliği kullanmak için lütfen <a href=\"https://kairontask.app/download/\">masaüstü sürümünü indirin</a>!</b>",
       "CAL_PATH": "iCal kaynağının URL'si",
       "CHECK_UPDATES": "Her X'te bir uzaktan güncellemeleri kontrol edin",
-      "HELP": "Hatırlatılacak takvimleri entegre edebilir ve bunları Super Productivity içinde görev olarak ekleyebilirsiniz. Entegrasyon iCal biçimini kullanarak çalışır. Bunun çalışması için takvimlerinizin internet üzerinden veya dosya sistemi aracılığıyla erişilebilir olması gerekir.",
+      "HELP": "Hatırlatılacak takvimleri entegre edebilir ve bunları KaironTask içinde görev olarak ekleyebilirsiniz. Entegrasyon iCal biçimini kullanarak çalışır. Bunun çalışması için takvimlerinizin internet üzerinden veya dosya sistemi aracılığıyla erişilebilir olması gerekir.",
       "SHOW_BANNER_THRESHOLD": "Etkinlikten önce bir bildirim X göster (devre dışı bırakmak için boş)"
     },
     "EVALUATION": {
@@ -2164,7 +2164,7 @@
       "USE_ALARM_STYLE_REMINDERS": "Alarm tarzı bildirimleri kullan (Android)",
       "USE_ALARM_STYLE_REMINDERS_DESCRIPTION": "Etkinleştirildiğinde, hatırlatıcılar daha yüksek sesli alarm sesleri ve daha müdahaleci bildirimler kullanır. Kritik hatırlatıcılar için önerilir.",
       "DUE_DATE_NOTIFICATION_HOUR": "Son tarih bildirimlerinin gösterileceği saat (0-23)",
-      "HELP": "<p><strong>Önemli:</strong> Hatırlatıcılar push bildirimleri değil, <strong>yerel bildirimler</strong> kullanır. Bu, hatırlatıcıların planlanabilmesi için uygulamanın cihazınızda en az bir kez açılmış olması gerektiği anlamına gelir. Başka bir cihazda ayarlanan hatırlatıcılar, yalnızca uygulama hedef cihazda senkronize olduktan sonra görünecektir.</p><p><strong>iOS</strong>'ta, 'Ayarlar' > 'Bildirimler' altında Super Productivity için bildirimlerin etkinleştirildiğinden emin olun.</p>",
+      "HELP": "<p><strong>Önemli:</strong> Hatırlatıcılar push bildirimleri değil, <strong>yerel bildirimler</strong> kullanır. Bu, hatırlatıcıların planlanabilmesi için uygulamanın cihazınızda en az bir kez açılmış olması gerektiği anlamına gelir. Başka bir cihazda ayarlanan hatırlatıcılar, yalnızca uygulama hedef cihazda senkronize olduktan sonra görünecektir.</p><p><strong>iOS</strong>'ta, 'Ayarlar' > 'Bildirimler' altında KaironTask için bildirimlerin etkinleştirildiğinden emin olun.</p>",
       "NOTIFY_ON_DUE_DATE": "Bugün son tarihi olan görevler için bildirim göster"
     },
     "SCHEDULE": {
@@ -2382,7 +2382,7 @@
     "DIALOG_MESSAGE": "Verilerinizin nasıl depolandığını geliştirilmiş senkronizasyon güvenilirliği için güncelliyoruz.<br><br>Verilerinizin bir yedeği otomatik olarak indirilecek. Gerekirse bu yedeği kullanarak verilerinizi geri yükleyebilirsiniz (Dosya > İçe Aktar)."
   },
   "ONBOARDING": {
-    "TITLE": "Super Productivity'yi nasıl kullanmak istiyorsunuz?",
+    "TITLE": "KaironTask'yi nasıl kullanmak istiyorsunuz?",
     "SUBTITLE": "Çalışma tarzınıza uygun bir kurulum seçin. Bunu daha sonra Ayarlar'dan istediğiniz zaman değiştirebilirsiniz.",
     "PRIVACY_HINT": "Verileriniz cihazınızda güvenle kalır. Sunucuya hiçbir şey gönderilmez.",
     "PRESETS": {

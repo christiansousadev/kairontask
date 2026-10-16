@@ -130,8 +130,8 @@ TODO configure more restrictive Content-Security-Policy
         height: 90px;
       }
 
-      .app-loading .logo path {
-        fill: #fff;
+      .app-loading .logo {
+        filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.45));
       }
 
       @media (prefers-color-scheme: light) {
@@ -139,10 +139,6 @@ TODO configure more restrictive Content-Security-Policy
           background: transparent;
           background-image: none;
           color: #000000;
-        }
-
-        .app-loading .logo path {
-          fill: #000;
         }
       }
 
@@ -223,16 +219,55 @@ TODO configure more restrictive Content-Security-Policy
             class="logo"
             viewBox="0 0 64 64"
           >
+            <defs>
+              <linearGradient
+                id="splashGrad"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop
+                  offset="0%"
+                  stop-color="#38BDF8"
+                />
+                <stop
+                  offset="50%"
+                  stop-color="#6366F1"
+                />
+                <stop
+                  offset="100%"
+                  stop-color="#8B5CF6"
+                />
+              </linearGradient>
+            </defs>
+            <rect
+              x="10"
+              y="8"
+              width="9"
+              height="48"
+              rx="4.5"
+              fill="url(#splashGrad)"
+            />
             <path
-              d="M 12,8 H 52 L 36,28 L 52,56 H 12 L 28,28 Z"
-              id="kaironLogoPath"
-              style="
-                fill-opacity: 1;
-                fill-rule: evenodd;
-                stroke: none;
-                stroke-linecap: round;
-                stroke-linejoin: round;
-              "
+              d="M23 34 L45 10 H54 L32 34 Z"
+              fill="url(#splashGrad)"
+            />
+            <path
+              d="M28 30 L54 54 H45 L21 32 Z"
+              fill="url(#splashGrad)"
+              opacity="0.95"
+            />
+            <polygon
+              points="26,32 32,26 38,32 32,38"
+              fill="#38BDF8"
+            />
+            <circle
+              cx="32"
+              cy="32"
+              r="2"
+              fill="#FFFFFF"
+              opacity="0.9"
             />
           </svg>
         </div>
@@ -291,7 +326,7 @@ TODO configure more restrictive Content-Security-Policy
           'Try and correct, try and correct, try and correct, try and correct, try and correct...',
         ],
         [
-          'Two step super productivity',
+          'Two step KaironTask productivity',
           '1. Physically get in your work position. 2. Do one small thing.',
         ],
         ['Prioritize', 'Do first things first.'],

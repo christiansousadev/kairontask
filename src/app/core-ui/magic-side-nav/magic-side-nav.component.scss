@@ -151,10 +151,21 @@
     scrollbar-width: none;
     scrollbar-gutter: stable both-edges;
 
+    .nav-brand-header {
+      right: 0;
+      justify-content: center;
+      padding: 0;
+      top: 48px;
+    }
+
     .mode-toggle {
       right: auto;
       left: 50%;
       transform: translateX(-50%);
+    }
+
+    .nav-list {
+      --pt: 92px;
     }
   }
 
@@ -193,6 +204,65 @@
   }
 
   // Note: Theme colors are handled by CSS variables above
+}
+
+// Brand Header
+.nav-brand-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 40px;
+  padding: 0 14px;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  transition: opacity 0.2s ease;
+  position: absolute;
+  top: 8px;
+  left: 0;
+  right: 48px;
+  z-index: 10;
+  -webkit-app-region: no-drag;
+
+  :host-context(.isMac.isElectron) & {
+    top: calc(8px + var(--mac-title-bar-padding, 0px));
+  }
+
+  &:hover {
+    opacity: 0.88;
+  }
+
+  .brand-logo-container {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: rgba(99, 102, 241, 0.12);
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.2);
+  }
+
+  .brand-logo-svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .brand-text {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--sidenav-text, #fff);
+    white-space: nowrap;
+
+    .brand-accent {
+      background: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-left: 1px;
+    }
+  }
 }
 
 // Sidebar toggle button (desktop)

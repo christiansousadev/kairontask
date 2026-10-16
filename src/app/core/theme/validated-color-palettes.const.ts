@@ -20,16 +20,16 @@ export interface ValidatedColorPalette {
  */
 export const VALIDATED_COLOR_PALETTES: readonly ValidatedColorPalette[] = [
   {
-    name: 'Purple & Pink (Default)',
-    description: 'The classic Super Productivity theme',
+    name: 'Kairon Indigo (Default)',
+    description: 'The signature KaironTask theme',
     theme: {
       isAutoContrast: true,
       isDisableBackgroundTint: false,
-      primary: '#8b4a9d', // Darker purple for better contrast (was #a05db1)
+      primary: '#6366f1',
       huePrimary: '500',
-      accent: '#d81b60', // Darker pink for better contrast (was #ff4081)
+      accent: '#06b6d4',
       hueAccent: '500',
-      warn: '#c62828', // Darker red for better contrast (was #e11826)
+      warn: '#ef4444',
       hueWarn: '500',
       backgroundImageDark: null,
       backgroundImageLight: null,

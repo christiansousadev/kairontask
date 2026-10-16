@@ -7,7 +7,7 @@
 
 ## 1. Visão Geral da Arquitetura Local-First
 
-O Super Productivity adota o paradigma **Local-First**, onde:
+O KaironTask adota o paradigma **Local-First**, onde:
 
 1. Todos os dados residem primariamente no dispositivo do usuário (IndexedDB).
 2. Cada modificação gera uma operação imutável versionada por **Relógios Vetoriais (Vector Clocks)**.
@@ -104,7 +104,7 @@ interface Operation {
 
 ## 5. Persistência Local com IndexedDB (`src/app/pfapi/`)
 
-O Super Productivity utiliza uma camada de persistência robusta baseada em IndexedDB encapsulada em [`src/app/pfapi/`](file:///c:/Projects/super-productivity/src/app/pfapi/):
+O KaironTask utiliza uma camada de persistência robusta baseada em IndexedDB encapsulada em [`src/app/pfapi/`](file:///c:/Projects/kairontask/src/app/pfapi/):
 
 - **Object Store `op_log`**: Tabela sequencial contendo todas as operações pendentes e aplicadas.
 - **Object Store `app_data`**: Armazena snapshots periódicos compactados do estado do NgRx. Na inicialização do app, o snapshot mais recente é carregado e apenas as operações posteriores a ele são reprocessadas (_Fast Startup_).

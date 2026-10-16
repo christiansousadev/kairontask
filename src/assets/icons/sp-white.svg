@@ -1,9 +1,13 @@
-<svg viewBox="0 0 64 64"
-     xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Kairon Precision Stem (White) -->
+  <rect x="10" y="8" width="9" height="48" rx="4.5" fill="#FFFFFF" />
 
-  <path d="M 12,8 H 52 L 36,28 L 52,56 H 12 L 28,28 Z"
-        id="kaironLogoWhite"
-        style="fill-opacity:1;fill-rule:evenodd;stroke:none;
-        fill: #fff;
-        stroke-linecap:round;stroke-linejoin:round;" />
+  <!-- Upper Dynamic Chevron -->
+  <path d="M23 34 L45 10 H54 L32 34 Z" fill="#FFFFFF" />
+  
+  <!-- Lower Dynamic Chevron -->
+  <path d="M28 30 L54 54 H45 L21 32 Z" fill="#FFFFFF" opacity="0.9" />
+
+  <!-- Central Kairos Temporal Core -->
+  <polygon points="26,32 32,26 38,32 32,38" fill="#FFFFFF" opacity="0.95" />
 </svg>

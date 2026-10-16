@@ -216,12 +216,12 @@ export const DEFAULT_GLOBAL_CONFIG: GlobalConfigState = {
       baseUrl: null,
       userName: null,
       password: null,
-      syncFolderPath: 'super-productivity',
+      syncFolderPath: 'kairontask',
     },
 
     superSync: {
       baseUrl: environment.production
-        ? 'https://sync.super-productivity.com'
+        ? 'https://sync.kairontask.app'
         : 'http://localhost:1901',
       userName: null,
       password: null,
@@ -237,7 +237,7 @@ export const DEFAULT_GLOBAL_CONFIG: GlobalConfigState = {
       serverUrl: null,
       userName: null,
       password: null,
-      syncFolderPath: 'super-productivity',
+      syncFolderPath: 'kairontask',
     },
   },
 } as const;

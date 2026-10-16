@@ -59,9 +59,10 @@ services:
       retries: 3
       start_period: 10s
 
-  # Super Productivity app
+  # KaironTask app
   app:
-    image: johannesjo/super-productivity:latest
+    image: kairontask:latest
+    build: .
     ports:
       - '8080:80'
     environment:

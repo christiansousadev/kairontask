@@ -1,20 +1,19 @@
 # Privacy Policy
 
-**Super Productivity Sync**
-_Version: 08.12.2025_
+**KaironTask Sync**
+_Version: 2026_
 
 _Note: This is a translation for convenience only. In case of discrepancies between the German and the English version, the German version shall prevail._
 
 ## 1. Introduction
 
-With this Privacy Policy, we inform you about the type, scope, and purpose of the processing of personal data ("Data") within the scope of using the service **Super Productivity Sync**. This policy also explains your rights under the General Data Protection Regulation (GDPR).
+With this Privacy Policy, we inform you about the type, scope, and purpose of the processing of personal data ("Data") within the scope of using the service **KaironTask Sync**. This policy also explains your rights under the General Data Protection Regulation (GDPR).
 
 ## 2. Controller
 
-**Johannes Millan**
-Germany
+**Christian Sousa**
 
-Email: contact@super-productivity.com
+Email: support@kairontask.app
 
 _(Further legal information can be found in the Legal Notice / Impressum on the website.)_
 

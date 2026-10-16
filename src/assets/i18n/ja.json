@@ -3,7 +3,7 @@
     "B_INSTALL": {
       "IGNORE": "無視する",
       "INSTALL": "インストール",
-      "MSG": "Super ProductivityをPWAとしてインストールしますか？"
+      "MSG": "KaironTaskをPWAとしてインストールしますか？"
     },
     "B_OFFLINE": "インターネットに接続していません。課題プロバイダーデータの同期と要求は機能しません。",
     "CONTEXT_MENU": {
@@ -39,7 +39,7 @@
   "EXAMPLE_TASKS": {
     "LEARN_KEYBOARD_SHORTCUTS": {
       "TITLE": "キーボードショートカットを覚える",
-      "NOTES": "Super Productivityはキーボードでの操作を前提に設計されています。ショートカットを覚えて、より速く作業しましょう。\n\n**始め方：**\n1. **サイドバーメニュー**を開く\n2. **ヘルプ**に移動する\n3. **キーボードナビゲーションツアー**をクリックする"
+      "NOTES": "KaironTaskはキーボードでの操作を前提に設計されています。ショートカットを覚えて、より速く作業しましょう。\n\n**始め方：**\n1. **サイドバーメニュー**を開く\n2. **ヘルプ**に移動する\n3. **キーボードナビゲーションツアー**をクリックする"
     },
     "CREATE_PROJECT": {
       "TITLE": "最初のプロジェクトを作成する",
@@ -127,7 +127,7 @@
         "TWO_WAY_SYNC_TITLE": "タイトルの同期方向"
       },
       "FORM_SECTION": {
-        "HELP": "<p>ここでは、SuperProductivityを構成して、特定のプロジェクトの未完了のCalDavタスクを日次計画ビューのタスク作成パネルに一覧表示できます。それらは提案としてリストされ、todoへのリンクとそれに関する詳細情報を提供します。</p> <p>さらに、未完了のすべてのToDoをタスクバックログに自動的に追加して同期することができます。</p>"
+        "HELP": "<p>ここでは、KaironTaskを構成して、特定のプロジェクトの未完了のCalDavタスクを日次計画ビューのタスク作成パネルに一覧表示できます。それらは提案としてリストされ、todoへのリンクとそれに関する詳細情報を提供します。</p> <p>さらに、未完了のすべてのToDoをタスクバックログに自動的に追加して同期することができます。</p>"
       },
       "S": {
         "CALENDAR_NOT_FOUND": "CalDav：カレンダー \"{{calendarName}}\"が見つかりません",
@@ -262,7 +262,7 @@
         "TOKEN": "アクセストークン"
       },
       "FORM_SECTION": {
-        "HELP": "<p>ここで SuperProductivity を設定し、日次計画ビューのタスク作成パネルで特定のリポジトリに対して未解決の Gitea 課題を一覧表示させることができます。それらは提案としてリストされ、課題へのリンクとそれに関する詳細情報が提供されます。</p> <p>さらに、すべてのオープン課題を自動的に追加してインポートすることもできます。</p><p>利用制限を通過してアクセスするには、アクセストークンを提供することができます。"
+        "HELP": "<p>ここで KaironTask を設定し、日次計画ビューのタスク作成パネルで特定のリポジトリに対して未解決の Gitea 課題を一覧表示させることができます。それらは提案としてリストされ、課題へのリンクとそれに関する詳細情報が提供されます。</p> <p>さらに、すべてのオープン課題を自動的に追加してインポートすることもできます。</p><p>利用制限を通過してアクセスするには、アクセストークンを提供することができます。"
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "譲受人",
@@ -304,7 +304,7 @@
         "TOKEN": "アクセストークン"
       },
       "FORM_SECTION": {
-        "HELP": "<p>ここでは、SuperProductivityを構成して、特定のプロジェクトの開いているGitLab（オンラインバージョンまたはセルフホストインスタンス）の課題を日次計画ビューのタスク作成パネルに一覧表示できます。それらは提案としてリストされ、課題へのリンクとそれに関する詳細情報を提供します。</p> <p>さらに、すべての未解決の課題をタスクバックログに自動的に追加して同期できます。</p>"
+        "HELP": "<p>ここでは、KaironTaskを構成して、特定のプロジェクトの開いているGitLab（オンラインバージョンまたはセルフホストインスタンス）の課題を日次計画ビューのタスク作成パネルに一覧表示できます。それらは提案としてリストされ、課題へのリンクとそれに関する詳細情報を提供します。</p> <p>さらに、すべての未解決の課題をタスクバックログに自動的に追加して同期できます。</p>"
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "担当者",
@@ -322,7 +322,7 @@
       }
     },
     "ISSUE": {
-      "CROSS_ORIGIN_BROWSER_WARNING": "この統合は、お使いのブラウザでは動作しない可能性があります。デスクトップ版またはAndroid版のSuper Productivityをダウンロードしてください！",
+      "CROSS_ORIGIN_BROWSER_WARNING": "この統合は、お使いのブラウザでは動作しない可能性があります。デスクトップ版またはAndroid版のKaironTaskをダウンロードしてください！",
       "DEFAULT": {
         "ISSUE_STR": "問題",
         "ISSUES_STR": "課題"
@@ -397,7 +397,7 @@
     },
     "JIRA": {
       "BANNER": {
-        "BLOCK_ACCESS_MSG": "Jira：APIからの締め出しを防ぐために、アクセスはSuper Productivityによってブロックされています。あなたはおそらくあなたのJira設定をチェックするべきです！",
+        "BLOCK_ACCESS_MSG": "Jira：APIからの締め出しを防ぐために、アクセスはKaironTaskによってブロックされています。あなたはおそらくあなたのJira設定をチェックするべきです！",
         "BLOCK_ACCESS_UNBLOCK": "ブロック解除"
       },
       "CFG_CMP": {
@@ -502,7 +502,7 @@
       },
       "S": {
         "ADDED_WORKLOG_FOR": "Jira： {{issueKey}}の作業ログを追加しました",
-        "EXTENSION_NOT_LOADED": "Super Productivity Extensionがロードされていません。ページをリロードすると役に立つかもしれません",
+        "EXTENSION_NOT_LOADED": "KaironTask Extensionがロードされていません。ページをリロードすると役に立つかもしれません",
         "INSUFFICIENT_SETTINGS": "Jiraの設定が不十分",
         "INVALID_RESPONSE": "Jira：応答に無効なデータが含まれていました",
         "NO_AUTO_IMPORT_JQL": "Jira：自動インポート用に定義された検索クエリはありません",
@@ -693,7 +693,7 @@
         "TOKEN": "アクセストークン"
       },
       "FORM_SECTION": {
-        "HELP": "<p>ここでは、開いているOpenProjectワークパッケージを一覧表示するようにSuperProductivityを構成できます。これがブラウザで機能するためには、おそらくOpenProjectサーバーのCORSを構成して、app.super-productivity.comからのアクセスを許可する必要があることに注意してください</p>"
+        "HELP": "<p>ここでは、開いているOpenProjectワークパッケージを一覧表示するようにKaironTaskを構成できます。これがブラウザで機能するためには、おそらくOpenProjectサーバーのCORSを構成して、app.kairontask.appからのアクセスを許可する必要があることに注意してください</p>"
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "譲受人",
@@ -823,7 +823,7 @@
         "IS_SHOW_TIME_TRACKING_DIALOG_FOR_EACH_SUB_TASK": "サブタスク完了時に時間トラッキングダイアログを表示"
       },
       "FORM_SECTION": {
-        "HELP": "<p>ここで SuperProductivity を設定し、日次計画ビューのタスク作成パネルで、特定のプロジェクトの Redmine (オンライン版またはセルフホスト インスタンス) の未解決の課題をリストすることができます。それらは提案としてリストされ、課題へのリンクとそれに関する詳細情報が提供されます。</p><p>さらに、すべての未解決課題を自動的にインポートすることもできます。</p>",
+        "HELP": "<p>ここで KaironTask を設定し、日次計画ビューのタスク作成パネルで、特定のプロジェクトの Redmine (オンライン版またはセルフホスト インスタンス) の未解決の課題をリストすることができます。それらは提案としてリストされ、課題へのリンクとそれに関する詳細情報が提供されます。</p><p>さらに、すべての未解決課題を自動的にインポートすることもできます。</p>",
         "TITLE": "Redmine"
       },
       "ISSUE_CONTENT": {
@@ -1015,7 +1015,7 @@
         "TITLE": "同期",
         "WEB_DAV": {
           "CORS_INFO": "<strong>実験的!!</strong> これを機能させるには、NextcloudインスタンスのCORSを無効にするか制限する必要があります。これは、セキュリティに悪影響を与える可能性があります。詳細については、 <a href='https://github.com/nextcloud/server/issues/3131'>このスレッド</a> を参照してください。自己責任！",
-          "INFO": "残念ながらWebDAVの実装は大きく異なります。Super ProductivityはNextcloudとうまく連携していることで知られていますが、 <strong>あなたのプロバイダー</strong>ではうまくいかないかもしれません。",
+          "INFO": "残念ながらWebDAVの実装は大きく異なります。KaironTaskはNextcloudとうまく連携していることで知られていますが、 <strong>あなたのプロバイダー</strong>ではうまくいかないかもしれません。",
           "L_BASE_URL": "ベースURL",
           "L_PASSWORD": "パスワード",
           "L_SYNC_FOLDER_PATH": "同期フォルダパス",
@@ -1870,10 +1870,10 @@
     "EXPORT_DATA": "データのエクスポート",
     "IMPORT_FROM_FILE": "ファイルからインポート",
     "IMPORT_FROM_URL": "URLからインポート",
-    "IMPORT_FROM_URL_DIALOG_DESCRIPTION": "インポートしたいSuper ProductivityのバックアップJSONファイルの完全なURLを入力してください。",
+    "IMPORT_FROM_URL_DIALOG_DESCRIPTION": "インポートしたいKaironTaskのバックアップJSONファイルの完全なURLを入力してください。",
     "IMPORT_FROM_URL_DIALOG_TITLE": "URLからインポート",
     "OPEN_IMPORT_FROM_URL_DIALOG": "URLからインポート",
-    "PRIVACY_EXPORT": "匿名化されたデータをエクスポートする（デバッグ用に contact@super-productivity.com に送信する）。",
+    "PRIVACY_EXPORT": "匿名化されたデータをエクスポートする（デバッグ用に support@kairontask.app に送信する）。",
     "S_BACKUP_DOWNLOADED": "バックアップをAndroidドキュメントフォルダにダウンロードしました",
     "S_ERR_IMPORT_FAILED": "データのインポートに失敗しました",
     "S_ERR_INVALID_DATA": "インポートに失敗しました：無効なJSON",
@@ -1936,10 +1936,10 @@
       "TITLE": "自動バックアップ"
     },
     "CALENDARS": {
-      "BROWSER_WARNING": "クロスオリジン制限 <b>のため、これは Super Productivity のブラウザ バージョンでは動作しない可能性があります。<br /> この機能を使用するには、 <a href=\"https://super-productivity.com/download/\">デスクトップ バージョン</a> をダウンロードしてください。</b>",
+      "BROWSER_WARNING": "クロスオリジン制限 <b>のため、これは KaironTask のブラウザ バージョンでは動作しない可能性があります。<br /> この機能を使用するには、 <a href=\"https://kairontask.app/download/\">デスクトップ バージョン</a> をダウンロードしてください。</b>",
       "CAL_PATH": "ICalソースのURL",
       "CHECK_UPDATES": "リモートのアップデートを毎X回チェックする",
-      "HELP": "カレンダーを統合してリマインドしたり、Super Productivity内でタスクとして追加することができます。統合はiCal形式を使用して動作します。この機能を使用するには、カレンダーにインターネット経由またはファイルシステム経由でアクセスできる必要があります。",
+      "HELP": "カレンダーを統合してリマインドしたり、KaironTask内でタスクとして追加することができます。統合はiCal形式を使用して動作します。この機能を使用するには、カレンダーにインターネット経由またはファイルシステム経由でアクセスできる必要があります。",
       "SHOW_BANNER_THRESHOLD": "イベント前に通知Xを表示（無効は空白）"
     },
     "EVALUATION": {
@@ -1976,7 +1976,7 @@
       "EXPAND_SUB_TASKS": "サブタスクを展開",
       "GLOBAL_ADD_NOTE": "新しいメモを追加",
       "GLOBAL_ADD_TASK": "新しいタスクを追加する",
-      "GLOBAL_SHOW_HIDE": "Super Productivityの表示/非表示",
+      "GLOBAL_SHOW_HIDE": "KaironTaskの表示/非表示",
       "GLOBAL_TOGGLE_TASK_START": "最後のアクティブタスクのタイムトラッキングを切り替えます",
       "GO_TO_DAILY_AGENDA": "アジェンダに移動",
       "GO_TO_FOCUS_MODE": "フォーカスモードに移動",
@@ -2114,7 +2114,7 @@
       "TITLE": "注意事項",
       "DISABLE_REMINDERS": "すべてのリマインダーを無効にする",
       "DUE_DATE_NOTIFICATION_HOUR": "期日通知を表示する時間 (0-23)",
-      "HELP": "<p><strong>重要:</strong> リマインダーはプッシュ通知ではなく<strong>ローカル通知</strong>を使用します。リマインダーがスケジュールされるためには、デバイスでアプリを少なくとも1回開く必要があります。他のデバイスで設定されたリマインダーは、対象デバイスでアプリが同期された後にのみ表示されます。</p><p><strong>iOS</strong>では、デバイス設定の「設定」>「通知」でSuper Productivityの通知が有効になっていることを確認してください。</p>",
+      "HELP": "<p><strong>重要:</strong> リマインダーはプッシュ通知ではなく<strong>ローカル通知</strong>を使用します。リマインダーがスケジュールされるためには、デバイスでアプリを少なくとも1回開く必要があります。他のデバイスで設定されたリマインダーは、対象デバイスでアプリが同期された後にのみ表示されます。</p><p><strong>iOS</strong>では、デバイス設定の「設定」>「通知」でKaironTaskの通知が有効になっていることを確認してください。</p>",
       "IS_FOCUS_WINDOW": "リマインダー発動時にアプリウィンドウをフォーカス",
       "NOTIFY_ON_DUE_DATE": "今日期限のタスクの通知を表示",
       "USE_ALARM_STYLE_REMINDERS": "アラーム式通知を使用 (Androidのみ)",
@@ -2357,7 +2357,7 @@
     "TOGGLE_SHOW_BOOKMARKS": "ブックマークの表示/非表示"
   },
   "MIGRATE": {
-    "C_DOWNLOAD_BACKUP": "レガシーデータのバックアップをダウンロードしますか(古いバージョンのSuper Productivityで使用できます)?",
+    "C_DOWNLOAD_BACKUP": "レガシーデータのバックアップをダウンロードしますか(古いバージョンのKaironTaskで使用できます)?",
     "DETECTED_LEGACY": "レガシーデータを検出しました。私たちはあなたのためにそれを移行します!",
     "E_MIGRATION_FAILED": "移行に失敗しました。エラーあり:",
     "E_RESTART_FAILED": "自動再起動に失敗しました。アプリを手動で再起動してください。",
@@ -2370,7 +2370,7 @@
     "STATUS_PREPARING": "移行を準備中..."
   },
   "ONBOARDING": {
-    "TITLE": "Super Productivityをどのように使いますか？",
+    "TITLE": "KaironTaskをどのように使いますか？",
     "SUBTITLE": "あなたのワークフローに合ったセットアップを選んでください。後からいつでも設定で変更できます。",
     "PRIVACY_HINT": "データはお使いのデバイスに安全に保存されます。サーバーには何も送信されません。",
     "PRESETS": {
@@ -2615,7 +2615,7 @@
   },
   "DONATE_PAGE": {
     "BUTTON_TEXT": "GitHub Sponsorsで寄付する",
-    "INTRO_1": "Super Productivityはコミュニティによって完全に支えられています。トラッキング、広告、データ収集は一切ありません。タスクはお使いのデバイスに保存されます。",
+    "INTRO_1": "KaironTaskはコミュニティによって完全に支えられています。トラッキング、広告、データ収集は一切ありません。タスクはお使いのデバイスに保存されます。",
     "INTRO_2": "このアプローチに価値を感じ、プロジェクトの健全な発展を支援したい場合、任意の寄付をいただけると大変ありがたいです。"
   },
   "GLOBAL": {

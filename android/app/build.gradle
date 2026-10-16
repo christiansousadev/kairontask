@@ -28,7 +28,7 @@ android {
                 defaultUrl     : "https://app.kairontask.app",
                 launcherName   : "KaironTask",
                 assetStatements: '[{ "relation": ["delegate_permission/common.handle_all_urls"], ' +
-                        '"target": {"namespace": "web", "site": "https://app.super-productivity.com"}}]'
+                        '"target": {"namespace": "web", "site": "https://app.kairontask.app"}}]'
         ]
     }
 

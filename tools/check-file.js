@@ -17,6 +17,7 @@ try {
   execFileSync('npm', ['run', 'prettier:file', '--', absolutePath], {
     stdio: 'pipe',
     encoding: 'utf8',
+    shell: true,
   });
 
   // Run lint based on file type
@@ -27,12 +28,14 @@ try {
     execFileSync('npx', ['stylelint', absolutePath], {
       stdio: 'pipe',
       encoding: 'utf8',
+      shell: true,
     });
   } else {
     // Use ng lint for TypeScript/JavaScript files
     execFileSync('npm', ['run', 'lint:file', '--', absolutePath], {
       stdio: 'pipe',
       encoding: 'utf8',
+      shell: true,
     });
   }
 

@@ -1,5 +1,5 @@
-appId: com.super-productivity.app
-productName: Super Productivity
+appId: com.kairontask.app
+productName: KaironTask
 artifactName: ${name}-${arch}.${ext}
 files:
   - electron/**/*
@@ -22,7 +22,7 @@ mac:
 
 mas:
   type: distribution
-  appId: com.super-productivity.app
+  appId: com.kairontask.app
   category: public.app-category.productivity
   gatekeeperAssess: false
   darkModeSupport: true

@@ -1,19 +1,19 @@
 # General Terms and Conditions (GTC)
 
-**Super Productivity Sync**
-_Last updated: 08.12.2025_
+**KaironTask Sync**
+_Last updated: 2026_
 
 ## 1. Scope and Provider
 
-(1) These General Terms and Conditions ("GTC") govern the use of the service **Super Productivity Sync** ("Service"), operated by **Johannes Millan** ("Provider").
+(1) These General Terms and Conditions ("GTC") govern the use of the service **KaironTask Sync** ("Service"), operated by **Christian Sousa** ("Provider").
 
 (2) By registering for or using the Service, the user ("User") declares their agreement with these GTC.
 
-(3) The contract language is German. Deviating terms and conditions of the User do not apply unless the Provider expressly agrees to their validity in writing.
+(3) Deviating terms and conditions of the User do not apply unless the Provider expressly agrees to their validity in writing.
 
 ## 2. Subject of Service
 
-(1) The Service enables the cloud-based synchronization of data for the application "Super Productivity".
+(1) The Service enables the cloud-based synchronization of data for the application "KaironTask".
 
 (2) The Service is provided in its currently available version ("as available"). The Provider may further develop, modify, restrict, or discontinue the Service at any time. There is no claim to a specific technical or functional configuration.
 

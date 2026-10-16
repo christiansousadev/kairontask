@@ -7,7 +7,7 @@
 
 ## 1. Visão Geral da Arquitetura Mobile
 
-O Super Productivity utiliza o **Capacitor 7** para empacotar o bundle Angular de produção ([`dist/browser/`](file:///c:/Projects/super-productivity/dist/browser)) em aplicações nativas de alta performance para Android e iOS.
+O KaironTask utiliza o **Capacitor 7** para empacotar o bundle Angular de produção ([`dist/browser/`](file:///c:/Projects/kairontask/dist/browser)) em aplicações nativas de alta performance para Android e iOS.
 
 ```
                   ┌────────────────────────────────────────┐
@@ -31,7 +31,7 @@ O Super Productivity utiliza o **Capacitor 7** para empacotar o bundle Angular d
 
 ## 2. Configuração do Capacitor (`capacitor.config.ts`)
 
-O arquivo [`capacitor.config.ts`](file:///c:/Projects/super-productivity/capacitor.config.ts) define o comportamento da ponte nativa:
+O arquivo [`capacitor.config.ts`](file:///c:/Projects/kairontask/capacitor.config.ts) define o comportamento da ponte nativa:
 
 ```typescript
 import { CapacitorConfig } from '@capacitor/cli';
@@ -75,7 +75,7 @@ export default config;
 
 ### 3.1. Sabores de Build (Flavors)
 
-O projeto Android possui dois _product flavors_ configurados no [`android/app/build.gradle`](file:///c:/Projects/super-productivity/android/app/build.gradle):
+O projeto Android possui dois _product flavors_ configurados no [`android/app/build.gradle`](file:///c:/Projects/kairontask/android/app/build.gradle):
 
 1. **`playstore`**: Versão para distribuição no Google Play Store, com suporte a serviços Google Play.
 2. **`fdroid`**: Versão 100% livre e de código aberto (_FOSS_), sem bibliotecas proprietárias da Google, aprovada para os repositórios do F-Droid.

@@ -1,18 +1,17 @@
 # Datenschutzerklärung
 
-**Super Productivity Sync**
-_Stand: 08.12.2025_
+**KaironTask Sync**
+_Stand: 2026_
 
 ## 1. Einleitung
 
-Mit dieser Datenschutzerklärung informieren wir Sie über die Art, den Umfang und den Zweck der Verarbeitung personenbezogener Daten („Daten“) im Rahmen der Nutzung des Dienstes **Super Productivity Sync**. Diese Erklärung erläutert außerdem Ihre Rechte gemäß der Datenschutz-Grundverordnung (DSGVO).
+Mit dieser Datenschutzerklärung informieren wir Sie über die Art, den Umfang und den Zweck der Verarbeitung personenbezogener Daten („Daten“) im Rahmen der Nutzung des Dienstes **KaironTask Sync**. Diese Erklärung erläutert außerdem Ihre Rechte gemäß der Datenschutz-Grundverordnung (DSGVO).
 
 ## 2. Verantwortlicher
 
-**Johannes Millan**
-Deutschland
+**Christian Sousa**
 
-E-Mail: contact@super-productivity.com
+E-Mail: support@kairontask.app
 
 _(Weitere rechtliche Angaben finden Sie im Impressum der Website.)_
 

@@ -1,7 +1,7 @@
 {
   "name": "@super-productivity/super-sync-server",
   "version": "1.0.0",
-  "description": "SuperSync server for Super Productivity",
+  "description": "KaironSync server for KaironTask",
   "main": "dist/src/index.js",
   "scripts": {
     "build": "tsc",

@@ -7,7 +7,7 @@ server {
     listen       ${APP_PORT};
     server_name  localhost;
 
-    # serve super-productivity as static files at the path /
+    # serve kairontask as static files at the path /
     location / {
         root   /usr/share/nginx/html;
         index  index.html index.htm;

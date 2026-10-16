@@ -3,7 +3,7 @@
     "B_INSTALL": {
       "IGNORE": "Negeren",
       "INSTALL": "Installeren",
-      "MSG": "Wilt u Super Productivity als PWA installeren?"
+      "MSG": "Wilt u KaironTask als PWA installeren?"
     },
     "B_OFFLINE": "Je hebt geen verbinding met internet. Het synchroniseren en opvragen van probleemprovidergegevens werkt niet.",
     "CONTEXT_MENU": {
@@ -38,13 +38,13 @@
   },
   "DONATE_PAGE": {
     "BUTTON_TEXT": "Doneer via GitHub Sponsors",
-    "INTRO_1": "Super Productivity wordt volledig gefinancierd door de gemeenschap. Er is geen tracking, geen advertenties en geen gegevensverzameling — je taken blijven op je apparaat.",
+    "INTRO_1": "KaironTask wordt volledig gefinancierd door de gemeenschap. Er is geen tracking, geen advertenties en geen gegevensverzameling — je taken blijven op je apparaat.",
     "INTRO_2": "Als je deze aanpak waardeert en het project gezond en in ontwikkeling wilt houden, wordt een vrijwillige donatie zeer op prijs gesteld."
   },
   "EXAMPLE_TASKS": {
     "LEARN_KEYBOARD_SHORTCUTS": {
       "TITLE": "Leer de sneltoetsen",
-      "NOTES": "Super Productivity is ontworpen om met het toetsenbord te gebruiken. Leer de sneltoetsen om sneller te werken.\n\n**Hoe te beginnen:**\n1. Open het **zijbalkmenu**\n2. Ga naar **Help**\n3. Klik op **Toetsenbordnavigatie-tour**"
+      "NOTES": "KaironTask is ontworpen om met het toetsenbord te gebruiken. Leer de sneltoetsen om sneller te werken.\n\n**Hoe te beginnen:**\n1. Open het **zijbalkmenu**\n2. Ga naar **Help**\n3. Klik op **Toetsenbordnavigatie-tour**"
     },
     "CREATE_PROJECT": {
       "TITLE": "Maak je eerste project aan",
@@ -132,7 +132,7 @@
         "TWO_WAY_SYNC_TITLE": "Titel synchronisatierichting"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Hier kunt u SuperProductivity configureren om niet-voltooide CalDav-taken voor een specifiek project weer te geven in het taakaanmaakpaneel in de dagelijkse planningsweergave. Ze worden vermeld als suggesties en bieden een link naar de taak en meer informatie erover.</p> <p>Bovendien kunt u automatisch alle niet-voltooide taken toevoegen aan en synchroniseren met uw backlog.</p>"
+        "HELP": "<p>Hier kunt u KaironTask configureren om niet-voltooide CalDav-taken voor een specifiek project weer te geven in het taakaanmaakpaneel in de dagelijkse planningsweergave. Ze worden vermeld als suggesties en bieden een link naar de taak en meer informatie erover.</p> <p>Bovendien kunt u automatisch alle niet-voltooide taken toevoegen aan en synchroniseren met uw backlog.</p>"
       },
       "ISSUE_CONTENT": {
         "DESCRIPTION": "Beschrijving",
@@ -267,7 +267,7 @@
         "TOKEN": "Access Token"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Hier kun je SuperProductivity configureren om open Gitea kwesties voor een specifieke repository te tonen in het paneel voor het aanmaken van taken in de dagelijkse planningsweergave. Ze worden weergegeven als suggesties en geven een link naar het issue en meer informatie over het issue.</p> <p>Daarnaast kun je automatisch alle openstaande issues toevoegen en importeren.</p><p>Om de gebruikslimieten te omzeilen en toegang te krijgen kun je een toegangstoken geven."
+        "HELP": "<p>Hier kun je KaironTask configureren om open Gitea kwesties voor een specifieke repository te tonen in het paneel voor het aanmaken van taken in de dagelijkse planningsweergave. Ze worden weergegeven als suggesties en geven een link naar het issue en meer informatie over het issue.</p> <p>Daarnaast kun je automatisch alle openstaande issues toevoegen en importeren.</p><p>Om de gebruikslimieten te omzeilen en toegang te krijgen kun je een toegangstoken geven."
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "Geadresseerde",
@@ -309,7 +309,7 @@
         "TOKEN": "Toegangstoken"
       },
       "FORM_SECTION": {
-        "HELP": "<p> Hier kunt u SuperProductivity configureren om open GitLab (ofwel de online versie of een zelf-gehoste instantie) problemen voor een specifiek project in het taakcreatiepaneel in de dagelijkse planningsweergave op te sommen. Ze worden vermeld als suggesties en bevatten een link naar het probleem en meer informatie erover. </p> <p> Daarnaast kunt u automatisch alle openstaande problemen toevoegen aan en synchroniseren met uw backlog. </p>"
+        "HELP": "<p> Hier kunt u KaironTask configureren om open GitLab (ofwel de online versie of een zelf-gehoste instantie) problemen voor een specifiek project in het taakcreatiepaneel in de dagelijkse planningsweergave op te sommen. Ze worden vermeld als suggesties en bevatten een link naar het probleem en meer informatie erover. </p> <p> Daarnaast kunt u automatisch alle openstaande problemen toevoegen aan en synchroniseren met uw backlog. </p>"
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "Toegewezen aan",
@@ -327,7 +327,7 @@
       }
     },
     "ISSUE": {
-      "CROSS_ORIGIN_BROWSER_WARNING": "Deze integratie werkt waarschijnlijk niet in uw browser. Download de desktop- of Android-versie van Super Productivity!",
+      "CROSS_ORIGIN_BROWSER_WARNING": "Deze integratie werkt waarschijnlijk niet in uw browser. Download de desktop- of Android-versie van KaironTask!",
       "DEFAULT": {
         "ISSUE_STR": "Kwestie",
         "ISSUES_STR": "Problemen"
@@ -402,7 +402,7 @@
     },
     "JIRA": {
       "BANNER": {
-        "BLOCK_ACCESS_MSG": "Jira: Om te voorkomen dat api wordt afgesloten, is de toegang geblokkeerd door Super Productivity. U moet waarschijnlijk uw jira-instellingen controleren!",
+        "BLOCK_ACCESS_MSG": "Jira: Om te voorkomen dat api wordt afgesloten, is de toegang geblokkeerd door KaironTask. U moet waarschijnlijk uw jira-instellingen controleren!",
         "BLOCK_ACCESS_UNBLOCK": "Deblokkeer"
       },
       "CFG_CMP": {
@@ -507,7 +507,7 @@
       },
       "S": {
         "ADDED_WORKLOG_FOR": "Jira: Worklog toegevoegd voor {{issueKey}}",
-        "EXTENSION_NOT_LOADED": "Super Productivity-extensie niet geladen. Het kan helpen om de pagina opnieuw te laden",
+        "EXTENSION_NOT_LOADED": "KaironTask-extensie niet geladen. Het kan helpen om de pagina opnieuw te laden",
         "INSUFFICIENT_SETTINGS": "Er zijn onvoldoende instellingen voor Jira",
         "INVALID_RESPONSE": "Jira: Reactie bevat ongeldige gegevens",
         "NO_AUTO_IMPORT_JQL": "Jira: Geen zoekopdracht gedefinieerd voor automatisch importeren",
@@ -725,7 +725,7 @@
         "TOKEN": "Toegangstoken"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Hier kunt u SuperProductivity configureren om open OpenProject-werkpakketten weer te geven. Houd er rekening mee dat om dit in de browser te laten werken, u waarschijnlijk CORS moet configureren voor uw OpenProject-server, om toegang te verlenen vanaf app.super-productivity.com</p>"
+        "HELP": "<p>Hier kunt u KaironTask configureren om open OpenProject-werkpakketten weer te geven. Houd er rekening mee dat om dit in de browser te laten werken, u waarschijnlijk CORS moet configureren voor uw OpenProject-server, om toegang te verlenen vanaf app.kairontask.app</p>"
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "Cessionaris",
@@ -864,7 +864,7 @@
         "IS_SHOW_TIME_TRACKING_DIALOG_FOR_EACH_SUB_TASK": "Tijdregistratiedialoog tonen wanneer subtaken zijn voltooid"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Hier kunt u SuperProductivity configureren om open Redmine (hetzij de online versie of een zelf gehoste instantie) problemen voor een specifiek project te tonen in het taakcreatiepaneel in de dagelijkse planningsweergave. Ze worden weergegeven als suggesties en geven een link naar het probleem en meer informatie erover.</p><p>Daarnaast kun je automatisch alle openstaande kwesties importeren.</p>",
+        "HELP": "<p>Hier kunt u KaironTask configureren om open Redmine (hetzij de online versie of een zelf gehoste instantie) problemen voor een specifiek project te tonen in het taakcreatiepaneel in de dagelijkse planningsweergave. Ze worden weergegeven als suggesties en geven een link naar het probleem en meer informatie erover.</p><p>Daarnaast kun je automatisch alle openstaande kwesties importeren.</p>",
         "TITLE": "Redmine"
       },
       "ISSUE_CONTENT": {
@@ -1160,7 +1160,7 @@
         "WEB_DAV": {
           "CORS_INFO": "<strong>Experimenteel !!</strong> Om dit te laten werken, moet u CORS uitschakelen of beperken voor uw Nextcloud-instantie, wat negatieve gevolgen voor de veiligheid kan hebben! Raadpleeg <a href='https://github.com/nextcloud/server/issues/3131'>deze thread</a> voor meer informatie. Gebruik op eigen risico!",
           "D_SYNC_FOLDER_PATH": "Pad relatief aan de root van de WebDAV-server waar synchronisatiebestanden worden opgeslagen (bijv. '/super-productivity' of '/'). Dit is NIET het interne directorypad van je server.",
-          "INFO": "WebDAV-implementaties verschillen helaas sterk. Super Productivity werkt goed met Nextcloud, <strong>maar het werkt mogelijk niet met jouw provider</strong>.",
+          "INFO": "WebDAV-implementaties verschillen helaas sterk. KaironTask werkt goed met Nextcloud, <strong>maar het werkt mogelijk niet met jouw provider</strong>.",
           "L_BASE_URL": "Basis-URL",
           "L_PASSWORD": "Wachtwoord",
           "L_SYNC_FOLDER_PATH": "Map pad synchroniseren",
@@ -1169,7 +1169,7 @@
           "S_FILL_ALL_FIELDS": "Vul eerst alle WebDAV-velden in",
           "S_TEST_FAIL": "Verbindingstest mislukt: {{error}} - Doel-URL: {{url}}",
           "S_TEST_SUCCESS": "Verbindingstest geslaagd! Doel-URL: {{url}}",
-          "CONDITIONAL_HEADER_WARNING_MSG": "Je WebDAV-server ondersteunt geen conditionele headers (If-Unmodified-Since). Dit betekent dat Super Productivity geen gelijktijdige wijzigingen van andere apparaten kan detecteren tijdens het uploaden.<br><br>Synchronisatie werkt nog steeds, maar er is een klein risico op gegevensconflicten als je tegelijkertijd wijzigingen aanbrengt op meerdere apparaten.",
+          "CONDITIONAL_HEADER_WARNING_MSG": "Je WebDAV-server ondersteunt geen conditionele headers (If-Unmodified-Since). Dit betekent dat KaironTask geen gelijktijdige wijzigingen van andere apparaten kan detecteren tijdens het uploaden.<br><br>Synchronisatie werkt nog steeds, maar er is een klein risico op gegevensconflicten als je tegelijkertijd wijzigingen aanbrengt op meerdere apparaten.",
           "CONDITIONAL_HEADER_WARNING_TITLE": "Verminderde synchronisatieveiligheid"
         },
         "BTN_DISABLE_ENCRYPTION": "Versleuteling uitschakelen",
@@ -1875,10 +1875,10 @@
     "EXPORT_DATA": "Exportgegevens",
     "IMPORT_FROM_FILE": "Importeren uit bestand",
     "IMPORT_FROM_URL": "Importeren van URL",
-    "IMPORT_FROM_URL_DIALOG_DESCRIPTION": "Voer de volledige URL in van het Super Productivity-back-up JSON-bestand dat je wilt importeren.",
+    "IMPORT_FROM_URL_DIALOG_DESCRIPTION": "Voer de volledige URL in van het KaironTask-back-up JSON-bestand dat je wilt importeren.",
     "IMPORT_FROM_URL_DIALOG_TITLE": "Importeren van URL",
     "OPEN_IMPORT_FROM_URL_DIALOG": "Importeren van URL",
-    "PRIVACY_EXPORT": "Geanonimiseerde gegevens exporteren (om naar contact@super-productivity.com te sturen voor debugging)",
+    "PRIVACY_EXPORT": "Geanonimiseerde gegevens exporteren (om naar support@kairontask.app te sturen voor debugging)",
     "S_BACKUP_DOWNLOADED": "Back-up gedownload naar de map met Android-documenten",
     "S_ERR_IMPORT_FAILED": "Het importeren van gegevens is mislukt",
     "S_ERR_INVALID_DATA": "Importeren mislukt: ongeldige JSON",
@@ -1960,10 +1960,10 @@
       "TITLE": "Automatische back-ups"
     },
     "CALENDARS": {
-      "BROWSER_WARNING": "Vanwege cross origin beperkingen <b>zal dit waarschijnlijk NIET werken met de browserversie van Super Productivity.<br />  <a href=\"https://super-productivity.com/download/\">Download de desktopversie</a> om deze functie te gebruiken!</b>",
+      "BROWSER_WARNING": "Vanwege cross origin beperkingen <b>zal dit waarschijnlijk NIET werken met de browserversie van KaironTask.<br />  <a href=\"https://kairontask.app/download/\">Download de desktopversie</a> om deze functie te gebruiken!</b>",
       "CAL_PATH": "URL van de iCal-bron",
       "CHECK_UPDATES": "Elke X controleren op updates op afstand",
-      "HELP": "Je kunt kalenders integreren om eraan herinnerd te worden en ze toevoegen als taken binnen Super Productivity. De integratie maakt gebruik van de iCal-indeling. Om dit te laten werken moeten uw agenda's toegankelijk zijn via het internet of via het bestandssysteem.",
+      "HELP": "Je kunt kalenders integreren om eraan herinnerd te worden en ze toevoegen als taken binnen KaironTask. De integratie maakt gebruik van de iCal-indeling. Om dit te laten werken moeten uw agenda's toegankelijk zijn via het internet of via het bestandssysteem.",
       "SHOW_BANNER_THRESHOLD": "Toon een melding X voor de gebeurtenis (leeg voor uitgeschakeld)"
     },
     "CLIPBOARD_IMAGES": {
@@ -2168,7 +2168,7 @@
       "IS_COUNTDOWN_BANNER_ENABLED": "Aftelbanner tonen voordat herinneringen klaar zijn",
       "TITLE": "Herinneringen",
       "DUE_DATE_NOTIFICATION_HOUR": "Uur om meldingen voor vervaldata te tonen (0-23)",
-      "HELP": "<p><strong>Belangrijk:</strong> Herinneringen gebruiken <strong>lokale meldingen</strong>, geen push-meldingen. Dit betekent dat de app minstens één keer op je apparaat geopend moet zijn om herinneringen in te plannen. Herinneringen die op een ander apparaat zijn ingesteld, verschijnen pas na synchronisatie op het doelapparaat.</p><p>Op <strong>iOS</strong> zorg je ervoor dat meldingen zijn ingeschakeld voor Super Productivity in je apparaatinstellingen onder 'Instellingen' > 'Meldingen'.</p>",
+      "HELP": "<p><strong>Belangrijk:</strong> Herinneringen gebruiken <strong>lokale meldingen</strong>, geen push-meldingen. Dit betekent dat de app minstens één keer op je apparaat geopend moet zijn om herinneringen in te plannen. Herinneringen die op een ander apparaat zijn ingesteld, verschijnen pas na synchronisatie op het doelapparaat.</p><p>Op <strong>iOS</strong> zorg je ervoor dat meldingen zijn ingeschakeld voor KaironTask in je apparaatinstellingen onder 'Instellingen' > 'Meldingen'.</p>",
       "IS_FOCUS_WINDOW": "App-venster naar voren brengen wanneer herinnering wordt geactiveerd",
       "NOTIFY_ON_DUE_DATE": "Meldingen tonen voor taken die vandaag vervallen",
       "USE_ALARM_STYLE_REMINDERS": "Alarmachtige meldingen gebruiken (alleen Android)",
@@ -2365,7 +2365,7 @@
     "TOGGLE_SHOW_BOOKMARKS": "Bladwijzers tonen/verbergen"
   },
   "MIGRATE": {
-    "C_DOWNLOAD_BACKUP": "Wilt u een back-up downloaden van uw verouderde gegevens (kan worden gebruikt met oudere versies van Super Productivity)?",
+    "C_DOWNLOAD_BACKUP": "Wilt u een back-up downloaden van uw verouderde gegevens (kan worden gebruikt met oudere versies van KaironTask)?",
     "DETECTED_LEGACY": "Verouderde gegevens gedetecteerd. Wij migreren het voor u!",
     "E_MIGRATION_FAILED": "Migratie mislukt! met fout:",
     "E_RESTART_FAILED": "Automatisch opnieuw opstarten is mislukt. Start de app handmatig opnieuw!",
@@ -2378,7 +2378,7 @@
     "STATUS_PREPARING": "Migratie voorbereiden..."
   },
   "ONBOARDING": {
-    "TITLE": "Hoe wil je Super Productivity gebruiken?",
+    "TITLE": "Hoe wil je KaironTask gebruiken?",
     "SUBTITLE": "Kies een instelling die bij je werkwijze past. Je kunt dit later altijd wijzigen in Instellingen.",
     "PRIVACY_HINT": "Je gegevens blijven veilig op je apparaat. Er wordt niets naar een server verzonden.",
     "PRESETS": {

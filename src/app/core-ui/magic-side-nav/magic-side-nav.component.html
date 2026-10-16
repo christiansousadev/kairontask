@@ -45,6 +45,76 @@
     swipeGesture
     [swipeEnabled]="swipeEnabled()"
   >
+    <!-- Brand Header -->
+    <div
+      class="nav-brand-header"
+      routerLink="/active/tasks"
+      title="KaironTask"
+    >
+      <div class="brand-logo-container">
+        <svg
+          class="brand-logo-svg"
+          viewBox="0 0 64 64"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient
+              id="navBrandGrad"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
+              <stop
+                offset="0%"
+                stop-color="#38BDF8"
+              />
+              <stop
+                offset="50%"
+                stop-color="#6366F1"
+              />
+              <stop
+                offset="100%"
+                stop-color="#8B5CF6"
+              />
+            </linearGradient>
+          </defs>
+          <rect
+            x="10"
+            y="8"
+            width="9"
+            height="48"
+            rx="4.5"
+            fill="url(#navBrandGrad)"
+          />
+          <path
+            d="M23 34 L45 10 H54 L32 34 Z"
+            fill="url(#navBrandGrad)"
+          />
+          <path
+            d="M28 30 L54 54 H45 L21 32 Z"
+            fill="url(#navBrandGrad)"
+            opacity="0.95"
+          />
+          <polygon
+            points="26,32 32,26 38,32 32,38"
+            fill="#38BDF8"
+          />
+          <circle
+            cx="32"
+            cy="32"
+            r="2"
+            fill="#FFFFFF"
+            opacity="0.9"
+          />
+        </svg>
+      </div>
+      @if (showText()) {
+        <span class="brand-text">Kairon<span class="brand-accent">Task</span></span>
+      }
+    </div>
+
     <!-- Desktop Toggle Button (inside sidenav) -->
     @if (!isMobile()) {
       <button

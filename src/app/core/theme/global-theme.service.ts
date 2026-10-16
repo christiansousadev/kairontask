@@ -175,6 +175,8 @@ export class GlobalThemeService {
   private _initIcons(): void {
     const icons: [string, string][] = [
       ['sp', 'assets/icons/sp.svg'],
+      ['kairon', 'assets/icons/sp.svg'],
+      ['kairontask', 'assets/icons/sp.svg'],
       ['github', 'assets/icons/github.svg'],
       ['gitlab', 'assets/icons/gitlab.svg'],
       ['jira', 'assets/icons/jira.svg'],

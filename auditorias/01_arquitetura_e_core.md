@@ -7,7 +7,7 @@
 
 ## 1. Visão Geral da Arquitetura do Frontend
 
-O Super Productivity foi desenvolvido como uma Single Page Application (SPA) Angular de alto desempenho, utilizando:
+O KaironTask foi desenvolvido como uma Single Page Application (SPA) Angular de alto desempenho, utilizando:
 
 - **Standalone Components & Directives**: Sem a complexidade de `NgModule` legado para novos componentes.
 - **Signals & Reatividade Fina**: Combina Signals nativos do Angular (`signal`, `computed`, `toSignal`) para renderização otimizada com **RxJS** para pipelines de eventos assíncronos.
@@ -31,7 +31,7 @@ O Super Productivity foi desenvolvido como uma Single Page Application (SPA) Ang
 
 ## 2. Inventário dos 27 Subsistemas do `src/app/core/`
 
-O diretório [`src/app/core/`](file:///c:/Projects/super-productivity/src/app/core) isola serviços de infraestrutura e utilitários globais:
+O diretório [`src/app/core/`](file:///c:/Projects/kairontask/src/app/core) isola serviços de infraestrutura e utilitários globais:
 
 | Subsistema                   | Caminho                                            | Responsabilidade Técnica                                                                                        |
 | :--------------------------- | :------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------- |
@@ -66,11 +66,11 @@ O diretório [`src/app/core/`](file:///c:/Projects/super-productivity/src/app/co
 
 ### 3.1. Arquitetura do Root Store (`src/app/root-store/`)
 
-O estado global do aplicativo é registrado no [`src/app/root-store/root-state.ts`](file:///c:/Projects/super-productivity/src/app/root-store/root-state.ts) e orquestrado pelo [`src/app/root-store/meta/meta-reducer-registry.ts`](file:///c:/Projects/super-productivity/src/app/root-store/meta/meta-reducer-registry.ts).
+O estado global do aplicativo é registrado no [`src/app/root-store/root-state.ts`](file:///c:/Projects/kairontask/src/app/root-store/root-state.ts) e orquestrado pelo [`src/app/root-store/meta/meta-reducer-registry.ts`](file:///c:/Projects/kairontask/src/app/root-store/meta/meta-reducer-registry.ts).
 
 ### 3.2. A Suíte de Meta-Reducers Compartilhados (`task-shared-meta-reducers/`)
 
-Mutações complexas no Super Productivity **nunca são feitas através de múltiplos efeitos assíncronos encadeados**, pois isso geraria operações parciais no log de sincronização e inconsistência de dados. Em vez disso, o projeto utiliza **Meta-Reducers Atômicos**:
+Mutações complexas no KaironTask **nunca são feitas através de múltiplos efeitos assíncronos encadeados**, pois isso geraria operações parciais no log de sincronização e inconsistência de dados. Em vez disso, o projeto utiliza **Meta-Reducers Atômicos**:
 
 ```
                     Ação Despachada (ex: deleteTask)
@@ -133,7 +133,7 @@ Mutações complexas no Super Productivity **nunca são feitas através de múlt
 
 ### 4.2. Efeitos Baseados em Seletores
 
-- Conforme [`CLAUDE.md`](file:///c:/Projects/super-productivity/CLAUDE.md), seletores ignoram a filtragem de ações. Se for estritamente necessário criar um effect que escuta um seletor (`this._store$.select(...)`), ele deve ser protegido com:
+- Conforme [`CLAUDE.md`](file:///c:/Projects/kairontask/CLAUDE.md), seletores ignoram a filtragem de ações. Se for estritamente necessário criar um effect que escuta um seletor (`this._store$.select(...)`), ele deve ser protegido com:
   ```typescript
   if (this._hydrationStateService.isApplyingRemoteOps()) {
     return; // Ignora se for replay de sincronização remota
@@ -152,7 +152,7 @@ Mutações complexas no Super Productivity **nunca são feitas através de múlt
 
 ## 6. Auditoria de Logging e Boas Práticas (`Log.ts`)
 
-O arquivo [`src/app/core/log.ts`](file:///c:/Projects/super-productivity/src/app/core/log.ts) implementa um sistema de log seguro com buffer circular para exportação em diagnósticos técnicos.
+O arquivo [`src/app/core/log.ts`](file:///c:/Projects/kairontask/src/app/core/log.ts) implementa um sistema de log seguro com buffer circular para exportação em diagnósticos técnicos.
 
 ### 6.1. Diretrizes de Sanitização de Logs:
 

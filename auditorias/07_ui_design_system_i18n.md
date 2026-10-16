@@ -7,7 +7,7 @@
 
 ## 1. Visão Geral do Design System
 
-O Super Productivity possui um sistema de design baseado em **CSS Custom Properties (Variáveis CSS)** altamente modularizado e integrado com os componentes do Angular Material.
+O KaironTask possui um sistema de design baseado em **CSS Custom Properties (Variáveis CSS)** altamente modularizado e integrado com os componentes do Angular Material.
 
 ```
                     src/styles/_css-variables.scss
@@ -23,7 +23,7 @@ O Super Productivity possui um sistema de design baseado em **CSS Custom Propert
 
 ## 2. Folha-Mestra de Tokens (`src/styles/_css-variables.scss`)
 
-O arquivo [`src/styles/_css-variables.scss`](file:///c:/Projects/super-productivity/src/styles/_css-variables.scss) é o ponto central para qualquer ajuste de identidade visual, cores e espaçamento.
+O arquivo [`src/styles/_css-variables.scss`](file:///c:/Projects/kairontask/src/styles/_css-variables.scss) é o ponto central para qualquer ajuste de identidade visual, cores e espaçamento.
 
 ### 2.1. Catálogo dos Tokens Principais
 
@@ -39,7 +39,7 @@ O arquivo [`src/styles/_css-variables.scss`](file:///c:/Projects/super-productiv
 
 ### 2.2. Regra Anti-Pattern do Projeto
 
-> **Diretriz Crítica**: Conforme [`CLAUDE.md`](file:///c:/Projects/super-productivity/CLAUDE.md) e [`docs/styling-guide.md`](file:///c:/Projects/super-productivity/docs/styling-guide.md), **nunca redeclare estilos do Material Theme diretamente**. Sempre utilize as variáveis CSS e classes utilitárias já existentes em `_css-variables.scss`.
+> **Diretriz Crítica**: Conforme [`CLAUDE.md`](file:///c:/Projects/kairontask/CLAUDE.md) e [`docs/styling-guide.md`](file:///c:/Projects/kairontask/docs/styling-guide.md), **nunca redeclare estilos do Material Theme diretamente**. Sempre utilize as variáveis CSS e classes utilitárias já existentes em `_css-variables.scss`.
 
 ---
 
@@ -70,7 +70,7 @@ No Desktop Electron, o usuário pode colocar um arquivo `styles.css` diretamente
 - **Fonte Oficial**: `@fontsource/open-sans` embutida no projeto em formato `.woff2` para garantir carregamento instantâneo e funcionamento 100% offline.
 - **Ícones**:
   - Material Symbols através do pacote `@material-symbols/font-400`.
-  - SVGs vetoriais customizados em [`src/assets/icons/`](file:///c:/Projects/super-productivity/src/assets/icons/).
+  - SVGs vetoriais customizados em [`src/assets/icons/`](file:///c:/Projects/kairontask/src/assets/icons/).
 
 ---
 
@@ -78,7 +78,7 @@ No Desktop Electron, o usuário pode colocar um arquivo `styles.css` diretamente
 
 ### 5.1. O Arquivo Canônico `en.json`
 
-- **Arquivo**: [`src/assets/i18n/en.json`](file:///c:/Projects/super-productivity/src/assets/i18n/en.json)
+- **Arquivo**: [`src/assets/i18n/en.json`](file:///c:/Projects/kairontask/src/assets/i18n/en.json)
 - **Regra de Ouro**: **Apenas o arquivo `en.json` deve ser editado manualmente**.
 - Os demais 20+ idiomas (pt, de, es, fr, zh, ru, etc.) são atualizados por ferramentas automatizadas de extração e tradutores comunitários.
 

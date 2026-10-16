@@ -3,7 +3,7 @@
     "B_INSTALL": {
       "IGNORE": "Ignorera",
       "INSTALL": "Installera",
-      "MSG": "Vill du installera Super Productivity som en PWA?"
+      "MSG": "Vill du installera KaironTask som en PWA?"
     },
     "B_OFFLINE": "Du är bortkopplad från internet. Synkronisering och begäran om data från ärendeleverantören fungerar inte.",
     "CONTEXT_MENU": {
@@ -39,7 +39,7 @@
   "EXAMPLE_TASKS": {
     "LEARN_KEYBOARD_SHORTCUTS": {
       "TITLE": "Lär dig tangentbordsgenvägarna",
-      "NOTES": "Super Productivity är utformat för att användas med tangentbordet. Lär dig genvägarna för att arbeta snabbare.\n\n**Så här börjar du:**\n1. Öppna **sidofältsmenyn**\n2. Gå till **Hjälp**\n3. Klicka på **Tangentbordsnavigationstur**"
+      "NOTES": "KaironTask är utformat för att användas med tangentbordet. Lär dig genvägarna för att arbeta snabbare.\n\n**Så här börjar du:**\n1. Öppna **sidofältsmenyn**\n2. Gå till **Hjälp**\n3. Klicka på **Tangentbordsnavigationstur**"
     },
     "CREATE_PROJECT": {
       "TITLE": "Skapa ditt första projekt",
@@ -127,7 +127,7 @@
         "TWO_WAY_SYNC_TITLE": "Synkroniseringsriktning för titel"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Här kan du konfigurera SuperProductivity till att lista icke slutförda CalDav-uppgifter för ett specifikt projekt på panelen för uppgiftsskapande i den dagliga planeringsvyn. De kommer att listas som förslag och kommer att länka till uppgiften samt mer information om den.</p> <p>Dessutom kan du automatiskt lägga till och synkronisera alla icke slutförda uppgifter med din lista med eftersläpande uppgifter.</p><p>För att det ska fungera med Nextcloud i webbappen kan du behöva vitlista \"https://app.super-productivity.com\" via Nextcloud-appen <a href='https://apps.nextcloud.com/apps/webapppassword'>webapppassword<a>.</p>"
+        "HELP": "<p>Här kan du konfigurera KaironTask till att lista icke slutförda CalDav-uppgifter för ett specifikt projekt på panelen för uppgiftsskapande i den dagliga planeringsvyn. De kommer att listas som förslag och kommer att länka till uppgiften samt mer information om den.</p> <p>Dessutom kan du automatiskt lägga till och synkronisera alla icke slutförda uppgifter med din lista med eftersläpande uppgifter.</p><p>För att det ska fungera med Nextcloud i webbappen kan du behöva vitlista \"https://app.kairontask.app\" via Nextcloud-appen <a href='https://apps.nextcloud.com/apps/webapppassword'>webapppassword<a>.</p>"
       },
       "S": {
         "CALENDAR_NOT_FOUND": "CalDav: Kunde inte hitta kalendern \"{{calendarName}}\"",
@@ -278,7 +278,7 @@
         "TOKEN": "Åtkomsttoken"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Här kan du konfigurera SuperProductivity så att öppna Gitea-ärenden för ett specifikt arkiv listas i panelen för uppgiftskapande i den dagliga planeringsvyn. De listas som förslag och innehåller en länk till ärendet samt mer information om det. </p> <p>Dessutom kan du automatiskt lägga till och importera alla öppna ärenden. </p><p>För att komma förbi användningsbegränsningar och få åtkomst kan du ange en åtkomsttoken."
+        "HELP": "<p>Här kan du konfigurera KaironTask så att öppna Gitea-ärenden för ett specifikt arkiv listas i panelen för uppgiftskapande i den dagliga planeringsvyn. De listas som förslag och innehåller en länk till ärendet samt mer information om det. </p> <p>Dessutom kan du automatiskt lägga till och importera alla öppna ärenden. </p><p>För att komma förbi användningsbegränsningar och få åtkomst kan du ange en åtkomsttoken."
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "Mottagare",
@@ -320,7 +320,7 @@
         "TOKEN": "Åtkomsttoken"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Här kan du konfigurera SuperProductivity så att det listar öppna GitLab-ärenden (antingen onlineversionen eller en egenhostad instans) för ett specifikt projekt i panelen för uppgiftskapande i den dagliga planeringsvyn. De listas som förslag och innehåller en länk till ärendet samt mer information om det. </p> <p>Dessutom kan du automatiskt importera alla öppna ärenden. </p>"
+        "HELP": "<p>Här kan du konfigurera KaironTask så att det listar öppna GitLab-ärenden (antingen onlineversionen eller en egenhostad instans) för ett specifikt projekt i panelen för uppgiftskapande i den dagliga planeringsvyn. De listas som förslag och innehåller en länk till ärendet samt mer information om det. </p> <p>Dessutom kan du automatiskt importera alla öppna ärenden. </p>"
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "Mottagare",
@@ -338,13 +338,13 @@
       }
     },
     "ISSUE": {
-      "CROSS_ORIGIN_BROWSER_WARNING": "Denna integration kommer troligen inte att fungera i din webbläsare. Ladda ner Desktop- eller Android-versionen av Super Productivity!",
+      "CROSS_ORIGIN_BROWSER_WARNING": "Denna integration kommer troligen inte att fungera i din webbläsare. Ladda ner Desktop- eller Android-versionen av KaironTask!",
       "DEFAULT": {
         "ISSUE_STR": "ärende",
         "ISSUES_STR": "ärenden"
       },
       "DEFAULT_PROJECT_DESCRIPTION": "Projekt tilldelat uppgifter som skapats från ärenden.",
-      "DEFAULT_PROJECT_LABEL": "Standardprojekt för Super Productivity",
+      "DEFAULT_PROJECT_LABEL": "Standardprojekt för KaironTask",
       "HOW_TO_GET_A_TOKEN": "Hur får man en token?",
       "ISSUE_CONTENT": {
         "ASSIGNEE": "Mottagare",
@@ -408,7 +408,7 @@
     },
     "JIRA": {
       "BANNER": {
-        "BLOCK_ACCESS_MSG": "Jira: För att förhindra utestängning från API har åtkomsten blockerats av Super Productivity. Du bör nog kontrollera dina Jira-inställningar!",
+        "BLOCK_ACCESS_MSG": "Jira: För att förhindra utestängning från API har åtkomsten blockerats av KaironTask. Du bör nog kontrollera dina Jira-inställningar!",
         "BLOCK_ACCESS_UNBLOCK": "Avblockera"
       },
       "CFG_CMP": {
@@ -457,7 +457,7 @@
         "TITLE": "Jira: Skicka in arbetslogg"
       },
       "FORM_ADV": {
-        "AUTO_ADD_BACKLOG_JQL_QUERY": "JQL som används för att automatiskt importera ärenden till Super Productivity",
+        "AUTO_ADD_BACKLOG_JQL_QUERY": "JQL som används för att automatiskt importera ärenden till KaironTask",
         "IS_ADD_WORKLOG_ON_SUB_TASK_DONE": "Öppna dialogrutan för att skicka arbetsloggen till Jira när deluppgiften är klar.",
         "IS_CHECK_TO_RE_ASSIGN_TICKET_ON_TASK_START": "Kontrollera om det aktuella ärendet är tilldelat den aktuella användaren.",
         "IS_WORKLOG_ENABLED": "Öppna dialogrutan för att skicka arbetsloggen till Jira när uppgiften är klar",
@@ -513,7 +513,7 @@
       },
       "S": {
         "ADDED_WORKLOG_FOR": "Jira: Arbetslogg tillagd för {{issueKey}}",
-        "EXTENSION_NOT_LOADED": "Super Productivity Tillägget har inte laddats. Det kan hjälpa att ladda om sidan.",
+        "EXTENSION_NOT_LOADED": "KaironTask Tillägget har inte laddats. Det kan hjälpa att ladda om sidan.",
         "INSUFFICIENT_SETTINGS": "Otillräckliga inställningar för Jira",
         "INVALID_RESPONSE": "Jira: Svaret innehöll ogiltig data",
         "NO_AUTO_IMPORT_JQL": "Jira: Ingen sökfråga definierad för automatisk import",
@@ -704,7 +704,7 @@
         "TOKEN": "Åtkomsttoken"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Här kan du konfigurera SuperProductivity så att öppna OpenProject-arbetspaket listas. Observera att för att detta ska fungera i webbläsaren måste du troligen konfigurera CORS för din OpenProject-server, för att tillåta åtkomst från app.super-productivity.com</p>"
+        "HELP": "<p>Här kan du konfigurera KaironTask så att öppna OpenProject-arbetspaket listas. Observera att för att detta ska fungera i webbläsaren måste du troligen konfigurera CORS för din OpenProject-server, för att tillåta åtkomst från app.kairontask.app</p>"
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "Mottagare",
@@ -852,7 +852,7 @@
         "IS_SHOW_TIME_TRACKING_DIALOG_FOR_EACH_SUB_TASK": "Visa tidsregistreringsdialog när deluppgifter slutförs"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Här kan du konfigurera SuperProductivity så att öppna Redmine-ärenden (antingen onlineversionen eller en egenhostad instans) för ett specifikt projekt listas i panelen för uppgiftskapande i den dagliga planeringsvyn. De listas som förslag och innehåller en länk till ärendet samt mer information om det.</p><p>Dessutom kan du automatiskt importera alla öppna ärenden.</p>",
+        "HELP": "<p>Här kan du konfigurera KaironTask så att öppna Redmine-ärenden (antingen onlineversionen eller en egenhostad instans) för ett specifikt projekt listas i panelen för uppgiftskapande i den dagliga planeringsvyn. De listas som förslag och innehåller en länk till ärendet samt mer information om det.</p><p>Dessutom kan du automatiskt importera alla öppna ärenden.</p>",
         "TITLE": "Redmine"
       },
       "ISSUE_CONTENT": {
@@ -1043,13 +1043,13 @@
         },
         "TITLE": "Synkronisera",
         "WEB_DAV": {
-          "CORS_INFO": "<strong>Få det att fungera i webbläsaren:</strong> För att detta ska fungera i webbläsaren måste du vitlista Super Productivity för CORS-förfrågningar för din webdav-server. Detta kan ha negativa säkerhetskonsekvenser! För nextcloud, <a href=’https://github.com/nextcloud/server/issues/3131’>se denna tråd för mer information</a>. Ett sätt att få detta att fungera på mobilen är att vitlista \"https://app.super-productivity.com\" via Nextcloud-appen <a href='https://apps.nextcloud.com/apps/webapppassword'>webapppassword<a>. Använd på egen risk!</p>",
-          "INFO": "WebDAV-implementeringar skiljer sig tyvärr mycket åt. Super Productivity fungerar bra med Nextcloud, <strong>men kanske inte med din leverantör</strong>.",
+          "CORS_INFO": "<strong>Få det att fungera i webbläsaren:</strong> För att detta ska fungera i webbläsaren måste du vitlista KaironTask för CORS-förfrågningar för din webdav-server. Detta kan ha negativa säkerhetskonsekvenser! För nextcloud, <a href=’https://github.com/nextcloud/server/issues/3131’>se denna tråd för mer information</a>. Ett sätt att få detta att fungera på mobilen är att vitlista \"https://app.kairontask.app\" via Nextcloud-appen <a href='https://apps.nextcloud.com/apps/webapppassword'>webapppassword<a>. Använd på egen risk!</p>",
+          "INFO": "WebDAV-implementeringar skiljer sig tyvärr mycket åt. KaironTask fungerar bra med Nextcloud, <strong>men kanske inte med din leverantör</strong>.",
           "L_BASE_URL": "Bas-URL",
           "L_PASSWORD": "Lösenord",
           "L_SYNC_FOLDER_PATH": "Sökväg till synkroniseringsmapp",
           "L_USER_NAME": "Användarnamn",
-          "CONDITIONAL_HEADER_WARNING_MSG": "Din WebDAV-server stöder inte villkorliga rubriker (If-Unmodified-Since). Detta innebär att Super Productivity inte kan upptäcka samtidiga ändringar från andra enheter vid uppladdning.<br><br>Synkronisering fungerar fortfarande, men det finns en liten risk för datakonflikter om du gör ändringar på flera enheter samtidigt.",
+          "CONDITIONAL_HEADER_WARNING_MSG": "Din WebDAV-server stöder inte villkorliga rubriker (If-Unmodified-Since). Detta innebär att KaironTask inte kan upptäcka samtidiga ändringar från andra enheter vid uppladdning.<br><br>Synkronisering fungerar fortfarande, men det finns en liten risk för datakonflikter om du gör ändringar på flera enheter samtidigt.",
           "CONDITIONAL_HEADER_WARNING_TITLE": "Reducerad synkroniseringssäkerhet",
           "D_SYNC_FOLDER_PATH": "Sökväg relativt till WebDAV-serverns rot där synkfiler lagras (t.ex. '/super-productivity' eller '/'). Detta är INTE din servers interna katalogsökväg.",
           "L_TEST_CONNECTION": "Testa anslutning",
@@ -1870,10 +1870,10 @@
     "EXPORT_DATA": "Export Data",
     "IMPORT_FROM_FILE": "Importera från fil",
     "IMPORT_FROM_URL": "Importera från URL",
-    "IMPORT_FROM_URL_DIALOG_DESCRIPTION": "Ange den fullständiga URL-adressen till den Super Productivity säkerhetskopia JSON-fil som du vill importera.",
+    "IMPORT_FROM_URL_DIALOG_DESCRIPTION": "Ange den fullständiga URL-adressen till den KaironTask säkerhetskopia JSON-fil som du vill importera.",
     "IMPORT_FROM_URL_DIALOG_TITLE": "Importera från URL",
     "OPEN_IMPORT_FROM_URL_DIALOG": "Importera från URL",
-    "PRIVACY_EXPORT": "Exportera anonymiserade data (för att skicka till contact@super-productivity.com för felsökning)",
+    "PRIVACY_EXPORT": "Exportera anonymiserade data (för att skicka till support@kairontask.app för felsökning)",
     "S_BACKUP_DOWNLOADED": "Säkerhetskopia nedladdad till Android-dokumentmappen",
     "S_ERR_IMPORT_FAILED": "Import av data misslyckades",
     "S_ERR_INVALID_DATA": "Import misslyckades: Ogiltig JSON",
@@ -1936,10 +1936,10 @@
       "TITLE": "Automatiska säkerhetskopior"
     },
     "CALENDARS": {
-      "BROWSER_WARNING": "På grund av begränsningar för korsreferenser <b>kommer detta sannolikt INTE att fungera med webbläsarversionen av Super Productivity.<br /> Vänligen <a href=\"https://super-productivity.com/download/\">ladda ner desktopversionen</a> för att kunna använda denna funktion!</b>",
+      "BROWSER_WARNING": "På grund av begränsningar för korsreferenser <b>kommer detta sannolikt INTE att fungera med webbläsarversionen av KaironTask.<br /> Vänligen <a href=\"https://kairontask.app/download/\">ladda ner desktopversionen</a> för att kunna använda denna funktion!</b>",
       "CAL_PATH": "iCal-källans URL",
       "CHECK_UPDATES": "Kontrollera efter fjärruppdateringar var X:e gång",
-      "HELP": "Du kan integrera kalendrar för att få påminnelser och lägga till dem som uppgifter i Super Productivity. Integrationen fungerar med hjälp av iCal-formatet. För att detta ska fungera måste dina kalendrar vara tillgängliga antingen via internet eller via filsystemet.",
+      "HELP": "Du kan integrera kalendrar för att få påminnelser och lägga till dem som uppgifter i KaironTask. Integrationen fungerar med hjälp av iCal-formatet. För att detta ska fungera måste dina kalendrar vara tillgängliga antingen via internet eller via filsystemet.",
       "SHOW_BANNER_THRESHOLD": "Visa en avisering X före händelsen (tomt för inaktiverat)"
     },
     "EVALUATION": {
@@ -1976,7 +1976,7 @@
       "EXPAND_SUB_TASKS": "Expandera deluppgifter",
       "GLOBAL_ADD_NOTE": "Lägg till ny anteckning",
       "GLOBAL_ADD_TASK": "Lägg till ny uppgift",
-      "GLOBAL_SHOW_HIDE": "Visa/dölj Super Productivity",
+      "GLOBAL_SHOW_HIDE": "Visa/dölj KaironTask",
       "GLOBAL_TOGGLE_TASK_START": "Växla tidsspårning för senaste aktiva uppgift",
       "GO_TO_DAILY_AGENDA": "Gå till Agenda",
       "GO_TO_FOCUS_MODE": "Gå till fokusläge",
@@ -2124,7 +2124,7 @@
       "TITLE": "Påminnelser",
       "DISABLE_REMINDERS": "Inaktivera alla påminnelser",
       "DUE_DATE_NOTIFICATION_HOUR": "Timme för visning av förfallodatumsaviseringar (0-23)",
-      "HELP": "<p><strong>Viktigt:</strong> Påminnelser använder <strong>lokala aviseringar</strong>, inte push-aviseringar. Detta innebär att appen måste ha öppnats minst en gång på din enhet för att påminnelser ska schemaläggas. Påminnelser inställda på en annan enhet visas först efter att appen synkroniserar på målenheten.</p><p>På <strong>iOS</strong>, se till att aviseringar är aktiverade för Super Productivity i enhetsinställningarna under «Inställningar» > «Aviseringar».</p>",
+      "HELP": "<p><strong>Viktigt:</strong> Påminnelser använder <strong>lokala aviseringar</strong>, inte push-aviseringar. Detta innebär att appen måste ha öppnats minst en gång på din enhet för att påminnelser ska schemaläggas. Påminnelser inställda på en annan enhet visas först efter att appen synkroniserar på målenheten.</p><p>På <strong>iOS</strong>, se till att aviseringar är aktiverade för KaironTask i enhetsinställningarna under «Inställningar» > «Aviseringar».</p>",
       "IS_FOCUS_WINDOW": "Fokusera appfönstret när påminnelse utlöses",
       "NOTIFY_ON_DUE_DATE": "Visa aviseringar för uppgifter som förfaller idag",
       "USE_ALARM_STYLE_REMINDERS": "Använd larmliknande aviseringar (endast Android)",
@@ -2357,7 +2357,7 @@
     "TOGGLE_SHOW_BOOKMARKS": "Visa/dölj bokmärken"
   },
   "MIGRATE": {
-    "C_DOWNLOAD_BACKUP": "Vill du ladda ner en säkerhetskopia av dina gamla data (kan användas med äldre versioner av Super Productivity)?",
+    "C_DOWNLOAD_BACKUP": "Vill du ladda ner en säkerhetskopia av dina gamla data (kan användas med äldre versioner av KaironTask)?",
     "DETECTED_LEGACY": "Vi har hittat gamla data. Vi flyttar dem åt dig!",
     "E_MIGRATION_FAILED": "Migreringen misslyckades! Fel:",
     "E_RESTART_FAILED": "Automatisk omstart misslyckades. Starta om appen manuellt!",
@@ -2370,7 +2370,7 @@
     "STATUS_PREPARING": "Förbereder migrering..."
   },
   "ONBOARDING": {
-    "TITLE": "Hur vill du använda Super Productivity?",
+    "TITLE": "Hur vill du använda KaironTask?",
     "SUBTITLE": "Välj en inställning som passar ditt arbetsflöde. Du kan alltid ändra detta senare i Inställningar.",
     "PRIVACY_HINT": "Dina data förblir säkert på din enhet. Inget skickas till en server.",
     "PRESETS": {
@@ -2598,7 +2598,7 @@
   },
   "DONATE_PAGE": {
     "BUTTON_TEXT": "Donera via GitHub Sponsors",
-    "INTRO_1": "Super Productivity finansieras helt av gemenskapen. Det finns ingen spårning, inga annonser och ingen datainsamling — dina uppgifter stannar på din enhet.",
+    "INTRO_1": "KaironTask finansieras helt av gemenskapen. Det finns ingen spårning, inga annonser och ingen datainsamling — dina uppgifter stannar på din enhet.",
     "INTRO_2": "Om du värderar detta tillvägagångssätt och vill att projektet ska förbli hälsosamt och utvecklas, uppskattas en frivillig donation mycket."
   },
   "GLOBAL": {

@@ -3,7 +3,7 @@
     "B_INSTALL": {
       "IGNORE": "Ignorar",
       "INSTALL": "Instalar",
-      "MSG": "Você quer instalar o Super Productivity como um PWA?"
+      "MSG": "Você quer instalar o KaironTask como um PWA?"
     },
     "B_OFFLINE": "Você está desconectado da internet. Sincronizar e solicitar dados do provedor de problemas não funcionará.",
     "CONTEXT_MENU": {
@@ -38,13 +38,13 @@
   },
   "DONATE_PAGE": {
     "BUTTON_TEXT": "Doe via GitHub Sponsors",
-    "INTRO_1": "O Super Productivity é financiado inteiramente pela comunidade. Não há rastreamento, anúncios ou coleta de dados — suas tarefas permanecem no seu dispositivo.",
+    "INTRO_1": "O KaironTask é financiado inteiramente pela comunidade. Não há rastreamento, anúncios ou coleta de dados — suas tarefas permanecem no seu dispositivo.",
     "INTRO_2": "Se você valoriza essa abordagem e quer manter o projeto saudável e em evolução, uma doação voluntária é muito apreciada."
   },
   "EXAMPLE_TASKS": {
     "LEARN_KEYBOARD_SHORTCUTS": {
       "TITLE": "Aprenda os atalhos de teclado",
-      "NOTES": "O Super Productivity foi projetado para ser usado com o teclado. Aprenda os atalhos para trabalhar mais rápido.\n\n**Como começar:**\n1. Abra o **menu da barra lateral**\n2. Vá em **Ajuda**\n3. Clique em **Tour de navegação por teclado**"
+      "NOTES": "O KaironTask foi projetado para ser usado com o teclado. Aprenda os atalhos para trabalhar mais rápido.\n\n**Como começar:**\n1. Abra o **menu da barra lateral**\n2. Vá em **Ajuda**\n3. Clique em **Tour de navegação por teclado**"
     },
     "CREATE_PROJECT": {
       "TITLE": "Crie seu primeiro projeto",
@@ -132,7 +132,7 @@
         "TWO_WAY_SYNC_TITLE": "Direção de sincronização do título"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Aqui você pode configurar o SuperProductivity para listar todos os CalDav não concluídos para um projeto específico no painel de criação de tarefas na visualização de planejamento diário. Eles serão listados como sugestões e fornecerão um link para o todo, bem como mais informações sobre ele.</p><p> Além disso, você pode adicionar e sincronizar automaticamente todas as tarefas não concluídas nas suas pendências.</p><p> Para que funcione no nextcloud no webapp, talvez seja necessário colocar \"https://app.super-productivity.com\" na lista de permissões por meio do <a href='https://apps.nextcloud.com/apps/webapppassword'>webapppassword</a> do aplicativo nextcloud <a>.</a>"
+        "HELP": "<p>Aqui você pode configurar o KaironTask para listar todos os CalDav não concluídos para um projeto específico no painel de criação de tarefas na visualização de planejamento diário. Eles serão listados como sugestões e fornecerão um link para o todo, bem como mais informações sobre ele.</p><p> Além disso, você pode adicionar e sincronizar automaticamente todas as tarefas não concluídas nas suas pendências.</p><p> Para que funcione no nextcloud no webapp, talvez seja necessário colocar \"https://app.kairontask.app\" na lista de permissões por meio do <a href='https://apps.nextcloud.com/apps/webapppassword'>webapppassword</a> do aplicativo nextcloud <a>.</a>"
       },
       "S": {
         "CALENDAR_NOT_FOUND": "CalDav: Calendário \" {{calendarName}}\" não encontrado",
@@ -278,7 +278,7 @@
         "TOKEN": "Token de acesso"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Aqui você pode configurar o SuperProductivity para listar problemas abertos do Gitea para um repositório específico no painel de criação de tarefas na visualização de planejamento diário. Eles serão listados como sugestões e fornecerão um link para o problema, bem como mais informações sobre ele.</p><p> Além disso, você pode adicionar e importar automaticamente todos os problemas abertos.</p><p> Para contornar os limites de uso e acessar, você pode fornecer um token de acesso."
+        "HELP": "<p>Aqui você pode configurar o KaironTask para listar problemas abertos do Gitea para um repositório específico no painel de criação de tarefas na visualização de planejamento diário. Eles serão listados como sugestões e fornecerão um link para o problema, bem como mais informações sobre ele.</p><p> Além disso, você pode adicionar e importar automaticamente todos os problemas abertos.</p><p> Para contornar os limites de uso e acessar, você pode fornecer um token de acesso."
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "Responsável",
@@ -320,7 +320,7 @@
         "TOKEN": "Token de acesso"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Aqui você pode configurar o SuperProductivity para listar problemas abertos do GitLab (seja a versão online ou uma instância auto-hospedada) para um projeto específico no painel de criação de tarefas na visualização de planejamento diário. Eles serão listados como sugestões e fornecerão um link para o problema, bem como mais informações sobre ele.</p><p> Além disso, você pode importar automaticamente todos os problemas abertos.</p>"
+        "HELP": "<p>Aqui você pode configurar o KaironTask para listar problemas abertos do GitLab (seja a versão online ou uma instância auto-hospedada) para um projeto específico no painel de criação de tarefas na visualização de planejamento diário. Eles serão listados como sugestões e fornecerão um link para o problema, bem como mais informações sobre ele.</p><p> Além disso, você pode importar automaticamente todos os problemas abertos.</p>"
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "Responsável",
@@ -338,7 +338,7 @@
       }
     },
     "ISSUE": {
-      "CROSS_ORIGIN_BROWSER_WARNING": "Essa integração provavelmente não funcionará no seu navegador. Baixe a versão Desktop ou Android do Super Productivity!",
+      "CROSS_ORIGIN_BROWSER_WARNING": "Essa integração provavelmente não funcionará no seu navegador. Baixe a versão Desktop ou Android do KaironTask!",
       "DEFAULT": {
         "ISSUE_STR": "problema",
         "ISSUES_STR": "problemas"
@@ -413,7 +413,7 @@
     },
     "JIRA": {
       "BANNER": {
-        "BLOCK_ACCESS_MSG": "Jira: Para evitar o desligamento da API, o acesso foi bloqueado pela Super Productivity. Você provavelmente deve verificar suas configurações do Jira!",
+        "BLOCK_ACCESS_MSG": "Jira: Para evitar o desligamento da API, o acesso foi bloqueado pela KaironTask. Você provavelmente deve verificar suas configurações do Jira!",
         "BLOCK_ACCESS_UNBLOCK": "Desbloquear"
       },
       "CFG_CMP": {
@@ -462,7 +462,7 @@
         "TITLE": "Jira: Enviar registro de trabalho"
       },
       "FORM_ADV": {
-        "AUTO_ADD_BACKLOG_JQL_QUERY": "JQL usado para importar problemas para o Super Productivity automaticamente",
+        "AUTO_ADD_BACKLOG_JQL_QUERY": "JQL usado para importar problemas para o KaironTask automaticamente",
         "IS_ADD_WORKLOG_ON_SUB_TASK_DONE": "Abra a caixa de diálogo para enviar o registro de trabalho ao Jira quando a subtarefa for concluída",
         "IS_CHECK_TO_RE_ASSIGN_TICKET_ON_TASK_START": "Verifique se o problema atualmente trabalhado está atribuído ao usuário atual",
         "IS_WORKLOG_ENABLED": "Abra a caixa de diálogo para enviar o registro de trabalho ao Jira quando a tarefa for concluída",
@@ -518,7 +518,7 @@
       },
       "S": {
         "ADDED_WORKLOG_FOR": "Jira: Adicionado registro de trabalho para {{issueKey}}",
-        "EXTENSION_NOT_LOADED": "A extensão Super Productivity não foi carregada. Recarregar a página pode ajudar",
+        "EXTENSION_NOT_LOADED": "A extensão KaironTask não foi carregada. Recarregar a página pode ajudar",
         "INSUFFICIENT_SETTINGS": "Configurações insuficientes fornecidas para o Jira",
         "INVALID_RESPONSE": "Jira: A resposta continha dados inválidos",
         "NO_AUTO_IMPORT_JQL": "Jira: Nenhuma consulta de pesquisa definida para importação automática",
@@ -709,7 +709,7 @@
         "TOKEN": "Token de acesso"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Aqui você pode configurar o SuperProductivity para listar pacotes de trabalho abertos do OpenProject. Observe que para que isso funcione no navegador, você provavelmente precisa configurar o CORS para seu servidor OpenProject, para permitir acesso de app.super-productivity.com</p>"
+        "HELP": "<p>Aqui você pode configurar o KaironTask para listar pacotes de trabalho abertos do OpenProject. Observe que para que isso funcione no navegador, você provavelmente precisa configurar o CORS para seu servidor OpenProject, para permitir acesso de app.kairontask.app</p>"
       },
       "ISSUE_CONTENT": {
         "ASSIGNEE": "Responsável",
@@ -839,7 +839,7 @@
         "IS_SHOW_TIME_TRACKING_DIALOG_FOR_EACH_SUB_TASK": "Mostrar diálogo de rastreamento de tempo ao concluir subtarefas"
       },
       "FORM_SECTION": {
-        "HELP": "<p>Aqui você pode configurar o SuperProductivity para listar problemas abertos do Redmine (seja a versão online ou uma instância auto-hospedada) para um projeto específico no painel de criação de tarefas na visualização de planejamento diário. Eles serão listados como sugestões e fornecerão um link para o problema, bem como mais informações sobre ele.</p><p> Além disso, você pode importar automaticamente todos os problemas abertos.</p>",
+        "HELP": "<p>Aqui você pode configurar o KaironTask para listar problemas abertos do Redmine (seja a versão online ou uma instância auto-hospedada) para um projeto específico no painel de criação de tarefas na visualização de planejamento diário. Eles serão listados como sugestões e fornecerão um link para o problema, bem como mais informações sobre ele.</p><p> Além disso, você pode importar automaticamente todos os problemas abertos.</p>",
         "TITLE": "Redmine"
       },
       "ISSUE_CONTENT": {
@@ -1030,9 +1030,9 @@
         },
         "TITLE": "Sincronizar",
         "WEB_DAV": {
-          "CORS_INFO": "<strong>Fazendo funcionar no navegador:</strong> Para fazer isso funcionar no navegador, você precisa colocar o Super Productivity na lista de permissões para solicitações CORS para sua instância Nextcloud. Isso pode ter implicações negativas de segurança! <a href='https://github.com/nextcloud/server/issues/3131'>Consulte este tópico para obter mais informações</a> . Uma abordagem para fazer isso funcionar no celular é colocar o \"https://app.super-productivity.com\" na lista de permissões por meio do <a href='https://apps.nextcloud.com/apps/webapppassword'>webapppassword</a> do aplicativo nextcloud <a>. Use por sua conta e risco!</a>",
+          "CORS_INFO": "<strong>Fazendo funcionar no navegador:</strong> Para fazer isso funcionar no navegador, você precisa colocar o KaironTask na lista de permissões para solicitações CORS para sua instância Nextcloud. Isso pode ter implicações negativas de segurança! <a href='https://github.com/nextcloud/server/issues/3131'>Consulte este tópico para obter mais informações</a> . Uma abordagem para fazer isso funcionar no celular é colocar o \"https://app.kairontask.app\" na lista de permissões por meio do <a href='https://apps.nextcloud.com/apps/webapppassword'>webapppassword</a> do aplicativo nextcloud <a>. Use por sua conta e risco!</a>",
           "D_SYNC_FOLDER_PATH": "Caminho relativo à raiz do servidor WebDAV onde os arquivos de sincronização serão armazenados (ex.: ' /super-productivity' ou ' /'). Este NÃO é o caminho interno do diretório do seu servidor.",
-          "INFO": "As implementações do WebDAV diferem muito, infelizmente. O Super Productivity é conhecido por funcionar bem com o Nextcloud, <strong>mas pode não funcionar com seu provedor</strong>.",
+          "INFO": "As implementações do WebDAV diferem muito, infelizmente. O KaironTask é conhecido por funcionar bem com o Nextcloud, <strong>mas pode não funcionar com seu provedor</strong>.",
           "L_BASE_URL": "URL base",
           "L_PASSWORD": "Senha",
           "L_SYNC_FOLDER_PATH": "Caminho da pasta de sincronização",
@@ -1041,7 +1041,7 @@
           "S_FILL_ALL_FIELDS": "Por favor, preencha todos os campos do WebDAV primeiro",
           "S_TEST_FAIL": "Falha no teste de conexão: {{error}} - URL de destino: {{url}}",
           "S_TEST_SUCCESS": "Teste de conexão bem-sucedido! URL de destino: {{url}}",
-          "CONDITIONAL_HEADER_WARNING_MSG": "Seu servidor WebDAV não suporta cabeçalhos condicionais (If-Unmodified-Since). Isso significa que o Super Productivity não pode detectar alterações simultâneas de outros dispositivos durante o envio.<br><br>A sincronização ainda funcionará, mas há um pequeno risco de conflitos de dados se você fizer alterações em vários dispositivos simultaneamente.",
+          "CONDITIONAL_HEADER_WARNING_MSG": "Seu servidor WebDAV não suporta cabeçalhos condicionais (If-Unmodified-Since). Isso significa que o KaironTask não pode detectar alterações simultâneas de outros dispositivos durante o envio.<br><br>A sincronização ainda funcionará, mas há um pequeno risco de conflitos de dados se você fizer alterações em vários dispositivos simultaneamente.",
           "CONDITIONAL_HEADER_WARNING_TITLE": "Segurança de sincronização reduzida"
         },
         "BTN_CHANGE_PASSWORD": "Alterar senha",
@@ -1875,10 +1875,10 @@
     "EXPORT_DATA": "Exportar dados",
     "IMPORT_FROM_FILE": "Importar do arquivo",
     "IMPORT_FROM_URL": "Importar do URL",
-    "IMPORT_FROM_URL_DIALOG_DESCRIPTION": "Por favor, insira o URL completo do arquivo de backup JSON do Super Productivity que deseja importar.",
+    "IMPORT_FROM_URL_DIALOG_DESCRIPTION": "Por favor, insira o URL completo do arquivo de backup JSON do KaironTask que deseja importar.",
     "IMPORT_FROM_URL_DIALOG_TITLE": "Importar do URL",
     "OPEN_IMPORT_FROM_URL_DIALOG": "Importar do URL",
-    "PRIVACY_EXPORT": "Exportar dados anonimizados (para enviar para contact@super-productivity.com para depuração)",
+    "PRIVACY_EXPORT": "Exportar dados anonimizados (para enviar para support@kairontask.app para depuração)",
     "S_BACKUP_DOWNLOADED": "Backup baixado para a pasta de documentos do android",
     "S_ERR_IMPORT_FAILED": "Falha ao importar dados",
     "S_ERR_INVALID_DATA": "Falha na importação: JSON inválido",
@@ -1960,10 +1960,10 @@
       "TITLE": "Backups automáticos"
     },
     "CALENDARS": {
-      "BROWSER_WARNING": "Devido a restrições de origem cruzada <b>, isso provavelmente NÃO funcionará com a versão do Super Productivity para navegador.<br /> <a href=\"https://super-productivity.com/download/\">Baixe a versão para desktop</a> para usar este recurso!</b>",
+      "BROWSER_WARNING": "Devido a restrições de origem cruzada <b>, isso provavelmente NÃO funcionará com a versão do KaironTask para navegador.<br /> <a href=\"https://kairontask.app/download/\">Baixe a versão para desktop</a> para usar este recurso!</b>",
       "CAL_PATH": "URL da fonte iCal",
       "CHECK_UPDATES": "Verifique se há atualizações remotas a cada X",
-      "HELP": "Você pode integrar calendários para ser lembrado e adicioná-los como tarefas dentro do Super Productivity. A integração funciona usando o formato iCal. Para que isso funcione, seus calendários precisam estar acessíveis pela internet ou pelo sistema de arquivos.",
+      "HELP": "Você pode integrar calendários para ser lembrado e adicioná-los como tarefas dentro do KaironTask. A integração funciona usando o formato iCal. Para que isso funcione, seus calendários precisam estar acessíveis pela internet ou pelo sistema de arquivos.",
       "SHOW_BANNER_THRESHOLD": "Mostrar uma notificação X antes do evento (em branco para desabilitado)"
     },
     "EVALUATION": {
@@ -2148,7 +2148,7 @@
       "IS_COUNTDOWN_BANNER_ENABLED": "Mostrar banner de contagem regressiva antes do vencimento dos lembretes",
       "TITLE": "Lembretes",
       "DUE_DATE_NOTIFICATION_HOUR": "Hora para mostrar notificações de prazo (0-23)",
-      "HELP": "<p><strong>Importante:</strong> Os lembretes usam <strong>notificações locais</strong>, não notificações push. Isso significa que o aplicativo precisa ter sido aberto pelo menos uma vez no seu dispositivo para que os lembretes sejam agendados. Lembretes definidos em outro dispositivo só aparecerão após o aplicativo sincronizar no dispositivo alvo.</p><p>No <strong>iOS</strong>, certifique-se de que as notificações estão ativadas para o Super Productivity nas configurações do dispositivo em 'Ajustes' > 'Notificações'.</p>",
+      "HELP": "<p><strong>Importante:</strong> Os lembretes usam <strong>notificações locais</strong>, não notificações push. Isso significa que o aplicativo precisa ter sido aberto pelo menos uma vez no seu dispositivo para que os lembretes sejam agendados. Lembretes definidos em outro dispositivo só aparecerão após o aplicativo sincronizar no dispositivo alvo.</p><p>No <strong>iOS</strong>, certifique-se de que as notificações estão ativadas para o KaironTask nas configurações do dispositivo em 'Ajustes' > 'Notificações'.</p>",
       "IS_FOCUS_WINDOW": "Focar janela do aplicativo quando o lembrete for acionado",
       "NOTIFY_ON_DUE_DATE": "Mostrar notificações para tarefas com prazo hoje",
       "USE_ALARM_STYLE_REMINDERS": "Usar notificações estilo alarme (somente Android)",
@@ -2365,7 +2365,7 @@
     "TOGGLE_SHOW_BOOKMARKS": "Mostrar/ocultar favoritos"
   },
   "MIGRATE": {
-    "C_DOWNLOAD_BACKUP": "Você deseja baixar um backup dos seus dados legados (pode ser usado com versões antigas do Super Productivity)?",
+    "C_DOWNLOAD_BACKUP": "Você deseja baixar um backup dos seus dados legados (pode ser usado com versões antigas do KaironTask)?",
     "DETECTED_LEGACY": "Dados legados detectados. Vamos migrá-los para você!",
     "E_MIGRATION_FAILED": "Falha na migração! com erro:",
     "E_RESTART_FAILED": "Falha na reinicialização automática. Por favor, reinicie o aplicativo manualmente!",
@@ -2378,7 +2378,7 @@
     "STATUS_PREPARING": "Preparando migração..."
   },
   "ONBOARDING": {
-    "TITLE": "Como você quer usar o Super Productivity?",
+    "TITLE": "Como você quer usar o KaironTask?",
     "SUBTITLE": "Escolha uma configuração que combine com seu fluxo de trabalho. Você pode mudar isso depois nas Configurações.",
     "PRIVACY_HINT": "Seus dados ficam seguros no seu dispositivo. Nada é enviado para um servidor.",
     "PRESETS": {

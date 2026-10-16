@@ -1,7 +1,7 @@
 {
   "name": "@super-productivity/plugin-api",
   "version": "1.0.1",
-  "description": "TypeScript definitions for Super Productivity plugin development",
+  "description": "TypeScript definitions for KaironTask plugin development",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -13,24 +13,24 @@
     "version": "npm run build"
   },
   "keywords": [
-    "super-productivity",
+    "kairontask",
     "plugin",
     "typescript",
     "types",
     "productivity",
     "task-management"
   ],
-  "author": "Johannes Millan",
+  "author": "Christian Sousa <support@kairontask.app>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/super-productivity/super-productivity.git",
+    "url": "git+https://github.com/christiansousadev/kairontask.git",
     "directory": "packages/plugin-api"
   },
   "bugs": {
-    "url": "https://github.com/super-productivity/super-productivity/issues"
+    "url": "https://github.com/christiansousadev/kairontask/issues"
   },
-  "homepage": "https://github.com/super-productivity/super-productivity#readme",
+  "homepage": "https://kairontask.app",
   "files": [
     "dist/**/*.js",
     "dist/**/*.d.ts",

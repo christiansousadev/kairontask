@@ -30,7 +30,7 @@
   - Importação de tarefas atribuídas, apontamento de horas (_worklogs_) e transição de status.
 - **Sincronização Distribuída com Op-Log**:
   - Arquitetura determinística com **Relógios Vetoriais (Vector Clocks)**.
-  - Suporte a **WebDAV** (Nextcloud, ownCloud), **Dropbox**, **SuperSync** e pasta local.
+  - Suporte a **KaironSync / SuperSync**, **WebDAV** (Nextcloud, ownCloud), **Dropbox** e pasta local.
   - Criptografia autenticada Ponta a Ponta (**E2EE**) com AES-GCM.
 - **Privacidade Soberana**:
   - **Zero telemetria**, sem contas obrigatórias, sem rastreadores. Seus dados residem 100% no seu dispositivo.
@@ -111,6 +111,9 @@ Para entender detalhadamente todos os módulos, arquitetura e governança do pro
 
 ---
 
-## 📄 Licença
+## 📄 Licença e Autoria
 
-Distribuído sob a licença [MIT](LICENSE).
+- **Autor e Mantenedor**: [Christian Sousa](https://github.com/christiansousadev)
+- **Repositório Oficial**: [github.com/christiansousadev/kairontask](https://github.com/christiansousadev/kairontask)
+- **Website / Web App**: [kairontask.app](https://kairontask.app)
+- **Licença**: Distribuído sob a licença [MIT](LICENSE). Copyright (c) 2026 Christian Sousa.
