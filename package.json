@@ -201,7 +201,7 @@
     "@ngrx/effects": "^21.0.1",
     "@ngrx/entity": "^21.0.1",
     "@ngrx/schematics": "^21.0.1",
-    "@ngrx/store": "21.0.1",
+    "@ngrx/store": "22.0.1",
     "@ngrx/store-devtools": "^21.0.1",
     "@ngx-formly/core": "^7.1.0",
     "@ngx-formly/material": "^7.1.0",
