@@ -239,7 +239,7 @@
     "eslint-plugin-jsdoc": "62.8.1",
     "eslint-plugin-local-rules": "^3.0.2",
     "eslint-plugin-prefer-arrow": "1.2.3",
-    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-prettier": "^5.5.7",
     "fflate": "^0.8.2",
     "file-saver": "^2.0.5",
     "fs-extra": "^11.3.3",
