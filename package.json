@@ -162,7 +162,7 @@
     "uuidv7": "^1.1.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^21.2.3",
+    "@angular-devkit/build-angular": "^21.2.26",
     "@angular-eslint/builder": "^21.3.1",
     "@angular-eslint/eslint-plugin": "^21.3.1",
     "@angular-eslint/eslint-plugin-template": "^21.3.1",
