@@ -20,7 +20,7 @@ A documentação desta auditoria foi estruturada em 8 cadernos técnicos especia
 | **[`05_mobile_capacitor.md`](file:///c:/Projects/kairontask/auditorias/05_mobile_capacitor.md)**                             | **Mobile (Capacitor / Android / iOS)** | `capacitor.config.ts`, `android/` (Gradle, Flavors PlayStore/FDroid, Connectivity Modes), `ios/` (Xcode, Fastlane), Plugins nativos, Safe Area e Dark Mode.                                                                                 |
 | **[`06_packages_e_plugins.md`](file:///c:/Projects/kairontask/auditorias/06_packages_e_plugins.md)**                         | **Extensibilidade & Sub-pacotes**      | `packages/plugin-api`, `packages/shared-schema` (Validação Typia), `packages/super-sync-server` (Backend Node/PostgreSQL), `packages/vite-plugin`, `packages/plugin-dev`, `src/app/plugins/`.                                               |
 | **[`07_ui_design_system_i18n.md`](file:///c:/Projects/kairontask/auditorias/07_ui_design_system_i18n.md)**                   | **Design System, UI & i18n**           | Tokens de CSS (`_css-variables.scss`), Temas (10 temas embutidos + `styles.css` local), Angular Material custom vars, Ícones, Pipeline de i18n (`en.json` canônico, `t.const.ts`, scripts de extração).                                     |
-| **[`08_infra_build_cicd_testes.md`](file:///c:/Projects/kairontask/auditorias/08_infra_build_cicd_testes.md)**               | **Infra, CI/CD, Build & Testes**       | Multi-stage `Dockerfile`, 4 arquivos `docker-compose*.yaml`, `nginx/default.conf.template`, 24 GitHub Workflows, Testes Karma/Jasmine Multi-Timezone, Testes Playwright E2E, ESLint Local Rules, Husky.                                     |
+| **[`08_infra_build_cicd_testes.md`](file:///c:/Projects/kairontask/auditorias/08_infra_build_cicd_testes.md)**               | **Infra, CI/CD, Build & Testes**       | Multi-stage `Dockerfile`, 4 arquivos `docker-compose*.yaml`, `nginx/default.conf.template`, Workflows manuais sob demanda, Testes Karma/Jasmine Multi-Timezone, Testes Playwright E2E, ESLint Local Rules, Husky.                           |
 | **[`09_varredura_vestigios_opensource.md`](file:///c:/Projects/kairontask/auditorias/09_varredura_vestigios_opensource.md)** | **Vestígios Open-Source & Rebrand**    | Mapeamento de autoria (`Johannes Millan`), nomes de produto, links de doação/sponsors, `contact@super-productivity.com`, App IDs, imagens Docker e checklist de substituição.                                                               |
 
 ---
@@ -39,7 +39,7 @@ A documentação desta auditoria foi estruturada em 8 cadernos técnicos especia
 ├──────────────────────┼─────────────────────────┼─────────────────────────────────┤
 │ Persistência & Sync  │ Sub-pacotes Internos    │ Infraestrutura & Qualidade      │
 │ - IndexedDB (idb)    │ - plugin-api            │ - Docker Multi-Stage (Nginx)    │
-│ - Op-Log com UUIDv7  │ - shared-schema (Typia) │ - GitHub Actions (24 workflows) │
+│ - Op-Log com UUIDv7  │ - shared-schema (Typia) │ - CI/CD Manual sem Autodeploy   │
 │ - Vector Clocks      │ - super-sync-server     │ - Karma Multi-TZ + Playwright   │
 │ - WebDAV / Dropbox   │ - vite-plugin           │ - ESLint Flat + Husky Hooks     │
 └──────────────────────┴─────────────────────────┴─────────────────────────────────┘

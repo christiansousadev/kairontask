@@ -8,8 +8,6 @@ on:
       - 'docs/wiki/**'
   workflow_dispatch:
     inputs: {}
-  release:
-    types: [published]
 permissions:
   contents: read
 

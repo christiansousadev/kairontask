@@ -72,18 +72,18 @@ O repositório possui uma infraestrutura completa para gerar artefatos para web,
 
 ---
 
-## 4. Automação de CI/CD (GitHub Actions)
+## 4. Governança de CI/CD (GitHub Actions)
 
-O repositório possui 24 workflows configurados em [`.github/workflows/`](file:///c:/Projects/kairontask/.github/workflows):
+A suíte de automações no GitHub Actions foi enxugada e desativada de execuções automáticas não solicitadas (sem autodeploy e sem agendamentos noturnos via cron), mantendo o repositório sob controle 100% manual e silencioso:
 
-| Workflow                        | Gatilho              | Responsabilidade                                                                                            |
-| :------------------------------ | :------------------- | :---------------------------------------------------------------------------------------------------------- |
-| **`ci.yml`**                    | Pull Requests e Push | Executa ESLint, Prettier, Stylelint, compilação de packages e testes unitários.                             |
-| **`build.yml`**                 | Releases e tags git  | Compila instaladores para Windows (`.exe`, `.appx`), Linux (`.deb`, `.AppImage`, `.snap`) e macOS (`.dmg`). |
-| **`build-android.yml`**         | Releases e manual    | Compila APKs de debug e release (Play Store e F-Droid) via Gradle.                                          |
-| **`build-ios.yml`**             | Releases e manual    | Executa pipeline Fastlane para gerar o `.ipa` e enviar ao TestFlight.                                       |
-| **`publish-to-hub-docker.yml`** | Releases             | Compila a imagem Docker multi-arquitetura (`amd64`, `arm64`, `arm/v7`) e publica no Docker Hub.             |
-| **`e2e-scheduled.yml`**         | Cron noturno         | Executa a suíte completa de testes Playwright contra navegadores Chromium, Firefox e WebKit.                |
+| Workflow                     | Gatilho                      | Responsabilidade                                                                                  |
+| :--------------------------- | :--------------------------- | :------------------------------------------------------------------------------------------------ |
+| **`ci.yml`**                 | Pull Requests ou Manual      | Validação de ESLint, integridade de i18n, compilação e suíte de testes.                           |
+| **`manual-build.yml`**       | Manual (`workflow_dispatch`) | Compilação sob demanda de instaladores Windows (`.exe`) e macOS (`.dmg`) com upload de artefatos. |
+| **`supersync-docker.yml`**   | Manual (`workflow_dispatch`) | Compilação e push sob demanda da imagem Docker do SuperSync Server.                               |
+| **`test-mac-dmg-build.yml`** | Manual (`workflow_dispatch`) | Teste sob demanda de compilação do instalador DMG para macOS.                                     |
+
+> **Nota de Saneamento**: Todos os cron jobs noturnos (`e2e-scheduled.yml`, `stale.yml`, `stale-discussions.yml`), auto-replies de bots, atualizações automáticas do Dependabot (`dependabot.yml`) e autodeploys externos para lojas/servidores foram completamente removidos para evitar consumo de cota e deploys não autorizados.
 
 ---
 
