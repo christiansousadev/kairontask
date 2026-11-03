@@ -57,7 +57,7 @@ sudo chmod 600 /run/secrets/backup_passphrase
 
 ### For Existing Deployments
 
-See full migration guide in `/docs/long-term-plans/supersync-encryption-at-rest.md`
+Ensure a full backup of PostgreSQL data is taken before mounting encrypted volumes.
 
 ## Prerequisites
 
@@ -256,7 +256,7 @@ sudo tail -20 /var/log/luks-audit.log
 
 ### Automated Monitoring
 
-See `/docs/long-term-plans/supersync-encryption-at-rest.md` Section 5.4 for:
+Recommended automated monitoring checks:
 
 - Prometheus metrics integration
 - Nagios/Icinga check scripts
@@ -355,7 +355,6 @@ docker exec postgres pgbench -c 10 -j 2 -t 1000 supersync
 
 ## References
 
-- Full implementation plan: `/docs/long-term-plans/supersync-encryption-at-rest.md`
 - LUKS documentation: https://gitlab.com/cryptsetup/cryptsetup
 - GDPR Article 32: https://gdpr-info.eu/art-32-gdpr/
 - AES-NI performance: https://www.kernel.org/doc/html/latest/admin-guide/device-mapper/dm-crypt.html

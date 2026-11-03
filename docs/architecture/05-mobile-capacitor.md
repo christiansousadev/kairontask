@@ -37,8 +37,8 @@ O arquivo [`capacitor.config.ts`](file:///c:/Projects/kairontask/capacitor.confi
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.superproductivity.superproductivity',
-  appName: 'Super Productivity',
+  appId: 'com.kairontask.app',
+  appName: 'KaironTask',
   webDir: 'dist/browser',
   server: {
     androidScheme: 'https', // Garante contexto seguro para Web Crypto e IndexedDB

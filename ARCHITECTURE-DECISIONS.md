@@ -1,6 +1,6 @@
 # Architecture Decision Records
 
-This document tracks significant architectural decisions and patterns in the Super Productivity codebase. When making changes that affect these patterns, reference this document and update it if needed.
+This document tracks significant architectural decisions and patterns in the KaironTask codebase. When making changes that affect these patterns, reference this document and update it if needed.
 
 ## Active Patterns & Decisions
 
@@ -119,8 +119,8 @@ Add a new decision record when:
 
 ## Related Documentation
 
-- [`docs/sync-and-op-log/`](docs/sync-and-op-log/) - Operation log architecture
-- [`docs/long-term-plans/`](docs/long-term-plans/) - Future architectural plans
+- [`docs/architecture/`](docs/architecture/) - KaironTask system architecture and engineering specifications
+- [`docs/architecture/02-persistence-and-sync.md`](docs/architecture/02-persistence-and-sync.md) - Distributed persistence and Op-Log synchronization
 
 ---
 

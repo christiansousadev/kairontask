@@ -1,10 +1,10 @@
-# Adding a New Integration to Super Productivity
+# Adding a New Integration to KaironTask
 
-This guide explains how to add a new issue tracker integration to Super Productivity.
+This guide explains how to add a new issue tracker integration to KaironTask.
 
 ## Overview
 
-Super Productivity supports multiple issue tracker integrations (called "Issue Providers" in the codebase), including Jira, GitLab, Gitea, Redmine, Open Project, CalDAV, Calendar (iCal), Trello, ClickUp, Linear, Azure DevOps, and Nextcloud Deck. GitHub has been migrated to a plugin-based provider. Adding a new integration requires implementing specific interfaces and services to communicate with the external service.
+KaironTask supports multiple issue tracker integrations (called "Issue Providers" in the codebase), including Jira, GitLab, Gitea, Redmine, Open Project, CalDAV, Calendar (iCal), Trello, ClickUp, Linear, Azure DevOps, and Nextcloud Deck. GitHub has been migrated to a plugin-based provider. Adding a new integration requires implementing specific interfaces and services to communicate with the external service.
 
 ## Integration Architecture
 
@@ -308,4 +308,4 @@ The `IssueService` uses a provider factory pattern. Ensure your provider service
 
 ## Contributing Back
 
-Once your integration is working, please consider submitting it back to the Super Productivity project as a pull request!
+Once your integration is working, feel free to open a pull request or share your integration with the community!

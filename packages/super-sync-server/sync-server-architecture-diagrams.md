@@ -833,7 +833,7 @@ flowchart TB
 - `taskSharedCrudMetaReducer` - Task CRUD with tag/project updates
 - `stateCaptureMetaReducer` - Captures before/after state for diff
 
-See Part F in [operation-log-architecture.md](docs/sync-and-op-log/operation-log-architecture.md) for details.
+See [02-persistence-and-sync.md](../../docs/architecture/02-persistence-and-sync.md) for details.
 
 ---
 
