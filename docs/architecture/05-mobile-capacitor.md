@@ -1,4 +1,4 @@
-# Auditoria 05 — Camada Mobile (Capacitor / Android / iOS)
+# 05. Camada Mobile (Capacitor / Android / iOS)
 
 > **Módulos**: `capacitor.config.ts`, `android/`, `ios/`, `fastlane/`, `src/app/features/android/`, `src/app/features/mobile/`  
 > **Camada**: Wrapper Mobile Híbrido, Projetos Nativos Gradle/Xcode, Plugins de Hardware e Adaptação Tátil

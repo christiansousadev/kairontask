@@ -1,4 +1,4 @@
-# Auditoria 07 — Design System, UI, Temas e Internacionalização (i18n)
+# 07. Design System, UI, Temas e Internacionalização (i18n)
 
 > **Módulos**: `src/styles/`, `docs/styling-guide.md`, `src/assets/i18n/`, `src/app/t.const.ts`, `tools/*i18n*`  
 > **Camada**: Design Tokens, Folhas de Estilo Globais, Temas Dinâmicos, Tipografia e Sistema de Tradução

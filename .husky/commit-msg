@@ -1,0 +1,2 @@
+node tools/strip-co-authors.js "$1"
+

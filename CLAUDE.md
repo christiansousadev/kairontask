@@ -145,6 +145,13 @@ Use Angular commit message format: `type(scope): description`
 
 **IMPORTANT**: Never use `fix(test):` or `fix(e2e):` for test-related changes. The `fix` type is reserved for actual code/bug fixes. Always use `test:` for test changes, e.g., `test(e2e): fix flaky sync tests` or `test: update unit test assertions`.
 
+### 👤 Author Identity & Strict Attribution Rules
+
+1. **CRITICAL**: All commits must be authored strictly and exclusively by Christian Sousa (`Christian Sousa <christiansousadev@gmail.com>`).
+2. **NEVER** include `Co-authored-by: Claude`, `Co-authored-by: ...` or any AI assistant attribution, trailer or signature in git commit messages.
+3. Commit messages must contain ONLY the conventional commit header and description, with no co-author metadata whatsoever.
+4. Never mention Claude, Anthropic or AI in commit subjects, descriptions, or PR templates.
+
 ## 🚫 Anti-Patterns → Do This Instead
 
 | Avoid                                | Do Instead                                                                          |

@@ -1,4 +1,4 @@
-# Auditoria 08 — Infraestrutura, Build, Deploy, Testes e CI/CD
+# 08. Infraestrutura, Build, Deploy, Testes e CI/CD
 
 > **Módulos**: `Dockerfile*`, `docker-compose*.yaml`, `nginx/`, `.github/workflows/`, `e2e/`, `tools/`, `package.json`  
 > **Camada**: Esteira de Build, Conteinerização, Automações de CI/CD, Testes Automatizados e Governança

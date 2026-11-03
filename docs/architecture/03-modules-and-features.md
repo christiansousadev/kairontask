@@ -1,4 +1,4 @@
-# Auditoria 03 — Módulos de Domínio e Funcionalidades do Usuário
+# 03. Módulos de Domínio e Funcionalidades do Usuário
 
 > **Módulos**: `src/app/features/` (Todos os 41 subsistemas de domínio)  
 > **Camada**: Lógica de Negócio, Entidades, Componentes de Domínio e Integrações Externas

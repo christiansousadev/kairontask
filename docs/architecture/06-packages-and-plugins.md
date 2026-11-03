@@ -1,4 +1,4 @@
-# Auditoria 06 — Sub-pacotes, Plugins e Ecossistema de Extensibilidade
+# 06. Sub-pacotes, Plugins e Ecossistema de Extensibilidade
 
 > **Módulos**: `packages/`, `src/app/plugins/`, `src/assets/community-plugins.json`, `docs/plugin-development.md`  
 > **Camada**: SDKs Internos, Tipagem Compartilhada, Backend SuperSync e Sistema de Extensão por Plugins
@@ -24,7 +24,7 @@ Frontend & Electron     Frontend & Servidor       para Self-Hosting
 
 ---
 
-## 2. Inventário e Auditoria dos Sub-pacotes
+## 2. Inventário dos Sub-pacotes
 
 ### 2.1. `packages/plugin-api` (SDK Oficial de Plugins)
 

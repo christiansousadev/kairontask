@@ -1,4 +1,4 @@
-# Auditoria 04 — Camada Desktop (Electron)
+# 04. Camada Desktop (Electron)
 
 > **Módulos**: `electron/`, `electron-builder.yaml`, `electron/shared-with-frontend/`, `electron/ipc-handlers/`  
 > **Camada**: Wrapper Desktop, Processo Principal Node.js, Sandboxing e Integração Nativa com o Sistema Operacional

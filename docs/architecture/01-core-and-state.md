@@ -1,4 +1,4 @@
-# Auditoria 01 — Arquitetura Base, Core e Gerenciamento de Estado
+# 01. Arquitetura Base, Core e Gerenciamento de Estado
 
 > **Módulos**: `src/main.ts`, `src/app/core/`, `src/app/root-store/`, `src/app/routes/`, `src/app/util/`  
 > **Camada**: Core da Aplicação, Bootstrap, Injeção de Dependências e Infraestrutura de Estado
@@ -150,7 +150,7 @@ Mutações complexas no KaironTask **nunca são feitas através de múltiplos ef
 
 ---
 
-## 6. Auditoria de Logging e Boas Práticas (`Log.ts`)
+## 6. Logging e Boas Práticas (`Log.ts`)
 
 O arquivo [`src/app/core/log.ts`](file:///c:/Projects/kairontask/src/app/core/log.ts) implementa um sistema de log seguro com buffer circular para exportação em diagnósticos técnicos.
 

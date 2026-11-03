@@ -1,4 +1,4 @@
-# Auditoria 02 — Persistência, Sincronização e Log de Operações (Op-Log)
+# 02. Persistência, Sincronização e Log de Operações (Op-Log)
 
 > **Módulos**: `src/app/op-log/`, `src/app/pfapi/`, `src/app/imex/sync/`, `src/app/imex/local-backup/`, `src/app/imex/file-imex/`  
 > **Camada**: Persistência de Dados Local-First, Sincronização Distribuída e Resolução de Conflitos
