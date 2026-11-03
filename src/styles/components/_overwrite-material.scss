@@ -15,6 +15,70 @@
   --mat-tab-header-inactive-label-text-color: var(--text-color-muted);
 }
 
+// ===============================
+// MIDNIGHT OBSIDIAN — MATERIAL TOKEN OVERRIDES
+// ===============================
+// Material emits its dark-theme component tokens on `.isDarkTheme` (see
+// angular-material-css-vars). `body.isDarkTheme` has higher specificity, and
+// `body` wins over the root-level light tokens through inheritance. All values
+// reference theme-aware variables from _css-variables.scss, so light, dark and
+// custom themes (assets/themes/*.css) stay consistent.
+body,
+body.isDarkTheme {
+  // Buttons
+  --mat-button-text-container-shape: var(--radius-md);
+  --mat-button-filled-container-shape: var(--radius-md);
+  --mat-button-outlined-container-shape: var(--radius-md);
+  --mat-button-protected-container-shape: var(--radius-md);
+  --mat-button-tonal-container-shape: var(--radius-md);
+  --mat-button-text-label-text-weight: 500;
+  --mat-button-filled-label-text-weight: 600;
+  --mat-button-outlined-label-text-weight: 500;
+  --mat-button-protected-label-text-weight: 600;
+  --mat-button-tonal-label-text-weight: 500;
+  --mat-button-filled-horizontal-padding: var(--s2);
+  --mat-button-outlined-horizontal-padding: 14px;
+  --mat-button-protected-horizontal-padding: var(--s2);
+  --mat-button-outlined-outline-color: var(--border-default);
+  --mat-button-protected-container-elevation-shadow: var(--whiteframe-shadow-1dp);
+  --mat-button-protected-hover-container-elevation-shadow: var(--whiteframe-shadow-2dp);
+  --mat-button-toggle-shape: var(--radius-md);
+  --mat-icon-button-container-shape: var(--radius-md);
+
+  // Menus & overlay panels (acrylic surface)
+  --mat-menu-container-color: var(--overlay-surface);
+  --mat-menu-container-shape: var(--radius-lg);
+  --mat-menu-container-elevation-shadow: var(--overlay-shadow);
+  --mat-menu-divider-color: var(--border-subtle);
+  --mat-menu-item-hover-state-layer-color: var(--text-color);
+  --mat-select-panel-background-color: var(--overlay-surface);
+  --mat-select-container-elevation-shadow: var(--overlay-shadow);
+  --mat-autocomplete-background-color: var(--overlay-surface);
+  --mat-autocomplete-container-shape: var(--radius-lg);
+  --mat-autocomplete-container-elevation-shadow: var(--overlay-shadow);
+
+  // Tooltips
+  --mat-tooltip-container-color: var(--tooltip-bg);
+  --mat-tooltip-supporting-text-color: var(--tooltip-fg);
+  --mat-tooltip-container-shape: var(--radius-sm);
+
+  // Form fields — clean boxes, no Material underline
+  --mat-form-field-filled-container-color: var(--input-bg);
+  --mat-form-field-filled-disabled-container-color: transparent;
+  --mat-form-field-filled-container-shape: var(--radius-md);
+  --mat-form-field-filled-active-indicator-height: 0px;
+  --mat-form-field-filled-focus-active-indicator-height: 0px;
+  --mat-form-field-filled-focus-label-text-color: var(--focus-label-color);
+  --mat-form-field-hover-state-layer-opacity: 0;
+  --mat-form-field-focus-state-layer-opacity: 0;
+  --mat-form-field-outlined-container-shape: var(--radius-md);
+  --mat-form-field-outlined-outline-color: var(--border-default);
+  --mat-form-field-outlined-hover-outline-color: var(--border-strong);
+  --mat-form-field-outlined-focus-outline-color: var(--brand-cyan);
+  --mat-form-field-outlined-focus-outline-width: 1px;
+  --mat-form-field-outlined-focus-label-text-color: var(--focus-label-color);
+}
+
 // Dark theme tab overrides for better contrast - use lighter shade
 body.isDarkTheme {
   --mat-tab-header-active-label-text-color: var(--palette-primary-300);
@@ -154,6 +218,47 @@ body .mat-mdc-dialog-surface {
   margin-bottom: var(--s2);
 }
 
+// Filled fields become clean bordered boxes (underline removed via tokens above).
+// MDC only rounds the top corners of filled fields, so the radius is set here.
+.mat-mdc-text-field-wrapper.mdc-text-field--filled {
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  transition:
+    border-color var(--transition-duration-s) var(--ani-standard-timing),
+    box-shadow var(--transition-duration-s) var(--ani-standard-timing),
+    background-color var(--transition-duration-s) var(--ani-standard-timing);
+
+  .mdc-line-ripple {
+    display: none;
+  }
+}
+
+.mat-mdc-form-field:not(.mat-form-field-disabled):hover
+  .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  border-color: var(--border-strong);
+  background-color: var(--input-bg-hover);
+}
+
+.mat-mdc-form-field.mat-focused .mdc-text-field--filled {
+  border-color: var(--brand-cyan);
+  box-shadow: var(--focus-ring);
+}
+
+.mat-mdc-form-field.mat-form-field-invalid .mdc-text-field--filled {
+  border-color: var(--color-danger);
+}
+
+.mat-mdc-form-field.mat-form-field-disabled .mdc-text-field--filled {
+  border-style: dashed;
+  border-color: var(--border-subtle);
+}
+
+// Outlined fields: cyan focus ring on top of the 1px cyan outline
+.mat-mdc-form-field.mat-focused .mdc-text-field--outlined {
+  border-radius: var(--radius-md);
+  box-shadow: var(--focus-ring);
+}
+
 // needs to be global cause of cdk overlay
 // is used for select-task
 mat-option.isDone {
@@ -169,26 +274,58 @@ mat-option.isDone {
 // Text buttons use theme colors directly on background, so we need good contrast
 .mat-mdc-button,
 .mat-mdc-outlined-button {
+  // NOTE: Angular Material 21 uses `--mat-button-*` tokens (the former `--mdc-*`
+  // names are no longer read by the components).
   &[color='primary'] {
     // Use primary color - validated palettes ensure WCAG AA compliance
-    --mdc-text-button-label-text-color: var(--palette-primary-500);
-    --mdc-outlined-button-label-text-color: var(--palette-primary-500);
-    --mdc-outlined-button-outline-color: var(--palette-primary-500);
+    --mat-button-text-label-text-color: var(--palette-primary-500);
+    --mat-button-outlined-label-text-color: var(--palette-primary-500);
+    --mat-button-outlined-outline-color: var(--palette-primary-500);
   }
 
   &[color='accent'] {
     // Use accent color - validated palettes ensure WCAG AA compliance
-    --mdc-text-button-label-text-color: var(--palette-accent-500);
-    --mdc-outlined-button-label-text-color: var(--palette-accent-500);
-    --mdc-outlined-button-outline-color: var(--palette-accent-500);
+    --mat-button-text-label-text-color: var(--palette-accent-500);
+    --mat-button-outlined-label-text-color: var(--palette-accent-500);
+    --mat-button-outlined-outline-color: var(--palette-accent-500);
   }
 
   &[color='warn'] {
     // Use warn color - validated palettes ensure WCAG AA compliance
-    --mdc-text-button-label-text-color: var(--palette-warn-500);
-    --mdc-outlined-button-label-text-color: var(--palette-warn-500);
-    --mdc-outlined-button-outline-color: var(--palette-warn-500);
+    --mat-button-text-label-text-color: var(--palette-warn-500);
+    --mat-button-outlined-label-text-color: var(--palette-warn-500);
+    --mat-button-outlined-outline-color: var(--palette-warn-500);
   }
+}
+
+// Midnight Obsidian button finish: smooth state transitions, rounded shape,
+// subtle top highlight on filled buttons instead of the flat Material look.
+.mat-mdc-button-base {
+  transition:
+    background-color var(--transition-duration-s) var(--ani-standard-timing),
+    border-color var(--transition-duration-s) var(--ani-standard-timing),
+    box-shadow var(--transition-duration-s) var(--ani-standard-timing),
+    color var(--transition-duration-s) var(--ani-standard-timing),
+    filter var(--transition-duration-s) var(--ani-standard-timing);
+}
+
+.mat-mdc-unelevated-button:not(:disabled) {
+  box-shadow: var(--btn-filled-highlight);
+
+  &:hover {
+    filter: brightness(1.08);
+  }
+}
+
+.mat-mdc-outlined-button:not(:disabled):not([color]) {
+  &:hover {
+    --mat-button-outlined-outline-color: var(--border-strong);
+    background-color: var(--input-bg-hover);
+  }
+}
+
+.mat-mdc-button-base:focus-visible {
+  box-shadow: var(--focus-ring);
 }
 
 .mat-mdc-menu-item-text {
@@ -351,6 +488,36 @@ body .mat-mdc-button-base .mat-icon {
   padding: 0 !important;
 }
 
+// Acrylic overlay panels: menus, selects and autocompletes share one finish
+.mat-mdc-menu-panel,
+.mat-mdc-select-panel,
+.mat-mdc-autocomplete-panel {
+  border: 1px solid var(--border-default);
+  -webkit-backdrop-filter: var(--overlay-blur);
+  backdrop-filter: var(--overlay-blur);
+}
+
+.mat-mdc-select-panel,
+.mat-mdc-autocomplete-panel {
+  border-radius: var(--radius-lg) !important;
+}
+
+// Inset, rounded hover highlight for menu items instead of edge-to-edge bars
+.mat-mdc-menu-content > .mat-mdc-menu-item,
+.mat-mdc-menu-content > * > .mat-mdc-menu-item {
+  border-radius: var(--radius-sm);
+  margin: 0 var(--s-half);
+  width: calc(100% - var(--s));
+}
+
+.mat-mdc-menu-content:has(> .mat-mdc-menu-item) {
+  padding: var(--s-half) 0 !important;
+}
+
+.mat-mdc-menu-item:focus-visible {
+  box-shadow: inset 0 0 0 1px var(--brand-cyan);
+}
+
 .mat-mdc-menu-item.quick-access {
   border: 1px solid red;
 }
@@ -362,6 +529,15 @@ task.cdk-drag-preview .box {
 // MAT TOOLTIP
 mat-tooltip-component {
   pointer-events: none;
+}
+
+.mat-mdc-tooltip .mdc-tooltip__surface {
+  border: 1px solid var(--border-default);
+  box-shadow: var(--overlay-shadow);
+  -webkit-backdrop-filter: var(--overlay-blur);
+  backdrop-filter: var(--overlay-blur);
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
 // SNACK

@@ -32,6 +32,19 @@
     'Open Sans', 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
     'Noto Color Emoji', 'Android Emoji', 'EmojiSymbols', -apple-system,
     BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  // System monospace stack (no bundled font needed, works offline) — timers & counters
+  --font-mono-stack:
+    ui-monospace, 'SF Mono', 'Cascadia Code', 'JetBrains Mono', 'Roboto Mono', Menlo,
+    Consolas, monospace;
+  --heading-letter-spacing: -0.02em;
+
+  // -----------------------------
+  // Radius scale (Midnight Obsidian)
+  // -----------------------------
+  --radius-sm: 6px; // menu items, tooltips, small chips
+  --radius-md: 8px; // buttons, inputs
+  --radius-lg: 10px; // cards, menus, panels
+  --radius-xl: 14px; // dialogs
 
   --s2: 16px; // 2 * 8px
   --s3: 24px; // 3 * 8px
@@ -401,6 +414,23 @@ body {
 
   // Background overlay
   --c-bg-overlay: var(--c-light-80);
+
+  // Surfaces, borders & overlays (Midnight Obsidian — light variant)
+  --border-subtle: rgba(15, 23, 42, 0.07);
+  --border-default: rgba(15, 23, 42, 0.12);
+  --border-strong: rgba(15, 23, 42, 0.22);
+  --input-bg: #f8f9fc;
+  --input-bg-hover: #f2f4f9;
+  --overlay-surface: var(
+    --card-bg
+  ); // fallback; translucent variant set below via @supports
+  --overlay-blur: blur(12px) saturate(140%);
+  --overlay-shadow: 0 12px 32px rgba(15, 23, 42, 0.14), 0 2px 6px rgba(15, 23, 42, 0.08);
+  --tooltip-bg: rgba(22, 26, 35, 0.94);
+  --tooltip-fg: rgb(241, 243, 249);
+  --focus-ring: 0 0 0 2px rgba(34, 211, 238, 0.25);
+  --focus-label-color: var(--palette-primary-600);
+  --btn-filled-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 // -----------------------------
@@ -529,6 +559,16 @@ body.isDarkTheme {
   // Background overlay
   --c-bg-overlay: var(--c-dark-80);
 
+  // Surfaces, borders & overlays (Midnight Obsidian — dark variant)
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-default: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --input-bg: rgba(255, 255, 255, 0.03);
+  --input-bg-hover: rgba(255, 255, 255, 0.05);
+  --overlay-shadow: 0 16px 40px rgba(0, 0, 0, 0.55), 0 2px 8px rgba(0, 0, 0, 0.4);
+  --focus-label-color: #67e8f9; // cyan-300: readable on obsidian
+  --btn-filled-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+
   // Deeper shadows — pure black shadows read better on obsidian surfaces
   --md-sys-level1: 0 2px 8px rgba(0, 0, 0, 0.4), 0 1px 3px -2px rgba(0, 0, 0, 0.5);
   --md-sys-level1-5: 0 3px 10px rgba(0, 0, 0, 0.42), 0 3px 6px -3px rgba(0, 0, 0, 0.5);
@@ -587,4 +627,15 @@ body.isDarkTheme {
   //--md-sys-level3:   0 8px 16px rgba(0,0,0,0.14), 0 10px 6px rgba(0,0,0,0.12);
   //--md-sys-level4:   0 12px 24px rgba(0,0,0,0.16), 0 16px 8px rgba(0,0,0,0.12);
   //--md-sys-level5:   0 20px 40px rgba(0,0,0,0.18), 0 28px 12px rgba(0,0,0,0.14);
+}
+
+// Translucent "acrylic" overlay surface (menus, selects, autocomplete) where
+// color-mix() is supported (Chrome 111+, Safari 16.2+). Older engines keep the
+// opaque --card-bg fallback defined above. Derived from --card-bg so custom
+// themes (assets/themes/*.css) keep working.
+@supports (background: color-mix(in srgb, red 50%, transparent)) {
+  body,
+  body.isDarkTheme {
+    --overlay-surface: color-mix(in srgb, var(--card-bg) 86%, transparent);
+  }
 }
