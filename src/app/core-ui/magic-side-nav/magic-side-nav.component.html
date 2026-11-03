@@ -49,7 +49,7 @@
     <div
       class="nav-brand-header"
       routerLink="/active/tasks"
-      title="KaironTask"
+      title="KaironTask — by Christian Sousa"
     >
       <div class="brand-logo-container">
         <svg
@@ -68,7 +68,7 @@
             >
               <stop
                 offset="0%"
-                stop-color="#38BDF8"
+                stop-color="#22D3EE"
               />
               <stop
                 offset="50%"
@@ -76,7 +76,7 @@
               />
               <stop
                 offset="100%"
-                stop-color="#8B5CF6"
+                stop-color="#7C3AED"
               />
             </linearGradient>
           </defs>
@@ -99,7 +99,7 @@
           />
           <polygon
             points="26,32 32,26 38,32 32,38"
-            fill="#38BDF8"
+            fill="#22D3EE"
           />
           <circle
             cx="32"
@@ -111,7 +111,10 @@
         </svg>
       </div>
       @if (showText()) {
-        <span class="brand-text">Kairon<span class="brand-accent">Task</span></span>
+        <span class="brand-text-wrapper">
+          <span class="brand-text">Kairon<span class="brand-accent">Task</span></span>
+          <span class="brand-byline">by Christian Sousa</span>
+        </span>
       }
     </div>
 

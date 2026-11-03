@@ -51,7 +51,7 @@ export class DialogSyncErrorComponent {
   async downloadBackup(): Promise<void> {
     const data = await this._backupService.loadCompleteBackup(true);
     try {
-      await download('super-productivity-backup.json', JSON.stringify(data));
+      await download('kairontask-backup.json', JSON.stringify(data));
     } catch (e) {
       Log.error(e);
     }

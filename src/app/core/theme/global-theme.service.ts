@@ -606,7 +606,7 @@ export class GlobalThemeService {
         Log.warn('Failed to set status bar style', err);
       });
       if (this._platformService.isAndroid()) {
-        const bgColor = isDark ? '#131314' : '#f8f8f7';
+        const bgColor = isDark ? '#0b0d12' : '#f5f6fa';
         StatusBar.setBackgroundColor({ color: bgColor }).catch((err) => {
           Log.warn('Failed to set status bar background color', err);
         });

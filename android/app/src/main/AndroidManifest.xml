@@ -79,7 +79,7 @@
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
         <data
-          android:scheme="com.super-productivity.app"
+          android:scheme="com.kairontask.app"
           android:host="oauth-callback" />
       </intent-filter>
 
@@ -89,7 +89,7 @@
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
         <data
-          android:scheme="com.super-productivity.app"
+          android:scheme="com.kairontask.app"
           android:host="plugin-oauth-callback" />
       </intent-filter>
 
@@ -99,7 +99,7 @@
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
         <data
-          android:scheme="com.superproductivity.superproductivity"
+          android:scheme="com.kairontask.app"
           android:pathPrefix="/plugin-oauth-callback" />
       </intent-filter>
     </activity>

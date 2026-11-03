@@ -16,12 +16,28 @@ export interface ValidatedColorPalette {
 /**
  * Collection of pre-validated color palettes.
  * All palettes are tested to meet WCAG AA contrast standards (4.5:1 ratio)
- * on both light (#f8f8f7) and dark (#131314) backgrounds.
+ * on both light (#f5f6fa) and dark (#0b0d12) backgrounds.
  */
 export const VALIDATED_COLOR_PALETTES: readonly ValidatedColorPalette[] = [
   {
-    name: 'Kairon Indigo (Default)',
-    description: 'The signature KaironTask theme',
+    name: 'Midnight Obsidian (Default)',
+    description: 'The signature KaironTask theme — violet & electric cyan',
+    theme: {
+      isAutoContrast: true,
+      isDisableBackgroundTint: false,
+      primary: '#7c3aed',
+      huePrimary: '500',
+      accent: '#22d3ee',
+      hueAccent: '500',
+      warn: '#ef4444',
+      hueWarn: '500',
+      backgroundImageDark: null,
+      backgroundImageLight: null,
+    },
+  },
+  {
+    name: 'Kairon Indigo',
+    description: 'The original KaironTask indigo theme',
     theme: {
       isAutoContrast: true,
       isDisableBackgroundTint: false,

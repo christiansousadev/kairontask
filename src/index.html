@@ -37,7 +37,7 @@
       type="image/png"
     />
     <link
-      color="#6366f1"
+      color="#7c3aed"
       href="assets/icons/safari-pinned-tab.svg"
       rel="mask-icon"
     />
@@ -47,7 +47,7 @@
       name="msapplication-TileImage"
     />
     <meta
-      content="#4f46e5"
+      content="#0b0d12"
       name="msapplication-TileColor"
     />
 
@@ -56,16 +56,12 @@
       rel="manifest"
     />
     <meta
-      content="#6366f1"
+      content="#0b0d12"
       name="theme-color"
     />
     <meta
       content="yes"
       name="mobile-web-app-capable"
-    />
-    <meta
-      content="#2b5797"
-      name="msapplication-TileColor"
     />
     <meta
       content="assets/icons/browserconfig.xml"
@@ -87,6 +83,7 @@ TODO configure more restrictive Content-Security-Policy
     />
     <base href="./" />
     <style type="text/css">
+      /* KaironTask splash — "Midnight Obsidian" */
       html,
       body {
         height: 100%;
@@ -96,8 +93,8 @@ TODO configure more restrictive Content-Security-Policy
         height: 100%;
         margin: 0;
         padding: 0;
-        background: rgb(18, 18, 18);
-        color: #fff;
+        background: #0b0d12;
+        color: #e2e6f0;
       }
 
       .loading-full-page-wrapper {
@@ -108,6 +105,18 @@ TODO configure more restrictive Content-Security-Policy
         bottom: 0;
         cursor: grab;
         -webkit-app-region: drag;
+        background:
+          radial-gradient(
+            60vmax 60vmax at 15% 10%,
+            rgba(124, 58, 237, 0.16),
+            transparent 60%
+          ),
+          radial-gradient(
+            50vmax 50vmax at 85% 90%,
+            rgba(34, 211, 238, 0.12),
+            transparent 60%
+          ),
+          #0b0d12;
       }
 
       .loading-full-page-wrapper:active {
@@ -119,85 +128,185 @@ TODO configure more restrictive Content-Security-Policy
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-      }
-
-      .app-loading .logo {
-        position: fixed;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 90px;
-        height: 90px;
-      }
-
-      .app-loading .logo {
-        filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.45));
-      }
-
-      @media (prefers-color-scheme: light) {
-        body {
-          background: transparent;
-          background-image: none;
-          color: #000000;
-        }
-      }
-
-      .app-loading .spinner {
-        position: relative;
-        margin: 100px auto;
-        width: 120px;
-        height: 120px;
-      }
-
-      .app-loading .spinner-pulse {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 140px;
-        height: 140px;
-        margin: -70px 0 0 -70px;
-        border-radius: 50%;
-        background-color: #6366f1;
-        opacity: 0;
-        animation: sp-pulse 2s ease-in-out infinite;
-      }
-
-      .productivity-tip {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+        width: 420px;
+        max-width: 86vw;
         text-align: center;
-        position: absolute;
-        left: 50%;
-        bottom: 70%;
-        width: 400px;
-        max-width: 80vw;
-        transform: translate(-50%);
-        padding-bottom: 10px;
+        font-family: 'Open Sans', 'Segoe UI', 'Helvetica Neue', sans-serif;
       }
 
       .app-loading .productivity-tip h2 {
         font:
-          500 20px/32px 'Open Sans',
+          600 19px/28px 'Open Sans',
           'Helvetica Neue',
           sans-serif;
-        margin: 0 0 8px !important;
+        letter-spacing: -0.01em;
+        margin: 0 0 6px !important;
+        color: #f1f3f9;
       }
 
       .app-loading .productivity-tip p {
         font:
-          400 14px/20px 'Open Sans',
+          400 14px/21px 'Open Sans',
           'Helvetica Neue',
           sans-serif;
-        margin: 0 0 8px !important;
+        margin: 0 !important;
+        color: rgba(226, 230, 240, 0.65);
       }
 
-      @keyframes sp-pulse {
+      .app-loading .emblem {
+        position: relative;
+        width: 136px;
+        height: 136px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .app-loading .emblem-glow {
+        position: absolute;
+        inset: -18px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(124, 58, 237, 0.45) 0%,
+          rgba(34, 211, 238, 0.18) 45%,
+          transparent 70%
+        );
+        animation: kt-pulse 2.4s ease-in-out infinite;
+      }
+
+      .app-loading .emblem-ring {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background: conic-gradient(
+          from 0deg,
+          rgba(34, 211, 238, 0) 0deg,
+          #22d3ee 110deg,
+          #6366f1 220deg,
+          #7c3aed 320deg,
+          rgba(124, 58, 237, 0) 360deg
+        );
+        -webkit-mask: radial-gradient(
+          farthest-side,
+          transparent calc(100% - 3px),
+          #000 0
+        );
+        mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 0);
+        animation: kt-spin 1.6s linear infinite;
+      }
+
+      .app-loading .emblem-core {
+        position: relative;
+        width: 104px;
+        height: 104px;
+        border-radius: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(160deg, #161a23 0%, #0e1117 100%);
+        box-shadow:
+          inset 0 0 0 1px rgba(148, 163, 255, 0.12),
+          0 12px 32px rgba(0, 0, 0, 0.55);
+      }
+
+      .app-loading .logo {
+        width: 64px;
+        height: 64px;
+        filter: drop-shadow(0 0 14px rgba(124, 58, 237, 0.5));
+      }
+
+      .app-loading .wordmark {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+      }
+
+      .app-loading .wordmark-title {
+        font:
+          700 22px/1.1 'Open Sans',
+          'Helvetica Neue',
+          sans-serif;
+        letter-spacing: -0.02em;
+        color: #f1f3f9;
+      }
+
+      .app-loading .wordmark-accent {
+        background: linear-gradient(135deg, #22d3ee 0%, #7c3aed 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .app-loading .wordmark-byline {
+        font:
+          500 11px/1.4 'Open Sans',
+          'Helvetica Neue',
+          sans-serif;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(226, 230, 240, 0.5);
+      }
+
+      @media (prefers-color-scheme: light) {
+        body {
+          background: #f5f6fa;
+          color: #1e2230;
+        }
+
+        .loading-full-page-wrapper {
+          background:
+            radial-gradient(
+              60vmax 60vmax at 15% 10%,
+              rgba(124, 58, 237, 0.1),
+              transparent 60%
+            ),
+            radial-gradient(
+              50vmax 50vmax at 85% 90%,
+              rgba(34, 211, 238, 0.1),
+              transparent 60%
+            ),
+            #f5f6fa;
+        }
+
+        .app-loading .productivity-tip h2,
+        .app-loading .wordmark-title {
+          color: #0b0d12;
+        }
+
+        .app-loading .productivity-tip p,
+        .app-loading .wordmark-byline {
+          color: rgba(30, 34, 48, 0.6);
+        }
+      }
+
+      @keyframes kt-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes kt-pulse {
         0%,
         100% {
-          opacity: 0;
-          transform: scale(0.8);
+          opacity: 0.35;
+          transform: scale(0.88);
         }
         50% {
-          opacity: 0.15;
+          opacity: 0.85;
           transform: scale(1);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .app-loading .emblem-ring,
+        .app-loading .emblem-glow {
+          animation: none;
         }
       }
     </style>
@@ -211,65 +320,75 @@ TODO configure more restrictive Content-Security-Policy
             <p id="text">Text</p>
           </div>
 
-          <div class="spinner">
-            <div class="spinner-pulse"></div>
+          <div class="emblem">
+            <div class="emblem-glow"></div>
+            <div class="emblem-ring"></div>
+            <div class="emblem-core">
+              <svg
+                class="logo"
+                aria-hidden="true"
+                viewBox="0 0 64 64"
+              >
+                <defs>
+                  <linearGradient
+                    id="splashGrad"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop
+                      offset="0%"
+                      stop-color="#22D3EE"
+                    />
+                    <stop
+                      offset="50%"
+                      stop-color="#6366F1"
+                    />
+                    <stop
+                      offset="100%"
+                      stop-color="#7C3AED"
+                    />
+                  </linearGradient>
+                </defs>
+                <rect
+                  x="10"
+                  y="8"
+                  width="9"
+                  height="48"
+                  rx="4.5"
+                  fill="url(#splashGrad)"
+                />
+                <path
+                  d="M23 34 L45 10 H54 L32 34 Z"
+                  fill="url(#splashGrad)"
+                />
+                <path
+                  d="M28 30 L54 54 H45 L21 32 Z"
+                  fill="url(#splashGrad)"
+                  opacity="0.95"
+                />
+                <polygon
+                  points="26,32 32,26 38,32 32,38"
+                  fill="#22D3EE"
+                />
+                <circle
+                  cx="32"
+                  cy="32"
+                  r="2"
+                  fill="#FFFFFF"
+                  opacity="0.9"
+                />
+              </svg>
+            </div>
           </div>
 
-          <svg
-            class="logo"
-            viewBox="0 0 64 64"
-          >
-            <defs>
-              <linearGradient
-                id="splashGrad"
-                x1="0%"
-                y1="0%"
-                x2="100%"
-                y2="100%"
-              >
-                <stop
-                  offset="0%"
-                  stop-color="#38BDF8"
-                />
-                <stop
-                  offset="50%"
-                  stop-color="#6366F1"
-                />
-                <stop
-                  offset="100%"
-                  stop-color="#8B5CF6"
-                />
-              </linearGradient>
-            </defs>
-            <rect
-              x="10"
-              y="8"
-              width="9"
-              height="48"
-              rx="4.5"
-              fill="url(#splashGrad)"
-            />
-            <path
-              d="M23 34 L45 10 H54 L32 34 Z"
-              fill="url(#splashGrad)"
-            />
-            <path
-              d="M28 30 L54 54 H45 L21 32 Z"
-              fill="url(#splashGrad)"
-              opacity="0.95"
-            />
-            <polygon
-              points="26,32 32,26 38,32 32,38"
-              fill="#38BDF8"
-            />
-            <circle
-              cx="32"
-              cy="32"
-              r="2"
-              fill="#FFFFFF"
-              opacity="0.9"
-            />
-          </svg>
+          <div class="wordmark">
+            <span class="wordmark-title"
+              >Kairon<span class="wordmark-accent">Task</span></span
+            >
+            <span class="wordmark-byline">by Christian Sousa</span>
+          </div>
         </div>
       </div>
     </app-root>

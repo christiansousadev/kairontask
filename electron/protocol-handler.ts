@@ -4,7 +4,7 @@ import * as path from 'path';
 import { IPC } from './shared-with-frontend/ipc-events.const';
 import { showOrFocus } from './various-shared';
 
-export const PROTOCOL_NAME = 'superproductivity';
+export const PROTOCOL_NAME = 'kairontask';
 export const PROTOCOL_PREFIX = `${PROTOCOL_NAME}://`;
 
 // Store pending URLs to process after window is ready

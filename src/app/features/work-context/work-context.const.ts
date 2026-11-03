@@ -13,16 +13,17 @@ export const WORKLOG_EXPORT_DEFAULTS: WorklogExportSettings = {
   groupBy: WorklogGrouping.DATE,
 };
 
-export const DEFAULT_PROJECT_COLOR = '#06b6d4';
-export const DEFAULT_TAG_COLOR = '#6366f1';
-export const DEFAULT_TODAY_TAG_COLOR = '#6366f1';
+// KaironTask "Midnight Obsidian" brand palette
+export const DEFAULT_PROJECT_COLOR = '#22d3ee';
+export const DEFAULT_TAG_COLOR = '#7c3aed';
+export const DEFAULT_TODAY_TAG_COLOR = '#7c3aed';
 
 export const WORK_CONTEXT_DEFAULT_THEME: WorkContextThemeCfg = {
   isAutoContrast: true,
   isDisableBackgroundTint: false,
   primary: DEFAULT_TAG_COLOR,
   huePrimary: '500',
-  accent: '#06b6d4',
+  accent: '#22d3ee',
   hueAccent: '500',
   warn: '#ef4444',
   hueWarn: '500',

@@ -8,22 +8,25 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Versão-18.1.3-6366f1.svg?style=flat-square" alt="Versão 18.1.3"/>
+  <img src="https://img.shields.io/badge/Versão-18.1.3-7c3aed.svg?style=flat-square" alt="Versão 18.1.3"/>
   &nbsp;
-  <img src="https://img.shields.io/badge/Licença-MIT-indigo.svg?style=flat-square" alt="MIT License"/>
+  <img src="https://img.shields.io/badge/Licença-MIT-0b0d12.svg?style=flat-square" alt="MIT License"/>
   &nbsp;
-  <img src="https://img.shields.io/badge/Arquitetura-Local--First-06b6d4.svg?style=flat-square" alt="Local First"/>
+  <img src="https://img.shields.io/badge/Arquitetura-Local--First-22d3ee.svg?style=flat-square" alt="Local First"/>
   &nbsp;
   <img src="https://img.shields.io/badge/Stack-Angular_18+_|_Electron_37+_|_Capacitor_7-38bdf8.svg?style=flat-square" alt="Stack"/>
   &nbsp;
   <img src="https://img.shields.io/badge/Privacidade-Zero_Telemetria-10b981.svg?style=flat-square" alt="Zero Telemetry"/>
   &nbsp;
   <img src="https://img.shields.io/badge/Testes-8376_Passando-success.svg?style=flat-square" alt="Testes"/>
+  &nbsp;
+  <img src="https://img.shields.io/badge/Design-Midnight_Obsidian-7c3aed.svg?style=flat-square" alt="Design Midnight Obsidian"/>
 </p>
 
 <p align="center">
   <a href="#-principais-funcionalidades">Funcionalidades</a> •
   <a href="#-telas-e-demonstração-visual">Telas &amp; Demonstração</a> •
+  <a href="#-identidade-visual--midnight-obsidian">Identidade Visual</a> •
   <a href="#️-arquitetura-e-engenharia-do-sistema">Arquitetura</a> •
   <a href="#-como-executar-em-desenvolvimento">Como Executar</a> •
   <a href="#-empacotamento-e-build-para-produção">Builds de Produção</a> •
@@ -70,12 +73,37 @@ Sincronize tarefas de forma bidirecional sem trocar de janela:
 |                        🌙 Lista de Tarefas & Timeboxing (Dark Mode)                        |                              ☀️ Interface Dinâmica (Light Mode)                              |
 | :----------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------: |
 | <img src="docs/assets/screenshot-tasks-dark.png" alt="KaironTask Dark Mode" width="100%"/> | <img src="docs/assets/screenshot-tasks-light.png" alt="KaironTask Light Mode" width="100%"/> |
-|       _Planejamento diário, subtarefas e cronômetro ativo com paleta Kairon Indigo._       |         _Tema claro de alta legibilidade adaptável ao tema do sistema operacional._          |
+|            _Planejamento diário, subtarefas e cronômetro ativo no tema escuro._            |         _Tema claro de alta legibilidade adaptável ao tema do sistema operacional._          |
 
 |                           ⏱️ Resumo Diário & Planejamento de Fechamento                           |                         📊 Worklog, Métricas & Folha de Ponto                         |
 | :-----------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
 | <img src="docs/assets/screenshot-daily-summary.png" alt="KaironTask Daily Summary" width="100%"/> | <img src="docs/assets/screenshot-worklog.png" alt="KaironTask Worklog" width="100%"/> |
 |         _Revisão de tarefas concluídas, notas do dia e planejamento para o dia seguinte._         |    _Exportação de horas, gráficos de tempo investido por projeto e apontamentos._     |
+
+---
+
+## 🎨 Identidade Visual — Midnight Obsidian
+
+O KaironTask adota um design system autoral, com estética de produto SaaS premium: superfícies em **obsidiana** com leve tom ardósia, **violeta** como cor primária e **ciano elétrico** como destaque.
+
+| Token                       | Cor                   | Uso                                                     |
+| :-------------------------- | :-------------------- | :------------------------------------------------------ |
+| `--bg` (escuro)             | `#0B0D12`             | Fundo da aplicação                                      |
+| `--sidenav-bg` (escuro)     | `#0E1117`             | Barra lateral                                           |
+| `--dark2` / `--card-bg`     | `#11141B` / `#161A23` | Superfícies, cartões de tarefa e painéis                |
+| `--brand-violet` / primária | `#7C3AED`             | Ações principais, item ativo do menu, seleção de tarefa |
+| `--brand-cyan` / destaque   | `#22D3EE`             | Foco da entrada rápida, tarefa em andamento, realces    |
+| `--bg` (claro)              | `#F5F6FA`             | Fundo do tema claro                                     |
+
+Destaques do redesign:
+
+- **Splash screen** com anel em gradiente violeta → ciano, brilho pulsante suave e respeito a `prefers-reduced-motion`.
+- **Cartões de tarefa** com cantos de 8px, bordas translúcidas e sombras profundas calibradas para superfícies escuras.
+- **Entrada rápida** com anel de foco ciano e **tags** em formato _pill_ discreto.
+- **Barra lateral** com logotipo em gradiente e assinatura _by Christian Sousa_.
+- Cores nativas alinhadas em todas as plataformas: barra de status/navegação Android, área segura iOS, title bar do Electron e manifesto PWA.
+
+Todos os tokens vivem em [`src/styles/_css-variables.scss`](src/styles/_css-variables.scss); as regras de uso estão em [`docs/styling-guide.md`](docs/styling-guide.md). O tema padrão de projetos e tags novos é definido em [`work-context.const.ts`](src/app/features/work-context/work-context.const.ts).
 
 ---
 
@@ -262,7 +290,12 @@ Para aprofundar-se na engenharia, padrões de projeto e governança do código, 
 ---
 
 ## 📄 Licença e Autoria
- 
-- **Autor e Desenvolvedor**: Christian Sousa
-- **Licença**: Distribuído sob os termos da licença [MIT](LICENSE).  
-Copyright (c) 2026 Christian Sousa. Todos os direitos reservados.
+
+- **Autor e Mantenedor**: Christian Sousa
+- **Website**: [christiansousa.dev](https://christiansousa.dev)
+- **App Web**: [kairontask.christiansousa.dev](https://kairontask.christiansousa.dev)
+- **Contato / Suporte**: [contato@christiansousa.dev](mailto:contato@christiansousa.dev)
+- **Repositório**: [github.com/christiansousadev/kairontask](https://github.com/christiansousadev/kairontask)
+- **Licença**: Distribuído sob os termos da licença [MIT](LICENSE).
+
+Copyright (c) 2026 Christian Sousa. O aviso de copyright original (`Copyright (c) 2018 Johannes Millan`) é preservado no arquivo [LICENSE](LICENSE), conforme exigido pela licença MIT.

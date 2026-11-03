@@ -24,11 +24,11 @@ html {
   // Set html background for iOS safe area (home indicator)
   // Uses :has() to match body theme class since --bg is defined on body
   &:has(body.isLightTheme) {
-    background: #f8f8f7;
+    background: #f5f6fa;
   }
 
   &:has(body.isDarkTheme) {
-    background: #131314;
+    background: #0b0d12;
   }
 
   button,

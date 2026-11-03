@@ -27,19 +27,46 @@ O arquivo [`src/styles/_css-variables.scss`](file:///c:/Projects/kairontask/src/
 
 ### 2.1. Catálogo dos Tokens Principais
 
-| Categoria               | Variáveis Principais                                                    | Descrição / Valores Padrão                                                                         |
-| :---------------------- | :---------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------- |
-| **Cores Semânticas**    | `--color-primary`, `--color-accent`, `--color-warn`                     | Cores principais da identidade e botões de ação.                                                   |
-| **Superfícies & Fundo** | `--color-bg`, `--color-surface`, `--color-sidebar`                      | Fundos de página, cartões de tarefa e barras laterais.                                             |
-| **Texto & Ícones**      | `--color-text-primary`, `--color-text-secondary`, `--color-text-muted`  | Hierarquia de contraste e legibilidade.                                                            |
-| **Tipografia**          | `--font-primary-stack`                                                  | Pilha de fontes: `'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif`. |
-| **Espaçamento**         | `--s` (8px), `--s2` (16px), `--s3` (24px), `--s4` (32px), `--s8` (64px) | Grid espacial proporcional.                                                                        |
-| **Bordas & Sombras**    | `--card-border-radius`, `--default-box-shadow`, `--elevation-z*`        | Cantos arredondados e elevações em camadas.                                                        |
-| **Z-Index**             | `--z-sidebar`, `--z-header`, `--z-modal`, `--z-toast`, `--z-blocker`    | Camadas de sobreposição sem risco de sobreposição incorreta.                                       |
+| Categoria               | Variáveis Principais                                                                                                       | Descrição / Valores Padrão                                                                         |
+| :---------------------- | :------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------- |
+| **Marca**               | `--brand-violet`, `--brand-indigo`, `--brand-cyan`, `--brand-gradient`, `--brand-focus-ring`, `--brand-glow`               | Identidade Midnight Obsidian (ver seção 2.3).                                                      |
+| **Paleta Material**     | `--c-primary`, `--c-accent`, `--c-warn`, `--palette-{primary,accent,warn}-{50..900}`                                       | Injetadas em tempo de execução pelo `angular-material-css-vars` a partir do tema do contexto.      |
+| **Cores Semânticas**    | `--color-success`, `--color-warning`, `--color-danger`                                                                     | `#10b981`, `#f59e0b`, `#ef4444`.                                                                   |
+| **Superfícies & Fundo** | `--bg`, `--bg-lighter`, `--card-bg`, `--task-c-bg`, `--sidenav-bg`, `--dark0`…`--dark24`                                   | Fundos de página, cartões de tarefa, barra lateral e escala de elevação escura.                    |
+| **Texto & Ícones**      | `--text-color`, `--text-color-less-intense`, `--text-color-muted`, `--text-color-most-intense`                             | Hierarquia de contraste e legibilidade.                                                            |
+| **Tipografia**          | `--font-primary-stack`                                                                                                     | Pilha de fontes: `'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif`. |
+| **Espaçamento**         | `--s` (8px), `--s2` (16px), `--s3` (24px), `--s4` (32px), `--s8` (64px)                                                    | Grid espacial proporcional.                                                                        |
+| **Bordas & Sombras**    | `--card-border-radius` (10px), `--task-border-radius` (8px), `--md-sys-level*`, `--whiteframe-shadow-*dp`, `--task-shadow` | Cantos arredondados e elevações em camadas.                                                        |
+| **Z-Index**             | `--z-side-nav`, `--z-main-header`, `--z-backdrop`, `--z-add-task-bar`, `--z-tour`                                          | Camadas de sobreposição sem risco de sobreposição incorreta.                                       |
+
+> **Correção (2026-11-03)**: versões anteriores deste caderno listavam `--color-bg`, `--color-surface`, `--color-sidebar` e `--color-text-*`. Esses tokens **não existem** no código; a tabela acima reflete os nomes reais.
 
 ### 2.2. Regra Anti-Pattern do Projeto
 
 > **Diretriz Crítica**: Conforme [`CLAUDE.md`](file:///c:/Projects/kairontask/CLAUDE.md) e [`docs/styling-guide.md`](file:///c:/Projects/kairontask/docs/styling-guide.md), **nunca redeclare estilos do Material Theme diretamente**. Sempre utilize as variáveis CSS e classes utilitárias já existentes em `_css-variables.scss`.
+
+### 2.3. Identidade Visual "Midnight Obsidian" (2026-11-03)
+
+Design system autoral do KaironTask: superfícies obsidiana com leve tom ardósia, **violeta** como primária e **ciano elétrico** como destaque.
+
+| Papel         | Token / Local                             | Escuro                     | Claro                               |
+| :------------ | :---------------------------------------- | :------------------------- | :---------------------------------- |
+| Fundo         | `--bg`                                    | `#0b0d12` (`--dark0-5`)    | `#f5f6fa`                           |
+| Barra lateral | `--sidenav-bg`                            | `#0e1117` (`--dark1`)      | transparente                        |
+| Superfícies   | `--dark2` / `--card-bg` / `--task-c-bg`   | `#11141b` / `#161a23`      | `#ffffff`                           |
+| Texto         | `--text-color`                            | `rgb(226, 230, 240)`       | `rgb(30, 34, 48)`                   |
+| Bordas        | `--extra-border-color`, `--divider-color` | `rgba(148, 163, 255, 0.1)` | `#e6e8f0` / `rgba(30, 34, 48, 0.1)` |
+| Primária      | `WORK_CONTEXT_DEFAULT_THEME.primary`      | `#7c3aed`                  | `#7c3aed`                           |
+| Destaque      | `WORK_CONTEXT_DEFAULT_THEME.accent`       | `#22d3ee`                  | `#22d3ee`                           |
+
+**Onde cada parte vive:**
+
+- **Tokens CSS** — [`src/styles/_css-variables.scss`](file:///c:/Projects/kairontask/src/styles/_css-variables.scss): tokens `--brand-*`, escala obsidiana `--dark0`…`--dark24`, superfícies, texto, sombras mais profundas no escuro (`--md-sys-level*` sobrescritos em `body.isDarkTheme`), `--tag-chip-bg/-border`.
+- **Tema padrão de contexto** — [`work-context.const.ts`](file:///c:/Projects/kairontask/src/app/features/work-context/work-context.const.ts): `DEFAULT_TAG_COLOR`/`DEFAULT_TODAY_TAG_COLOR = #7c3aed`, `DEFAULT_PROJECT_COLOR = #22d3ee`, accent `#22d3ee`. Afeta apenas projetos/tags novos ou sem tema salvo.
+- **Presets** — [`validated-color-palettes.const.ts`](file:///c:/Projects/kairontask/src/app/core/theme/validated-color-palettes.const.ts): "Midnight Obsidian (Default)" adicionado; "Kairon Indigo" mantido como alternativa.
+- **Componentes** — cartões de tarefa (raio 8px, sombras com contorno translúcido, realce ciano para tarefa atual e violeta para selecionada), entrada rápida com anel de foco ciano (`add-task-bar.component.scss`), tags em formato _pill_ (`tag.component.scss`), barra lateral com logotipo em gradiente e assinatura _by Christian Sousa_ (`magic-side-nav`).
+- **Splash** — [`src/index.html`](file:///c:/Projects/kairontask/src/index.html): anel cônico violeta→ciano giratório, brilho pulsante, wordmark e suporte a `prefers-color-scheme` / `prefers-reduced-motion`.
+- **Cores nativas alinhadas** — `page.scss` (área segura iOS), `global-theme.service.ts` (status/navigation bar Android), `capacitor.config.ts`, `android/app/src/main/res/values*/colors.xml`, `electron/main-window.ts` (title bar overlay), `src/manifest.json` (PWA).
 
 ---
 

@@ -1,1 +1,1 @@
-For all current downloads, package links, and platform-specific notes: [check the wiki](https://github.com/super-productivity/super-productivity/wiki/2.01-Downloads-and-Install).
+For all current downloads, package links, and platform-specific notes: [check the releases page](https://github.com/christiansousadev/kairontask/releases) or visit [christiansousa.dev](https://christiansousa.dev).

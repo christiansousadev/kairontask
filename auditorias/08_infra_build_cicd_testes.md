@@ -76,14 +76,16 @@ O repositório possui uma infraestrutura completa para gerar artefatos para web,
 
 A suíte de automações no GitHub Actions foi enxugada e desativada de execuções automáticas não solicitadas (sem autodeploy e sem agendamentos noturnos via cron), mantendo o repositório sob controle 100% manual e silencioso:
 
-| Workflow                     | Gatilho                      | Responsabilidade                                                                                  |
-| :--------------------------- | :--------------------------- | :------------------------------------------------------------------------------------------------ |
-| **`ci.yml`**                 | Pull Requests ou Manual      | Validação de ESLint, integridade de i18n, compilação e suíte de testes.                           |
-| **`manual-build.yml`**       | Manual (`workflow_dispatch`) | Compilação sob demanda de instaladores Windows (`.exe`) e macOS (`.dmg`) com upload de artefatos. |
-| **`supersync-docker.yml`**   | Manual (`workflow_dispatch`) | Compilação e push sob demanda da imagem Docker do SuperSync Server.                               |
-| **`test-mac-dmg-build.yml`** | Manual (`workflow_dispatch`) | Teste sob demanda de compilação do instalador DMG para macOS.                                     |
+| Workflow                     | Gatilho                      | Responsabilidade                                                                                                  |
+| :--------------------------- | :--------------------------- | :---------------------------------------------------------------------------------------------------------------- |
+| **`ci.yml`**                 | Pull Requests ou Manual      | Validação de ESLint, integridade de i18n, compilação e suíte de testes. Sem `paths-ignore` (o wiki foi removido). |
+| **`manual-build.yml`**       | Manual (`workflow_dispatch`) | Compilação sob demanda de instaladores Windows (`.exe`) e macOS (`.dmg`) com upload de artefatos.                 |
+| **`supersync-docker.yml`**   | Manual (`workflow_dispatch`) | Compilação e push sob demanda da imagem Docker do SuperSync Server.                                               |
+| **`test-mac-dmg-build.yml`** | Manual (`workflow_dispatch`) | Teste sob demanda de compilação do instalador DMG para macOS.                                                     |
 
 > **Nota de Saneamento**: Todos os cron jobs noturnos (`e2e-scheduled.yml`, `stale.yml`, `stale-discussions.yml`), auto-replies de bots, atualizações automáticas do Dependabot (`dependabot.yml`) e autodeploys externos para lojas/servidores foram completamente removidos para evitar consumo de cota e deploys não autorizados.
+
+> **Saneamento de Documentação (2026-11-03)**: o wiki legado `docs/wiki/` (70 arquivos), seu matcher de lint (`.github/annotations/wiki-lint-problem-matcher.json`) e o filtro `paths-ignore: docs/wiki/**` do `ci.yml` foram removidos. Também saíram `docs/promotion/`, `docs/how-to-rate.md` e os guias de publicação do mantenedor original (`build-and-publish-notes.md`, `mac-app-store-code-signing-guide.md`, `update-mac-certificates.md`, `howto-refresh-snap-credentials.md`). Os links do `.github/CONTRIBUTING.md`, do `PULL_REQUEST_TEMPLATE.md` e de `build/release-notes.md` agora apontam para `docs/` local, para os releases de `christiansousadev/kairontask` e para `christiansousa.dev`.
 
 ---
 

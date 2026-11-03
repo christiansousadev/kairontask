@@ -5,13 +5,15 @@
   align-items: center;
   flex-direction: row;
   min-width: 20px;
-  padding: 0 var(--s);
-  padding-left: 0;
+  padding: var(--s-quarter) var(--s);
+  padding-left: var(--s-half);
   font-size: 10px;
   border-radius: var(--s2);
   cursor: pointer;
   vertical-align: middle;
   color: var(--text-color-less-intense);
+  background: var(--tag-chip-bg);
+  border: 1px solid var(--tag-chip-border);
 }
 
 .tag-title {

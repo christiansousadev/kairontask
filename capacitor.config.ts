@@ -26,7 +26,7 @@ const config: CapacitorConfig = {
     contentInset: 'never',
     // Background color for safe areas (home indicator, notch)
     // Use dark color to match dark theme (most common on mobile)
-    backgroundColor: '#131314',
+    backgroundColor: '#0b0d12',
     // Allow inline media playback
     allowsLinkPreview: true,
     // Scroll behavior

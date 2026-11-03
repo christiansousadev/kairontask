@@ -106,8 +106,7 @@ export class RemoteOpsProcessingService {
           type: 'ERROR',
           msg: T.F.SYNC.S.VERSION_UNSUPPORTED,
           actionStr: T.PS.UPDATE_APP,
-          actionFn: () =>
-            window.open('https://super-productivity.com/download', '_blank'),
+          actionFn: () => window.open('https://christiansousa.dev', '_blank'),
         });
         return {
           localWinOpsCreated: 0,
@@ -130,8 +129,7 @@ export class RemoteOpsProcessingService {
           type: 'WARNING',
           msg: T.F.SYNC.S.NEWER_VERSION_AVAILABLE,
           actionStr: T.PS.UPDATE_APP,
-          actionFn: () =>
-            window.open('https://super-productivity.com/download', '_blank'),
+          actionFn: () => window.open('https://christiansousa.dev', '_blank'),
         });
       }
 
@@ -182,7 +180,7 @@ export class RemoteOpsProcessingService {
         type: 'ERROR',
         msg: T.F.SYNC.S.VERSION_TOO_OLD,
         actionStr: T.PS.UPDATE_APP,
-        actionFn: () => window.open('https://super-productivity.com/download', '_blank'),
+        actionFn: () => window.open('https://christiansousa.dev', '_blank'),
       });
       return {
         localWinOpsCreated: 0,

@@ -34,9 +34,9 @@ let mainWin: BrowserWindow;
  * Semi-transparent to ensure window controls are always visible.
  */
 const getTitleBarColor = (isDark: boolean): string => {
-  // Dark: matches --bg (#131314) with 0% opacity (fully transparent)
-  // Light: matches --bg (#f8f8f7) with 0% opacity (fully transparent)
-  return isDark ? 'rgba(19, 19, 20, 0)' : 'rgba(248, 248, 247, 0)';
+  // Dark: matches --bg (#0b0d12) with 0% opacity (fully transparent)
+  // Light: matches --bg (#f5f6fa) with 0% opacity (fully transparent)
+  return isDark ? 'rgba(11, 13, 18, 0)' : 'rgba(245, 246, 250, 0)';
 };
 
 const mainWinModule: {

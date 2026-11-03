@@ -44,10 +44,23 @@
   color: var(--text-color-most-intense);
 
   box-shadow: var(--whiteframe-shadow-3dp);
+  border: 1px solid var(--extra-border-color);
   border-radius: var(--card-border-radius);
+  transition:
+    box-shadow var(--transition-duration-s) var(--ani-standard-timing),
+    border-color var(--transition-duration-s) var(--ani-standard-timing);
+
+  &:focus-within {
+    border-color: var(--brand-cyan);
+    box-shadow: var(--brand-focus-ring), var(--whiteframe-shadow-3dp);
+  }
 
   &.isGlobalBarVariant {
     box-shadow: var(--whiteframe-shadow-12dp);
+
+    &:focus-within {
+      box-shadow: var(--brand-focus-ring), var(--whiteframe-shadow-12dp);
+    }
   }
 }
 

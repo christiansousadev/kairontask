@@ -21,7 +21,7 @@ class WebViewRequestHandler(private val activity: Activity, private val serviceH
     fun handleUrlLoading(view: WebView, url: String): Boolean {
         Log.v("TW", url)
         return if (url.startsWith("http://") || url.startsWith("https://")) {
-            if (url.contains("super-productivity.com") || url.contains("localhost") || url.contains(
+            if (url.contains("localhost") || url.contains(
                     serviceHost
                 )
             ) {

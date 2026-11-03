@@ -118,12 +118,12 @@ Todas as etapas do plano de ação foram **100% executadas e consolidadas**:
    - `package.json` atualizado (`name: kairontask`, autor `Christian Sousa <support@kairontask.app>`, `https://kairontask.app`).
    - `electron-builder.yaml`, `build/electron-builder.mas.yaml` e `build/electron-builder.mas-dev.yaml` atualizados para `com.kairontask.app` e `KaironTask`.
    - `capacitor.config.ts`, `android/app/build.gradle` e `ios/App/App.xcodeproj` apontando para `com.kairontask.app` e `https://app.kairontask.app`.
-   - `LICENSE` e `android/LICENSE` atribuídos a `Copyright (c) 2026 Christian Sousa`.
+   - `LICENSE` e `android/LICENSE` com `Copyright (c) 2026 Christian Sousa`, **preservando** o aviso histórico `Copyright (c) 2018 Johannes Millan` (raiz) e `Copyright (c) 2020 Johannes Millan` (Android), conforme exigido pela licença MIT — ver seção 4.
 2. [x] **Passo 2 — UI, Nova Identidade Visual & Novo Logo (Concluído)**:
    - Novo logotipo vetorial oficial KaironTask criado em `src/assets/icons/sp.svg` e `src/assets/icons/sp-white.svg` (emblema geométrico com gradiente Cyan/Indigo/Violeta e núcleo temporal Kairos).
    - Splash screen em `src/index.html` atualizado com o novo logotipo e iluminação ambiente.
    - Cabeçalho de marca `nav-brand-header` adicionado à barra lateral (`magic-side-nav`), perfeitamente adaptado aos modos expandido e compacto.
-   - Paleta de cores padrão modernizada para a identidade oficial KaironTask (Primary `#6366f1`, Accent `#06b6d4`, Warn `#ef4444`).
+   - Paleta de cores padrão modernizada para a identidade oficial KaironTask (Primary `#6366f1`, Accent `#06b6d4`, Warn `#ef4444`). **Substituída na seção 4 pela paleta Midnight Obsidian** (Primary `#7c3aed`, Accent `#22d3ee`).
 3. [x] **Passo 3 — Suporte, Links e Menus (Concluído)**:
    - Rota e botão `/donate` redirecionados para `https://kairontask.app`.
    - `getGithubErrorUrl` apontando para `github.com/christiansousadev/kairontask`.
@@ -136,3 +136,64 @@ Todas as etapas do plano de ação foram **100% executadas e consolidadas**:
 5. [x] **Passo 5 — Validação e Testes (Concluído)**:
    - Validação de integridade de tradução `npm run int:test` aprovada com 100% de sucesso.
    - Verificação de formatação e linting via `npm run checkFile` aprovada.
+
+---
+
+## 4. Fase Final — Limpeza Cirúrgica Definitiva (2026-11-03)
+
+Rodada final de desvinculação executada sobre os vestígios **operacionais** restantes (que afetavam comportamento em tempo de execução), acompanhada do redesign visual e da poda de documentação legada.
+
+### 4.1. Licença MIT (correção legal)
+
+| Arquivo           | Estado anterior                                                           | Estado atual                                                                |
+| :---------------- | :------------------------------------------------------------------------ | :-------------------------------------------------------------------------- |
+| `LICENSE`         | Somente `Copyright (c) 2026 Christian Sousa` (aviso MIT original ausente) | `Copyright (c) 2018 Johannes Millan` + `Copyright (c) 2026 Christian Sousa` |
+| `android/LICENSE` | Ordem invertida                                                           | `Copyright (c) 2020 Johannes Millan` + `Copyright (c) 2026 Christian Sousa` |
+
+> A licença MIT exige que o aviso de copyright original acompanhe todas as cópias ou partes substanciais do software. A remoção anterior foi revertida.
+
+### 4.2. Vestígios operacionais substituídos
+
+| Arquivo                                                                                 | Antes                                                                    | Depois                                                                            |
+| :-------------------------------------------------------------------------------------- | :----------------------------------------------------------------------- | :-------------------------------------------------------------------------------- |
+| `electron/protocol-handler.ts`                                                          | `PROTOCOL_NAME = 'superproductivity'`                                    | `PROTOCOL_NAME = 'kairontask'` (deep link `kairontask://`)                        |
+| `android/app/src/main/AndroidManifest.xml` (3 intent-filters OAuth)                     | `com.super-productivity.app` / `com.superproductivity.superproductivity` | `com.kairontask.app`                                                              |
+| `ios/App/App/Info.plist` (`CFBundleURLSchemes`)                                         | `com.super-productivity.app`                                             | `com.kairontask.app`                                                              |
+| `src/assets/android-oauth-callback.html`                                                | `com.super-productivity.app://plugin-oauth-callback`                     | `com.kairontask.app://plugin-oauth-callback`                                      |
+| `src/app/op-log/sync/remote-ops-processing.service.ts` (3 links)                        | `https://super-productivity.com/download`                                | `https://christiansousa.dev`                                                      |
+| `share-formatter.ts`, `share-url-builder.util.ts`, `share-text.util.ts`                 | `https://super-productivity.com`                                         | `https://christiansousa.dev`                                                      |
+| `file-imex.component.ts`, `dialog-sync-error.component.ts`                              | `super-productivity-backup.json`                                         | `kairontask-backup.json`                                                          |
+| `android/app/app_config.properties`, `android/app/config.gradle`                        | `app.super-productivity.com`                                             | `kairontask.christiansousa.dev`                                                   |
+| `android/.../webview/WebViewRequestHandler.kt`                                          | Mantinha `super-productivity.com` dentro do WebView                      | Cláusula removida (o `serviceHost` já cobre o domínio oficial)                    |
+| `dialog-please-rate.component.html`                                                     | `docs/how-to-rate.md` do repositório upstream                            | `github.com/christiansousadev/kairontask`                                         |
+| `plugin-management.component.html`                                                      | `community-plugins.json` do repositório upstream                         | `github.com/christiansousadev/kairontask/.../community-plugins.json`              |
+| `gitlab-cfg-form.const.ts`                                                              | Guia de token GitLab no repositório upstream                             | `github.com/christiansousadev/kairontask/.../gitlab-access-token-instructions.md` |
+| `.github/CONTRIBUTING.md`, `.github/PULL_REQUEST_TEMPLATE.md`, `build/release-notes.md` | Links para o wiki upstream                                               | `docs/` local, releases e `christiansousa.dev`                                    |
+
+> **Nota de correção**: o TypeScript (`plugin-oauth.service.ts`, `oauth-callback-handler.service.ts`) já usava `com.kairontask.app`, mas o `AndroidManifest.xml` e o `Info.plist` ainda declaravam o esquema antigo — os callbacks OAuth mobile estavam dessincronizados e foram corrigidos nesta rodada.
+
+### 4.3. Documentação legada removida
+
+- `docs/wiki/` (70 arquivos do wiki do projeto original) e `.github/annotations/wiki-lint-problem-matcher.json`; filtro `paths-ignore: docs/wiki/**` removido de `.github/workflows/ci.yml`.
+- `docs/promotion/` (banners da Microsoft Store) e `docs/how-to-rate.md`.
+- Guias de publicação do mantenedor original: `docs/build-and-publish-notes.md`, `docs/mac-app-store-code-signing-guide.md`, `docs/update-mac-certificates.md`, `docs/howto-refresh-snap-credentials.md`.
+- **Mantido**: `.github/FUNDING.yml` — já aponta para `github: [christiansousadev]`, portanto não é vestígio legado.
+
+### 4.4. Vestígios mantidos intencionalmente
+
+| Item                                                                                                 | Motivo                                                                                                              |
+| :--------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------ |
+| Pacote Java/Kotlin `com.superproductivity.superproductivity` (inclui actions `...DONE` / `...PAUSE`) | Namespace interno; renomear exige migração de todos os fontes nativos. O `applicationId` já é `com.kairontask.app`. |
+| Alias npm `@super-productivity/plugin-api`                                                           | Compatibilidade de build com plugins e sub-pacotes.                                                                 |
+| Comentários `// https://github.com/super-productivity/.../issues/NNNN`                               | Rastreabilidade histórica de correções; não afetam execução.                                                        |
+| `IOS_BACKUP_FILENAME = 'super-productivity-backup.json'` (`local-backup.service.ts`)                 | Nome de arquivo já persistido no dispositivo; renomear sem migração tornaria backups existentes órfãos.             |
+| `Copyright (c) 2018/2020 Johannes Millan` nas licenças                                               | Exigência legal da licença MIT.                                                                                     |
+
+### 4.5. Pendências identificadas (fora do escopo desta rodada)
+
+| Item                                                                                                          | Observação                                                                                |
+| :------------------------------------------------------------------------------------------------------------ | :---------------------------------------------------------------------------------------- |
+| E-mail `support@kairontask.app` (`global-error-handler.util.ts` e chave `PRIVACY_EXPORT` nos 27 idiomas)      | O contato oficial é `contato@christiansousa.dev`; alinhar e rodar `npm run int:clean`.    |
+| Botão de doação (`donate-page.component.html`) → `https://kairontask.app`                                     | Confirmar se o domínio `kairontask.app` existe ou redirecionar para `christiansousa.dev`. |
+| `SUPER_SYNC_DEFAULT_BASE_URL = 'https://sync.kairontask.app'`                                                 | Confirmar o host de produção do servidor de sync.                                         |
+| Demais menções textuais (~800 ocorrências) em i18n, `packages/plugin-dev/*`, testes e `docs/long-term-plans/` | Não operacionais; tratar em varredura textual dedicada.                                   |
