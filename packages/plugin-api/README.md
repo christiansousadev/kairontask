@@ -1,6 +1,6 @@
 # @super-productivity/plugin-api
 
-Official TypeScript definitions for developing [Super Productivity](https://github.com/super-productivity/super-productivity) plugins.
+Official TypeScript definitions for developing [KaironTask](https://github.com/christiansousadev/kairontask) plugins.
 
 ## Installation
 

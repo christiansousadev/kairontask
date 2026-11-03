@@ -1,6 +1,6 @@
-# Super Productivity Plugin Development
+# KaironTask Plugin Development
 
-This directory contains tools and examples for developing plugins for Super Productivity.
+This directory contains tools and examples for developing plugins for KaironTask.
 
 ## Quick Commands
 

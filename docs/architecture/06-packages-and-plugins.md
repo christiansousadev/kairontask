@@ -1,6 +1,6 @@
 # 06. Sub-pacotes, Plugins e Ecossistema de Extensibilidade
 
-> **Módulos**: `packages/`, `src/app/plugins/`, `src/assets/community-plugins.json`, `docs/plugin-development.md`  
+> **Módulos**: `packages/`, `src/app/plugins/`, `src/assets/community-plugins.json`  
 > **Camada**: SDKs Internos, Tipagem Compartilhada, Backend SuperSync e Sistema de Extensão por Plugins
 
 ---

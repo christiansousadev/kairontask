@@ -1,49 +1,23 @@
-# Super Productivity Packages
+# KaironTask Monorepo Packages
 
-This directory contains plugin packages and the plugin API for Super Productivity.
+This directory contains internal packages, shared schemas, plugin SDKs, and the sync server backend for KaironTask.
 
-## Structure
+## Architecture
 
-- `plugin-api/` - TypeScript definitions for the plugin API
-- `plugin-dev/` - Plugin development examples and tools
-  - `api-test-plugin/` - Basic API test plugin
-  - `procrastination-buster/` - Example SolidJS-based plugin
-  - `yesterday-tasks-plugin/` - Simple plugin showing yesterday's tasks
-  - `boilerplate-solid-js/` - Template for creating new SolidJS plugins (not built)
-  - `sync-md/` - Markdown sync plugin (not built)
+For complete architectural documentation, Typia validation specifications, and package build orchestration:
 
-## Building Packages
+- Refer to [`docs/architecture/06-packages-and-plugins.md`](../docs/architecture/06-packages-and-plugins.md).
 
-All packages are built automatically when running the main build process:
+## Packages Overview
+
+- `plugin-api/` — TypeScript declarations and SDK for KaironTask plugins.
+- `shared-schema/` — Ahead-of-Time (AOT) type validation compiled with Typia for op-log entities and synchronization.
+- `super-sync-server/` — Self-hosted backend server for KaironTask sync with PostgreSQL.
+- `vite-plugin/` — Custom Vite build plugin for packaging community and internal plugins.
+- `plugin-dev/` — Internal issue providers and example plugins.
+
+## Building All Packages
 
 ```bash
 npm run build:packages
 ```
-
-This command:
-
-1. Builds the plugin-api TypeScript definitions
-2. Builds plugins that require compilation (e.g., procrastination-buster)
-3. Copies plugin files to `src/assets/` for inclusion in the app
-
-## Development
-
-To work on a specific plugin:
-
-```bash
-cd plugin-dev/[plugin-name]
-npm install
-npm run dev
-```
-
-## Adding a New Plugin
-
-1. Create a new directory in `plugin-dev/`
-2. Add the plugin configuration to `/packages/build-packages.js`
-3. Run `npm run build:packages` to test the build
-
-## Notes
-
-- The `boilerplate-solid-js` and `sync-md` plugins are development templates and are not included in production builds
-- Plugin files are automatically copied to `src/assets/` during the build process
-- The build script handles dependency installation automatically

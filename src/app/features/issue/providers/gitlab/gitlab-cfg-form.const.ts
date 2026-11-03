@@ -44,7 +44,7 @@ export const GITLAB_CONFIG_FORM: LimitedFormlyFieldConfig<IssueProviderGitlab>[]
   {
     type: 'link',
     templateOptions: {
-      url: 'https://github.com/christiansousadev/kairontask/blob/master/docs/gitlab-access-token-instructions.md',
+      url: 'https://github.com/christiansousadev/kairontask/blob/main/docs/gitlab-access-token-instructions.md',
       txt: T.F.ISSUE.HOW_TO_GET_A_TOKEN,
     },
   },
