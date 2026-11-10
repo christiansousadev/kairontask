@@ -118,7 +118,7 @@ O KaironTask utiliza uma camada de persistência robusta baseada em IndexedDB en
 
 - Suporta Nextcloud, ownCloud, Apache e servidores WebDAV customizados.
 - Arquivos de estado gravados remotamente:
-  - `super-productivity-backup.json` (Snapshot)
+  - `kairontask-backup.json` (Snapshot)
   - `op-log/` (Deltas de operações criptografadas)
 
 ### 6.2. Dropbox (`src/app/imex/sync/dropbox/`)

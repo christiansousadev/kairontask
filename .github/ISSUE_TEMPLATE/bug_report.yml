@@ -72,6 +72,6 @@ body:
       label: documentation gap
       description: Optionally, indicate whether documentation updates are needed.
       options:
-        - label: The documentation/[wiki](https://github.com/super-productivity/super-productivity/wiki) is unclear or incorrect for this case.
-        - label: There should be a note added to the documentation/[wiki](https://github.com/super-productivity/super-productivity/wiki) for this case.
+        - label: The documentation is unclear or incorrect for this case.
+        - label: There should be a note added to the documentation for this case.
         - label: I can help improve the documentation.

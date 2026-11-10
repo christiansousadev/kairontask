@@ -306,7 +306,7 @@
         "FILTER_USER": "Filtrar nome de usuário",
         "GITLAB_BASE_URL": "URL base personalizada do GitLab (opcional)",
         "PROJECT": "nome de usuário/projeto",
-        "PROJECT_HINT": "por exemplo johannesjo/superprodutividade",
+        "PROJECT_HINT": "por exemplo christiansousadev/kairontask",
         "SCOPE": "Escopo",
         "SCOPE_ALL": "Todos",
         "SCOPE_ASSIGNED": "Atribuído a mim",

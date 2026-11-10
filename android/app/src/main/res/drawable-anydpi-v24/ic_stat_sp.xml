@@ -1,20 +1,23 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp"
     android:height="24dp"
-    android:viewportWidth="24"
-    android:viewportHeight="24"
+    android:viewportWidth="64"
+    android:viewportHeight="64"
     android:tint="#FFFFFF">
-  <group android:scaleX="0.27037618"
-      android:scaleY="0.27037618"
-      android:translateX="3.3479624"
-      android:translateY="3.3479624">
-    <path
-        android:pathData="M0.6554,34.5828 L32.4523,63.8553 63.7915,0.9436 30.2226,47.722Z"
-        android:strokeLineJoin="bevel"
-        android:strokeWidth="1.46761858"
-        android:fillColor="#ffffff"
-        android:strokeColor="#00000000"
-        android:fillType="evenOdd"
-        android:strokeLineCap="butt"/>
-  </group>
+  <!-- Kairon Precision Stem -->
+  <path
+      android:fillColor="#ffffff"
+      android:pathData="M14.5,8 C12,8 10,10 10,12.5 v39 C10,54 12,56 14.5,56 C17,56 19,54 19,51.5 v-39 C19,10 17,8 14.5,8 Z" />
+  <!-- Upper Dynamic Chevron -->
+  <path
+      android:fillColor="#ffffff"
+      android:pathData="M23,34 L45,10 H54 L32,34 Z" />
+  <!-- Lower Dynamic Chevron -->
+  <path
+      android:fillColor="#ffffff"
+      android:pathData="M28,30 L54,54 H45 L21,32 Z" />
+  <!-- Kairos Core Diamond -->
+  <path
+      android:fillColor="#ffffff"
+      android:pathData="M26,32 L32,26 L38,32 L32,38 Z" />
 </vector>

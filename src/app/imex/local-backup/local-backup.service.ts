@@ -21,7 +21,7 @@ import { Directory, Encoding, Filesystem } from '@capacitor/filesystem';
 
 const DEFAULT_BACKUP_INTERVAL = 5 * 60 * 1000;
 const ANDROID_DB_KEY = 'backup';
-const IOS_BACKUP_FILENAME = 'super-productivity-backup.json';
+const IOS_BACKUP_FILENAME = 'kairontask-backup.json';
 
 // const DEFAULT_BACKUP_INTERVAL = 6 * 1000;
 

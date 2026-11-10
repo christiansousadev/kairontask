@@ -141,7 +141,7 @@ const createTaskWidgetWindow = async (): Promise<void> => {
     height: bounds.height,
     x: bounds.x,
     y: bounds.y,
-    title: 'Super Productivity Task Widget',
+    title: 'KaironTask Widget',
     frame: false,
     transparent: true,
     alwaysOnTop: true,

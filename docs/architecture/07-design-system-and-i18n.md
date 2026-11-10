@@ -67,6 +67,7 @@ Design system autoral do KaironTask: superfícies obsidiana com leve tom ardósi
 - **Componentes** — cartões de tarefa (raio 8px, sombras com contorno translúcido, realce ciano para tarefa atual e violeta para selecionada), entrada rápida com anel de foco ciano (`add-task-bar.component.scss`), tags em formato _pill_ (`tag.component.scss`), barra lateral com logotipo em gradiente e assinatura _by Christian Sousa_ (`magic-side-nav`).
 - **Splash** — [`src/index.html`](file:///c:/Projects/kairontask/src/index.html): anel cônico violeta→ciano giratório, brilho pulsante, wordmark e suporte a `prefers-color-scheme` / `prefers-reduced-motion`.
 - **Cores nativas alinhadas** — `page.scss` (área segura iOS), `global-theme.service.ts` (status/navigation bar Android), `capacitor.config.ts`, `android/app/src/main/res/values*/colors.xml`, `electron/main-window.ts` (title bar overlay), `src/manifest.json` (PWA).
+- **Ativos Nativos & Bandeja (2026-11-10)** — todos os ícones da bandeja (`electron/assets/icons/`), azulejos Windows Store (`build/appx/`), ícones de notificação Android (`ic_stat_sp.xml`) e pacote iOS (`Info.plist` / `Assets.xcassets`) padronizados para o símbolo oficial e geometria do KaironTask via `tools/generate-all-kairon-icons.js`.
 
 ---
 

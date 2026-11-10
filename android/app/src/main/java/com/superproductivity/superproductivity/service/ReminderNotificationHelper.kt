@@ -244,7 +244,7 @@ object ReminderNotificationHelper {
             // Show summary notification for grouping
             val summaryNotification = NotificationCompat.Builder(context, channelId)
                 .setSmallIcon(R.drawable.ic_stat_sp)
-                .setContentTitle("Super Productivity")
+                .setContentTitle("KaironTask")
                 .setContentText("Task reminders")
                 .setGroup(GROUP_KEY)
                 .setGroupSummary(true)

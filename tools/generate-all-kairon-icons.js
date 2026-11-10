@@ -207,7 +207,109 @@ async function run() {
     }
   }
 
-  // 7. Run tools/generate-mac-icon.js and tools/generate-ios-icon.js
+  // 7. Generate Electron Tray & Indicator Icons
+  console.log('⚡ Generating Electron Tray and Indicator assets...');
+  const electronIconsDir = path.join(ROOT_DIR, 'electron/assets/icons');
+  const indicatorDir = path.join(electronIconsDir, 'indicator');
+  const svgWhiteSource = path.join(ROOT_DIR, 'src/assets/icons/sp-white.svg');
+  const svgWhiteBuffer = fs.existsSync(svgWhiteSource)
+    ? fs.readFileSync(svgWhiteSource)
+    : svgBuffer;
+
+  // icon_256x256.png
+  fs.writeFileSync(
+    path.join(electronIconsDir, 'icon_256x256.png'),
+    await sharp(transparentMasterBuffer).resize(256, 256).png().toBuffer(),
+  );
+
+  // White icon for dark tray / taskbar
+  const whiteIcon16 = await sharp(svgWhiteBuffer, { density: 300 })
+    .resize(16, 16)
+    .png()
+    .toBuffer();
+  const whiteIcon32 = await sharp(svgWhiteBuffer, { density: 300 })
+    .resize(32, 32)
+    .png()
+    .toBuffer();
+  // Dark icon for light tray / taskbar
+  const darkIcon16 = await sharp(svgBuffer, { density: 300 })
+    .resize(16, 16)
+    .png()
+    .toBuffer();
+  const darkIcon32 = await sharp(svgBuffer, { density: 300 })
+    .resize(32, 32)
+    .png()
+    .toBuffer();
+
+  fs.writeFileSync(path.join(electronIconsDir, 'tray-ico-d.png'), whiteIcon16);
+  fs.writeFileSync(path.join(electronIconsDir, 'tray-ico-d@2x.png'), whiteIcon32);
+  fs.writeFileSync(path.join(electronIconsDir, 'tray-ico-l.png'), darkIcon16);
+  fs.writeFileSync(path.join(electronIconsDir, 'tray-ico-l@2x.png'), darkIcon32);
+
+  if (fs.existsSync(indicatorDir)) {
+    fs.writeFileSync(path.join(indicatorDir, 'running-d.png'), whiteIcon16);
+    fs.writeFileSync(path.join(indicatorDir, 'running-d@2x.png'), whiteIcon32);
+    fs.writeFileSync(path.join(indicatorDir, 'running-l.png'), darkIcon16);
+    fs.writeFileSync(path.join(indicatorDir, 'running-l@2x.png'), darkIcon32);
+    fs.writeFileSync(path.join(indicatorDir, 'stopped-d.png'), whiteIcon16);
+    fs.writeFileSync(path.join(indicatorDir, 'stopped-d@2x.png'), whiteIcon32);
+    fs.writeFileSync(path.join(indicatorDir, 'stopped-l.png'), darkIcon16);
+    fs.writeFileSync(path.join(indicatorDir, 'stopped-l@2x.png'), darkIcon32);
+  }
+
+  // 8. Generate Windows Store AppX Assets
+  console.log('🪟 Generating Windows Store AppX assets in build/appx/...');
+  const appxDir = path.join(ROOT_DIR, 'build/appx');
+  if (fs.existsSync(appxDir)) {
+    const appxFiles = fs.readdirSync(appxDir);
+    for (const file of appxFiles) {
+      if (!file.endsWith('.png')) continue;
+      const targetPath = path.join(appxDir, file);
+      const meta = await sharp(targetPath).metadata();
+      const w = meta.width;
+      const h = meta.height;
+
+      if (file.startsWith('BadgeLogo')) {
+        // Monochrome white on transparent
+        const badgeBuf = await sharp(svgWhiteBuffer, { density: 300 })
+          .resize(w, h, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
+          .png()
+          .toBuffer();
+        fs.writeFileSync(targetPath, badgeBuf);
+      } else if (file.startsWith('SplashScreen') || file.startsWith('Wide')) {
+        // Wide canvas on dark slate (#0F172A)
+        const iconH = Math.round(h * 0.7);
+        const iconBuf = await sharp(svgBuffer, { density: 300 })
+          .resize(iconH, iconH, {
+            fit: 'contain',
+            background: { r: 0, g: 0, b: 0, alpha: 0 },
+          })
+          .png()
+          .toBuffer();
+        const wideBuf = await sharp({
+          create: {
+            width: w,
+            height: h,
+            channels: 4,
+            background: { r: 15, g: 23, b: 42, alpha: 1 },
+          },
+        })
+          .composite([{ input: iconBuf, gravity: 'center' }])
+          .png()
+          .toBuffer();
+        fs.writeFileSync(targetPath, wideBuf);
+      } else {
+        // Square tiles with background
+        const squareBuf = await sharp(squareMasterBuffer)
+          .resize(w, h, { fit: 'cover' })
+          .png()
+          .toBuffer();
+        fs.writeFileSync(targetPath, squareBuf);
+      }
+    }
+  }
+
+  // 9. Run tools/generate-mac-icon.js and tools/generate-ios-icon.js
   console.log('🍎 Generating macOS .icns and iOS icon assets...');
   try {
     execSync('node tools/generate-mac-icon.js', { cwd: ROOT_DIR, stdio: 'inherit' });

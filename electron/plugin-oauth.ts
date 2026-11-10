@@ -22,13 +22,13 @@ const cleanupServer = (): void => {
 
 // Success page shown in the user's browser after completing OAuth
 const SUCCESS_HTML = `<!DOCTYPE html>
-<html><head><meta charset="utf-8"><title>Super Productivity</title>
+<html><head><meta charset="utf-8"><title>KaironTask</title>
 <style>body{font-family:system-ui,sans-serif;display:flex;align-items:center;
-justify-content:center;height:100vh;margin:0;background:#f5f5f5}
-.card{text-align:center;padding:2rem;background:#fff;border-radius:8px;
-box-shadow:0 2px 8px rgba(0,0,0,.1)}</style></head>
+justify-content:center;height:100vh;margin:0;background:#0b0d12;color:#e2e6f0}
+.card{text-align:center;padding:2rem;background:#161a23;border:1px solid rgba(124,58,237,0.3);border-radius:10px;
+box-shadow:0 8px 32px rgba(0,0,0,.45)}h2{color:#f1f3f9}p{color:rgba(226,230,240,0.7)}</style></head>
 <body><div class="card"><h2>Authentication complete</h2>
-<p>You can close this tab and return to Super Productivity.</p></div></body></html>`;
+<p>You can close this tab and return to KaironTask.</p></div></body></html>`;
 
 export const initPluginOAuth = (mainWin: BrowserWindow): void => {
   // Prepare: start a loopback HTTP server and return the port.
