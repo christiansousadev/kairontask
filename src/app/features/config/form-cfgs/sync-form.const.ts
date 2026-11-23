@@ -130,7 +130,7 @@ export const SYNC_FORM: ConfigFormSection<SyncConfig> = {
         label: T.F.SYNC.FORM.L_SYNC_PROVIDER,
         required: true,
         options: [
-          { label: 'SuperSync (Beta)', value: SyncProviderId.SuperSync },
+          { label: 'KaironSync (Beta)', value: SyncProviderId.SuperSync },
           { label: SyncProviderId.Dropbox, value: SyncProviderId.Dropbox },
           { label: 'Nextcloud', value: SyncProviderId.Nextcloud },
           {

@@ -156,7 +156,7 @@ export const createErrorAlert = (
     btnExport.addEventListener('click', async () => {
       try {
         await download(
-          'super-productivity-crash-user-data-export.json',
+          'kairontask-crash-user-data-export.json',
           JSON.stringify(userData),
         );
       } catch (e) {
@@ -246,7 +246,7 @@ export const getGithubErrorUrl = (
   isHideActionsBeforeError = false,
 ): string => {
   return newGithubIssueUrl({
-    user: 'kairontask',
+    user: 'christiansousadev',
     repo: 'kairontask',
     title: '💥 ' + title,
     template: 'in_app_bug_report.md',

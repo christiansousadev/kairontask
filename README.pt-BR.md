@@ -359,6 +359,7 @@ Para uma análise detalhada dos padrões de engenharia, ciclo de vida do estado 
 - **Autor e Mantenedor**: Christian Sousa
 - **Website**: [christiansousa.dev](https://christiansousa.dev)
 - **App Web**: [kairontask.christiansousa.dev](https://kairontask.christiansousa.dev)
+- **Landing Page do Produto**: [`landing/`](landing/) (Site estático multi-idioma Dark/Light)
 - **Contato / Suporte**: [contato@christiansousa.dev](mailto:contato@christiansousa.dev)
 - **Repositório**: [github.com/christiansousadev/kairontask](https://github.com/christiansousadev/kairontask)
 - **Licença**: Distribuído sob os termos da licença [MIT](LICENSE).

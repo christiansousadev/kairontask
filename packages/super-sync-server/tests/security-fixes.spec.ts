@@ -67,8 +67,8 @@ describe('Security Fixes', () => {
 
       const config = loadConfigFromEnv();
       expect(config.cors.allowedOrigins).toEqual([
-        'https://app.super-productivity.com',
-        /^https:\/\/[a-zA-Z0-9-]+\.super-productivity-preview\.pages\.dev$/,
+        'https://kairontask.christiansousa.dev',
+        /^https:\/\/[a-zA-Z0-9-]+\.kairontask-preview\.pages\.dev$/,
       ]);
     });
   });

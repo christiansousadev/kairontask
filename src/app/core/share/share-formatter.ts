@@ -87,12 +87,12 @@ export class ShareFormatter {
     const url = this._buildUrl(options);
     const text =
       customText ||
-      'Check out Super Productivity - an advanced todo list and time tracking app with focus on flexibility and privacy!';
+      'Check out KaironTask - a local-first task manager and time tracking app built for focus and privacy!';
 
     return {
       text,
       url,
-      title: 'Super Productivity',
+      title: 'KaironTask',
     };
   }
 
@@ -211,7 +211,7 @@ export class ShareFormatter {
 
     // Hashtags
     if (options.includeHashtags) {
-      parts.push('\n#productivity #timetracking #SuperProductivity');
+      parts.push('\n#productivity #timetracking #KaironTask');
     }
 
     let text = parts.join('\n');

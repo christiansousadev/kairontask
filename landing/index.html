@@ -1,0 +1,800 @@
+<!doctype html>
+<html
+  lang="en"
+  data-theme="dark"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>KaironTask — Local-First Task Management & Timeboxing</title>
+    <meta
+      name="description"
+      content="Calm, local-first task manager, timeboxer, and worklog tool with end-to-end encrypted sync. Available on Web, Windows, macOS, Linux, Android, and iOS."
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/favicon.png"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        try {
+          var savedTheme = localStorage.getItem('kairon_landing_theme');
+          var theme =
+            savedTheme === 'light' || savedTheme === 'dark'
+              ? savedTheme
+              : window.matchMedia &&
+                  window.matchMedia('(prefers-color-scheme: light)').matches
+                ? 'light'
+                : 'dark';
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {}
+      })();
+    </script>
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a
+          href="#top"
+          class="brand"
+          aria-label="KaironTask"
+        >
+          <img
+            src="assets/logo.svg"
+            alt="KaironTask Logo"
+            class="brand-icon"
+            width="24"
+            height="24"
+          />
+          <span class="brand-name">KaironTask</span>
+        </a>
+
+        <nav
+          class="nav-links"
+          aria-label="Primary navigation"
+        >
+          <a
+            href="#workflow"
+            data-i18n="nav.workflow"
+            >Workflow</a
+          >
+          <a
+            href="#syntax"
+            data-i18n="nav.syntax"
+            >Syntax</a
+          >
+          <a
+            href="#privacy"
+            data-i18n="nav.privacy"
+            >Architecture</a
+          >
+          <a
+            href="#platforms"
+            data-i18n="nav.platforms"
+            >Platforms</a
+          >
+        </nav>
+
+        <div class="header-controls">
+          <div
+            class="lang-switch"
+            role="group"
+            data-i18n-aria="controls.langGroupAria"
+            aria-label="Language"
+          >
+            <button
+              type="button"
+              class="lang-btn"
+              data-lang="pt-BR"
+            >
+              PT
+            </button>
+            <button
+              type="button"
+              class="lang-btn"
+              data-lang="en"
+            >
+              EN
+            </button>
+            <button
+              type="button"
+              class="lang-btn"
+              data-lang="es"
+            >
+              ES
+            </button>
+          </div>
+
+          <button
+            type="button"
+            id="theme-toggle"
+            class="icon-btn"
+            data-i18n-aria="controls.themeToggleAria"
+            aria-label="Toggle color theme"
+          >
+            <svg
+              class="icon-sun"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="4"
+              ></circle>
+              <path
+                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+              ></path>
+            </svg>
+            <svg
+              class="icon-moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+          </button>
+
+          <a
+            href="https://kairontask.christiansousa.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-sm btn-primary"
+            data-i18n="nav.openApp"
+            >Open Web App</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- Hero + Product Tour Window -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero-copy">
+            <p
+              class="eyebrow mono"
+              data-i18n="hero.eyebrow"
+            >
+              LOCAL-FIRST · OPEN SOURCE · AES-256-GCM
+            </p>
+            <h1 data-i18n="hero.title">
+              Calm, local-first task management and timeboxing.
+            </h1>
+            <p
+              class="lead"
+              data-i18n="hero.subtitle"
+            >
+              Built for software engineers and technical teams who want keyboard-driven
+              planning, accurate time tracking, and zero vendor lock-in. Your data stays
+              in IndexedDB and syncs under your own key.
+            </p>
+
+            <div class="hero-actions">
+              <a
+                href="https://kairontask.christiansousa.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+                data-i18n="hero.ctaPrimary"
+                >Launch Web App</a
+              >
+              <a
+                href="https://github.com/christiansousadev/kairontask"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary"
+                data-i18n="hero.ctaSecondary"
+                >Source on GitHub</a
+              >
+            </div>
+
+            <p
+              class="spec-line mono"
+              data-i18n="hero.specLine"
+            >
+              IndexedDB · Vector-Clock Op-Log · Web / Desktop / Mobile · MIT
+            </p>
+          </div>
+
+          <!-- Interactive Workspace Preview Frame -->
+          <div class="showcase-frame">
+            <div class="showcase-toolbar">
+              <div
+                class="showcase-tabs"
+                role="tablist"
+                aria-label="Product screens"
+              >
+                <button
+                  type="button"
+                  role="tab"
+                  class="tab-btn active"
+                  data-screen="today"
+                  aria-selected="true"
+                  data-i18n="screens.today.tab"
+                >
+                  Today
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  class="tab-btn"
+                  data-screen="focus"
+                  aria-selected="false"
+                  data-i18n="screens.focus.tab"
+                >
+                  Focus
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  class="tab-btn"
+                  data-screen="planner"
+                  aria-selected="false"
+                  data-i18n="screens.planner.tab"
+                >
+                  Planner
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  class="tab-btn"
+                  data-screen="schedule"
+                  aria-selected="false"
+                  data-i18n="screens.schedule.tab"
+                >
+                  Timeline
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  class="tab-btn"
+                  data-screen="boards"
+                  aria-selected="false"
+                  data-i18n="screens.boards.tab"
+                >
+                  Boards
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  class="tab-btn"
+                  data-screen="summary"
+                  aria-selected="false"
+                  data-i18n="screens.summary.tab"
+                >
+                  Daily Summary
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  class="tab-btn"
+                  data-screen="worklog"
+                  aria-selected="false"
+                  data-i18n="screens.worklog.tab"
+                >
+                  Worklog
+                </button>
+              </div>
+            </div>
+
+            <figure class="showcase-viewport">
+              <img
+                id="showcase-img"
+                src="assets/screenshot-tasks-dark.png"
+                alt="KaironTask Workspace"
+                loading="eager"
+              />
+              <figcaption
+                id="showcase-caption"
+                class="showcase-caption"
+              ></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Workflow Architecture -->
+      <section
+        id="workflow"
+        class="section border-top"
+      >
+        <div class="container">
+          <div class="section-head">
+            <span
+              class="section-kicker mono"
+              data-i18n="workflow.kicker"
+              >DAILY LOOP</span
+            >
+            <h2 data-i18n="workflow.title">
+              Structured execution from capture to wrap-up.
+            </h2>
+          </div>
+
+          <div class="editorial-grid four-col">
+            <article class="editorial-cell">
+              <span class="cell-num mono">01</span>
+              <h3 data-i18n="workflow.steps.capture.title">Capture & Triage</h3>
+              <p data-i18n="workflow.steps.capture.desc">
+                Add tasks anywhere via Shift+A with inline tags, project routing, natural
+                dates, and time estimates without touching the mouse.
+              </p>
+            </article>
+
+            <article class="editorial-cell">
+              <span class="cell-num mono">02</span>
+              <h3 data-i18n="workflow.steps.focus.title">Timebox & Focus</h3>
+              <p data-i18n="workflow.steps.focus.desc">
+                Track active tasks down to the second in the Today list or switch to Focus
+                Mode with Countdown, Pomodoro, or Flowtime timers.
+              </p>
+            </article>
+
+            <article class="editorial-cell">
+              <span class="cell-num mono">03</span>
+              <h3 data-i18n="workflow.steps.plan.title">Plan & Schedule</h3>
+              <p data-i18n="workflow.steps.plan.desc">
+                Distribute workload across multi-day Planner columns, automatic Timeline
+                blocks, Kanban boards, and the Eisenhower Matrix.
+              </p>
+            </article>
+
+            <article class="editorial-cell">
+              <span class="cell-num mono">04</span>
+              <h3 data-i18n="workflow.steps.review.title">Wrap-up & Export</h3>
+              <p data-i18n="workflow.steps.review.desc">
+                Review work windows and completed tasks in Daily Summary, then inspect
+                weekly hours or export timesheets from the Worklog.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Quick-Add Syntax & Shortcuts -->
+      <section
+        id="syntax"
+        class="section border-top"
+      >
+        <div class="container">
+          <div class="section-head">
+            <span
+              class="section-kicker mono"
+              data-i18n="syntax.kicker"
+              >KEYBOARD-FIRST</span
+            >
+            <h2 data-i18n="syntax.title">Inline short syntax & default bindings.</h2>
+            <p
+              class="section-desc"
+              data-i18n="syntax.subtitle"
+            >
+              Edit the command line below to test how KaironTask parses projects, tags,
+              timeboxes, and natural-language dates.
+            </p>
+          </div>
+
+          <div class="split-layout">
+            <div class="syntax-tester panel">
+              <div class="panel-header">
+                <label
+                  for="syntax-input"
+                  class="mono"
+                  data-i18n="syntax.inputLabel"
+                  >Quick-Add Bar Simulation</label
+                >
+                <div class="preset-chips">
+                  <button
+                    type="button"
+                    class="chip-btn"
+                    data-sample="Audit OAuth2 token refresh +Sync Engine #e2ee #backend t45m/1h30m @tomorrow 10:00"
+                  >
+                    Sync Engine
+                  </button>
+                  <button
+                    type="button"
+                    class="chip-btn"
+                    data-sample="Refactor design tokens +Design System #ui-ux 2h @Friday"
+                  >
+                    Design System
+                  </button>
+                  <button
+                    type="button"
+                    class="chip-btn"
+                    data-sample="Benchmark IndexedDB op-log compaction +KaironTask Core #perf t20m/1h @today 14:00"
+                  >
+                    IndexedDB
+                  </button>
+                </div>
+              </div>
+
+              <input
+                id="syntax-input"
+                type="text"
+                class="syntax-input mono"
+                value="Audit OAuth2 token refresh +Sync Engine #e2ee #backend t45m/1h30m @tomorrow 10:00"
+                spellcheck="false"
+                autocomplete="off"
+              />
+
+              <dl
+                class="parsed-grid"
+                id="parsed-output"
+              >
+                <div class="parsed-row">
+                  <dt data-i18n="syntax.parsed.title">Title</dt>
+                  <dd
+                    id="out-title"
+                    class="parsed-title"
+                  ></dd>
+                </div>
+                <div class="parsed-row">
+                  <dt data-i18n="syntax.parsed.project">Project</dt>
+                  <dd
+                    id="out-project"
+                    class="mono"
+                  ></dd>
+                </div>
+                <div class="parsed-row">
+                  <dt data-i18n="syntax.parsed.tags">Tags</dt>
+                  <dd
+                    id="out-tags"
+                    class="mono"
+                  ></dd>
+                </div>
+                <div class="parsed-row">
+                  <dt data-i18n="syntax.parsed.time">Timebox</dt>
+                  <dd
+                    id="out-time"
+                    class="mono"
+                  ></dd>
+                </div>
+                <div class="parsed-row">
+                  <dt data-i18n="syntax.parsed.due">Schedule</dt>
+                  <dd
+                    id="out-due"
+                    class="mono"
+                  ></dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="shortcuts-panel panel">
+              <div class="panel-header">
+                <span
+                  class="mono"
+                  data-i18n="syntax.shortcutsLabel"
+                  >Default Keybindings</span
+                >
+              </div>
+              <ul class="shortcut-list">
+                <li>
+                  <kbd>Shift+A</kbd>
+                  <span data-i18n="syntax.keys.addTask">Open Quick-Add bar</span>
+                </li>
+                <li>
+                  <kbd>Y</kbd>
+                  <span data-i18n="syntax.keys.togglePlay"
+                    >Start / pause time tracking</span
+                  >
+                </li>
+                <li>
+                  <kbd>D</kbd>
+                  <span data-i18n="syntax.keys.done">Toggle task completion</span>
+                </li>
+                <li>
+                  <kbd>A</kbd>
+                  <span data-i18n="syntax.keys.subtask"
+                    >Add subtask under selected item</span
+                  >
+                </li>
+                <li>
+                  <kbd>T</kbd>
+                  <span data-i18n="syntax.keys.estimate"
+                    >Edit spent &amp; estimated time</span
+                  >
+                </li>
+                <li>
+                  <kbd>S</kbd>
+                  <span data-i18n="syntax.keys.schedule"
+                    >Schedule task date / reminder</span
+                  >
+                </li>
+                <li>
+                  <kbd>I</kbd>
+                  <span data-i18n="syntax.keys.notes">Toggle Markdown detail drawer</span>
+                </li>
+                <li>
+                  <kbd>F</kbd>
+                  <span data-i18n="syntax.keys.focus">Enter Deep Focus Mode</span>
+                </li>
+                <li>
+                  <kbd>W</kbd>
+                  <span data-i18n="syntax.keys.today">Return to Today workspace</span>
+                </li>
+                <li>
+                  <kbd>Shift+T</kbd>
+                  <span data-i18n="syntax.keys.timeline"
+                    >Open Timeline schedule view</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Privacy & Architecture -->
+      <section
+        id="privacy"
+        class="section border-top"
+      >
+        <div class="container">
+          <div class="section-head">
+            <span
+              class="section-kicker mono"
+              data-i18n="privacy.kicker"
+              >ENGINEERING &amp; PRIVACY</span
+            >
+            <h2 data-i18n="privacy.title">
+              Offline by default. Encrypted before transit.
+            </h2>
+            <p
+              class="section-desc"
+              data-i18n="privacy.subtitle"
+            >
+              No mandatory cloud account, no analytics scripts, and no third-party data
+              brokers.
+            </p>
+          </div>
+
+          <div class="spec-table-wrap">
+            <table class="spec-table">
+              <tbody>
+                <tr>
+                  <th
+                    scope="row"
+                    data-i18n="privacy.rows.storage.label"
+                  >
+                    Primary Persistence
+                  </th>
+                  <td data-i18n="privacy.rows.storage.value">
+                    Local IndexedDB stores (app_data &amp; sequential op_log) with zero
+                    network latency.
+                  </td>
+                </tr>
+                <tr>
+                  <th
+                    scope="row"
+                    data-i18n="privacy.rows.crypto.label"
+                  >
+                    Client-Side E2EE
+                  </th>
+                  <td data-i18n="privacy.rows.crypto.value">
+                    Authenticated AES-256-GCM encryption derives keys locally before any
+                    delta leaves your device.
+                  </td>
+                </tr>
+                <tr>
+                  <th
+                    scope="row"
+                    data-i18n="privacy.rows.sync.label"
+                  >
+                    Conflict Resolution
+                  </th>
+                  <td data-i18n="privacy.rows.sync.value">
+                    Immutable UUIDv7 operation logs combined with deterministic Vector
+                    Clock ordering.
+                  </td>
+                </tr>
+                <tr>
+                  <th
+                    scope="row"
+                    data-i18n="privacy.rows.targets.label"
+                  >
+                    Sync Targets
+                  </th>
+                  <td data-i18n="privacy.rows.targets.value">
+                    KaironSync (self-hostable Node/PostgreSQL), WebDAV (Nextcloud /
+                    ownCloud), Dropbox, or shared local folder.
+                  </td>
+                </tr>
+                <tr>
+                  <th
+                    scope="row"
+                    data-i18n="privacy.rows.integrations.label"
+                  >
+                    Issue &amp; Calendar Integrations
+                  </th>
+                  <td data-i18n="privacy.rows.integrations.value">
+                    GitHub, GitLab, Jira, Linear, ClickUp, Trello, Gitea, Redmine,
+                    OpenProject, CalDAV, and Nextcloud Deck.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Platforms & Downloads -->
+      <section
+        id="platforms"
+        class="section border-top"
+      >
+        <div class="container">
+          <div class="section-head">
+            <span
+              class="section-kicker mono"
+              data-i18n="platforms.kicker"
+              >DISTRIBUTION</span
+            >
+            <h2 data-i18n="platforms.title">Run anywhere you work.</h2>
+          </div>
+
+          <div class="editorial-grid four-col">
+            <article class="editorial-cell platform-cell">
+              <span class="cell-num mono">WEB</span>
+              <h3 data-i18n="platforms.items.web.title">Browser &amp; PWA</h3>
+              <p data-i18n="platforms.items.web.desc">
+                Zero install. Works offline via Service Worker with full IndexedDB local
+                storage.
+              </p>
+              <a
+                href="https://kairontask.christiansousa.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-link"
+                data-i18n="platforms.items.web.cta"
+                >Open Web App &rarr;</a
+              >
+            </article>
+
+            <article class="editorial-cell platform-cell">
+              <span class="cell-num mono">DESKTOP</span>
+              <h3 data-i18n="platforms.items.desktop.title">
+                Windows, macOS &amp; Linux
+              </h3>
+              <p data-i18n="platforms.items.desktop.desc">
+                Electron desktop build with global shortcuts, idle detection, and system
+                tray timer.
+              </p>
+              <a
+                href="https://github.com/christiansousadev/kairontask/releases"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-link"
+                data-i18n="platforms.items.desktop.cta"
+                >Download Releases &rarr;</a
+              >
+            </article>
+
+            <article class="editorial-cell platform-cell">
+              <span class="cell-num mono">MOBILE</span>
+              <h3 data-i18n="platforms.items.mobile.title">Android &amp; iOS</h3>
+              <p data-i18n="platforms.items.mobile.desc">
+                Capacitor native wrapper with background sync notifications and mobile
+                gestures.
+              </p>
+              <a
+                href="https://github.com/christiansousadev/kairontask/releases"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-link"
+                data-i18n="platforms.items.mobile.cta"
+                >Mobile Builds &rarr;</a
+              >
+            </article>
+
+            <article class="editorial-cell platform-cell">
+              <span class="cell-num mono">SELF-HOST</span>
+              <h3 data-i18n="platforms.items.docker.title">Docker &amp; KaironSync</h3>
+              <p data-i18n="platforms.items.docker.desc">
+                Deploy both the web client and KaironSync server in your own Docker host.
+              </p>
+              <a
+                href="https://github.com/christiansousadev/kairontask#readme"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-link"
+                data-i18n="platforms.items.docker.cta"
+                >Deployment Guide &rarr;</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer border-top">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <div class="brand footer-brand">
+            <img
+              src="assets/logo.svg"
+              alt="KaironTask"
+              class="brand-icon"
+              width="20"
+              height="20"
+            />
+            <span class="brand-name">KaironTask</span>
+          </div>
+          <nav
+            class="footer-links"
+            aria-label="Footer links"
+          >
+            <a
+              href="https://github.com/christiansousadev/kairontask"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub</a
+            >
+            <a
+              href="https://github.com/christiansousadev/kairontask/releases"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-i18n="footer.releases"
+              >Releases</a
+            >
+            <a
+              href="https://github.com/christiansousadev/kairontask/tree/main/docs/architecture"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-i18n="footer.architecture"
+              >Architecture</a
+            >
+            <a
+              href="https://github.com/christiansousadev/kairontask/blob/main/LICENSE"
+              target="_blank"
+              rel="noopener noreferrer"
+              >MIT License</a
+            >
+          </nav>
+        </div>
+
+        <p class="footer-credit">
+          Developer by
+          <a
+            href="https://christiansousa.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Christian Sousa</a
+          >.
+        </p>
+      </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

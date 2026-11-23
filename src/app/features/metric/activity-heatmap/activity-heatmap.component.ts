@@ -637,8 +637,8 @@ export class ActivityHeatmapComponent {
 
     const normalizedTitle = contextTitle?.trim().length
       ? contextTitle.trim()
-      : 'Super Productivity';
-    const shareLabel = `${normalizedTitle} – With the Super Productivity App`;
+      : 'KaironTask';
+    const shareLabel = `${normalizedTitle} – With KaironTask`;
 
     ctx.fillStyle = 'rgba(0, 0, 0, 0.6)';
     ctx.font = '14px system-ui, -apple-system, sans-serif';

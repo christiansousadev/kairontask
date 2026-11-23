@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>SuperSync Server - Connect</title>
+    <title>KaironSync — Connect</title>
     <link
       rel="stylesheet"
       href="style.css"
@@ -20,30 +20,64 @@
   </head>
   <body>
     <div class="container">
-      <header>
-        <h1>SuperSync <span class="beta-badge">BETA</span></h1>
-        <p>Connect your productivity</p>
-        <div class="eu-badge">
-          <img
-            src="eu-stars.svg"
-            alt="EU Flag"
-            class="eu-stars"
-          />
-          <span>Data hosted in EU</span>
+      <header class="portal-header">
+        <div class="brand-lockup">
+          <svg
+            class="brand-mark"
+            viewBox="0 0 64 64"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <defs>
+              <linearGradient
+                id="syncBrandGrad"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop
+                  offset="0%"
+                  stop-color="#22D3EE"
+                />
+                <stop
+                  offset="50%"
+                  stop-color="#6366F1"
+                />
+                <stop
+                  offset="100%"
+                  stop-color="#7C3AED"
+                />
+              </linearGradient>
+            </defs>
+            <rect
+              x="10"
+              y="8"
+              width="9"
+              height="48"
+              rx="4.5"
+              fill="url(#syncBrandGrad)"
+            />
+            <path
+              d="M23 34 L45 10 H54 L32 34 Z"
+              fill="url(#syncBrandGrad)"
+            />
+            <path
+              d="M28 30 L54 54 H45 L21 32 Z"
+              fill="url(#syncBrandGrad)"
+              opacity="0.95"
+            />
+            <polygon
+              points="26,32 32,26 38,32 32,38"
+              fill="#22D3EE"
+            />
+          </svg>
+          <h1>KaironSync</h1>
         </div>
+        <p>Encrypted end-to-end sync for KaironTask</p>
       </header>
 
       <main id="app">
-        <div
-          class="warning-box"
-          style="margin-bottom: 1rem"
-        >
-          <p>
-            ⚠️ <strong>Note:</strong> This service is free for now, but will likely cost
-            money in the future.
-          </p>
-        </div>
-
         <!-- Authentication Forms -->
         <div
           id="auth-forms"
@@ -207,11 +241,11 @@
           id="token-display"
           class="card hidden"
         >
-          <div class="success-icon">🔐</div>
+          <div class="success-icon">✓</div>
           <h2>Connection Successful</h2>
           <p>
-            <strong>Next step:</strong> Copy this token and paste it in Super
-            Productivity's sync settings.
+            <strong>Next step:</strong> Copy this token and paste it in KaironTask's sync
+            settings.
           </p>
 
           <div class="token-box">
@@ -230,12 +264,12 @@
           <details class="instructions">
             <summary>How to use this token</summary>
             <ol>
-              <li>Open Super Productivity</li>
+              <li>Open KaironTask</li>
               <li>Go to Settings (gear icon)</li>
               <li>Click "Setup Sync" or go to the Sync section</li>
-              <li>Select "SuperSync" as your sync provider</li>
+              <li>Select "KaironSync" as your sync provider</li>
               <li>Paste the token in the "Access Token" field</li>
-              <li>Click "Save & Enable"</li>
+              <li>Click "Save &amp; Enable"</li>
             </ol>
           </details>
 
@@ -272,8 +306,7 @@
             <h3>Reset Account</h3>
             <p>
               Clear all synced data from the server. Your account remains active and you
-              can sync fresh data afterwards. Local data in Super Productivity is not
-              affected.
+              can sync fresh data afterwards. Local data in KaironTask is not affected.
             </p>
             <button
               id="reset-account-btn"
@@ -317,7 +350,15 @@
       </main>
 
       <footer>
-        <p>Super Productivity Sync Server</p>
+        <p>
+          KaironSync &middot; Developer by
+          <a
+            href="https://christiansousa.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Christian Sousa</a
+          >.
+        </p>
       </footer>
     </div>
 

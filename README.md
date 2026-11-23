@@ -359,6 +359,7 @@ For deep dives into design patterns, state machines, and platform subsystems, re
 - **Author & Maintainer**: Christian Sousa
 - **Website**: [christiansousa.dev](https://christiansousa.dev)
 - **Web App**: [kairontask.christiansousa.dev](https://kairontask.christiansousa.dev)
+- **Product Landing Page**: [`landing/`](landing/) (Multi-language Dark/Light static site)
 - **Contact / Inquiries**: [contato@christiansousa.dev](mailto:contato@christiansousa.dev)
 - **Repository**: [github.com/christiansousadev/kairontask](https://github.com/christiansousadev/kairontask)
 - **License**: Released under the terms of the [MIT License](LICENSE).

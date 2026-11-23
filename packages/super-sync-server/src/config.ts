@@ -110,10 +110,10 @@ export interface ServerConfig {
  * Use CORS_ORIGINS env var to add additional origins.
  */
 const DEFAULT_CORS_ORIGINS: CorsOrigin[] = [
-  'https://app.super-productivity.com',
+  'https://kairontask.christiansousa.dev',
   // Cloudflare Pages preview format: <commit-hash>.<project>.pages.dev
   // Using [a-zA-Z0-9-]+ to prevent domain confusion attacks (e.g., evil.com.preview.pages.dev)
-  /^https:\/\/[a-zA-Z0-9-]+\.super-productivity-preview\.pages\.dev$/,
+  /^https:\/\/[a-zA-Z0-9-]+\.kairontask-preview\.pages\.dev$/,
 ];
 
 const DEFAULT_CONFIG: ServerConfig = {
