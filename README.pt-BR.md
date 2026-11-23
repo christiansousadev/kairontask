@@ -72,17 +72,78 @@ Sincronize tarefas de forma bidirecional sem trocar de janela:
 
 ---
 
-## 📸 Telas e Demonstração Visual
+## 📸 Tour Visual do Produto
 
-|                        🌙 Lista de Tarefas & Timeboxing (Dark Mode)                         |                              ☀️ Interface Dinâmica (Light Mode)                              |
-| :-----------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------: |
-| <img src="docs/assets/screenshot-tasks-dark.png" alt="KaironTask Dark Mode" width="100%"/>  | <img src="docs/assets/screenshot-tasks-light.png" alt="KaironTask Light Mode" width="100%"/> |
-| _Workspace Midnight Obsidian com barra de métricas em pílula, rastreio ativo e subtarefas._ | _Modo claro de alto contraste com bordas nítidas de 1px e realce ciano calibrado (WCAG AA)._ |
+Veja como o KaironTask conduz seu fluxo de trabalho — da captura rápida pelo teclado ao foco profundo, planejamento semanal e fechamento do dia.
 
-|                           ⏱️ Resumo Diário & Planejamento de Fechamento                           |                         📊 Worklog, Métricas & Folha de Ponto                         |
-| :-----------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
-| <img src="docs/assets/screenshot-daily-summary.png" alt="KaironTask Daily Summary" width="100%"/> | <img src="docs/assets/screenshot-worklog.png" alt="KaironTask Worklog" width="100%"/> |
-|      _Cards KPI estruturados em grid, revisão de tarefas concluídas e notas de fechamento._       |     _Detalhamento anual, mensal e semanal de horas trabalhadas e folha de ponto._     |
+### 1. Workspace Hoje, Timeboxing e Temas Adaptativos
+
+A visualização **Hoje** centraliza sua rotina: uma barra lateral retrátil organiza **Listas Inteligentes**, **Projetos** (`KaironTask Core`, `Design System`, `Sync Engine`, `Mobile App`) e **Tags**, enquanto a barra superior em pílula acompanha capacidade estimada vs. restante em tempo real (`~3h 11m` / `3h 20m`). A tarefa ativa recebe destaque em ciano elétrico com cronômetro ao vivo, subtarefas expansíveis e um **painel lateral em Markdown** com checklists interativos.
+
+<img src="docs/assets/screenshot-tasks-dark.png" alt="KaironTask Workspace Hoje (Dark Mode)" width="100%"/>
+
+_Modo Escuro Midnight Obsidian com navegação por projetos, barra de métricas em pílula, rastreio ativo em ciano, subtarefas e painel Markdown._
+
+<details>
+<summary>☀️ Visualizar Modo Claro Adaptativo de Alto Contraste</summary>
+
+<br/>
+
+<img src="docs/assets/screenshot-tasks-light.png" alt="KaironTask Workspace Hoje (Light Mode)" width="100%"/>
+
+_Modo Claro limpo e de alto contraste, com bordas estruturais nítidas de `1px` e realce ciano calibrado (WCAG AA)._
+
+</details>
+
+### 2. Foco Profundo e Motor Pomodoro
+
+Pressione `F` (ou clique no botão de foco no cabeçalho) para entrar no **Modo Foco** — uma tela limpa sobre gradiente radial Midnight Obsidian. Alterne entre modos **Countdown**, **Pomodoro** (ciclos configuráveis de `25m` / `5m` / `15m`) e **Flowtime** mantendo apenas a tarefa em andamento visível.
+
+<img src="docs/assets/screenshot-focus-mode.png" alt="KaironTask Modo Foco Profundo" width="100%"/>
+
+_HUD do Modo Foco em tela cheia com anel regressivo ativo (`24:55`) e zero distrações laterais._
+
+### 3. Planejador Semanal, Cronograma Timeblocked e Quadros Kanban
+
+Organize sua semana inteira e distribua blocos concretos de execução ao longo da jornada:
+
+|                                 📅 Planejador Semanal                                 |                             ⏱️ Cronograma (Timeline Schedule)                              |
+| :-----------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------: |
+| <img src="docs/assets/screenshot-planner.png" alt="Planejador Semanal" width="100%"/> | <img src="docs/assets/screenshot-schedule.png" alt="Cronograma Timeblocked" width="100%"/> |
+|    _Colunas multi-dia (`Seg`–`Qui`) com carga horária diária e arrastar-e-soltar._    |     _Timeblocking automático com blocos coloridos por projeto e intervalos de pausa._      |
+
+<img src="docs/assets/screenshot-boards.png" alt="KaironTask Quadros Kanban e Matriz de Eisenhower" width="100%"/>
+
+_Quadros **Kanban** customizáveis (`To Do`, `In Progress`, `Done`) e abas integradas da **Matriz de Eisenhower** para triagem visual e controle de WIP._
+
+### 4. Resumo Diário, Worklog e Folha de Ponto
+
+Encerre o expediente com clareza através de cards KPI (`09:05 - 17:17`, tarefas concluídas, tempo trabalhado), tabelas agrupadas por projeto e um **Worklog** histórico com totais semanais e diários.
+
+|                                  🌙 Resumo Diário & Retrospectiva                                  |                              📊 Worklog & Folha de Ponto                               |
+| :------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: |
+| <img src="docs/assets/screenshot-daily-summary.png" alt="KaironTask Resumo Diário" width="100%"/>  | <img src="docs/assets/screenshot-worklog.png" alt="KaironTask Worklog" width="100%"/>  |
+| _Fechamento do dia com janela de trabalho (`09:05 - 17:17`), KPIs e revisão agrupada por projeto._ | _Histórico semanal e diário (`26h 55m` em 8 dias) com acesso rápido à folha de ponto._ |
+
+---
+
+## ⌨️ Sintaxe Rápida & Atalhos Padrão
+
+Crie, categorize, estime e agende tarefas em uma única linha usando a barra de adição rápida (`Shift+A`):
+
+```text
+Audit OAuth2 token refresh flow +Sync Engine #e2ee #backend t45m/1h30m @tomorrow 10:00
+```
+
+| Token / Atalho                | Comportamento                                                            |
+| :---------------------------- | :----------------------------------------------------------------------- |
+| `+Projeto`                    | Vincula a tarefa a um projeto existente (`+Sync Engine`)                 |
+| `#tag`                        | Associa ou cria tags automaticamente (`#backend`, `#ui-ux`)              |
+| `30m` / `1h 30m` / `t45m/1h`  | Define estimativa ou razão `tempoGasto/estimativa`                       |
+| `@tomorrow 10:00` / `@Friday` | Interpreta datas e lembretes em linguagem natural (`chrono-node`)        |
+| `Shift+A` / `Y` / `D`         | Nova tarefa rápida / Iniciar-pausar timer / Concluir tarefa              |
+| `A` / `T` / `S` / `I`         | Adicionar subtarefa / Estimar tempo / Agendar / Abrir painel Markdown    |
+| `F` / `W` / `Shift+T` / `?`   | Modo Foco / Visão Hoje / Cronograma Timeline / Ajuda completa de atalhos |
 
 ---
 

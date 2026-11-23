@@ -72,17 +72,78 @@ Two-way synchronization with leading issue tracking and developer platforms with
 
 ---
 
-## 📸 Visual Showcase & Screens
+## 📸 Visual Product Tour
 
-|                           🌙 Task List & Timeboxing (Dark Mode)                            |                          ☀️ Adaptive Dynamic Interface (Light Mode)                          |
-| :----------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------: |
-| <img src="docs/assets/screenshot-tasks-dark.png" alt="KaironTask Dark Mode" width="100%"/> | <img src="docs/assets/screenshot-tasks-light.png" alt="KaironTask Light Mode" width="100%"/> |
-|  _Midnight Obsidian workspace with pill metrics bar, active cyan tracking, and subtasks._  |      _Clean high-contrast light mode with crisp 1px borders and WCAG AA cyan accents._       |
+Explore how KaironTask guides your daily workflow — from fast keyboard capture to deep focus, weekly planning, and end-of-day wrap-up.
 
-|                                ⏱️ Daily Summary & Workday Wrap-Up                                 |                         📊 Worklog, Time Metrics & Timesheets                         |
+### 1. Today Workspace, Timeboxing & Adaptive Themes
+
+The **Today** view serves as your daily command center: a collapsible sidebar organizes **Smart Lists**, **Projects** (`KaironTask Core`, `Design System`, `Sync Engine`, `Mobile App`), and **Tags**, while the pill-shaped metrics bar tracks remaining vs. estimated daily capacity (`~3h 11m` / `3h 20m`). The active task highlights in electric cyan with a live timer, expandable subtasks, and a right-hand **Markdown detail panel** with interactive checklists.
+
+<img src="docs/assets/screenshot-tasks-dark.png" alt="KaironTask Today Workspace (Dark Mode)" width="100%"/>
+
+_Midnight Obsidian Dark Mode featuring sidebar project navigation, pill status metrics, active cyan tracking, subtasks, and Markdown detail drawer._
+
+<details>
+<summary>☀️ Preview Adaptive High-Contrast Light Mode</summary>
+
+<br/>
+
+<img src="docs/assets/screenshot-tasks-light.png" alt="KaironTask Today Workspace (Light Mode)" width="100%"/>
+
+_Clean high-contrast Light Mode engineered with crisp `1px` structural borders and WCAG AA cyan accents for bright environments._
+
+</details>
+
+### 2. Deep Focus & Pomodoro Engine
+
+Press `F` (or click the focus button in the top bar) to enter **Focus Mode** — a distraction-free full-screen HUD set over a subtle Midnight Obsidian radial backdrop. Switch between **Countdown**, **Pomodoro** (`25m` / `5m` / `15m` configurable cycles), and **Flowtime** modes while keeping only your active task in view.
+
+<img src="docs/assets/screenshot-focus-mode.png" alt="KaironTask Deep Focus Mode" width="100%"/>
+
+_Full-screen Focus Mode HUD with active countdown ring (`24:55`) and zero sidebar clutter._
+
+### 3. Weekly Planning, Timeline Schedule & Kanban Boards
+
+Plan across your week and map concrete execution blocks throughout the workday:
+
+|                                      📅 Weekly Planner                                      |                                  ⏱️ Timeblocked Schedule                                  |
+| :-----------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------: |
+|      <img src="docs/assets/screenshot-planner.png" alt="Weekly Planner" width="100%"/>      |   <img src="docs/assets/screenshot-schedule.png" alt="Timeline Schedule" width="100%"/>   |
+| _Multi-day column board (`Mon`–`Thu`) with daily hour totals and drag-and-drop scheduling._ | _Automatic timeblocking across workdays with color-coded project blocks and break slots._ |
+
+<img src="docs/assets/screenshot-boards.png" alt="KaironTask Kanban & Eisenhower Boards" width="100%"/>
+
+_Custom **Kanban Boards** (`To Do`, `In Progress`, `Done`) and built-in **Eisenhower Matrix** tabs for visual triage and work-in-progress control._
+
+### 4. Daily Summary, Worklog & Timesheets
+
+Close every workday intentionally with structured KPI cards (`09:05 - 17:17`, tasks completed, time worked), grouped completed task tables, and a multi-week **Worklog** summarizing logged hours across days and weeks.
+
+|                                 🌙 Daily Summary & Retrospective                                  |                                📊 Worklog & Timesheets                                |
 | :-----------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
 | <img src="docs/assets/screenshot-daily-summary.png" alt="KaironTask Daily Summary" width="100%"/> | <img src="docs/assets/screenshot-worklog.png" alt="KaironTask Worklog" width="100%"/> |
-|        _Structured KPI metric cards, completed task tables, and end-of-day retrospective._        |     _Annual/monthly/weekly worklog breakdown with quick task & timesheet review._     |
+|  _End-of-day wrap-up with work window (`09:05 - 17:17`), KPI cards, and grouped task breakdown._  |  _Weekly and daily breakdown (`26h 55m` across 8 days) with fast timesheet export._   |
+
+---
+
+## ⌨️ Quick-Add Syntax & Default Shortcuts
+
+Create, categorize, estimate, and schedule tasks in one line using inline short syntax in the Quick-Add bar (`Shift+A`):
+
+```text
+Audit OAuth2 token refresh flow +Sync Engine #e2ee #backend t45m/1h30m @tomorrow 10:00
+```
+
+| Token / Shortcut              | Behavior                                                         |
+| :---------------------------- | :--------------------------------------------------------------- |
+| `+Project`                    | Assigns the task to an existing project (`+Sync Engine`)         |
+| `#tag`                        | Attaches or creates tags (`#backend`, `#ui-ux`)                  |
+| `30m` / `1h 30m` / `t45m/1h`  | Sets time estimate, or `timeSpent/timeEstimate` split            |
+| `@tomorrow 10:00` / `@Friday` | Parses natural-language due dates and reminders (`chrono-node`)  |
+| `Shift+A` / `Y` / `D`         | Quick-add task / Start-pause timer / Toggle done                 |
+| `A` / `T` / `S` / `I`         | Add subtask / Estimate time / Schedule / Open Markdown panel     |
+| `F` / `W` / `Shift+T` / `?`   | Focus Mode / Today view / Timeline Schedule / Full shortcut help |
 
 ---
 
