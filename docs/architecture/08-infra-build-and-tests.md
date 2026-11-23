@@ -36,14 +36,13 @@ O repositório possui uma infraestrutura completa para gerar artefatos para web,
 - Injeta dinamicamente as variáveis de ambiente em [`nginx/default.conf.template`](../../nginx/default.conf.template) (porta do app `${APP_PORT}` e backend WebDAV `${WEBDAV_BACKEND}`).
 - Gera automaticamente o arquivo `src/assets/sync-config-default-override.json` a partir das variáveis `WEBDAV_BASE_URL`, `WEBDAV_USERNAME`, `SYNC_INTERVAL`, etc. Isso permite que instâncias corporativas ou de usuário único já inicializem com as configurações de sincronização pré-definidas sem necessidade de configuração manual na interface.
 
-### 2.3. As 4 Orquestrações Docker Compose
+### 2.3. As 3 Orquestrações Docker Compose
 
 | Compose File                                                           | Propósito              | Serviços Declarados                                                                              |
 | :--------------------------------------------------------------------- | :--------------------- | :----------------------------------------------------------------------------------------------- |
 | [`docker-compose.yaml`](../../docker-compose.yaml)                     | Stack completo padrão  | `app` (Web Nginx), `webdav` (servidor WebDAV local), `db` (Postgres), `supersync` (Node.js API). |
 | [`docker-compose.supersync.yaml`](../../docker-compose.supersync.yaml) | Overlay para SuperSync | Sobe o servidor SuperSync dedicado conectado ao PostgreSQL.                                      |
 | [`docker-compose.e2e.yaml`](../../docker-compose.e2e.yaml)             | Ambiente de testes E2E | Servidor web otimizado apontando para as portas de teste do Playwright.                          |
-| [`docker-compose.e2e.fast.yaml`](../../docker-compose.e2e.fast.yaml)   | E2E acelerado          | Variante com builds em memória temporária para aceleração de pipelines de CI.                    |
 
 ---
 
