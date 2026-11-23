@@ -108,7 +108,7 @@ Design Highlights:
 - **Sidebar & Header**: Translucent anchored header with squircle Play button, active task pill, gradient sidebar active indicator, and subtle _by Christian Sousa_ signature.
 - **Platform Alignment**: Matching native color palettes across Android status/navigation bars, iOS safe areas, Electron title bars, and PWA manifests.
 
-All design tokens are maintained in [`src/styles/_css-variables.scss`](src/styles/_css-variables.scss). For styling rules, see [`docs/styling-guide.md`](docs/styling-guide.md); for end-user workflows and shortcuts, see [`docs/user-guide.md`](docs/user-guide.md). Default project/tag themes are defined in [`work-context.const.ts`](src/app/features/work-context/work-context.const.ts).
+All design tokens are maintained in [`src/styles/_css-variables.scss`](src/styles/_css-variables.scss). For design system rules and token specs, see [`docs/architecture/07-design-system-and-i18n.md`](docs/architecture/07-design-system-and-i18n.md). Default project/tag themes are defined in [`work-context.const.ts`](src/app/features/work-context/work-context.const.ts).
 
 ---
 

@@ -1,6 +1,6 @@
 # 07. Design System, UI, Temas e Internacionalização (i18n)
 
-> **Módulos**: `src/styles/`, `docs/styling-guide.md`, `src/assets/i18n/`, `src/app/t.const.ts`, `tools/*i18n*`  
+> **Módulos**: `src/styles/`, `src/assets/i18n/`, `src/app/t.const.ts`, `tools/*i18n*`  
 > **Camada**: Design Tokens, Folhas de Estilo Globais, Temas Dinâmicos, Tipografia e Sistema de Tradução
 
 ---
@@ -27,23 +27,32 @@ O arquivo [`src/styles/_css-variables.scss`](../../src/styles/_css-variables.scs
 
 ### 2.1. Catálogo dos Tokens Principais
 
-| Categoria               | Variáveis Principais                                                                                                              | Descrição / Valores Padrão                                                                           |
-| :---------------------- | :-------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------- |
-| **Marca**               | `--brand-violet`, `--brand-indigo`, `--brand-cyan`, `--brand-cyan-text`, `--brand-gradient`, `--brand-focus-ring`, `--brand-glow` | Identidade Midnight Obsidian (ver seção 2.3).                                                        |
-| **Paleta Material**     | `--c-primary`, `--c-accent`, `--c-warn`, `--palette-{primary,accent,warn}-{50..900}`                                              | Injetadas em tempo de execução pelo `angular-material-css-vars` a partir do tema do contexto.        |
-| **Cores Semânticas**    | `--color-success`, `--color-warning`, `--color-danger`                                                                            | `#10b981`, `#f59e0b`, `#ef4444`.                                                                     |
-| **Superfícies & Fundo** | `--bg`, `--header-bg`, `--bg-lighter`, `--card-bg`, `--task-c-bg`, `--sidenav-bg`, `--dark0`…`--dark24`                           | Fundos de página, header translúcido, cartões de tarefa, barra lateral e escala de elevação escura.  |
-| **Texto & Ícones**      | `--text-color`, `--text-color-less-intense`, `--text-color-muted`, `--text-color-most-intense`                                    | Hierarquia de contraste e legibilidade.                                                              |
-| **Tipografia**          | `--font-primary-stack`, `--font-mono-stack`, `--heading-letter-spacing`                                                           | Pilhas offline embutidas: `Inter` (UI/Títulos) e `JetBrains Mono` (cronômetros e valores tabulares). |
-| **Espaçamento**         | `--s` (8px), `--s2` (16px), `--s3` (24px), `--s4` (32px), `--s8` (64px)                                                           | Grid espacial proporcional.                                                                          |
-| **Bordas & Sombras**    | `--card-border-radius` (10px), `--task-border-radius` (8px), `--md-sys-level*`, `--whiteframe-shadow-*dp`, `--task-shadow`        | Cantos arredondados e elevações em camadas.                                                          |
-| **Z-Index**             | `--z-side-nav`, `--z-main-header`, `--z-backdrop`, `--z-add-task-bar`, `--z-tour`                                                 | Camadas de sobreposição sem risco de sobreposição incorreta.                                         |
+| Categoria                  | Variáveis Principais                                                                                                                                        | Descrição / Valores Padrão                                                                           |
+| :------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------- |
+| **Marca**                  | `--brand-violet`, `--brand-indigo`, `--brand-cyan`, `--brand-cyan-text`, `--brand-gradient`, `--brand-focus-ring`, `--brand-glow`                           | Identidade Midnight Obsidian (ver seção 2.3).                                                        |
+| **Paleta Material**        | `--c-primary`, `--c-accent`, `--c-warn`, `--palette-{primary,accent,warn}-{50..900}`                                                                        | Injetadas em tempo de execução pelo `angular-material-css-vars` a partir do tema do contexto.        |
+| **Cores Semânticas**       | `--color-success`, `--color-warning`, `--color-danger`                                                                                                      | `#10b981`, `#f59e0b`, `#ef4444`.                                                                     |
+| **Superfícies & Fundo**    | `--bg`, `--header-bg`, `--bg-lighter`, `--card-bg`, `--task-c-bg`, `--sidenav-bg`, `--dark0`…`--dark24`                                                     | Fundos de página, header translúcido, cartões de tarefa, barra lateral e escala de elevação escura.  |
+| **Texto & Ícones**         | `--text-color`, `--text-color-less-intense`, `--text-color-muted`, `--text-color-most-intense`                                                              | Hierarquia de contraste e legibilidade.                                                              |
+| **Tipografia**             | `--font-primary-stack`, `--font-mono-stack`, `--heading-letter-spacing`                                                                                     | Pilhas offline embutidas: `Inter` (UI/Títulos) e `JetBrains Mono` (cronômetros e valores tabulares). |
+| **Espaçamento (Grid 8px)** | `--s-quarter` (2px), `--s-half` (4px), `--s` (8px), `--s2` (16px), `--s3` (24px), `--s4` (32px), `--s5` (40px), `--s6` (48px), `--s7` (56px), `--s8` (64px) | Grid espacial proporcional (nunca usar `px`/`rem` hardcoded para espaçamento).                       |
+| **Bordas & Sombras**       | `--card-border-radius` (10px), `--task-border-radius` (8px), `--md-sys-level*`, `--whiteframe-shadow-*dp`, `--task-shadow`                                  | Cantos arredondados e elevações em camadas.                                                          |
+| **Z-Index**                | `--z-side-nav`, `--z-main-header`, `--z-backdrop`, `--z-add-task-bar`, `--z-tour`                                                                           | Camadas de sobreposição sem risco de sobreposição incorreta.                                         |
 
 > **Correção (2026-11-03)**: versões anteriores deste caderno listavam `--color-bg`, `--color-surface`, `--color-sidebar` e `--color-text-*`. Esses tokens **não existem** no código; a tabela acima reflete os nomes reais.
 
-### 2.2. Regra Anti-Pattern do Projeto
+### 2.2. Regras de Estilização & Anti-Patterns
 
-> **Diretriz Crítica**: Conforme [`CLAUDE.md`](../../CLAUDE.md) e [`docs/styling-guide.md`](../../docs/styling-guide.md), **nunca redeclare estilos do Material Theme diretamente**. Sempre utilize as variáveis CSS e classes utilitárias já existentes em `_css-variables.scss`.
+> **Diretriz Crítica**: Conforme [`CLAUDE.md`](../../CLAUDE.md), **nunca redeclare estilos do Material Theme diretamente** nem faça hardcode de tokens visuais. Sempre utilize as variáveis CSS de `src/styles/_css-variables.scss`, os mixins de tema (`@include darkTheme()` / `@include lightTheme()` em `src/styles/mixins/_theming.scss`) e verifique `src/app/ui/` (40+ componentes reutilizáveis) antes de criar novos elementos.
+
+| Evitar (Anti-Pattern)           | Usar no Lugar                                                                        |
+| :------------------------------ | :----------------------------------------------------------------------------------- |
+| Cores hardcoded (`#fff`, `red`) | Variáveis CSS (`--text-color`, `--card-bg`, `--color-danger`, `--brand-cyan-text`)   |
+| Espaçamentos hardcoded (`16px`) | Tokens de grid (`--s2`, `--s`, `--s-half`)                                           |
+| Sombras hardcoded               | Variáveis de elevação (`--whiteframe-shadow-*dp`, `--md-sys-level*`)                 |
+| Transições/durações hardcoded   | Variáveis de transição (`--transition-standard`, `--transition-duration-*`)          |
+| Valores `z-index` arbitrários   | Tokens de camada (`--z-main-header`, `--z-backdrop`, `--z-side-nav`)                 |
+| Estilos globais no componente   | Overlays do Material (menus, tooltips, dialogs) pertencem a `src/styles/components/` |
 
 ### 2.3. Identidade Visual "Midnight Obsidian" (2026-11-03)
 

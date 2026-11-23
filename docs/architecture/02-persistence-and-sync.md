@@ -1,6 +1,6 @@
 # 02. Persistência, Sincronização e Log de Operações (Op-Log)
 
-> **Módulos**: `src/app/op-log/`, `src/app/pfapi/`, `src/app/imex/sync/`, `src/app/imex/local-backup/`, `src/app/imex/file-imex/`  
+> **Módulos**: `src/app/op-log/`, `src/app/imex/sync/`, `src/app/imex/local-backup/`, `src/app/imex/file-imex/`  
 > **Camada**: Persistência de Dados Local-First, Sincronização Distribuída e Resolução de Conflitos
 
 ---
@@ -36,7 +36,7 @@ O KaironTask adota o paradigma **Local-First**, onde:
                 │                                               │
                 ▼                                               ▼
 ┌───────────────────────────────┐               ┌───────────────────────────────┐
-│        src/app/pfapi/         │               │     src/app/imex/sync/        │
+│  src/app/op-log/persistence/  │               │     src/app/imex/sync/        │
 │   - IndexedDB (idb) Engine    │               │  - WebDAV (Nextcloud/Apache)  │
 │   - Stores: op_log, app_data, │               │  - Dropbox API                │
 │             archive           │               │  - SuperSync (Self-hosted)    │
@@ -102,9 +102,9 @@ interface Operation {
 
 ---
 
-## 5. Persistência Local com IndexedDB (`src/app/pfapi/`)
+## 5. Persistência Local com IndexedDB (`src/app/op-log/persistence/`)
 
-O KaironTask utiliza uma camada de persistência robusta baseada em IndexedDB encapsulada em [`src/app/pfapi/`](../../src/app/pfapi/):
+O KaironTask utiliza uma camada de persistência robusta baseada em IndexedDB encapsulada em [`src/app/op-log/persistence/`](../../src/app/op-log/persistence/):
 
 - **Object Store `op_log`**: Tabela sequencial contendo todas as operações pendentes e aplicadas.
 - **Object Store `app_data`**: Armazena snapshots periódicos compactados do estado do NgRx. Na inicialização do app, o snapshot mais recente é carregado e apenas as operações posteriores a ele são reprocessadas (_Fast Startup_).

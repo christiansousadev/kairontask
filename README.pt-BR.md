@@ -108,7 +108,7 @@ Destaques do redesign:
 - **Barra lateral & Header**: header translúcido com botão Play _squircle_, pílula de tarefa ativa, indicador lateral em gradiente e assinatura _by Christian Sousa_.
 - Cores nativas alinhadas em todas as plataformas: barra de status/navegação Android, área segura iOS, title bar do Electron e manifesto PWA.
 
-Todos os tokens vivem em [`src/styles/_css-variables.scss`](src/styles/_css-variables.scss); as regras de uso estão em [`docs/styling-guide.md`](docs/styling-guide.md) e o guia de uso para usuários finais em [`docs/user-guide.md`](docs/user-guide.md). O tema padrão de projetos e tags novos é definido em [`work-context.const.ts`](src/app/features/work-context/work-context.const.ts).
+Todos os tokens vivem em [`src/styles/_css-variables.scss`](src/styles/_css-variables.scss); as regras de estilo e especificações do Design System estão em [`docs/architecture/07-design-system-and-i18n.md`](docs/architecture/07-design-system-and-i18n.md). O tema padrão de projetos e tags novos é definido em [`work-context.const.ts`](src/app/features/work-context/work-context.const.ts).
 
 ---
 

@@ -114,7 +114,7 @@ The app uses NgRx (Redux pattern) for state management. Key state slices:
 
 ## Styling & Design System
 
-**WHENEVER you are making styling changes, read and apply [`docs/styling-guide.md`](docs/styling-guide.md).** It contains the rules, CSS variables, and patterns that must be followed for a consistent design language.
+**WHENEVER you are making styling changes, read and apply [`docs/architecture/07-design-system-and-i18n.md`](docs/architecture/07-design-system-and-i18n.md).** It contains the rules, CSS variables, and patterns that must be followed for a consistent design language.
 
 ## Important Development Notes
 
