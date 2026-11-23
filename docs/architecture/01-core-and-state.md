@@ -31,7 +31,7 @@ O KaironTask foi desenvolvido como uma Single Page Application (SPA) Angular de 
 
 ## 2. Inventário dos 27 Subsistemas do `src/app/core/`
 
-O diretório [`src/app/core/`](file:///c:/Projects/kairontask/src/app/core) isola serviços de infraestrutura e utilitários globais:
+O diretório [`src/app/core/`](../../src/app/core) isola serviços de infraestrutura e utilitários globais:
 
 | Subsistema                   | Caminho                                            | Responsabilidade Técnica                                                                                        |
 | :--------------------------- | :------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------- |
@@ -66,7 +66,7 @@ O diretório [`src/app/core/`](file:///c:/Projects/kairontask/src/app/core) isol
 
 ### 3.1. Arquitetura do Root Store (`src/app/root-store/`)
 
-O estado global do aplicativo é registrado no [`src/app/root-store/root-state.ts`](file:///c:/Projects/kairontask/src/app/root-store/root-state.ts) e orquestrado pelo [`src/app/root-store/meta/meta-reducer-registry.ts`](file:///c:/Projects/kairontask/src/app/root-store/meta/meta-reducer-registry.ts).
+O estado global do aplicativo é registrado no [`src/app/root-store/root-state.ts`](../../src/app/root-store/root-state.ts) e orquestrado pelo [`src/app/root-store/meta/meta-reducer-registry.ts`](../../src/app/root-store/meta/meta-reducer-registry.ts).
 
 ### 3.2. A Suíte de Meta-Reducers Compartilhados (`task-shared-meta-reducers/`)
 
@@ -133,7 +133,7 @@ Mutações complexas no KaironTask **nunca são feitas através de múltiplos ef
 
 ### 4.2. Efeitos Baseados em Seletores
 
-- Conforme [`CLAUDE.md`](file:///c:/Projects/kairontask/CLAUDE.md), seletores ignoram a filtragem de ações. Se for estritamente necessário criar um effect que escuta um seletor (`this._store$.select(...)`), ele deve ser protegido com:
+- Conforme [`CLAUDE.md`](../../CLAUDE.md), seletores ignoram a filtragem de ações. Se for estritamente necessário criar um effect que escuta um seletor (`this._store$.select(...)`), ele deve ser protegido com:
   ```typescript
   if (this._hydrationStateService.isApplyingRemoteOps()) {
     return; // Ignora se for replay de sincronização remota
@@ -152,7 +152,7 @@ Mutações complexas no KaironTask **nunca são feitas através de múltiplos ef
 
 ## 6. Logging e Boas Práticas (`Log.ts`)
 
-O arquivo [`src/app/core/log.ts`](file:///c:/Projects/kairontask/src/app/core/log.ts) implementa um sistema de log seguro com buffer circular para exportação em diagnósticos técnicos.
+O arquivo [`src/app/core/log.ts`](../../src/app/core/log.ts) implementa um sistema de log seguro com buffer circular para exportação em diagnósticos técnicos.
 
 ### 6.1. Diretrizes de Sanitização de Logs:
 

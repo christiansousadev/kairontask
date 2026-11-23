@@ -74,15 +74,15 @@ Sincronize tarefas de forma bidirecional sem trocar de janela:
 
 ## 📸 Telas e Demonstração Visual
 
-|                        🌙 Lista de Tarefas & Timeboxing (Dark Mode)                        |                              ☀️ Interface Dinâmica (Light Mode)                              |
-| :----------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------: |
-| <img src="docs/assets/screenshot-tasks-dark.png" alt="KaironTask Dark Mode" width="100%"/> | <img src="docs/assets/screenshot-tasks-light.png" alt="KaironTask Light Mode" width="100%"/> |
-|            _Planejamento diário, subtarefas e cronômetro ativo no tema escuro._            |         _Tema claro de alta legibilidade adaptável ao tema do sistema operacional._          |
+|                        🌙 Lista de Tarefas & Timeboxing (Dark Mode)                         |                              ☀️ Interface Dinâmica (Light Mode)                              |
+| :-----------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------: |
+| <img src="docs/assets/screenshot-tasks-dark.png" alt="KaironTask Dark Mode" width="100%"/>  | <img src="docs/assets/screenshot-tasks-light.png" alt="KaironTask Light Mode" width="100%"/> |
+| _Workspace Midnight Obsidian com barra de métricas em pílula, rastreio ativo e subtarefas._ | _Modo claro de alto contraste com bordas nítidas de 1px e realce ciano calibrado (WCAG AA)._ |
 
 |                           ⏱️ Resumo Diário & Planejamento de Fechamento                           |                         📊 Worklog, Métricas & Folha de Ponto                         |
 | :-----------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
 | <img src="docs/assets/screenshot-daily-summary.png" alt="KaironTask Daily Summary" width="100%"/> | <img src="docs/assets/screenshot-worklog.png" alt="KaironTask Worklog" width="100%"/> |
-|         _Revisão de tarefas concluídas, notas do dia e planejamento para o dia seguinte._         |    _Exportação de horas, gráficos de tempo investido por projeto e apontamentos._     |
+|      _Cards KPI estruturados em grid, revisão de tarefas concluídas e notas de fechamento._       |     _Detalhamento anual, mensal e semanal de horas trabalhadas e folha de ponto._     |
 
 ---
 
@@ -102,12 +102,13 @@ O KaironTask adota um design system autoral, com estética de produto SaaS premi
 Destaques do redesign:
 
 - **Splash screen** com anel em gradiente violeta → ciano, brilho pulsante suave e respeito a `prefers-reduced-motion`.
-- **Cartões de tarefa** com cantos de 8px, bordas translúcidas e sombras profundas calibradas para superfícies escuras.
-- **Entrada rápida** com anel de foco ciano e **tags** em formato _pill_ discreto.
-- **Barra lateral** com logotipo em gradiente e assinatura _by Christian Sousa_.
+- **Tipografia autoral offline**: `Inter` para interface e títulos combinada com `JetBrains Mono` (`tabular-nums`) em cronômetros, badges e métricas.
+- **Cartões de tarefa & Barra de status**: bordas nítidas de `1px`, faixa lateral ciano na tarefa ativa, guias verticais em subtarefas, checkmark semântico verde e barra de métricas em pílula.
+- **Focus Mode & Daily Summary**: fundo atmosférico radial, anel de progresso gradiente violeta→ciano e cards KPI em grid no fechamento do dia.
+- **Barra lateral & Header**: header translúcido com botão Play _squircle_, pílula de tarefa ativa, indicador lateral em gradiente e assinatura _by Christian Sousa_.
 - Cores nativas alinhadas em todas as plataformas: barra de status/navegação Android, área segura iOS, title bar do Electron e manifesto PWA.
 
-Todos os tokens vivem em [`src/styles/_css-variables.scss`](src/styles/_css-variables.scss); as regras de uso estão em [`docs/styling-guide.md`](docs/styling-guide.md). O tema padrão de projetos e tags novos é definido em [`work-context.const.ts`](src/app/features/work-context/work-context.const.ts).
+Todos os tokens vivem em [`src/styles/_css-variables.scss`](src/styles/_css-variables.scss); as regras de uso estão em [`docs/styling-guide.md`](docs/styling-guide.md) e o guia de uso para usuários finais em [`docs/user-guide.md`](docs/user-guide.md). O tema padrão de projetos e tags novos é definido em [`work-context.const.ts`](src/app/features/work-context/work-context.const.ts).
 
 ---
 

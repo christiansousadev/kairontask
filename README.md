@@ -77,12 +77,12 @@ Two-way synchronization with leading issue tracking and developer platforms with
 |                           🌙 Task List & Timeboxing (Dark Mode)                            |                          ☀️ Adaptive Dynamic Interface (Light Mode)                          |
 | :----------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------: |
 | <img src="docs/assets/screenshot-tasks-dark.png" alt="KaironTask Dark Mode" width="100%"/> | <img src="docs/assets/screenshot-tasks-light.png" alt="KaironTask Light Mode" width="100%"/> |
-|        _Daily planning, nested subtasks, and active stopwatch timer in dark theme._        |         _High-contrast, clean light theme adapting automatically to OS appearance._          |
+|  _Midnight Obsidian workspace with pill metrics bar, active cyan tracking, and subtasks._  |      _Clean high-contrast light mode with crisp 1px borders and WCAG AA cyan accents._       |
 
 |                                ⏱️ Daily Summary & Workday Wrap-Up                                 |                         📊 Worklog, Time Metrics & Timesheets                         |
 | :-----------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
 | <img src="docs/assets/screenshot-daily-summary.png" alt="KaironTask Daily Summary" width="100%"/> | <img src="docs/assets/screenshot-worklog.png" alt="KaironTask Worklog" width="100%"/> |
-|             _Completed tasks review, workday retrospective, and next-day scheduling._             |   _Timesheet exports, project time allocation breakdown, and productivity charts._    |
+|        _Structured KPI metric cards, completed task tables, and end-of-day retrospective._        |     _Annual/monthly/weekly worklog breakdown with quick task & timesheet review._     |
 
 ---
 
@@ -102,12 +102,13 @@ KaironTask features an original design system crafted for focused software engin
 Design Highlights:
 
 - **Splash Screen**: Gradient ring (violet → cyan) with a subtle pulse animation respecting `prefers-reduced-motion`.
-- **Task Cards**: Refined 8px rounded corners, translucent borders, and deep soft shadows calibrated for dark OLED displays.
-- **Quick-Add**: Electric cyan focus glow with discrete tag pill badges.
-- **Sidebar**: Clean brand mark with subtle _by Christian Sousa_ signature.
+- **Typography**: Bundled offline `Inter` UI type paired with `JetBrains Mono` (`tabular-nums`) for stopwatches, badges, and KPI metrics.
+- **Task Cards & Status Bar**: Crisp `1px` obsidian borders, cyan left accent for active tasks, vertical subtask guides, semantic green checkmarks, and a pill-style daily status bar.
+- **Focus Mode & Daily Summary**: Atmospheric radial backdrop with gradient progress ring (`kaironFocusGrad`) and structured KPI metric cards.
+- **Sidebar & Header**: Translucent anchored header with squircle Play button, active task pill, gradient sidebar active indicator, and subtle _by Christian Sousa_ signature.
 - **Platform Alignment**: Matching native color palettes across Android status/navigation bars, iOS safe areas, Electron title bars, and PWA manifests.
 
-All design tokens are maintained in [`src/styles/_css-variables.scss`](src/styles/_css-variables.scss). For guidelines, see [`docs/styling-guide.md`](docs/styling-guide.md). Default project/tag themes are defined in [`work-context.const.ts`](src/app/features/work-context/work-context.const.ts).
+All design tokens are maintained in [`src/styles/_css-variables.scss`](src/styles/_css-variables.scss). For styling rules, see [`docs/styling-guide.md`](docs/styling-guide.md); for end-user workflows and shortcuts, see [`docs/user-guide.md`](docs/user-guide.md). Default project/tag themes are defined in [`work-context.const.ts`](src/app/features/work-context/work-context.const.ts).
 
 ---
 

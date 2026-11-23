@@ -7,7 +7,7 @@
 
 ## 1. Visão Geral da Pasta `packages/`
 
-O KaironTask estrutura suas bibliotecas reutilizáveis e microsserviços na pasta [`packages/`](file:///c:/Projects/kairontask/packages). Todos os sub-pacotes são gerenciados via npm workspaces e orquestrados pelo script de compilação [`packages/build-packages.js`](file:///c:/Projects/kairontask/packages/build-packages.js).
+O KaironTask estrutura suas bibliotecas reutilizáveis e microsserviços na pasta [`packages/`](../../packages). Todos os sub-pacotes são gerenciados via npm workspaces e orquestrados pelo script de compilação [`packages/build-packages.js`](../../packages/build-packages.js).
 
 ```
                             packages/
@@ -55,7 +55,7 @@ Frontend & Electron     Frontend & Servidor       para Self-Hosting
   - `POST /api/sync/operations`: Recebimento de lotes de operações do `op-log` com validação de relógio vetorial.
   - `GET /api/sync/operations`: Consulta de deltas com base na última versão do cliente.
   - `WebSocket /api/sync/ws`: Notificações push em tempo real para sincronização instantânea entre múltiplos computadores e celulares conectados.
-- **Implantação**: Pode ser iniciado com um comando via [`docker-compose.supersync.yaml`](file:///c:/Projects/kairontask/docker-compose.supersync.yaml).
+- **Implantação**: Pode ser iniciado com um comando via [`docker-compose.supersync.yaml`](../../docker-compose.supersync.yaml).
 
 ---
 
@@ -74,7 +74,7 @@ Frontend & Electron     Frontend & Servidor       para Self-Hosting
   - Arquivo JSON versionado no repositório que lista plugins validados pela comunidade (ex: integrações com Toggl, Obsidian, Habitica).
 - **Modelo de Execução e Segurança**:
   - Na versão Web: Plugins rodam dentro de um Web Worker / Sandbox JS com permissões limitadas.
-  - Na versão Desktop (Electron): Chamadas que exigem acesso ao sistema de arquivos ou rede local são delegadas para o executor Node seguro [`electron/plugin-node-executor.ts`](file:///c:/Projects/kairontask/electron/plugin-node-executor.ts).
+  - Na versão Desktop (Electron): Chamadas que exigem acesso ao sistema de arquivos ou rede local são delegadas para o executor Node seguro [`electron/plugin-node-executor.ts`](../../electron/plugin-node-executor.ts).
 
 ---
 

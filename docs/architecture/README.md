@@ -9,7 +9,7 @@
 
 ## 🗺️ Architectural Documentation Map
 
-This directory contains the authoritative technical documentation for KaironTask's engineering, core systems, distributed data sync, and multi-platform architecture:
+This directory contains the authoritative technical documentation for KaironTask's engineering, core systems, distributed data sync, and multi-platform architecture (individual specifications `01`–`08` are authored in Portuguese):
 
 | Document                                                               | Subsystem / Layer                  | Topics Covered                                                                                                                                                                                                             |
 | :--------------------------------------------------------------------- | :--------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

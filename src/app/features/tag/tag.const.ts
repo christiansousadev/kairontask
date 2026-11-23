@@ -32,7 +32,6 @@ export const TODAY_TAG: Tag = {
     hueAccent: '500',
     hueWarn: '500',
     primary: DEFAULT_TODAY_TAG_COLOR,
-    // backgroundImageDark: 'assets/bg/NIGHT_manuel-will.jpg',
     backgroundImageDark: '',
     isDisableBackgroundTint: true,
   },

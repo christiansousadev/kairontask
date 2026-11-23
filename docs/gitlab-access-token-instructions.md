@@ -1,19 +1,20 @@
-# How to generate a GitLab Access Token with Privileges
+# How to Generate a GitLab Access Token
+
+To integrate KaironTask with GitLab Issues and Merge Requests, create an access token with the `api` scope.
 
 ## Personal Access Token
 
-For polling GitLab Issues, you need to provide an access token.
-
-1. Go to User Settings / Access tokens
-2. Add a new token with the scope `api`
-
-![Personal Token](https://github.com/user-attachments/assets/76fb204e-450a-4516-9d93-897ae2a32f6d)
+1. Open your GitLab **User Settings** → **Access Tokens**.
+2. Create a new personal access token with a descriptive name (for example, `KaironTask`).
+3. Enable the **`api`** scope so KaironTask can read issues, merge requests, and submit worklogs.
+4. Copy the generated token and paste it into the KaironTask GitLab integration settings.
 
 ## Project Access Token
 
-If you self-host GitLab or have the Premium/Ultimate license, it's possible to get a Project Access Token, which is scoped to a project.
-The scope is similar to the Personal Access token, but you also set a role. To learn what each role can do, see the <a href="https://docs.gitlab.com/ee/user/permissions.html#project-planning">Documentation</a>.
+If you use GitLab Premium/Ultimate or self-hosted GitLab, you can alternatively generate a **Project Access Token** scoped to a single repository:
 
-![Project Token](https://github.com/user-attachments/assets/f008f114-3d3e-450d-9301-7825222f9812)
+1. Open your repository **Settings** → **Access Tokens**.
+2. Select a role with issue read/write permissions (see the [GitLab Permissions Documentation](https://docs.gitlab.com/ee/user/permissions.html#project-planning)).
+3. Enable the **`api`** scope and copy the generated token into KaironTask.
 
-For GitHub Personal Access Token instructions, see [GitHub Access Token Instructions](./github-access-token-instructions.md).
+For GitHub integration, see [GitHub Access Token Instructions](./github-access-token-instructions.md).

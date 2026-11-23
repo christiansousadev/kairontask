@@ -8,6 +8,10 @@
   flex-direction: column;
   height: 100%;
   -webkit-app-region: no-drag !important;
+  background:
+    radial-gradient(55vmax 55vmax at 18% 12%, rgba(124, 58, 237, 0.06), transparent 60%),
+    radial-gradient(45vmax 45vmax at 82% 88%, rgba(34, 211, 238, 0.05), transparent 60%),
+    var(--bg);
   --z-focus-mode-drag-bar: 0;
   --z-focus-mode-close-btn: 5;
   --z-focus-mode-overlay-selector: 10;
@@ -17,6 +21,17 @@
   --z-focus-mode-drag-over: 31;
   --z-focus-mode-hide-notes: 2;
   --z-focus-mode-countdown: 11;
+
+  @include darkTheme() {
+    background:
+      radial-gradient(
+        55vmax 55vmax at 18% 12%,
+        rgba(124, 58, 237, 0.14),
+        transparent 60%
+      ),
+      radial-gradient(45vmax 45vmax at 82% 88%, rgba(34, 211, 238, 0.1), transparent 60%),
+      var(--bg);
+  }
 }
 
 .electron-drag-bar {

@@ -25,7 +25,7 @@
     overflow: hidden;
     flex: 1;
     min-width: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--font-primary-stack);
     font-weight: 400;
     letter-spacing: normal;
     color: var(--sidenav-text);
@@ -92,8 +92,14 @@
   transform: translateY(-50%);
   line-height: 1;
   text-align: center;
-  font-size: 10px;
-  right: 16px;
+  font-family: var(--font-mono-stack);
+  font-variant-numeric: tabular-nums;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--border-subtle);
+  right: 12px;
   display: flex;
   align-items: center;
   color: var(--text-color-muted);
@@ -119,6 +125,11 @@ button[mat-menu-item].nav-link.active {
 // Styling when used inside magic-side-nav: rely on global .nav-link/.nav-child-link
 // Only keep adjustments for the additional button here
 :host.variant-nav {
+  .nav-link {
+    margin: 0 8px;
+    width: calc(100% - 16px);
+  }
+
   .g-multi-btn-wrapper {
     background-color: transparent;
   }
@@ -159,22 +170,23 @@ button[mat-menu-item].nav-link.active {
 
 // Standard navigation row styles (simplified to be the only style)
 .nav-link {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: var(--s2);
-  padding: var(--s) var(--s2);
+  gap: 10px;
+  padding: 7px 12px;
   color: var(--sidenav-text);
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   transition: var(--transition-standard);
   cursor: pointer;
   background: transparent;
   border: none;
   width: 100%;
   text-align: left;
-  font-size: 14px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
+  font-size: 13.5px;
+  font-family: var(--font-primary-stack);
+  font-weight: 500;
   letter-spacing: normal;
 
   // Override Angular Material mat-menu-item defaults so buttons/anchors match our palette
@@ -212,7 +224,18 @@ button[mat-menu-item].nav-link.active {
   &.active {
     background: var(--sidenav-item-active-bg);
     color: var(--sidenav-active-text);
-    box-shadow: var(--whiteframe-shadow-1dp);
+    box-shadow: inset 0 0 0 1px rgba(124, 58, 237, 0.28);
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 20%;
+      bottom: 20%;
+      width: 3px;
+      border-radius: 0 3px 3px 0;
+      background: var(--brand-gradient);
+    }
 
     .nav-icon {
       color: var(--sidenav-active-text);
@@ -291,6 +314,12 @@ button[mat-menu-item].nav-link.active {
   .nav-link {
     justify-content: center;
     padding: 12px;
+    margin: 0;
+    width: 100%;
+
+    &.active::before {
+      display: none;
+    }
 
     &:focus,
     &:hover {

@@ -125,7 +125,7 @@ import { NavigateToTaskService } from '../../navigate-to-task/navigate-to-task.s
           left: -3px;
           right: 0;
           bottom: 0;
-          border-radius: 50%;
+          border-radius: var(--radius-md);
           margin: auto;
           transform: scale(1, 1);
           animation: pulse 2s infinite;
@@ -150,7 +150,8 @@ import { NavigateToTaskService } from '../../navigate-to-task/navigate-to-task.s
           position: relative;
           margin-left: 0;
           z-index: 6;
-          box-shadow: var(--whiteframe-shadow-2dp);
+          border-radius: var(--radius-md) !important;
+          box-shadow: var(--brand-glow);
 
           .mat-icon {
             position: relative;
@@ -168,8 +169,8 @@ import { NavigateToTaskService } from '../../navigate-to-task/navigate-to-task.s
         position: absolute;
         right: 100%;
         width: auto;
-        border: 1.5px solid var(--c-accent);
-        border-radius: 10px;
+        border: 1px solid var(--brand-cyan);
+        border-radius: 999px;
         min-width: 40px;
         white-space: nowrap;
         padding: calc(var(--s-half) * 0.75) var(--s);
@@ -179,8 +180,12 @@ import { NavigateToTaskService } from '../../navigate-to-task/navigate-to-task.s
         transform: translateY(-50%);
         transition: opacity 0.3s ease-out;
         display: flex;
-        background: var(--bg-lighter);
-        font-size: 13px;
+        align-items: center;
+        background: var(--overlay-surface);
+        backdrop-filter: var(--overlay-blur);
+        box-shadow: 0 0 14px rgba(34, 211, 238, 0.16);
+        font-size: 12.5px;
+        font-weight: 500;
         z-index: 5;
         cursor: pointer;
 

@@ -72,6 +72,8 @@
 .task-title-placeholder {
   text-align: center;
   font-size: 30px;
+  font-weight: 600;
+  letter-spacing: var(--heading-letter-spacing);
   line-height: 1.5;
   border-radius: var(--card-border-radius);
   border: 1px solid transparent;
@@ -197,17 +199,25 @@
 
   &__progress {
     fill: none;
-    stroke: var(--c-primary);
+    stroke: url(#kaironFocusGrad);
     stroke-width: 2;
     stroke-linecap: round;
+    filter: drop-shadow(0 0 3px rgba(124, 58, 237, 0.45));
     transition: stroke-dasharray 0.3s ease;
   }
 }
 
 .clock-time {
-  font-size: 24px;
-  font-weight: bold;
+  font-family: var(--font-mono-stack);
+  font-variant-numeric: tabular-nums;
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
   @include center;
+
+  @media (max-height: 500px) {
+    font-size: 20px;
+  }
 }
 
 .overtime-msg {

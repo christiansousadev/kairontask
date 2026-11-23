@@ -7,7 +7,7 @@
 
 ## 1. Visão Geral da Infraestrutura de Build
 
-O repositório possui uma infraestrutura completa para gerar artefatos para web, containers Docker, instaladores desktop e pacotes mobile a partir de scripts orquestrados no [`package.json`](file:///c:/Projects/kairontask/package.json).
+O repositório possui uma infraestrutura completa para gerar artefatos para web, containers Docker, instaladores desktop e pacotes mobile a partir de scripts orquestrados no [`package.json`](../../package.json).
 
 ```
                              npm run build / dist
@@ -33,17 +33,17 @@ O repositório possui uma infraestrutura completa para gerar artefatos para web,
 ### 2.2. Script de Entrada Dinâmico (`docker-entrypoint.sh`)
 
 - Executado no momento em que o container é iniciado (_container startup_).
-- Injeta dinamicamente as variáveis de ambiente em [`nginx/default.conf.template`](file:///c:/Projects/kairontask/nginx/default.conf.template) (porta do app `${APP_PORT}` e backend WebDAV `${WEBDAV_BACKEND}`).
+- Injeta dinamicamente as variáveis de ambiente em [`nginx/default.conf.template`](../../nginx/default.conf.template) (porta do app `${APP_PORT}` e backend WebDAV `${WEBDAV_BACKEND}`).
 - Gera automaticamente o arquivo `src/assets/sync-config-default-override.json` a partir das variáveis `WEBDAV_BASE_URL`, `WEBDAV_USERNAME`, `SYNC_INTERVAL`, etc. Isso permite que instâncias corporativas ou de usuário único já inicializem com as configurações de sincronização pré-definidas sem necessidade de configuração manual na interface.
 
 ### 2.3. As 4 Orquestrações Docker Compose
 
-| Compose File                                                                                    | Propósito              | Serviços Declarados                                                                              |
-| :---------------------------------------------------------------------------------------------- | :--------------------- | :----------------------------------------------------------------------------------------------- |
-| [`docker-compose.yaml`](file:///c:/Projects/kairontask/docker-compose.yaml)                     | Stack completo padrão  | `app` (Web Nginx), `webdav` (servidor WebDAV local), `db` (Postgres), `supersync` (Node.js API). |
-| [`docker-compose.supersync.yaml`](file:///c:/Projects/kairontask/docker-compose.supersync.yaml) | Overlay para SuperSync | Sobe o servidor SuperSync dedicado conectado ao PostgreSQL.                                      |
-| [`docker-compose.e2e.yaml`](file:///c:/Projects/kairontask/docker-compose.e2e.yaml)             | Ambiente de testes E2E | Servidor web otimizado apontando para as portas de teste do Playwright.                          |
-| [`docker-compose.e2e.fast.yaml`](file:///c:/Projects/kairontask/docker-compose.e2e.fast.yaml)   | E2E acelerado          | Variante com builds em memória temporária para aceleração de pipelines de CI.                    |
+| Compose File                                                           | Propósito              | Serviços Declarados                                                                              |
+| :--------------------------------------------------------------------- | :--------------------- | :----------------------------------------------------------------------------------------------- |
+| [`docker-compose.yaml`](../../docker-compose.yaml)                     | Stack completo padrão  | `app` (Web Nginx), `webdav` (servidor WebDAV local), `db` (Postgres), `supersync` (Node.js API). |
+| [`docker-compose.supersync.yaml`](../../docker-compose.supersync.yaml) | Overlay para SuperSync | Sobe o servidor SuperSync dedicado conectado ao PostgreSQL.                                      |
+| [`docker-compose.e2e.yaml`](../../docker-compose.e2e.yaml)             | Ambiente de testes E2E | Servidor web otimizado apontando para as portas de teste do Playwright.                          |
+| [`docker-compose.e2e.fast.yaml`](../../docker-compose.e2e.fast.yaml)   | E2E acelerado          | Variante com builds em memória temporária para aceleração de pipelines de CI.                    |
 
 ---
 
@@ -64,7 +64,7 @@ O repositório possui uma infraestrutura completa para gerar artefatos para web,
 
 ### 3.2. Testes de Ponta a Ponta com Playwright (`e2e/`)
 
-- **Configuração**: [`e2e/playwright.config.ts`](file:///c:/Projects/kairontask/e2e/playwright.config.ts).
+- **Configuração**: [`e2e/playwright.config.ts`](../../e2e/playwright.config.ts).
 - **Comandos Principais**:
   - `npm run e2e`: Executa toda a suíte de testes E2E de interface.
   - `npm run e2e:file <filepath> -- --retries=0`: Executa um teste específico com feedback imediato.
@@ -104,7 +104,7 @@ A suíte de automações no GitHub Actions foi enxugada e desativada de execuç�
 
 ### 5.2. O Utilitário Essencial `npm run checkFile`
 
-- **Comando**: `npm run checkFile <caminho_do_arquivo>` (executa [`tools/check-file.js`](file:///c:/Projects/kairontask/tools/check-file.js)).
+- **Comando**: `npm run checkFile <caminho_do_arquivo>` (executa [`tools/check-file.js`](../../tools/check-file.js)).
 - **Diretriz Obrigatória**: Sempre que modificar um arquivo `.ts` ou `.scss`, rode este comando para validar formatação e linting instantaneamente antes de commitar.
 
 ### 5.3. Gates do Husky (`.husky/`)

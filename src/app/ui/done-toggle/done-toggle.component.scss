@@ -54,10 +54,13 @@ $check-len: 18;
 
   .done-circle {
     stroke: currentColor;
-    stroke-width: 2;
+    stroke-width: 1.75;
     fill: none;
-    opacity: 0.3;
-    transition: opacity var(--transition-duration-m) var(--ani-standard-timing);
+    opacity: 0.35;
+    transition:
+      opacity var(--transition-duration-m) var(--ani-standard-timing),
+      stroke var(--transition-duration-m) var(--ani-standard-timing),
+      fill var(--transition-duration-m) var(--ani-standard-timing);
   }
 
   .done-check {
@@ -69,7 +72,9 @@ $check-len: 18;
     stroke-dasharray: $check-len;
     stroke-dashoffset: $check-len;
     opacity: 0.3;
-    transition: opacity var(--transition-duration-m) var(--ani-standard-timing);
+    transition:
+      opacity var(--transition-duration-m) var(--ani-standard-timing),
+      stroke var(--transition-duration-m) var(--ani-standard-timing);
   }
 
   .play-indicator {
@@ -81,19 +86,27 @@ $check-len: 18;
 
   &.is-done {
     .done-circle {
-      opacity: 0.5;
+      stroke: var(--color-success);
+      fill: rgba(16, 185, 129, 0.14);
+      opacity: 1;
     }
 
     .done-check {
-      opacity: 0.5;
+      stroke: var(--color-success);
+      opacity: 1;
       animation: draw-check 150ms ease-out forwards;
     }
   }
 
   &.is-current:not(.is-done) {
+    .done-circle {
+      stroke: var(--brand-cyan);
+      opacity: 0.85;
+    }
+
     &:hover {
       .done-circle {
-        opacity: 0.6;
+        opacity: 1;
       }
 
       .play-indicator {
@@ -103,21 +116,22 @@ $check-len: 18;
   }
 
   &:hover {
-    .done-circle {
-      opacity: 0.6;
+    &:not(.is-done):not(.is-current) .done-circle {
+      stroke: var(--brand-violet);
+      opacity: 0.9;
     }
 
     .done-check {
-      opacity: 0.6;
+      opacity: 0.7;
     }
 
     &.is-done {
       .done-circle {
-        opacity: 0.8;
+        opacity: 1;
       }
 
       .done-check {
-        opacity: 0.8;
+        opacity: 1;
       }
     }
   }

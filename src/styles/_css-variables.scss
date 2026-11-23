@@ -29,12 +29,12 @@
   // Fonts
   // -----------------------------
   --font-primary-stack:
-    'Open Sans', 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Inter', 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
     'Noto Color Emoji', 'Android Emoji', 'EmojiSymbols', -apple-system,
     BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  // System monospace stack (no bundled font needed, works offline) — timers & counters
+  // Bundled + system monospace stack — timers & counters
   --font-mono-stack:
-    ui-monospace, 'SF Mono', 'Cascadia Code', 'JetBrains Mono', 'Roboto Mono', Menlo,
+    'JetBrains Mono', ui-monospace, 'SF Mono', 'Cascadia Code', 'Roboto Mono', Menlo,
     Consolas, monospace;
   --heading-letter-spacing: -0.02em;
 
@@ -336,16 +336,18 @@ body {
   --sub-task-c-bg-in-selected: var(--task-c-bg);
 
   // Task shadows
-  --task-shadow: 0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 4px rgba(15, 23, 42, 0.08);
-  //--task-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  --task-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
 
   --task-shadow-sub-task: none;
-  //--task-shadow-sub-task: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  --task-current-shadow: var(--whiteframe-shadow-4dp);
-  --task-selected-shadow: var(--whiteframe-shadow-3dp);
+  --task-current-shadow: var(--whiteframe-shadow-2dp);
+  --task-selected-shadow: var(--whiteframe-shadow-2dp);
 
-  // Task Border
-  //--task-border: 1px solid var(--extra-border-color);
+  // Task Border & Surface Tokens (Light)
+  --task-border: 1px solid var(--border-default);
+  --task-hover-border: var(--border-strong);
+  --task-hover-bg: #fafbff;
+  --brand-cyan-text: #0891b2;
+  --header-bg: rgba(245, 246, 250, 0.82);
 
   // Scrollbar colors
   --scrollbar-thumb: rgba(136, 136, 136, 0.4);
@@ -497,12 +499,17 @@ body.isDarkTheme {
   --task-c-drag-drop-bg: var(--dark12);
   --sub-task-c-bg-in-selected: var(--dark10);
 
-  // Task shadows
-  --task-shadow: 0 0 0 1px rgba(148, 163, 255, 0.06), 0 1px 3px rgba(0, 0, 0, 0.45);
-  --task-current-shadow: 0 0 0 1px rgba(34, 211, 238, 0.25), var(--whiteframe-shadow-4dp);
+  // Task shadows & borders (Dark)
+  --task-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --task-current-shadow: 0 0 0 1px rgba(34, 211, 238, 0.28), var(--whiteframe-shadow-2dp);
   --task-selected-shadow:
-    0 0 0 1px rgba(124, 58, 237, 0.35), var(--whiteframe-shadow-4dp);
+    0 0 0 1px rgba(124, 58, 237, 0.35), var(--whiteframe-shadow-2dp);
   --task-shadow-sub-task: var(--task-shadow);
+  --task-border: 1px solid var(--border-subtle);
+  --task-hover-border: rgba(148, 163, 255, 0.22);
+  --task-hover-bg: var(--dark4);
+  --brand-cyan-text: var(--brand-cyan);
+  --header-bg: rgba(11, 13, 18, 0.78);
 
   // Scrollbar colors
   --scrollbar-thumb: rgba(148, 163, 255, 0.18);

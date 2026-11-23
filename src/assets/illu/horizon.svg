@@ -1,91 +1,39 @@
-<svg width="500"
-     height="100"
-     xmlns="http://www.w3.org/2000/svg">
-
+<svg width="500" height="120" viewBox="0 0 500 120" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="groundGradient"
-                    x1="0"
-                    y1="1"
-                    x2="0"
-                    y2="0">
-      <stop offset="0%"
-            stop-color="black"
-            stop-opacity="0" />
-      <stop offset="50%"
-            stop-color="black"
-            stop-opacity="0.01" />
-      <stop offset="100%"
-            stop-color="black"
-            stop-opacity="0.02" />
+    <linearGradient id="kaironHorizonArcLight" x1="60" y1="70" x2="440" y2="70" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0891b2" stop-opacity="0" />
+      <stop offset="30%" stop-color="#0891b2" stop-opacity="0.45" />
+      <stop offset="50%" stop-color="#6366f1" stop-opacity="0.65" />
+      <stop offset="70%" stop-color="#7c3aed" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0" />
     </linearGradient>
-
-    <mask id="fadeSides">
-      <linearGradient id="sideFade"
-                      x1="0"
-                      y1="0"
-                      x2="1"
-                      y2="0">
-        <stop offset="0%"
-              stop-color="black"
-              stop-opacity="0" />
-        <stop offset="20%"
-              stop-color="white"
-              stop-opacity="1" />
-        <stop offset="80%"
-              stop-color="white"
-              stop-opacity="1" />
-        <stop offset="100%"
-              stop-color="black"
-              stop-opacity="0" />
-      </linearGradient>
-      <rect width="100%"
-            height="100%"
-            fill="url(#sideFade)" />
-    </mask>
-
-    <filter id="glow"
-            x="-50%"
-            y="-50%"
-            width="200%"
-            height="200%">
-      <feDropShadow dx="0"
-                    dy="0"
-                    stdDeviation="5"
-                    flood-color="white"
-                    flood-opacity="0.9" />
-    </filter>
-
-    <clipPath id="cut-off-bottom">
-      <rect x="0"
-            y="0"
-            width="400"
-            height="50" />
-    </clipPath>
+    <radialGradient id="kaironOrbGlowLight" cx="50%" cy="62%" r="48%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.12" />
+      <stop offset="45%" stop-color="#0891b2" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#f5f6fa" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="kaironGridFadeLight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.16" />
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0" />
+    </linearGradient>
   </defs>
 
-<!--  <rect width="100%" height="100%" fill="#eef"/>-->
+  <ellipse cx="250" cy="64" rx="190" ry="52" fill="url(#kaironOrbGlowLight)" />
 
+  <!-- Minimal Horizon Baseline -->
+  <path d="M55 68 Q250 38 445 68" stroke="url(#kaironHorizonArcLight)" stroke-width="1.5" stroke-linecap="round" />
+  <line x1="30" y1="70" x2="470" y2="70" stroke="url(#kaironHorizonArcLight)" stroke-width="1" opacity="0.55" />
 
-  <circle cx="250"
-          cy="50"
-          r="40"
-          filter="url(#glow)"
-          fill="#fff"
-          opacity="1"
-          clip-path="url(#cut-off-bottom)" />
+  <!-- Subtle Perspective Grid Lines -->
+  <g stroke="url(#kaironGridFadeLight)" stroke-width="1">
+    <line x1="250" y1="70" x2="250" y2="116" />
+    <line x1="210" y1="70" x2="175" y2="116" />
+    <line x1="290" y1="70" x2="325" y2="116" />
+    <line x1="170" y1="70" x2="100" y2="116" />
+    <line x1="330" y1="70" x2="400" y2="116" />
+  </g>
 
-  <circle cx="250"
-          cy="50"
-          r="42"
-          filter="url(#glow)"
-          fill="#fff"
-          opacity=".8" />
-
-  <rect y="50"
-        width="100%"
-        height="50"
-        fill="url(#groundGradient)"
-        mask="url(#fadeSides)" />
-
-
+  <!-- Central Kairos Core Diamond -->
+  <polygon points="250,42 257,49 250,56 243,49" fill="#0891b2" opacity="0.8" />
+  <circle cx="250" cy="49" r="2" fill="#ffffff" />
 </svg>

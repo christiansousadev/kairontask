@@ -53,17 +53,19 @@ gap: 4px;
 
 ## Color Variables
 
-| Use case           | Variables                                                                                                                                                                 |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Text               | `--text-color`, `--text-color-muted`, `--text-color-most-intense`                                                                                                         |
-| Backgrounds        | `--bg`, `--card-bg`, `--task-c-bg`, `--sub-task-c-bg`                                                                                                                     |
-| Semantic           | `--color-success` (#10b981), `--color-warning` (#f59e0b), `--color-danger` (#ef4444)                                                                                      |
-| Brand              | `--brand-violet` (#7c3aed), `--brand-indigo` (#6366f1), `--brand-cyan` (#22d3ee), `--brand-gradient`, `--brand-gradient-text`, `--brand-violet-soft`, `--brand-cyan-soft` |
-| Brand effects      | `--brand-focus-ring` (cyan focus ring), `--brand-glow` (violet glow)                                                                                                      |
-| Tags               | `--tag-chip-bg`, `--tag-chip-border`                                                                                                                                      |
-| Material palette   | `--palette-primary-500`, `--palette-accent-500`, `--palette-warn-500` (100–900)                                                                                           |
-| Overlays           | `--c-dark-10` through `--c-dark-90`, `--c-light-05` through `--c-light-90`                                                                                                |
-| Alpha coefficients | `--border-alpha` (0.12), `--overlay-alpha` (0.1), `--muted-alpha` (0.6), `--separator-alpha` (0.3)                                                                        |
+| Use case           | Variables                                                                                                                                                                                                                     |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Text               | `--text-color`, `--text-color-muted`, `--text-color-most-intense`                                                                                                                                                             |
+| Backgrounds        | `--bg`, `--card-bg`, `--task-c-bg`, `--sub-task-c-bg`                                                                                                                                                                         |
+| Semantic           | `--color-success` (#10b981), `--color-warning` (#f59e0b), `--color-danger` (#ef4444)                                                                                                                                          |
+| Brand              | `--brand-violet` (#7c3aed), `--brand-indigo` (#6366f1), `--brand-cyan` (#22d3ee), `--brand-cyan-text` (#0891b2 light / #22d3ee dark), `--brand-gradient`, `--brand-gradient-text`, `--brand-violet-soft`, `--brand-cyan-soft` |
+| Surfaces & Borders | `--header-bg`, `--border-subtle`, `--border-default`, `--border-strong`, `--task-border`, `--task-hover-border`, `--task-hover-bg`                                                                                            |
+| Typography         | `--font-primary-stack` (`Inter`, system fallbacks), `--font-mono-stack` (`JetBrains Mono`, system monospace for timers/counters), `--heading-letter-spacing` (`-0.02em`)                                                      |
+| Brand effects      | `--brand-focus-ring` (cyan focus ring), `--brand-glow` (violet glow)                                                                                                                                                          |
+| Tags               | `--tag-chip-bg`, `--tag-chip-border`                                                                                                                                                                                          |
+| Material palette   | `--palette-primary-500`, `--palette-accent-500`, `--palette-warn-500` (100–900)                                                                                                                                               |
+| Overlays           | `--c-dark-10` through `--c-dark-90`, `--c-light-05` through `--c-light-90`                                                                                                                                                    |
+| Alpha coefficients | `--border-alpha` (0.12), `--overlay-alpha` (0.1), `--muted-alpha` (0.6), `--separator-alpha` (0.3)                                                                                                                            |
 
 ### Theme-Specific Values
 

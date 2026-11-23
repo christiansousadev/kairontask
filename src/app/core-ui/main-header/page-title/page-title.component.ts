@@ -91,13 +91,16 @@ import { KeyboardConfig } from '../../../features/config/keyboard-config.model';
       }
 
       .page-title {
-        font-size: 18px;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: var(--heading-letter-spacing);
+        color: var(--text-color-most-intense);
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
         max-width: 100%;
         cursor: pointer;
-        border-radius: var(--card-border-radius);
+        border-radius: var(--radius-md);
         padding: var(--s) var(--s2) var(--s) var(--s);
 
         @media (min-width: 600px) {

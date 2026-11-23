@@ -111,6 +111,28 @@
           viewBox="0 0 36 36"
           [class.is-hidden]="!isCountDown"
         >
+          <defs>
+            <linearGradient
+              id="kaironFocusGrad"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
+              <stop
+                offset="0%"
+                stop-color="#22d3ee"
+              />
+              <stop
+                offset="50%"
+                stop-color="#6366f1"
+              />
+              <stop
+                offset="100%"
+                stop-color="#7c3aed"
+              />
+            </linearGradient>
+          </defs>
           <path
             class="focus-progress-circle__bg"
             d="M18 2.0845
